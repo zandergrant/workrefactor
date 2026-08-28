@@ -10,13 +10,11 @@
     content="width=device-width, initial-scale=1.0"
   >
 
-  <title>
-    Start a Project | Business Systems, Automation & AI
-  </title>
+  <title>Start a Project | Business Systems, Automation & AI</title>
 
   <meta
     name="description"
-    content="Tell us what is making your business harder to run. Get support with business systems, workflow automation, AI automation, process improvement, and internal tools."
+    content="Tell us about the workflow, process, system, or operational problem making your business harder to run."
   >
 
   <meta
@@ -156,17 +154,20 @@
 
 
     <!-- ======================================================
-         CONTACT HERO
+         HERO
          ====================================================== -->
 
     <section class="contact-hero">
 
-      <div class="contact-hero-glow"></div>
+      <div
+        class="contact-hero-glow"
+        aria-hidden="true"
+      ></div>
 
       <div class="container contact-hero-grid">
 
 
-        <div class="contact-hero-copy">
+        <div>
 
           <p class="eyebrow">
             Start a project
@@ -177,53 +178,25 @@
             <em>harder to run?</em>
           </h1>
 
-          <p class="contact-hero-intro">
-            Tell us about the workflow, process, system,
-            or operational problem you want to improve.
-            You do not need to know what the technical
-            solution should be.
-          </p>
-
         </div>
 
 
-        <div class="contact-side-note">
+        <div class="contact-hero-copy">
 
-          <p class="contact-side-label">
-            Good reasons to reach out
+          <p>
+            Tell us about the workflow, process, system,
+            or recurring problem you want to improve.
           </p>
 
-          <ul class="contact-side-list">
+          <p>
+            You do not need to know whether the answer is
+            automation, AI, an integration, an internal
+            tool, or something else.
+          </p>
 
-            <li>
-              A recurring process is taking too much time.
-            </li>
-
-            <li>
-              Your team is manually moving information
-              between systems.
-            </li>
-
-            <li>
-              Reporting depends on spreadsheets or
-              repetitive preparation.
-            </li>
-
-            <li>
-              A workflow breaks as volume increases.
-            </li>
-
-            <li>
-              Important work depends too heavily on
-              one employee.
-            </li>
-
-            <li>
-              You think automation or AI could help,
-              but you are not sure where to start.
-            </li>
-
-          </ul>
+          <p>
+            Start with the problem.
+          </p>
 
         </div>
 
@@ -234,95 +207,177 @@
 
 
     <!-- ======================================================
-         CONTACT FORM
+         PROJECT FORM
          ====================================================== -->
 
-    <section class="contact-section">
+    <section class="project-section">
 
-      <div class="container contact-layout">
+      <div class="container project-layout">
 
 
         <!-- ==================================================
-             LEFT / FORM INTRO
+             LEFT COLUMN
              ================================================== -->
 
-        <div class="contact-intro">
+        <aside class="project-sidebar">
 
           <p class="eyebrow">
-            Tell us what is happening
+            Project inquiry
           </p>
 
           <h2>
-            Start with the problem, not the technology.
+            Give us the context.
           </h2>
 
-          <p>
-            A useful first conversation does not require
-            a technical specification.
+          <p class="project-sidebar-copy">
+            The more clearly we understand how the work
+            happens today, the easier it is to determine
+            where meaningful improvement may exist.
           </p>
 
-          <p>
-            Describe what your team currently does,
-            where the friction appears, and what you
-            would like to be easier, faster, clearer,
-            or more reliable.
-          </p>
 
-          <div class="contact-expectation">
+          <div class="project-sidebar-block">
 
-            <span class="contact-expectation-label">
-              What happens next
-            </span>
-
-            <p>
-              We review the problem first. If it looks
-              like something we can meaningfully help
-              with, we will follow up to understand the
-              workflow in more detail.
+            <p class="project-sidebar-label">
+              Good problems to bring us
             </p>
+
+            <ul class="project-sidebar-list">
+
+              <li>
+                Repetitive administrative work
+              </li>
+
+              <li>
+                Manual reporting
+              </li>
+
+              <li>
+                Disconnected systems
+              </li>
+
+              <li>
+                Duplicate data entry
+              </li>
+
+              <li>
+                Slow approvals or handoffs
+              </li>
+
+              <li>
+                Processes dependent on one person
+              </li>
+
+              <li>
+                Poor operational visibility
+              </li>
+
+              <li>
+                Workflows that no longer scale
+              </li>
+
+            </ul>
 
           </div>
 
-        </div>
+
+          <div class="project-sidebar-note">
+
+            <span>
+              Not ready?
+            </span>
+
+            <p>
+              You can also use the resource library to
+              diagnose the problem yourself before
+              reaching out.
+            </p>
+
+            <a href="../index.html#library">
+              Explore the library →
+            </a>
+
+          </div>
+
+        </aside>
 
 
         <!-- ==================================================
              FORM
              ================================================== -->
 
-        <div class="project-form-wrap">
+        <div class="project-form-panel">
 
           <form
             class="project-form"
-            action="https://formspree.io/f/YOUR_FORM_ID"
+            action="https://formsubmit.co/hello@example.com"
             method="POST"
           >
 
 
-            <!-- ----------------------------------------------
-                 CONTACT DETAILS
-                 ---------------------------------------------- -->
+            <!-- FormSubmit configuration -->
 
-            <fieldset class="form-section">
+            <input
+              type="hidden"
+              name="_subject"
+              value="New Project Inquiry"
+            >
+
+            <input
+              type="hidden"
+              name="_template"
+              value="table"
+            >
+
+            <input
+              type="hidden"
+              name="_captcha"
+              value="false"
+            >
+
+
+            <!-- Honeypot -->
+
+            <input
+              type="text"
+              name="_honey"
+              class="form-honeypot"
+              tabindex="-1"
+              autocomplete="off"
+            >
+
+
+            <!-- ==============================================
+                 SECTION 01
+                 ============================================== -->
+
+            <fieldset class="form-group">
 
               <legend>
+
+                <span class="form-section-number">
+                  01
+                </span>
+
                 About you
+
               </legend>
 
 
-              <div class="form-grid form-grid-two">
+              <div class="form-row">
 
 
                 <div class="form-field">
 
                   <label for="name">
                     Name
+                    <span aria-hidden="true">*</span>
                   </label>
 
                   <input
                     type="text"
                     id="name"
-                    name="name"
+                    name="Name"
                     autocomplete="name"
                     required
                   >
@@ -334,12 +389,13 @@
 
                   <label for="email">
                     Work email
+                    <span aria-hidden="true">*</span>
                   </label>
 
                   <input
                     type="email"
                     id="email"
-                    name="email"
+                    name="Email"
                     autocomplete="email"
                     required
                   >
@@ -350,19 +406,20 @@
               </div>
 
 
-              <div class="form-grid form-grid-two">
+              <div class="form-row">
 
 
                 <div class="form-field">
 
                   <label for="company">
                     Company
+                    <span aria-hidden="true">*</span>
                   </label>
 
                   <input
                     type="text"
                     id="company"
-                    name="company"
+                    name="Company"
                     autocomplete="organization"
                     required
                   >
@@ -379,9 +436,9 @@
                   <input
                     type="text"
                     id="role"
-                    name="role"
+                    name="Role"
                     autocomplete="organization-title"
-                    placeholder="Founder, COO, Operations, etc."
+                    placeholder="Founder, COO, Operations..."
                   >
 
                 </div>
@@ -394,15 +451,12 @@
 
                 <label for="website">
                   Company website
-                  <span class="field-optional">
-                    Optional
-                  </span>
                 </label>
 
                 <input
                   type="url"
                   id="website"
-                  name="website"
+                  name="Website"
                   autocomplete="url"
                   placeholder="https://"
                 >
@@ -413,18 +467,24 @@
             </fieldset>
 
 
-            <!-- ----------------------------------------------
-                 COMPANY
-                 ---------------------------------------------- -->
+            <!-- ==============================================
+                 SECTION 02
+                 ============================================== -->
 
-            <fieldset class="form-section">
+            <fieldset class="form-group">
 
               <legend>
+
+                <span class="form-section-number">
+                  02
+                </span>
+
                 About the business
+
               </legend>
 
 
-              <div class="form-grid form-grid-two">
+              <div class="form-row">
 
 
                 <div class="form-field">
@@ -435,43 +495,41 @@
 
                   <select
                     id="company-size"
-                    name="company_size"
-                    required
+                    name="Company Size"
                   >
 
                     <option
                       value=""
                       selected
-                      disabled
                     >
                       Select
                     </option>
 
-                    <option value="1-5">
+                    <option value="1–5 employees">
                       1–5 employees
                     </option>
 
-                    <option value="6-20">
+                    <option value="6–20 employees">
                       6–20 employees
                     </option>
 
-                    <option value="21-50">
+                    <option value="21–50 employees">
                       21–50 employees
                     </option>
 
-                    <option value="51-100">
+                    <option value="51–100 employees">
                       51–100 employees
                     </option>
 
-                    <option value="101-200">
+                    <option value="101–200 employees">
                       101–200 employees
                     </option>
 
-                    <option value="201-500">
+                    <option value="201–500 employees">
                       201–500 employees
                     </option>
 
-                    <option value="500+">
+                    <option value="500+ employees">
                       500+ employees
                     </option>
 
@@ -489,8 +547,8 @@
                   <input
                     type="text"
                     id="industry"
-                    name="industry"
-                    placeholder="Consulting, healthcare, agency, etc."
+                    name="Industry"
+                    placeholder="Consulting, healthcare, agency..."
                   >
 
                 </div>
@@ -502,14 +560,20 @@
             </fieldset>
 
 
-            <!-- ----------------------------------------------
-                 PROBLEM
-                 ---------------------------------------------- -->
+            <!-- ==============================================
+                 SECTION 03
+                 ============================================== -->
 
-            <fieldset class="form-section">
+            <fieldset class="form-group">
 
               <legend>
+
+                <span class="form-section-number">
+                  03
+                </span>
+
                 The problem
+
               </legend>
 
 
@@ -517,16 +581,17 @@
 
                 <label for="problem">
                   What is making the business harder to run?
+                  <span aria-hidden="true">*</span>
                 </label>
 
-                <p class="field-help">
-                  Describe the process, workflow, or recurring
-                  problem in plain language.
+                <p class="form-help">
+                  Describe the problem in plain language.
+                  You do not need to propose a solution.
                 </p>
 
                 <textarea
                   id="problem"
-                  name="problem"
+                  name="Problem"
                   rows="7"
                   required
                   placeholder="For example: Every week our operations team spends several hours collecting information from different systems and rebuilding the same client report..."
@@ -538,21 +603,19 @@
               <div class="form-field">
 
                 <label for="current-process">
-                  How does the process work today?
-                  <span class="field-optional">
-                    Optional
-                  </span>
+                  How does it work today?
                 </label>
 
-                <p class="field-help">
-                  Walk through the major steps if you know them.
+                <p class="form-help">
+                  Walk us through the major steps if you
+                  know them.
                 </p>
 
                 <textarea
                   id="current-process"
-                  name="current_process"
+                  name="Current Process"
                   rows="6"
-                  placeholder="First someone receives the request, then..."
+                  placeholder="For example: A request comes in by email, someone copies the details into a spreadsheet, then..."
                 ></textarea>
 
               </div>
@@ -562,20 +625,21 @@
 
                 <label for="impact">
                   What is the impact?
+                  <span aria-hidden="true">*</span>
                 </label>
 
-                <p class="field-help">
-                  Time, errors, delays, capacity, customer
-                  experience, visibility, cost, or anything else
-                  that matters.
+                <p class="form-help">
+                  Think about time, delays, errors,
+                  capacity, cost, customer experience,
+                  visibility, or risk.
                 </p>
 
                 <textarea
                   id="impact"
-                  name="impact"
+                  name="Business Impact"
                   rows="5"
                   required
-                  placeholder="This takes about 15 hours per week and creates delays when..."
+                  placeholder="For example: It takes roughly 15 hours per week, delays client reporting, and creates frequent errors..."
                 ></textarea>
 
               </div>
@@ -584,37 +648,48 @@
             </fieldset>
 
 
-            <!-- ----------------------------------------------
-                 TYPE OF HELP
-                 ---------------------------------------------- -->
+            <!-- ==============================================
+                 SECTION 04
+                 ============================================== -->
 
-            <fieldset class="form-section">
+            <fieldset class="form-group">
 
               <legend>
-                What kind of support are you looking for?
+
+                <span class="form-section-number">
+                  04
+                </span>
+
+                What kind of support might help?
+
               </legend>
 
 
-              <div class="choice-grid">
+              <p class="form-group-intro">
+                Choose as many as apply. If you are unsure,
+                select “Not sure yet.”
+              </p>
 
 
-                <label class="choice-card">
+              <div class="form-choice-grid">
+
+
+                <label class="form-choice">
 
                   <input
                     type="checkbox"
-                    name="support_type"
-                    value="systems-audit"
+                    name="Support"
+                    value="Systems Audit"
                   >
 
-                  <span class="choice-content">
+                  <span class="form-choice-box">
 
-                    <span class="choice-title">
+                    <strong>
                       Systems audit
-                    </span>
+                    </strong>
 
-                    <span class="choice-description">
-                      Identify the biggest opportunities
-                      before deciding what to build.
+                    <span>
+                      Identify and prioritize opportunities.
                     </span>
 
                   </span>
@@ -622,47 +697,22 @@
                 </label>
 
 
-                <label class="choice-card">
+                <label class="form-choice">
 
                   <input
                     type="checkbox"
-                    name="support_type"
-                    value="process-redesign"
+                    name="Support"
+                    value="Process Redesign"
                   >
 
-                  <span class="choice-content">
+                  <span class="form-choice-box">
 
-                    <span class="choice-title">
+                    <strong>
                       Process redesign
-                    </span>
+                    </strong>
 
-                    <span class="choice-description">
-                      Simplify and improve how the work
-                      should happen.
-                    </span>
-
-                  </span>
-
-                </label>
-
-
-                <label class="choice-card">
-
-                  <input
-                    type="checkbox"
-                    name="support_type"
-                    value="automation"
-                  >
-
-                  <span class="choice-content">
-
-                    <span class="choice-title">
-                      Automation
-                    </span>
-
-                    <span class="choice-description">
-                      Reduce repetitive work and connect
-                      systems or workflows.
+                    <span>
+                      Simplify how the work should happen.
                     </span>
 
                   </span>
@@ -670,23 +720,45 @@
                 </label>
 
 
-                <label class="choice-card">
+                <label class="form-choice">
 
                   <input
                     type="checkbox"
-                    name="support_type"
-                    value="ai"
+                    name="Support"
+                    value="Workflow Automation"
                   >
 
-                  <span class="choice-content">
+                  <span class="form-choice-box">
 
-                    <span class="choice-title">
+                    <strong>
+                      Workflow automation
+                    </strong>
+
+                    <span>
+                      Remove recurring manual work.
+                    </span>
+
+                  </span>
+
+                </label>
+
+
+                <label class="form-choice">
+
+                  <input
+                    type="checkbox"
+                    name="Support"
+                    value="AI Implementation"
+                  >
+
+                  <span class="form-choice-box">
+
+                    <strong>
                       AI implementation
-                    </span>
+                    </strong>
 
-                    <span class="choice-description">
-                      Use AI inside an actual operational
-                      workflow.
+                    <span>
+                      Use AI inside a real workflow.
                     </span>
 
                   </span>
@@ -694,23 +766,22 @@
                 </label>
 
 
-                <label class="choice-card">
+                <label class="form-choice">
 
                   <input
                     type="checkbox"
-                    name="support_type"
-                    value="internal-tool"
+                    name="Support"
+                    value="Internal Tool"
                   >
 
-                  <span class="choice-content">
+                  <span class="form-choice-box">
 
-                    <span class="choice-title">
+                    <strong>
                       Internal tool
-                    </span>
+                    </strong>
 
-                    <span class="choice-description">
-                      Build a focused dashboard, portal,
-                      application, or internal system.
+                    <span>
+                      Build a focused operational system.
                     </span>
 
                   </span>
@@ -718,23 +789,22 @@
                 </label>
 
 
-                <label class="choice-card">
+                <label class="form-choice">
 
                   <input
                     type="checkbox"
-                    name="support_type"
-                    value="not-sure"
+                    name="Support"
+                    value="Not Sure Yet"
                   >
 
-                  <span class="choice-content">
+                  <span class="form-choice-box">
 
-                    <span class="choice-title">
-                      I am not sure yet
-                    </span>
+                    <strong>
+                      Not sure yet
+                    </strong>
 
-                    <span class="choice-description">
-                      You know the problem but not what
-                      the solution should be.
+                    <span>
+                      You know the problem, not the solution.
                     </span>
 
                   </span>
@@ -748,18 +818,24 @@
             </fieldset>
 
 
-            <!-- ----------------------------------------------
-                 PROJECT DETAILS
-                 ---------------------------------------------- -->
+            <!-- ==============================================
+                 SECTION 05
+                 ============================================== -->
 
-            <fieldset class="form-section">
+            <fieldset class="form-group">
 
               <legend>
-                Project details
+
+                <span class="form-section-number">
+                  05
+                </span>
+
+                Project context
+
               </legend>
 
 
-              <div class="form-grid form-grid-two">
+              <div class="form-row">
 
 
                 <div class="form-field">
@@ -770,37 +846,37 @@
 
                   <select
                     id="budget"
-                    name="budget"
+                    name="Budget"
                   >
 
                     <option
-                      value=""
+                      value="Not sure yet"
                       selected
                     >
                       Not sure yet
                     </option>
 
-                    <option value="under-2500">
+                    <option value="Under $2,500">
                       Under $2,500
                     </option>
 
-                    <option value="2500-5000">
+                    <option value="$2,500–$5,000">
                       $2,500–$5,000
                     </option>
 
-                    <option value="5000-10000">
+                    <option value="$5,000–$10,000">
                       $5,000–$10,000
                     </option>
 
-                    <option value="10000-25000">
+                    <option value="$10,000–$25,000">
                       $10,000–$25,000
                     </option>
 
-                    <option value="25000-50000">
+                    <option value="$25,000–$50,000">
                       $25,000–$50,000
                     </option>
 
-                    <option value="50000-plus">
+                    <option value="$50,000+">
                       $50,000+
                     </option>
 
@@ -812,38 +888,38 @@
                 <div class="form-field">
 
                   <label for="timeline">
-                    Desired timeline
+                    Timeline
                   </label>
 
                   <select
                     id="timeline"
-                    name="timeline"
+                    name="Timeline"
                   >
 
                     <option
-                      value=""
+                      value="Flexible"
                       selected
                     >
                       Flexible
                     </option>
 
-                    <option value="asap">
+                    <option value="As soon as possible">
                       As soon as possible
                     </option>
 
-                    <option value="30-days">
+                    <option value="Within 30 days">
                       Within 30 days
                     </option>
 
-                    <option value="1-3-months">
+                    <option value="1–3 months">
                       1–3 months
                     </option>
 
-                    <option value="3-6-months">
+                    <option value="3–6 months">
                       3–6 months
                     </option>
 
-                    <option value="exploring">
+                    <option value="Just exploring">
                       Just exploring
                     </option>
 
@@ -858,17 +934,14 @@
               <div class="form-field">
 
                 <label for="success">
-                  What would a successful outcome look like?
-                  <span class="field-optional">
-                    Optional
-                  </span>
+                  What would success look like?
                 </label>
 
                 <textarea
                   id="success"
-                  name="success"
+                  name="Successful Outcome"
                   rows="5"
-                  placeholder="For example: reduce reporting work from 15 hours per week to 2, give managers real-time visibility, and eliminate duplicate entry..."
+                  placeholder="For example: Reduce reporting from 15 hours per week to 2, eliminate duplicate entry, and give managers real-time visibility..."
                 ></textarea>
 
               </div>
@@ -876,16 +949,13 @@
 
               <div class="form-field">
 
-                <label for="anything-else">
+                <label for="additional">
                   Anything else we should know?
-                  <span class="field-optional">
-                    Optional
-                  </span>
                 </label>
 
                 <textarea
-                  id="anything-else"
-                  name="anything_else"
+                  id="additional"
+                  name="Additional Information"
                   rows="4"
                 ></textarea>
 
@@ -895,31 +965,21 @@
             </fieldset>
 
 
-            <!-- ----------------------------------------------
-                 HIDDEN FIELDS
-                 ---------------------------------------------- -->
-
-            <input
-              type="hidden"
-              name="_subject"
-              value="New project inquiry"
-            >
-
-
-            <!-- ----------------------------------------------
+            <!-- ==============================================
                  SUBMIT
-                 ---------------------------------------------- -->
+                 ============================================== -->
 
-            <div class="form-submit">
+            <div class="form-submit-area">
 
               <button
                 class="button button-primary form-submit-button"
                 type="submit"
               >
-                Send project details
+                Send project inquiry
               </button>
 
-              <p class="form-privacy">
+
+              <p class="form-submit-note">
                 Your information is used only to review
                 and respond to your inquiry.
               </p>
@@ -938,7 +998,7 @@
 
 
     <!-- ======================================================
-         WHO THIS IS FOR
+         EXPECTATION
          ====================================================== -->
 
     <section class="section philosophy-section">
@@ -948,11 +1008,11 @@
         <div>
 
           <p class="eyebrow">
-            A useful fit
+            What happens next
           </p>
 
           <h2>
-            You do not need an automation strategy.
+            We start by understanding the problem.
           </h2>
 
         </div>
@@ -961,139 +1021,27 @@
         <div class="philosophy-copy">
 
           <p class="large-statement">
-            You need a real operational problem worth solving.
+            You are not committing to a project by
+            submitting the form.
           </p>
 
           <p>
-            The strongest projects usually begin with
-            something tangible: repetitive work, unreliable
-            handoffs, disconnected systems, recurring
-            reporting, poor visibility, administrative
-            bottlenecks, or processes that no longer scale.
+            We will review the information you provide
+            and determine whether the problem looks like
+            something we can meaningfully help solve.
           </p>
 
           <p>
-            We can work backward from there and determine
-            whether the right answer is process redesign,
-            automation, AI, integration, an internal tool,
-            or something simpler.
+            If it does, the next step is a conversation
+            focused on the workflow itself: how it works
+            today, what is creating friction, what systems
+            are involved, and what a better outcome would
+            look like.
           </p>
 
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- ======================================================
-         RESOURCE PATH
-         ====================================================== -->
-
-    <section class="section">
-
-      <div class="container">
-
-        <div class="section-heading">
-
-          <div>
-
-            <p class="eyebrow">
-              Not ready for a project?
-            </p>
-
-          </div>
-
-          <div>
-
-            <h2>
-              Use the resources first.
-            </h2>
-
-          </div>
-
-        </div>
-
-
-        <div class="service-list">
-
-
-          <a
-            class="service-row"
-            href="../workflow-automation/"
-          >
-
-            <span class="service-number">
-              Guide
-            </span>
-
-            <h3>
-              Workflow Automation
-            </h3>
-
-            <p>
-              Learn how workflow automation works,
-              what is worth automating, how to think
-              about ROI, and where AI belongs.
-            </p>
-
-            <span class="service-arrow">
-              ↗
-            </span>
-
-          </a>
-
-
-          <a
-            class="service-row"
-            href="../business-process-automation/"
-          >
-
-            <span class="service-number">
-              Guide
-            </span>
-
-            <h3>
-              Business Process Automation
-            </h3>
-
-            <p>
-              Learn how to evaluate broader end-to-end
-              processes and identify where automation
-              creates meaningful leverage.
-            </p>
-
-            <span class="service-arrow">
-              ↗
-            </span>
-
-          </a>
-
-
-          <a
-            class="service-row"
-            href="../index.html#library"
-          >
-
-            <span class="service-number">
-              Library
-            </span>
-
-            <h3>
-              Explore all resources
-            </h3>
-
-            <p>
-              Browse practical guides, frameworks,
-              and tools for improving how work gets done.
-            </p>
-
-            <span class="service-arrow">
-              ↗
-            </span>
-
-          </a>
-
+          <p>
+            Technology comes after that.
+          </p>
 
         </div>
 
