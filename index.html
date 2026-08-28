@@ -1,28 +1,1560 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Business Process Automation Services</title><meta name="description" content="Automate repetitive business processes, reduce manual work, connect systems, and improve operational capacity without adding unnecessary complexity."><meta name="robots" content="index,follow"><link rel="stylesheet" href="../assets/styles.css"><script defer src="../assets/site.js"></script></head><body><a class="skip-link" href="#main">Skip to content</a>
-<header class="site-header">
-  <div class="shell header-inner">
-    <a class="brand" href="../" aria-label="Home"><span class="brand-mark" aria-hidden="true">//</span><span data-site-name>Your Company</span></a>
-    <nav class="desktop-nav" aria-label="Primary navigation">
-      <div class="nav-dropdown"><button class="nav-link nav-button" type="button">Services <span>↘</span></button><div class="nav-menu"><a class="nav-menu-item" href="../business-process-automation/"><span class="nav-num">01</span><span>Business Process Automation</span></a><a class="nav-menu-item" href="../workflow-automation/"><span class="nav-num">02</span><span>Workflow Automation</span></a><a class="nav-menu-item" href="../ai-automation/"><span class="nav-num">03</span><span>AI Automation</span></a><a class="nav-menu-item" href="../business-process-improvement/"><span class="nav-num">04</span><span>Business Process Improvement</span></a><a class="nav-menu-item" href="../internal-tools/"><span class="nav-num">05</span><span>Internal Tools Development</span></a></div></div>
-      <a class="nav-link" href="../#approach">Approach</a>
-      <a class="nav-link" href="../#insights">Insights</a>
-      <a class="button button-small" href="../contact/">Start a project</a>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <title>Business Systems, Automation & AI</title>
+
+  <meta
+    name="description"
+    content="Improve how your business runs with better workflows, automation, AI, integrations, and practical internal tools."
+  >
+
+  <meta name="robots" content="index,follow">
+
+  <style>
+    :root {
+      --ink: #11110f;
+      --paper: #f3f1ea;
+      --paper-2: #e8e5dc;
+      --white: #fffef8;
+      --line: rgba(17, 17, 15, 0.16);
+      --line-dark: rgba(255, 255, 255, 0.18);
+      --muted: #67675f;
+      --accent: #d8ff5a;
+      --max: 1240px;
+      --pad: clamp(20px, 4vw, 56px);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body.menu-open {
+      overflow: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .shell {
+      width: min(
+        var(--max),
+        calc(100% - (var(--pad) * 2))
+      );
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: clamp(78px, 9vw, 150px) 0;
+    }
+
+    .section-rule {
+      border-top: 1px solid var(--line);
+    }
+
+    .dark-section {
+      background: var(--ink);
+      color: var(--white);
+    }
+
+    .tint-section {
+      background: var(--paper-2);
+    }
+
+    .eyebrow {
+      margin: 0 0 22px;
+      font-size: 11px;
+      line-height: 1;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .eyebrow.light {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      margin-bottom: 0;
+      font-size: clamp(56px, 9vw, 142px);
+      line-height: 0.88;
+      letter-spacing: -0.065em;
+      font-weight: 500;
+    }
+
+    h2 {
+      margin-bottom: 34px;
+      font-size: clamp(38px, 5.4vw, 76px);
+      line-height: 0.98;
+      letter-spacing: -0.045em;
+      font-weight: 500;
+    }
+
+    h3 {
+      font-size: clamp(22px, 2.1vw, 31px);
+      line-height: 1.04;
+      letter-spacing: -0.025em;
+      font-weight: 500;
+    }
+
+    p {
+      line-height: 1.55;
+    }
+
+    .large-copy {
+      max-width: 900px;
+      font-size: clamp(19px, 2vw, 27px);
+      line-height: 1.38;
+      letter-spacing: -0.018em;
+      color: #2d2d28;
+    }
+
+    .dark-section p {
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    /* ------------------------------
+       HEADER
+    ------------------------------ */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(243, 241, 234, 0.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .header-inner {
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-mark {
+      display: inline-grid;
+      place-items: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--ink);
+      color: var(--accent);
+      letter-spacing: -0.18em;
+      padding-right: 3px;
+    }
+
+    .desktop-nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .nav-link {
+      font-size: 13px;
+    }
+
+    .nav-button {
+      padding: 24px 0;
+      border: 0;
+      background: none;
+      cursor: pointer;
+      color: inherit;
+    }
+
+    .nav-dropdown {
+      position: relative;
+    }
+
+    .nav-menu {
+      position: absolute;
+      top: 58px;
+      left: -20px;
+      min-width: 360px;
+      padding: 8px;
+      background: var(--ink);
+      color: var(--white);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(8px);
+      transition: 0.2s ease;
+    }
+
+    .nav-dropdown:hover .nav-menu,
+    .nav-dropdown:focus-within .nav-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .nav-menu-item {
+      display: grid;
+      grid-template-columns: 36px 1fr;
+      gap: 12px;
+      padding: 16px;
+      border-bottom: 1px solid var(--line-dark);
+      font-size: 14px;
+    }
+
+    .nav-menu-item:last-child {
+      border-bottom: 0;
+    }
+
+    .nav-menu-item:hover {
+      background: rgba(255, 255, 255, 0.07);
+    }
+
+    .nav-num {
+      padding-top: 2px;
+      font-size: 10px;
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    .menu-toggle {
+      display: none;
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+    }
+
+    .mobile-nav {
+      display: none;
+    }
+
+    /* ------------------------------
+       BUTTONS
+    ------------------------------ */
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      min-height: 50px;
+      padding: 0 20px;
+      border: 1px solid var(--ink);
+      font-size: 13px;
+      font-weight: 700;
+      transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-small {
+      min-height: 40px;
+      padding: 0 15px;
+      background: var(--ink);
+      color: var(--white);
+      border: 0;
+    }
+
+    .button-light {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: var(--ink);
+    }
+
+    .text-link {
+      font-size: 13px;
+      text-decoration: underline;
+      text-underline-offset: 5px;
+    }
+
+    .light-link {
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    .button-row {
+      display: flex;
+      gap: 22px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    /* ------------------------------
+       HERO
+    ------------------------------ */
+
+    .home-hero {
+      min-height: calc(100vh - 72px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: clamp(60px, 8vw, 120px) 0 30px;
+      overflow: hidden;
+    }
+
+    .home-hero-grid {
+      display: grid;
+      grid-template-columns:
+        minmax(0, 1.45fr)
+        minmax(280px, 0.55fr);
+      gap: clamp(40px, 8vw, 120px);
+      align-items: end;
+    }
+
+    .home-title-wrap h1 em {
+      color: var(--accent);
+      font-style: normal;
+    }
+
+    .home-hero-copy {
+      max-width: 440px;
+      padding-bottom: 8px;
+    }
+
+    .home-hero-copy > p {
+      margin-bottom: 34px;
+      font-size: clamp(18px, 1.8vw, 24px);
+      line-height: 1.4;
+    }
+
+    .hero-visual {
+      margin-top: clamp(60px, 9vw, 120px);
+    }
+
+    .flow-diagram {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--line-dark);
+      border-bottom: 1px solid var(--line-dark);
+    }
+
+    .flow-node {
+      position: relative;
+      min-height: 145px;
+      padding: 24px 42px 24px 0;
+      border-right: 1px solid var(--line-dark);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      font-size: 18px;
+    }
+
+    .flow-node:not(:first-child) {
+      padding-left: 24px;
+    }
+
+    .flow-node:last-child {
+      border-right: 0;
+    }
+
+    .flow-index {
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    .flow-arrow {
+      position: absolute;
+      right: 16px;
+      bottom: 21px;
+      color: var(--accent);
+      font-size: 22px;
+    }
+
+    /* ------------------------------
+       CONTENT
+    ------------------------------ */
+
+    .statement-grid,
+    .split-intro,
+    .section-heading {
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      gap: 50px;
+    }
+
+    .section-heading {
+      margin-bottom: 56px;
+    }
+
+    .section-heading .eyebrow {
+      padding-top: 10px;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      max-width: 920px;
+    }
+
+    .service-index {
+      border-top: 1px solid var(--line);
+    }
+
+    .service-index-row {
+      display: grid;
+      grid-template-columns: 70px 1.15fr 1.5fr 30px;
+      gap: 26px;
+      align-items: start;
+      padding: 30px 0;
+      border-bottom: 1px solid var(--line);
+      transition: padding 0.2s ease;
+    }
+
+    .service-index-row:hover {
+      padding-left: 12px;
+    }
+
+    .service-index-row h3,
+    .service-index-row p {
+      margin: 0;
+    }
+
+    .service-index-row p {
+      max-width: 560px;
+      color: var(--muted);
+    }
+
+    .service-index-num {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .service-index-arrow {
+      font-size: 20px;
+    }
+
+    .principle-list > div {
+      display: grid;
+      grid-template-columns: 70px 1fr 1.4fr;
+      gap: 24px;
+      padding: 26px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .principle-list > div:last-child {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .principle-list span {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .principle-list h3,
+    .principle-list p {
+      margin: 0;
+    }
+
+    .principle-list p {
+      color: var(--muted);
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+    }
+
+    .feature-card {
+      min-height: 300px;
+      padding: 24px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .feature-card h3 {
+      margin-top: auto;
+      margin-bottom: 18px;
+    }
+
+    .feature-card p {
+      margin-bottom: 0;
+      color: var(--muted);
+    }
+
+    .card-num {
+      font-size: 10px;
+      color: var(--muted);
+    }
+
+    /* ------------------------------
+       CTA
+    ------------------------------ */
+
+    .cta-grid {
+      display: grid;
+      grid-template-columns: 1.55fr 0.65fr;
+      gap: 90px;
+      align-items: end;
+    }
+
+    .cta-grid h2 {
+      margin-bottom: 0;
+    }
+
+    .cta-grid > div:last-child p {
+      margin-bottom: 28px;
+      font-size: 18px;
+    }
+
+    /* ------------------------------
+       FOOTER
+    ------------------------------ */
+
+    .footer {
+      padding: 70px 0 24px;
+      background: #dcd9cf;
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 70px;
+    }
+
+    .footer-intro p {
+      max-width: 290px;
+      margin-top: 20px;
+      color: var(--muted);
+    }
+
+    .footer-brand {
+      margin-bottom: 16px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-links a {
+      font-size: 14px;
+    }
+
+    .footer-bottom {
+      margin-top: 70px;
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    /* ------------------------------
+       ACCESSIBILITY
+    ------------------------------ */
+
+    .skip-link {
+      position: fixed;
+      left: 16px;
+      top: -100px;
+      z-index: 1000;
+      padding: 12px 16px;
+      background: var(--accent);
+      color: var(--ink);
+    }
+
+    .skip-link:focus {
+      top: 16px;
+    }
+
+    /* ------------------------------
+       MOBILE
+    ------------------------------ */
+
+    @media (max-width: 920px) {
+      .desktop-nav {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .mobile-nav {
+        position: fixed;
+        inset: 72px 0 0 0;
+        z-index: 49;
+        width: 100%;
+        padding:
+          28px
+          var(--pad)
+          48px;
+        background: var(--ink);
+        color: var(--white);
+        flex-direction: column;
+        gap: 0;
+      }
+
+      .mobile-nav.is-open {
+        display: flex;
+      }
+
+      .mobile-nav a {
+        padding: 18px 0;
+        border-bottom: 1px solid var(--line-dark);
+        font-size: 18px;
+      }
+
+      .home-hero-grid,
+      .statement-grid,
+      .split-intro,
+      .section-heading,
+      .cta-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .home-hero {
+        min-height: auto;
+      }
+
+      .home-hero-copy {
+        max-width: 620px;
+      }
+
+      .flow-diagram {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .flow-node:nth-child(2) {
+        border-right: 0;
+      }
+
+      .flow-node:nth-child(-n + 2) {
+        border-bottom: 1px solid var(--line-dark);
+      }
+
+      .service-index-row {
+        grid-template-columns: 45px 1fr 24px;
+      }
+
+      .service-index-row p {
+        grid-column: 2 / 4;
+      }
+
+      .principle-list > div {
+        grid-template-columns: 45px 1fr;
+      }
+
+      .principle-list > div p {
+        grid-column: 2;
+      }
+
+      .feature-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 620px) {
+      h1 {
+        font-size: clamp(50px, 17vw, 78px);
+      }
+
+      .home-hero {
+        padding-top: 54px;
+      }
+
+      .flow-diagram,
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .flow-node {
+        min-height: 110px;
+        border-right: 0;
+        border-bottom: 1px solid var(--line-dark);
+        padding-left: 0 !important;
+      }
+
+      .flow-node:last-child {
+        border-bottom: 0;
+      }
+
+      .service-index-row {
+        grid-template-columns: 36px 1fr 20px;
+        gap: 12px;
+      }
+
+      .principle-list > div {
+        grid-template-columns: 34px 1fr;
+        gap: 14px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main">
+    Skip to content
+  </a>
+
+  <header class="site-header">
+
+    <div class="shell header-inner">
+
+      <a
+        class="brand"
+        href="./"
+        aria-label="Home"
+      >
+        <span
+          class="brand-mark"
+          aria-hidden="true"
+        >
+          //
+        </span>
+
+        <span>
+          Your Company
+        </span>
+      </a>
+
+      <nav
+        class="desktop-nav"
+        aria-label="Primary navigation"
+      >
+
+        <div class="nav-dropdown">
+
+          <button
+            class="nav-link nav-button"
+            type="button"
+          >
+            Services ↘
+          </button>
+
+          <div class="nav-menu">
+
+            <a
+              class="nav-menu-item"
+              href="business-process-automation/"
+            >
+              <span class="nav-num">01</span>
+              <span>
+                Business Process Automation
+              </span>
+            </a>
+
+            <a
+              class="nav-menu-item"
+              href="workflow-automation/"
+            >
+              <span class="nav-num">02</span>
+              <span>
+                Workflow Automation
+              </span>
+            </a>
+
+            <a
+              class="nav-menu-item"
+              href="ai-automation/"
+            >
+              <span class="nav-num">03</span>
+              <span>
+                AI Automation
+              </span>
+            </a>
+
+            <a
+              class="nav-menu-item"
+              href="business-process-improvement/"
+            >
+              <span class="nav-num">04</span>
+              <span>
+                Business Process Improvement
+              </span>
+            </a>
+
+            <a
+              class="nav-menu-item"
+              href="internal-tools/"
+            >
+              <span class="nav-num">05</span>
+              <span>
+                Internal Tools Development
+              </span>
+            </a>
+
+          </div>
+        </div>
+
+        <a
+          class="nav-link"
+          href="#approach"
+        >
+          Approach
+        </a>
+
+        <a
+          class="nav-link"
+          href="#insights"
+        >
+          Insights
+        </a>
+
+        <a
+          class="button button-small"
+          href="contact/"
+        >
+          Start a project
+        </a>
+
+      </nav>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="mobile-nav"
+      >
+        Menu
+      </button>
+
+    </div>
+
+    <nav
+      id="mobile-nav"
+      class="mobile-nav"
+      aria-label="Mobile navigation"
+    >
+
+      <a href="business-process-automation/">
+        Business Process Automation
+      </a>
+
+      <a href="workflow-automation/">
+        Workflow Automation
+      </a>
+
+      <a href="ai-automation/">
+        AI Automation
+      </a>
+
+      <a href="business-process-improvement/">
+        Business Process Improvement
+      </a>
+
+      <a href="internal-tools/">
+        Internal Tools Development
+      </a>
+
+      <a href="contact/">
+        Start a project ↗
+      </a>
+
     </nav>
-    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav">Menu</button>
-  </div>
-  <nav id="mobile-nav" class="mobile-nav shell" aria-label="Mobile navigation"><a href="../business-process-automation/">Business Process Automation</a><a href="../workflow-automation/">Workflow Automation</a><a href="../ai-automation/">AI Automation</a><a href="../business-process-improvement/">Business Process Improvement</a><a href="../internal-tools/">Internal Tools Development</a><a href="../contact/">Start a project ↗</a></nav>
-</header><main id="main">
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "Business Process Automation", "description": "Automate repetitive business processes, reduce manual work, connect systems, and improve operational capacity without adding unnecessary complexity.", "areaServed": "US"}</script>
-    <section class="service-hero section dark-section"><div class="shell hero-grid"><div><p class="eyebrow light">Business process automation</p><h1>Automate the work that should not require constant attention.</h1></div><div class="hero-side"><p class="hero-copy">We redesign repeatable business processes and automate the right steps—reducing manual effort, handoffs, delays, and errors without forcing another heavyweight platform into the stack.</p><a href="../contact/" class="button button-light">Start a project <span>↗</span></a></div></div><div class="shell hero-visual"><div class="flow-diagram"><div class="flow-node"><span class="flow-index">01</span><span>Request arrives</span><span class="flow-arrow">→</span></div><div class="flow-node"><span class="flow-index">02</span><span>Rules + validation</span><span class="flow-arrow">→</span></div><div class="flow-node"><span class="flow-index">03</span><span>Automated action</span><span class="flow-arrow">→</span></div><div class="flow-node"><span class="flow-index">04</span><span>Recorded outcome</span></div></div></div></section>
-    <section class="section"><div class="shell split-intro"><p class="eyebrow">The problem</p><div><h2>Manual processes quietly consume capacity.</h2><p class="large-copy">Many operational processes are not difficult; they are simply repetitive. Employees copy information between systems, build the same reports, send the same reminders, update statuses, rename files, and move work from one queue to another.</p><p class="large-copy">At low volume the process feels manageable. As the business grows, the same workflow becomes a headcount problem. Business process automation changes the economics by making routine work happen consistently without requiring another person to push every step forward.</p></div></div></section>
-    <section class="section section-rule"><div class="shell"><div class="section-heading"><p class="eyebrow">What we change</p><h2>Turn repeatable work into a dependable operating system.</h2></div><div class="feature-grid"><article class="feature-card"><span class="card-num">01</span><h3>Process mapping</h3><p>Understand triggers, inputs, decision points, exceptions, owners, and systems before automating anything.</p></article><article class="feature-card"><span class="card-num">02</span><h3>Workflow automation</h3><p>Move information, create tasks, send notifications, update records, and trigger next steps automatically.</p></article><article class="feature-card"><span class="card-num">03</span><h3>System integration</h3><p>Connect the tools already used by the business so data does not need to be manually re-entered.</p></article><article class="feature-card"><span class="card-num">04</span><h3>Exception handling</h3><p>Keep humans in the loop for judgment, edge cases, approvals, and situations where automation should stop.</p></article></div></div></section>
-    <section class="section tint-section"><div class="shell"><div class="section-heading narrow"><p class="eyebrow">Use cases</p><h2>Good automation targets recurring operational friction.</h2></div><div class="usecase-list"><div class="usecase-row"><span>01</span><h3>Client onboarding</h3><p>Collect information, create records, generate tasks, schedule kickoff steps, and trigger communications.</p></div><div class="usecase-row"><span>02</span><h3>Reporting</h3><p>Pull data from multiple sources, normalize it, calculate metrics, and prepare recurring reports automatically.</p></div><div class="usecase-row"><span>03</span><h3>Requests &amp; approvals</h3><p>Route requests to the right owner, gather approvals, enforce rules, and keep requesters informed.</p></div><div class="usecase-row"><span>04</span><h3>Document workflows</h3><p>Generate, rename, classify, route, extract from, and archive recurring business documents.</p></div></div></div></section>
-    <section class="section" id="approach"><div class="shell"><div class="section-heading"><p class="eyebrow">Our approach</p><h2>Fix the process. Then automate it.</h2></div><div class="process-grid"><div class="process-card"><span>01</span><h3>Understand</h3><p>Map the current workflow, the people involved, the systems touched, and where time or information gets lost.</p></div><div class="process-card"><span>02</span><h3>Simplify</h3><p>Remove unnecessary steps, duplicate work, fragile handoffs, and workarounds before adding technology.</p></div><div class="process-card"><span>03</span><h3>Build</h3><p>Automate, integrate, or build the lightweight system that best supports the improved process.</p></div><div class="process-card"><span>04</span><h3>Measure</h3><p>Track time saved, errors reduced, cycle time, throughput, and other outcomes that matter to the business.</p></div></div></div></section>
-    <section class="section dark-section"><div class="shell cta-grid"><div><p class="eyebrow light">Start with the friction</p><h2>Find the processes costing your team hours every week.</h2></div><div><p>A good first project is usually a workflow employees already complain about, repeat frequently, and can describe step by step.</p><a href="../contact/" class="button button-light">Start a project <span>↗</span></a></div></div></section>
-    <section class="section"><div class="shell faq-grid"><div><p class="eyebrow">FAQ</p><h2>Questions before you change the system.</h2></div><div class="faq-list"><details><summary><span>01</span>What is business process automation?</summary><p>Business process automation uses software, integrations, rules, and sometimes AI to execute repeatable steps inside an operational process with less manual intervention.</p></details><details><summary><span>02</span>What business processes should be automated first?</summary><p>Prioritize high-frequency, rules-based processes with meaningful labor cost, frequent errors, slow handoffs, or a clear impact on customers and employees.</p></details><details><summary><span>03</span>Do we need to replace our existing software?</summary><p>Usually not. We prefer to connect or extend systems you already use before recommending another platform.</p></details><details><summary><span>04</span>Can AI be part of the automation?</summary><p>Yes. AI is useful where the process involves unstructured text, documents, classification, summarization, drafting, or other work that traditional rules handle poorly.</p></details></div></div></section>
-    <section class="section section-rule related-section"><div class="shell"><p class="eyebrow">Related services</p><div class="related-grid"><a class="related-card" href="../workflow-automation/"><span>Workflow Automation</span><span>↗</span></a><a class="related-card" href="../business-process-improvement/"><span>Business Process Improvement</span><span>↗</span></a><a class="related-card" href="../ai-automation/"><span>AI Automation</span><span>↗</span></a></div></div></section>
-    </main><footer class="footer"><div class="shell footer-grid">
-      <div class="footer-intro"><div class="brand footer-brand"><span class="brand-mark">//</span><span data-site-name>Your Company</span></div><p>Better systems for how work gets done.</p></div>
-      <div><p class="eyebrow">Services</p><div class="footer-links"><a href="../business-process-automation/">Business Process Automation</a><a href="../workflow-automation/">Workflow Automation</a><a href="../ai-automation/">AI Automation</a><a href="../business-process-improvement/">Business Process Improvement</a><a href="../internal-tools/">Internal Tools Development</a></div></div>
-      <div><p class="eyebrow">Company</p><div class="footer-links"><a href="../contact/">Start a project</a><a data-site-email href="mailto:hello@example.com">hello@example.com</a></div></div>
-    </div><div class="shell footer-bottom"><span>© <span data-current-year></span> <span data-site-name>Your Company</span></span><span>Systems first. Technology second.</span></div></footer></body></html>
+
+  </header>
+
+  <main id="main">
+
+    <!-- HERO -->
+
+    <section class="home-hero dark-section">
+
+      <div class="shell home-hero-grid">
+
+        <div class="home-title-wrap">
+
+          <p class="eyebrow light">
+            Business systems / automation / AI
+          </p>
+
+          <h1>
+            Make your business
+            <em>easier</em>
+            to run.
+          </h1>
+
+        </div>
+
+        <div class="home-hero-copy">
+
+          <p>
+            We improve workflows, automate
+            repetitive work, connect existing
+            systems, and build practical internal
+            tools for growing teams.
+          </p>
+
+          <div class="button-row">
+
+            <a
+              href="contact/"
+              class="button button-light"
+            >
+              Start a project
+              <span>↗</span>
+            </a>
+
+            <a
+              href="#services"
+              class="text-link light-link"
+            >
+              Explore services ↓
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="shell hero-visual">
+
+        <div class="flow-diagram">
+
+          <div class="flow-node">
+            <span class="flow-index">01</span>
+            <span>Manual work</span>
+            <span class="flow-arrow">→</span>
+          </div>
+
+          <div class="flow-node">
+            <span class="flow-index">02</span>
+            <span>Process redesign</span>
+            <span class="flow-arrow">→</span>
+          </div>
+
+          <div class="flow-node">
+            <span class="flow-index">03</span>
+            <span>Automation + AI</span>
+            <span class="flow-arrow">→</span>
+          </div>
+
+          <div class="flow-node">
+            <span class="flow-index">04</span>
+            <span>Better-run business</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- INTRO -->
+
+    <section class="section">
+
+      <div class="shell statement-grid">
+
+        <p class="eyebrow">
+          Introduction
+        </p>
+
+        <div>
+
+          <h2>
+            Most businesses do not need more software.
+            They need better systems.
+          </h2>
+
+          <p class="large-copy">
+            Growth creates operational debt:
+            duplicate spreadsheets, manual reporting,
+            fragile handoffs, disconnected tools, and
+            processes that only work because somebody
+            remembers what to do next.
+          </p>
+
+          <p class="large-copy">
+            We start with how the work should happen,
+            then use automation, AI, integrations, or
+            lightweight software only where they make
+            the process simpler.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- SERVICES -->
+
+    <section
+      class="section section-rule"
+      id="services"
+    >
+
+      <div class="shell">
+
+        <div class="section-heading">
+
+          <p class="eyebrow">
+            Services
+          </p>
+
+          <h2>
+            Improve the system,
+            not just the task.
+          </h2>
+
+        </div>
+
+        <div class="service-index">
+
+          <a
+            href="business-process-automation/"
+            class="service-index-row"
+          >
+
+            <span class="service-index-num">
+              01
+            </span>
+
+            <h3>
+              Business Process Automation
+            </h3>
+
+            <p>
+              Turn repetitive, rules-based work into
+              reliable systems that move without
+              constant human intervention.
+            </p>
+
+            <span class="service-index-arrow">
+              ↗
+            </span>
+
+          </a>
+
+          <a
+            href="workflow-automation/"
+            class="service-index-row"
+          >
+
+            <span class="service-index-num">
+              02
+            </span>
+
+            <h3>
+              Workflow Automation
+            </h3>
+
+            <p>
+              Connect handoffs, approvals, systems,
+              and tasks so work progresses without
+              chasing status or copying data.
+            </p>
+
+            <span class="service-index-arrow">
+              ↗
+            </span>
+
+          </a>
+
+          <a
+            href="ai-automation/"
+            class="service-index-row"
+          >
+
+            <span class="service-index-num">
+              03
+            </span>
+
+            <h3>
+              AI Automation
+            </h3>
+
+            <p>
+              Put AI inside real operating workflows:
+              classification, extraction, research,
+              drafting, routing, and decision support.
+            </p>
+
+            <span class="service-index-arrow">
+              ↗
+            </span>
+
+          </a>
+
+          <a
+            href="business-process-improvement/"
+            class="service-index-row"
+          >
+
+            <span class="service-index-num">
+              04
+            </span>
+
+            <h3>
+              Business Process Improvement
+            </h3>
+
+            <p>
+              Redesign the process before adding
+              technology. Fewer steps. Cleaner
+              ownership. Better outcomes.
+            </p>
+
+            <span class="service-index-arrow">
+              ↗
+            </span>
+
+          </a>
+
+          <a
+            href="internal-tools/"
+            class="service-index-row"
+          >
+
+            <span class="service-index-num">
+              05
+            </span>
+
+            <h3>
+              Internal Tools Development
+            </h3>
+
+            <p>
+              Build focused dashboards, portals,
+              intake systems, and operational apps
+              when off-the-shelf software does not fit.
+            </p>
+
+            <span class="service-index-arrow">
+              ↗
+            </span>
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- APPROACH -->
+
+    <section
+      class="section tint-section"
+      id="approach"
+    >
+
+      <div class="shell split-intro">
+
+        <p class="eyebrow">
+          How we think
+        </p>
+
+        <div>
+
+          <h2>
+            Technology follows the workflow.
+          </h2>
+
+          <div class="principle-list">
+
+            <div>
+
+              <span>01</span>
+
+              <h3>
+                Fix the process first.
+              </h3>
+
+              <p>
+                Automating a bad process only makes
+                the bad process happen faster.
+              </p>
+
+            </div>
+
+            <div>
+
+              <span>02</span>
+
+              <h3>
+                Use what already works.
+              </h3>
+
+              <p>
+                Before adding another subscription,
+                we look for ways to extend and connect
+                the systems you already pay for.
+              </p>
+
+            </div>
+
+            <div>
+
+              <span>03</span>
+
+              <h3>
+                Build only what earns its keep.
+              </h3>
+
+              <p>
+                Every automation or internal tool
+                should produce a measurable
+                improvement in time, cost, capacity,
+                quality, or visibility.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- USE CASES -->
+
+    <section
+      class="section"
+      id="insights"
+    >
+
+      <div class="shell">
+
+        <div class="section-heading">
+
+          <p class="eyebrow">
+            Common friction
+          </p>
+
+          <h2>
+            Where better systems
+            create leverage.
+          </h2>
+
+        </div>
+
+        <div class="feature-grid">
+
+          <article class="feature-card">
+
+            <span class="card-num">
+              01
+            </span>
+
+            <h3>
+              Manual reporting
+            </h3>
+
+            <p>
+              Recurring reports that require exports,
+              spreadsheet cleanup, copy-paste, and
+              status chasing.
+            </p>
+
+          </article>
+
+          <article class="feature-card">
+
+            <span class="card-num">
+              02
+            </span>
+
+            <h3>
+              Client onboarding
+            </h3>
+
+            <p>
+              Forms, documents, scheduling, setup
+              tasks, and communications spread across
+              too many systems.
+            </p>
+
+          </article>
+
+          <article class="feature-card">
+
+            <span class="card-num">
+              03
+            </span>
+
+            <h3>
+              Approvals & handoffs
+            </h3>
+
+            <p>
+              Work waiting in inboxes because the
+              next owner does not know it is theirs.
+            </p>
+
+          </article>
+
+          <article class="feature-card">
+
+            <span class="card-num">
+              04
+            </span>
+
+            <h3>
+              Operational visibility
+            </h3>
+
+            <p>
+              Leaders asking for updates because no
+              reliable source of truth exists.
+            </p>
+
+          </article>
+
+          <article class="feature-card">
+
+            <span class="card-num">
+              05
+            </span>
+
+            <h3>
+              Document-heavy work
+            </h3>
+
+            <p>
+              Teams reading, classifying, extracting,
+              rewriting, and routing the same types of
+              documents repeatedly.
+            </p>
+
+          </article>
+
+          <article class="feature-card">
+
+            <span class="card-num">
+              06
+            </span>
+
+            <h3>
+              Tool sprawl
+            </h3>
+
+            <p>
+              Software added one problem at a time
+              until the stack itself becomes an
+              operating problem.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- CTA -->
+
+    <section class="section dark-section">
+
+      <div class="shell cta-grid">
+
+        <div>
+
+          <p class="eyebrow light">
+            Start here
+          </p>
+
+          <h2>
+            What is making your business harder
+            to run than it should be?
+          </h2>
+
+        </div>
+
+        <div>
+
+          <p>
+            Bring us the process that wastes time,
+            breaks under volume, depends on one
+            person, or feels held together by
+            workarounds. We will start there.
+          </p>
+
+          <a
+            href="contact/"
+            class="button button-light"
+          >
+            Start a project
+            <span>↗</span>
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="footer">
+
+    <div class="shell footer-grid">
+
+      <div class="footer-intro">
+
+        <div class="brand footer-brand">
+
+          <span class="brand-mark">
+            //
+          </span>
+
+          <span>
+            Your Company
+          </span>
+
+        </div>
+
+        <p>
+          Better systems for how work gets done.
+        </p>
+
+      </div>
+
+      <div>
+
+        <p class="eyebrow">
+          Services
+        </p>
+
+        <div class="footer-links">
+
+          <a href="business-process-automation/">
+            Business Process Automation
+          </a>
+
+          <a href="workflow-automation/">
+            Workflow Automation
+          </a>
+
+          <a href="ai-automation/">
+            AI Automation
+          </a>
+
+          <a href="business-process-improvement/">
+            Business Process Improvement
+          </a>
+
+          <a href="internal-tools/">
+            Internal Tools Development
+          </a>
+
+        </div>
+
+      </div>
+
+      <div>
+
+        <p class="eyebrow">
+          Company
+        </p>
+
+        <div class="footer-links">
+
+          <a href="contact/">
+            Start a project
+          </a>
+
+          <a href="mailto:hello@example.com">
+            hello@example.com
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="shell footer-bottom">
+
+      <span>
+        © <span id="year"></span>
+        Your Company
+      </span>
+
+      <span>
+        Systems first. Technology second.
+      </span>
+
+    </div>
+
+  </footer>
+
+  <script>
+    const toggle =
+      document.querySelector(".menu-toggle");
+
+    const mobileNav =
+      document.querySelector("#mobile-nav");
+
+    toggle.addEventListener("click", function () {
+      const isOpen =
+        mobileNav.classList.toggle("is-open");
+
+      toggle.setAttribute(
+        "aria-expanded",
+        isOpen
+      );
+
+      toggle.textContent =
+        isOpen ? "Close" : "Menu";
+
+      document.body.classList.toggle(
+        "menu-open",
+        isOpen
+      );
+    });
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
