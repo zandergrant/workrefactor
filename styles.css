@@ -1,3 +1,10 @@
+/* ==========================================================
+   GLOBAL DESIGN SYSTEM
+   Dark cinematic framing + light editorial reading areas
+
+   ALL SITE STYLING LIVES IN THIS FILE.
+   ========================================================== */
+
 :root {
 
   /* Light surfaces */
@@ -268,10 +275,10 @@ strong {
 
   background:
     rgba(
-      37,
-      46,
-      58,
-      0.97
+      30,
+      39,
+      52,
+      0.98
     );
 
   border-bottom:
@@ -381,7 +388,7 @@ strong {
       255,
       255,
       255,
-      0.82
+      0.80
     );
 
   font-size: 15px;
@@ -532,7 +539,8 @@ strong {
 
 
 /* ==========================================================
-   HERO
+   HOMEPAGE HERO
+   Deep cinematic navy / blue treatment
    ========================================================== */
 
 .hero {
@@ -551,37 +559,37 @@ strong {
       ellipse
       at
       52%
-      18%,
+      10%,
       rgba(
-        86,
-        161,
-        255,
-        0.95
+        60,
+        133,
+        238,
+        0.82
       )
       0%,
       rgba(
-        35,
-        111,
-        225,
-        0.78
+        24,
+        77,
+        172,
+        0.82
       )
-      19%,
+      22%,
       rgba(
-        13,
-        56,
-        128,
-        0.72
+        11,
+        39,
+        91,
+        0.96
       )
-      40%,
+      45%,
       rgba(
-        8,
-        29,
-        61,
-        0.94
+        7,
+        24,
+        51,
+        1
       )
-      64%,
-      #08111f
-      88%
+      66%,
+      #050b14
+      100%
     );
 }
 
@@ -591,48 +599,48 @@ strong {
 
   position: absolute;
 
-  width: 125%;
+  width: 118%;
 
-  height: 72%;
+  height: 64%;
 
-  top: -33%;
+  top: -34%;
 
-  left: -10%;
+  left: -8%;
 
   background:
     radial-gradient(
       ellipse
       at
-      67%
-      17%,
+      66%
+      18%,
       rgba(
         255,
         255,
         255,
-        0.96
+        0.82
       ),
       rgba(
-        186,
-        220,
+        181,
+        217,
         255,
-        0.5
+        0.36
       )
-      19%,
+      21%,
       rgba(
-        71,
-        145,
-        255,
-        0.18
+        61,
+        134,
+        242,
+        0.12
       )
-      47%,
+      48%,
       transparent
       70%
     );
 
   filter:
-    blur(38px);
+    blur(42px);
 
-  opacity: 0.82;
+  opacity: 0.56;
 
   pointer-events: none;
 }
@@ -647,9 +655,9 @@ strong {
 
   right: -10%;
 
-  bottom: -25%;
+  bottom: -23%;
 
-  height: 55%;
+  height: 58%;
 
   background:
     radial-gradient(
@@ -657,22 +665,22 @@ strong {
       at
       center,
       rgba(
-        0,
-        0,
-        0,
-        0.02
+        13,
+        36,
+        73,
+        0.08
       ),
       rgba(
-        5,
-        14,
-        29,
-        0.78
+        4,
+        10,
+        18,
+        0.93
       )
-      68%
+      70%
     );
 
   filter:
-    blur(30px);
+    blur(32px);
 
   pointer-events: none;
 }
@@ -729,7 +737,7 @@ strong {
       255,
       255,
       255,
-      0.76
+      0.68
     );
 }
 
@@ -748,7 +756,7 @@ strong {
       255,
       255,
       255,
-      0.92
+      0.88
     );
 
   font-size:
@@ -785,7 +793,7 @@ strong {
       255,
       255,
       255,
-      0.88
+      0.84
     );
 }
 
@@ -814,15 +822,15 @@ strong {
 
   height: 450px;
 
-  top: 20%;
+  top: 18%;
 
-  left: -180px;
+  left: -190px;
 
   background:
     rgba(
-      21,
-      95,
-      231,
+      19,
+      85,
+      209,
       0.18
     );
 }
@@ -833,16 +841,16 @@ strong {
 
   height: 500px;
 
-  right: -190px;
+  right: -200px;
 
   bottom: 5%;
 
   background:
     rgba(
-      47,
-      126,
-      255,
-      0.14
+      37,
+      103,
+      220,
+      0.12
     );
 }
 
@@ -857,7 +865,7 @@ strong {
 
   height: 190px;
 
-  opacity: 0.13;
+  opacity: 0.10;
 
   background-image:
     linear-gradient(
@@ -904,6 +912,7 @@ strong {
 
 /* ==========================================================
    INTRO
+   Light reading begins here
    ========================================================== */
 
 .intro-section {
@@ -1399,6 +1408,7 @@ a.friction-card:hover {
 
 /* ==========================================================
    FINAL CTA
+   Dark cinematic framing returns
    ========================================================== */
 
 .final-cta {
@@ -1419,21 +1429,21 @@ a.friction-card:hover {
       ellipse
       at
       25%
-      20%,
+      18%,
       rgba(
-        57,
-        133,
-        255,
-        0.56
+        44,
+        111,
+        220,
+        0.52
       ),
       rgba(
-        15,
-        40,
-        83,
-        0.48
+        13,
+        45,
+        103,
+        0.58
       )
       31%,
-      #08111f
+      #07101d
       72%
     );
 
@@ -1460,7 +1470,7 @@ a.friction-card:hover {
       255,
       255,
       255,
-      0.74
+      0.70
     );
 }
 
@@ -1481,10 +1491,10 @@ a.friction-card:hover {
 
   background:
     rgba(
-      141,
-      194,
+      107,
+      170,
       255,
-      0.19
+      0.16
     );
 
   filter:
@@ -1530,7 +1540,7 @@ a.friction-card:hover {
       255,
       255,
       255,
-      0.88
+      0.86
     );
 
   font-size:
@@ -1567,30 +1577,30 @@ a.friction-card:hover {
     radial-gradient(
       ellipse
       at
-      65%
-      5%,
+      62%
+      4%,
       rgba(
-        67,
-        145,
-        255,
-        0.72
+        55,
+        128,
+        231,
+        0.75
       ),
       rgba(
-        18,
-        61,
-        133,
-        0.45
+        16,
+        56,
+        128,
+        0.58
       )
       28%,
       rgba(
-        7,
-        18,
-        38,
-        0.84
+        8,
+        27,
+        59,
+        0.94
       )
       55%,
-      #08111f
-      82%
+      #050b14
+      84%
     );
 
   border-bottom:
@@ -1617,10 +1627,10 @@ a.friction-card:hover {
 
   background:
     rgba(
-      224,
-      240,
+      188,
+      222,
       255,
-      0.36
+      0.26
     );
 
   filter:
@@ -1646,10 +1656,10 @@ a.friction-card:hover {
 
   background:
     rgba(
-      48,
-      123,
-      255,
-      0.17
+      39,
+      103,
+      218,
+      0.15
     );
 
   filter:
@@ -1710,7 +1720,7 @@ a.friction-card:hover {
       255,
       255,
       255,
-      0.74
+      0.70
     );
 }
 
@@ -1730,7 +1740,7 @@ a.friction-card:hover {
       255,
       255,
       255,
-      0.88
+      0.86
     );
 
   font-size:
@@ -2590,7 +2600,7 @@ a.friction-card:hover {
 
 
 /* ==========================================================
-   GENERIC SERVICE PAGE SUPPORT
+   GENERIC SERVICE PAGE HERO
    ========================================================== */
 
 .service-hero {
@@ -2611,31 +2621,31 @@ a.friction-card:hover {
     radial-gradient(
       ellipse
       at
-      65%
-      18%,
+      62%
+      12%,
       rgba(
-        62,
-        137,
-        255,
-        0.85
+        52,
+        126,
+        233,
+        0.78
       )
       0%,
       rgba(
-        22,
-        79,
-        176,
-        0.55
+        18,
+        62,
+        142,
+        0.60
       )
-      27%,
+      29%,
       rgba(
         8,
-        24,
-        51,
-        0.85
+        28,
+        61,
+        0.94
       )
-      54%,
-      #08111f
-      82%
+      57%,
+      #050b14
+      84%
     );
 }
 
@@ -2654,7 +2664,7 @@ a.friction-card:hover {
       255,
       255,
       255,
-      0.88
+      0.86
     );
 }
 
@@ -2665,7 +2675,7 @@ a.friction-card:hover {
       255,
       255,
       255,
-      0.76
+      0.70
     );
 }
 
@@ -3033,7 +3043,7 @@ details[open] summary::after {
     28px;
 
   background:
-    #08111f;
+    #050b14;
 
   border-top:
     1px solid
@@ -3073,7 +3083,7 @@ details[open] summary::after {
       255,
       255,
       255,
-      0.68
+      0.66
     );
 
   font-size: 16px;
@@ -3120,7 +3130,7 @@ details[open] summary::after {
       255,
       255,
       255,
-      0.68
+      0.66
     );
 
   font-size: 15px;
@@ -3164,7 +3174,7 @@ details[open] summary::after {
       255,
       255,
       255,
-      0.46
+      0.44
     );
 
   font-size: 12px;
