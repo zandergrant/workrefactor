@@ -1,34 +1,53 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap');
+/* ==========================================================
+   GLOBAL SITE STYLES
+   Business Systems / Automation / AI
+   Shared across all pages
+
+   Typography:
+   - Instrument Serif = headlines + buttons
+   - DM Sans = body copy + navigation + utility text
+   ========================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap");
 
 
-/* =========================================================
-   DESIGN SYSTEM
-   Dark / atmospheric / premium
-   ========================================================= */
+/* ==========================================================
+   DESIGN TOKENS
+   ========================================================== */
 
 :root {
-  --bg: #08090b;
-  --bg-soft: #0d1015;
+
+  /* Backgrounds */
+  --bg: #060709;
+  --bg-soft: #0a0c10;
+  --bg-elevated: #10141b;
   --nav: #252d38;
 
-  --white: #f7f7f4;
-  --text: #d6d7d9;
-  --muted: #858a91;
+  /* Typography */
+  --white: #f8f8f5;
+  --text: #dfe3e8;
+  --muted: #b3b9c2;
+  --quiet: #858c96;
 
-  --line: rgba(255,255,255,.12);
-  --line-soft: rgba(255,255,255,.07);
+  /* Lines */
+  --line: rgba(255, 255, 255, 0.13);
+  --line-soft: rgba(255, 255, 255, 0.075);
 
-  --blue: #2778ff;
-  --blue-light: #8ebcff;
+  /* Accent */
+  --blue: #2d7cff;
+  --blue-light: #99c5ff;
+  --blue-glow: rgba(45, 124, 255, 0.28);
 
-  --max: 1320px;
-  --pad: clamp(22px,4vw,64px);
+  /* Layout */
+  --max: 1340px;
+  --pad: clamp(22px, 4vw, 64px);
+
 }
 
 
-/* =========================================================
+/* ==========================================================
    RESET
-   ========================================================= */
+   ========================================================== */
 
 *,
 *::before,
@@ -49,9 +68,14 @@ body {
   font-family:
     "DM Sans",
     Arial,
+    Helvetica,
     sans-serif;
 
+  font-size: 18px;
+  line-height: 1.7;
+
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 body.menu-open {
@@ -63,18 +87,31 @@ a {
   text-decoration: none;
 }
 
-button {
+button,
+input,
+textarea,
+select {
   font: inherit;
 }
 
+button {
+  color: inherit;
+}
+
 img {
+  display: block;
   max-width: 100%;
 }
 
+::selection {
+  background: var(--blue);
+  color: #ffffff;
+}
 
-/* =========================================================
-   GLOBAL
-   ========================================================= */
+
+/* ==========================================================
+   GLOBAL LAYOUT
+   ========================================================== */
 
 .shell {
   width: min(
@@ -89,26 +126,27 @@ img {
   position: relative;
 
   padding:
-    clamp(100px,11vw,180px)
+    clamp(105px, 11vw, 180px)
     0;
-
-  background: var(--bg);
 }
 
 .section-rule {
   border-top: 1px solid var(--line);
 }
 
-.dark-section,
-.tint-section {
+.dark-section {
   background: var(--bg);
   color: var(--white);
 }
 
+.tint-section {
+  background: var(--bg-soft);
+}
 
-/* =========================================================
-   TYPOGRAPHY
-   ========================================================= */
+
+/* ==========================================================
+   GLOBAL TYPOGRAPHY
+   ========================================================== */
 
 h1,
 h2,
@@ -121,62 +159,58 @@ h1,
 h2,
 h3 {
   color: var(--white);
+
+  font-family:
+    "Instrument Serif",
+    Georgia,
+    serif;
+
+  font-weight: 400;
+
+  text-wrap: balance;
 }
 
 h1 {
   margin-bottom: 0;
 
-  font-family:
-    "Instrument Serif",
-    Georgia,
-    serif;
-
   font-size:
-    clamp(70px,9.5vw,155px);
+    clamp(76px, 10vw, 164px);
 
-  line-height: .9;
-
-  letter-spacing: -.045em;
-
-  font-weight: 400;
+  line-height: 0.88;
+  letter-spacing: -0.05em;
 }
 
 h2 {
-  margin-bottom: 36px;
-
-  font-family:
-    "Instrument Serif",
-    Georgia,
-    serif;
+  margin-bottom: 34px;
 
   font-size:
-    clamp(48px,6vw,94px);
+    clamp(50px, 6.2vw, 96px);
 
-  line-height: .96;
-
-  letter-spacing: -.035em;
-
-  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.035em;
 }
 
 h3 {
-  font-family:
-    "Instrument Serif",
-    Georgia,
-    serif;
-
   font-size:
-    clamp(28px,2.5vw,40px);
+    clamp(28px, 2.5vw, 40px);
 
-  line-height: 1;
+  line-height: 1.03;
+  letter-spacing: -0.025em;
+}
 
-  letter-spacing: -.025em;
-
-  font-weight: 400;
+p,
+li,
+summary,
+.faq-answer {
+  font-family:
+    "DM Sans",
+    Arial,
+    Helvetica,
+    sans-serif;
 }
 
 p {
-  line-height: 1.55;
+  line-height: 1.7;
 }
 
 .eyebrow {
@@ -185,15 +219,21 @@ p {
     0
     24px;
 
-  color: var(--muted);
+  color: var(--blue-light);
+
+  font-family:
+    "DM Sans",
+    Arial,
+    sans-serif;
 
   font-size: 11px;
+  line-height: 1;
 
-  letter-spacing: .14em;
+  letter-spacing: 0.15em;
 
   text-transform: uppercase;
 
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .eyebrow.light {
@@ -206,26 +246,22 @@ p {
   color: var(--text);
 
   font-family:
-    "Instrument Serif",
-    Georgia,
-    serif;
+    "DM Sans",
+    Arial,
+    sans-serif;
 
   font-size:
-    clamp(28px,3vw,44px);
+    clamp(20px, 1.7vw, 24px);
 
-  line-height: 1.2;
+  line-height: 1.7;
 
-  letter-spacing: -.02em;
-}
-
-.dark-section p {
-  color: var(--muted);
+  letter-spacing: -0.01em;
 }
 
 
-/* =========================================================
+/* ==========================================================
    HEADER
-   ========================================================= */
+   ========================================================== */
 
 .site-header {
   position: sticky;
@@ -235,15 +271,13 @@ p {
   z-index: 100;
 
   background:
-    rgba(37,45,56,.96);
+    rgba(37, 45, 56, 0.96);
 
   border-bottom:
-    1px solid rgba(255,255,255,.08);
+    1px solid rgba(255, 255, 255, 0.08);
 
   backdrop-filter: blur(18px);
-
-  -webkit-backdrop-filter:
-    blur(18px);
+  -webkit-backdrop-filter: blur(18px);
 }
 
 .header-inner {
@@ -252,7 +286,6 @@ p {
   display: flex;
 
   align-items: center;
-
   justify-content: space-between;
 }
 
@@ -270,9 +303,9 @@ p {
     Georgia,
     serif;
 
-  font-size: 24px;
+  font-size: 26px;
 
-  font-weight: 400;
+  line-height: 1;
 }
 
 .brand-mark {
@@ -281,16 +314,15 @@ p {
   place-items: center;
 
   width: 36px;
-
   height: 36px;
 
-  border-radius: 50%;
-
-  background: transparent;
+  flex: 0 0 auto;
 
   border:
     1px solid
-    rgba(255,255,255,.5);
+    rgba(255, 255, 255, 0.5);
+
+  border-radius: 50%;
 
   color: var(--white);
 
@@ -299,7 +331,7 @@ p {
     Arial,
     sans-serif;
 
-  font-size: 11px;
+  font-size: 10px;
 }
 
 .desktop-nav {
@@ -312,7 +344,8 @@ p {
 
 .nav-link,
 .nav-button {
-  color: rgba(255,255,255,.72);
+  color:
+    rgba(255, 255, 255, 0.8);
 
   font-family:
     "Instrument Serif",
@@ -320,6 +353,9 @@ p {
     serif;
 
   font-size: 18px;
+
+  transition:
+    color 0.2s ease;
 }
 
 .nav-link:hover,
@@ -328,7 +364,7 @@ p {
 }
 
 .nav-button {
-  padding: 28px 0;
+  padding: 26px 0;
 
   border: 0;
 
@@ -345,16 +381,13 @@ p {
   position: absolute;
 
   top: 64px;
-
-  left: -26px;
+  left: -24px;
 
   min-width: 390px;
 
   padding: 10px;
 
-  background: #12161d;
-
-  color: var(--white);
+  background: #11151c;
 
   border:
     1px solid
@@ -363,28 +396,26 @@ p {
   border-radius: 14px;
 
   box-shadow:
-    0 30px 80px
-    rgba(0,0,0,.4);
+    0 28px 80px
+    rgba(0, 0, 0, 0.45);
 
   opacity: 0;
-
   visibility: hidden;
 
-  transform:
-    translateY(8px);
+  transform: translateY(8px);
 
   transition:
-    .2s ease;
+    opacity 0.18s ease,
+    transform 0.18s ease,
+    visibility 0.18s ease;
 }
 
 .nav-dropdown:hover .nav-menu,
 .nav-dropdown:focus-within .nav-menu {
   opacity: 1;
-
   visibility: visible;
 
-  transform:
-    translateY(0);
+  transform: translateY(0);
 }
 
 .nav-menu-item {
@@ -404,12 +435,9 @@ p {
 
   color: var(--text);
 
-  font-family:
-    "DM Sans",
-    Arial,
-    sans-serif;
-
   font-size: 14px;
+
+  line-height: 1.4;
 }
 
 .nav-menu-item:last-child {
@@ -418,7 +446,7 @@ p {
 
 .nav-menu-item:hover {
   background:
-    rgba(255,255,255,.05);
+    rgba(255, 255, 255, 0.05);
 
   border-radius: 8px;
 }
@@ -432,6 +460,8 @@ p {
 .menu-toggle {
   display: none;
 
+  padding: 8px 0;
+
   border: 0;
 
   background: transparent;
@@ -439,6 +469,8 @@ p {
   color: var(--white);
 
   cursor: pointer;
+
+  font-size: 14px;
 }
 
 .mobile-nav {
@@ -446,15 +478,14 @@ p {
 }
 
 
-/* =========================================================
+/* ==========================================================
    BUTTONS
-   ========================================================= */
+   ========================================================== */
 
 .button {
   display: inline-flex;
 
   align-items: center;
-
   justify-content: center;
 
   gap: 22px;
@@ -467,39 +498,39 @@ p {
 
   border:
     1px solid
-    rgba(255,255,255,.35);
+    rgba(255, 255, 255, 0.8);
 
   border-radius: 999px;
 
   background: var(--white);
 
-  color: #111318;
+  color: #12151a;
 
   font-family:
     "Instrument Serif",
     Georgia,
     serif;
 
-  font-size: 18px;
+  font-size: 19px;
 
-  font-weight: 400;
+  line-height: 1;
 
   box-shadow:
     0 0 0 3px
-    rgba(255,255,255,.08);
+    rgba(255, 255, 255, 0.08);
 
   transition:
-    transform .2s ease,
-    box-shadow .2s ease;
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
 }
 
 .button:hover {
-  transform:
-    translateY(-2px);
+  transform: translateY(-2px);
 
   box-shadow:
     0 0 0 5px
-    rgba(39,120,255,.18);
+    rgba(45, 124, 255, 0.2);
 }
 
 .button-small {
@@ -508,14 +539,6 @@ p {
   padding:
     0
     30px;
-
-  background: var(--white);
-
-  color: #111318;
-
-  border:
-    1px solid
-    rgba(255,255,255,.7);
 }
 
 .button-light {
@@ -523,19 +546,7 @@ p {
 
   border-color: var(--white);
 
-  color: #111318;
-}
-
-.text-link {
-  color: rgba(255,255,255,.7);
-
-  font-size: 14px;
-
-  text-decoration: none;
-}
-
-.text-link:hover {
-  color: var(--white);
+  color: #12151a;
 }
 
 .button-row {
@@ -548,150 +559,533 @@ p {
   flex-wrap: wrap;
 }
 
+.text-link {
+  color:
+    rgba(255, 255, 255, 0.78);
 
-/* =========================================================
+  font-size: 15px;
+
+  text-decoration: underline;
+
+  text-decoration-thickness: 1px;
+
+  text-underline-offset: 6px;
+}
+
+.text-link:hover {
+  color: var(--white);
+}
+
+.light-link {
+  color:
+    rgba(255, 255, 255, 0.8);
+}
+
+
+/* ==========================================================
    HOMEPAGE HERO
-   ========================================================= */
+   ========================================================== */
 
+.hero,
 .home-hero {
   position: relative;
 
   min-height:
     calc(100vh - 80px);
 
-  padding:
-    clamp(105px,13vw,205px)
-    0
-    clamp(90px,10vw,150px);
-
   overflow: hidden;
 
   background:
     radial-gradient(
-      ellipse at 50% 30%,
-      rgba(53,126,255,.95) 0%,
-      rgba(24,92,210,.72) 19%,
-      rgba(7,31,76,.72) 43%,
-      rgba(5,9,15,.92) 68%,
-      #060709 88%
+      ellipse at 54% 20%,
+      rgba(74, 151, 255, 0.95) 0%,
+      rgba(25, 100, 220, 0.78) 20%,
+      rgba(9, 46, 108, 0.72) 42%,
+      rgba(6, 16, 34, 0.92) 65%,
+      #050608 88%
     );
 }
 
-
-/* luminous upper haze */
-
+.hero::before,
 .home-hero::before {
   content: "";
 
   position: absolute;
 
-  inset:
-    -20%
-    -10%
-    auto;
+  top: -20%;
+  left: -5%;
 
+  width: 110%;
   height: 70%;
 
   background:
     radial-gradient(
-      ellipse at 63% 6%,
-      rgba(255,255,255,.88),
-      rgba(181,215,255,.42) 22%,
-      rgba(55,132,255,.2) 47%,
+      ellipse at 70% 5%,
+      rgba(255, 255, 255, 0.95),
+      rgba(181, 215, 255, 0.48) 20%,
+      rgba(74, 151, 255, 0.22) 43%,
       transparent 70%
     );
 
-  filter:
-    blur(34px);
+  filter: blur(34px);
 
-  opacity: .82;
+  opacity: 0.82;
 
   pointer-events: none;
 }
 
-
-/* lower shadow / atmospheric depth */
-
+.hero::after,
 .home-hero::after {
   content: "";
 
   position: absolute;
 
   left: -10%;
-
   right: -10%;
+  bottom: -24%;
 
-  bottom: -25%;
-
-  height: 60%;
+  height: 62%;
 
   background:
     radial-gradient(
       ellipse at center,
-      rgba(0,0,0,.1),
-      rgba(0,0,0,.88) 65%
+      rgba(0, 0, 0, 0.1),
+      rgba(0, 0, 0, 0.9) 68%
     );
 
-  filter: blur(30px);
+  filter: blur(28px);
 
   pointer-events: none;
 }
 
-.home-hero .shell {
+.hero-inner {
   position: relative;
 
   z-index: 2;
-}
 
-.home-hero-grid {
-  display: block;
+  min-height:
+    calc(100vh - 80px);
+
+  padding:
+    clamp(110px, 13vw, 205px)
+    0
+    110px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
 
   text-align: center;
 }
 
-.home-title-wrap {
-  max-width: 1250px;
-
-  margin: 0 auto;
-}
-
-.home-title-wrap .eyebrow {
-  margin-bottom: 38px;
-
-  color:
-    rgba(255,255,255,.62);
-}
-
-.home-title-wrap h1 {
-  max-width: 1200px;
+.hero h1,
+.home-hero h1 {
+  max-width: 1220px;
 
   margin:
     0
     auto;
 }
 
-.home-title-wrap h1 em {
-  color: var(--white);
-
+.hero h1 em,
+.home-hero h1 em {
   font-style: italic;
 }
 
+.hero-copy {
+  max-width: 850px;
+
+  margin:
+    38px
+    auto
+    0;
+}
+
+.hero-copy p {
+  margin-bottom: 34px;
+
+  color:
+    rgba(255, 255, 255, 0.86);
+
+  font-family:
+    "DM Sans",
+    Arial,
+    sans-serif;
+
+  font-size:
+    clamp(19px, 1.55vw, 22px);
+
+  line-height: 1.7;
+
+  letter-spacing: -0.01em;
+}
+
+
+/* Support original homepage structure */
+
+.home-hero {
+  padding:
+    clamp(110px, 13vw, 205px)
+    0
+    110px;
+}
+
+.home-hero-grid {
+  position: relative;
+
+  z-index: 2;
+
+  display: block;
+
+  text-align: center;
+}
+
+.home-title-wrap {
+  max-width: 1220px;
+
+  margin:
+    0
+    auto;
+}
+
 .home-hero-copy {
-  max-width: 830px;
+  max-width: 850px;
 
   margin:
     38px
     auto
     0;
 
-  padding: 0;
+  text-align: center;
 }
 
 .home-hero-copy > p {
   margin-bottom: 34px;
 
   color:
-    rgba(255,255,255,.72);
+    rgba(255, 255, 255, 0.86);
+
+  font-size:
+    clamp(19px, 1.55vw, 22px);
+
+  line-height: 1.7;
+}
+
+.home-hero-copy .button-row {
+  justify-content: center;
+}
+
+.home-hero .hero-visual {
+  display: none;
+}
+
+
+/* ==========================================================
+   INTRO
+   ========================================================== */
+
+.intro {
+  background: #070809;
+
+  border-top:
+    1px solid
+    var(--line);
+}
+
+.intro-grid {
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1fr;
+
+  gap:
+    clamp(70px, 12vw, 180px);
+
+  padding-bottom: 90px;
+
+  border-bottom:
+    1px solid
+    var(--line);
+}
+
+.intro-grid p {
+  margin: 0;
+
+  color: var(--text);
+
+  font-family:
+    "DM Sans",
+    Arial,
+    sans-serif;
+
+  font-size:
+    clamp(18px, 1.45vw, 21px);
+
+  line-height: 1.75;
+
+  letter-spacing: -0.005em;
+}
+
+
+/* ==========================================================
+   GENERAL SECTION LAYOUTS
+   ========================================================== */
+
+.statement-grid,
+.split,
+.split-intro,
+.section-heading {
+  display: grid;
+
+  grid-template-columns:
+    0.8fr
+    3fr;
+
+  gap:
+    clamp(50px, 8vw, 120px);
+}
+
+.section-heading {
+  margin-bottom: 72px;
+}
+
+.section-heading .eyebrow {
+  padding-top: 12px;
+}
+
+.section-heading h2 {
+  max-width: 980px;
+
+  margin-bottom: 0;
+}
+
+.body-copy {
+  max-width: 860px;
+}
+
+.body-copy p {
+  color: var(--muted);
+
+  font-size: 18px;
+
+  line-height: 1.75;
+}
+
+.body-copy p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* ==========================================================
+   HOMEPAGE SERVICES
+   ========================================================== */
+
+.services {
+  background:
+    radial-gradient(
+      circle at 50% 28%,
+      rgba(31, 111, 255, 0.08),
+      transparent 36%
+    ),
+    #070809;
+}
+
+.service-list,
+.service-index {
+  border-top:
+    1px solid
+    var(--line);
+}
+
+.service-row,
+.service-index-row {
+  display: grid;
+
+  grid-template-columns:
+    70px
+    1.1fr
+    1.4fr
+    30px;
+
+  gap: 30px;
+
+  align-items: start;
+
+  padding:
+    38px
+    0;
+
+  border-bottom:
+    1px solid
+    var(--line);
+
+  transition:
+    padding-left 0.2s ease,
+    background 0.2s ease;
+}
+
+.service-row:hover,
+.service-index-row:hover {
+  padding-left: 14px;
+
+  background:
+    rgba(45, 124, 255, 0.025);
+}
+
+.service-num,
+.service-index-num {
+  color: var(--blue-light);
+
+  font-size: 11px;
+}
+
+.service-row h3,
+.service-row p,
+.service-index-row h3,
+.service-index-row p {
+  margin: 0;
+}
+
+.service-row p,
+.service-index-row p {
+  max-width: 580px;
+
+  color: var(--muted);
+
+  font-family:
+    "DM Sans",
+    Arial,
+    sans-serif;
+
+  font-size: 17px;
+
+  line-height: 1.7;
+}
+
+.service-arrow,
+.service-index-arrow {
+  color: var(--blue-light);
+
+  font-size: 22px;
+}
+
+
+/* ==========================================================
+   STATS / NUMBERS
+   ========================================================== */
+
+.numbers {
+  position: relative;
+
+  overflow: hidden;
+
+  background: #050607;
+
+  border-top:
+    1px solid
+    var(--line);
+}
+
+.numbers::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background-image:
+    radial-gradient(
+      rgba(45, 124, 255, 0.42) 1px,
+      transparent 1px
+    );
+
+  background-size:
+    34px
+    34px;
+
+  opacity: 0.18;
+
+  -webkit-mask-image:
+    radial-gradient(
+      circle at center,
+      black,
+      transparent 70%
+    );
+
+  mask-image:
+    radial-gradient(
+      circle at center,
+      black,
+      transparent 70%
+    );
+}
+
+.numbers-inner {
+  position: relative;
+
+  z-index: 2;
+}
+
+.numbers-label {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 80px;
+
+  color: var(--muted);
+
+  font-size: 17px;
+}
+
+.numbers-dot {
+  width: 7px;
+  height: 7px;
+
+  background: var(--blue);
+}
+
+.numbers-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+}
+
+.number-card {
+  min-height: 300px;
+
+  padding:
+    0
+    40px
+    0
+    0;
+
+  border-right:
+    1px solid
+    var(--line);
+}
+
+.number-card:not(:first-child) {
+  padding-left: 40px;
+}
+
+.number-card:last-child {
+  border-right: 0;
+}
+
+.number {
+  display: block;
+
+  margin-bottom: 24px;
+
+  color: var(--white);
 
   font-family:
     "Instrument Serif",
@@ -699,26 +1093,96 @@ p {
     serif;
 
   font-size:
-    clamp(20px,2vw,29px);
+    clamp(86px, 10vw, 170px);
 
-  line-height: 1.45;
+  line-height: 0.82;
+
+  letter-spacing: -0.05em;
 }
 
-.home-hero-copy .button-row {
-  justify-content: center;
+.number small {
+  font-size: 0.42em;
+
+  vertical-align: top;
+}
+
+.number-card p {
+  max-width: 320px;
+
+  color: var(--muted);
+
+  font-size: 17px;
+
+  line-height: 1.7;
 }
 
 
-/* hide original process strip from hero */
+/* ==========================================================
+   PRINCIPLES
+   ========================================================== */
 
-.home-hero .hero-visual {
-  display: none;
+.principles {
+  background: #08090b;
+}
+
+.principle-list {
+  border-top:
+    1px solid
+    var(--line);
+}
+
+.principle-row,
+.principle-list > div {
+  display: grid;
+
+  grid-template-columns:
+    70px
+    1fr
+    1.4fr;
+
+  gap: 30px;
+
+  padding:
+    36px
+    0;
+
+  border-bottom:
+    1px solid
+    var(--line);
+}
+
+.principle-row span,
+.principle-list > div > span {
+  color: var(--blue-light);
+
+  font-size: 11px;
+}
+
+.principle-row h3,
+.principle-row p,
+.principle-list > div h3,
+.principle-list > div p {
+  margin: 0;
+}
+
+.principle-row p,
+.principle-list > div p {
+  color: var(--muted);
+
+  font-family:
+    "DM Sans",
+    Arial,
+    sans-serif;
+
+  font-size: 17px;
+
+  line-height: 1.7;
 }
 
 
-/* =========================================================
-   SERVICE HERO
-   ========================================================= */
+/* ==========================================================
+   SERVICE PAGE HERO
+   ========================================================== */
 
 .service-hero {
   position: relative;
@@ -726,7 +1190,7 @@ p {
   min-height: 760px;
 
   padding:
-    clamp(110px,11vw,180px)
+    clamp(110px, 11vw, 180px)
     0
     70px;
 
@@ -734,11 +1198,11 @@ p {
 
   background:
     radial-gradient(
-      ellipse at 66% 25%,
-      rgba(50,120,255,.78),
-      rgba(18,64,140,.46) 25%,
-      rgba(8,18,34,.78) 52%,
-      var(--bg) 78%
+      ellipse at 65% 22%,
+      rgba(62, 137, 255, 0.85) 0%,
+      rgba(22, 79, 176, 0.55) 27%,
+      rgba(8, 24, 51, 0.85) 54%,
+      #060709 80%
     );
 }
 
@@ -747,22 +1211,21 @@ p {
 
   position: absolute;
 
-  inset:
-    -20%
-    -10%
-    auto;
+  top: -20%;
+  left: -10%;
 
-  height: 65%;
+  width: 120%;
+  height: 70%;
 
   background:
     radial-gradient(
-      ellipse at 70% 5%,
-      rgba(255,255,255,.45),
-      rgba(89,160,255,.2) 35%,
-      transparent 70%
+      ellipse at 72% 7%,
+      rgba(255, 255, 255, 0.58),
+      rgba(104, 172, 255, 0.23) 32%,
+      transparent 68%
     );
 
-  filter: blur(32px);
+  filter: blur(34px);
 
   pointer-events: none;
 }
@@ -777,59 +1240,61 @@ p {
   display: grid;
 
   grid-template-columns:
-    minmax(0,1.5fr)
-    minmax(300px,.5fr);
+    minmax(0, 1.5fr)
+    minmax(300px, 0.5fr);
 
   gap:
-    clamp(60px,8vw,130px);
+    clamp(60px, 8vw, 130px);
 
   align-items: end;
 }
 
-.hero-copy {
-  max-width: 490px;
+.service-hero .hero-copy {
+  max-width: 500px;
+
+  margin: 0;
 }
 
-.hero-copy p {
-  margin-bottom: 35px;
-
+.service-hero .hero-copy p {
   color:
-    rgba(255,255,255,.66);
+    rgba(255, 255, 255, 0.86);
 
   font-family:
-    "Instrument Serif",
-    Georgia,
-    serif;
+    "DM Sans",
+    Arial,
+    sans-serif;
 
   font-size:
-    clamp(20px,2vw,28px);
+    clamp(19px, 1.5vw, 22px);
 
-  line-height: 1.45;
+  line-height: 1.7;
 }
 
 
-/* =========================================================
-   PROCESS STRIP
-   ========================================================= */
+/* ==========================================================
+   PROCESS / FLOW STRIP
+   ========================================================== */
 
 .flow-diagram,
 .hero-flow {
   display: grid;
 
   grid-template-columns:
-    repeat(4,1fr);
+    repeat(4, 1fr);
 
   margin-top:
-    clamp(75px,9vw,135px);
+    clamp(75px, 9vw, 135px);
 
   border-top:
-    1px solid var(--line);
+    1px solid
+    var(--line);
 
   border-bottom:
-    1px solid var(--line);
+    1px solid
+    var(--line);
 
   background:
-    rgba(0,0,0,.15);
+    rgba(0, 0, 0, 0.12);
 }
 
 .flow-node,
@@ -871,11 +1336,11 @@ p {
 
   font-size: 10px;
 
-  letter-spacing: .12em;
+  letter-spacing: 0.12em;
 }
 
-.hero-flow-label,
-.flow-node > span:nth-child(2) {
+.flow-node > span:nth-child(2),
+.hero-flow-label {
   color: var(--white);
 
   font-family:
@@ -883,7 +1348,9 @@ p {
     Georgia,
     serif;
 
-  font-size: 22px;
+  font-size: 23px;
+
+  line-height: 1.15;
 }
 
 .flow-arrow,
@@ -891,7 +1358,6 @@ p {
   position: absolute;
 
   right: 16px;
-
   bottom: 22px;
 
   color: var(--blue);
@@ -900,191 +1366,16 @@ p {
 }
 
 
-/* =========================================================
-   SECTION LAYOUTS
-   ========================================================= */
-
-.statement-grid,
-.split,
-.split-intro,
-.section-heading {
-  display: grid;
-
-  grid-template-columns:
-    .8fr
-    3fr;
-
-  gap:
-    clamp(50px,8vw,120px);
-}
-
-.section-heading {
-  margin-bottom: 68px;
-}
-
-.section-heading .eyebrow {
-  padding-top: 12px;
-}
-
-.section-heading h2 {
-  max-width: 980px;
-
-  margin-bottom: 0;
-}
-
-.body-copy {
-  max-width: 860px;
-}
-
-.body-copy p {
-  color: var(--muted);
-
-  font-family:
-    "Instrument Serif",
-    Georgia,
-    serif;
-
-  font-size:
-    clamp(20px,1.8vw,26px);
-
-  line-height: 1.45;
-}
-
-
-/* =========================================================
-   SERVICE INDEX
-   ========================================================= */
-
-.service-index {
-  border-top:
-    1px solid
-    var(--line);
-}
-
-.service-index-row {
-  display: grid;
-
-  grid-template-columns:
-    70px
-    1.1fr
-    1.5fr
-    32px;
-
-  gap: 30px;
-
-  padding:
-    36px
-    0;
-
-  border-bottom:
-    1px solid
-    var(--line);
-
-  transition:
-    padding-left .2s ease,
-    background .2s ease;
-}
-
-.service-index-row:hover {
-  padding-left: 16px;
-}
-
-.service-index-row h3 {
-  margin: 0;
-
-  color: var(--white);
-}
-
-.service-index-row p {
-  margin: 0;
-
-  max-width: 560px;
-
-  color: var(--muted);
-
-  font-family:
-    "Instrument Serif",
-    Georgia,
-    serif;
-
-  font-size: 20px;
-}
-
-.service-index-num {
-  color: var(--blue-light);
-
-  font-size: 11px;
-}
-
-.service-index-arrow {
-  color: var(--blue-light);
-
-  font-size: 20px;
-}
-
-
-/* =========================================================
-   PRINCIPLES
-   ========================================================= */
-
-.principle-list > div {
-  display: grid;
-
-  grid-template-columns:
-    70px
-    1fr
-    1.4fr;
-
-  gap: 26px;
-
-  padding:
-    34px
-    0;
-
-  border-top:
-    1px solid
-    var(--line);
-}
-
-.principle-list > div:last-child {
-  border-bottom:
-    1px solid
-    var(--line);
-}
-
-.principle-list span {
-  color: var(--blue-light);
-
-  font-size: 11px;
-}
-
-.principle-list h3,
-.principle-list p {
-  margin: 0;
-}
-
-.principle-list p {
-  color: var(--muted);
-
-  font-family:
-    "Instrument Serif",
-    Georgia,
-    serif;
-
-  font-size: 20px;
-}
-
-
-/* =========================================================
+/* ==========================================================
    CARD GRIDS
-   ========================================================= */
+   ========================================================== */
 
 .feature-grid,
 .problem-grid {
   display: grid;
 
   grid-template-columns:
-    repeat(3,1fr);
+    repeat(3, 1fr);
 
   border-top:
     1px solid
@@ -1093,6 +1384,10 @@ p {
   border-left:
     1px solid
     var(--line);
+}
+
+.problem-grid {
+  margin-top: 54px;
 }
 
 .feature-card,
@@ -1110,20 +1405,20 @@ p {
     var(--line);
 
   background:
-    rgba(255,255,255,.01);
+    rgba(255, 255, 255, 0.01);
 
   display: flex;
 
   flex-direction: column;
 
   transition:
-    background .2s ease;
+    background 0.2s ease;
 }
 
 .feature-card:hover,
 .problem-card:hover {
   background:
-    rgba(39,120,255,.045);
+    rgba(45, 124, 255, 0.045);
 }
 
 .feature-card h3,
@@ -1139,12 +1434,9 @@ p {
 
   color: var(--muted);
 
-  font-family:
-    "Instrument Serif",
-    Georgia,
-    serif;
+  font-size: 17px;
 
-  font-size: 19px;
+  line-height: 1.7;
 }
 
 .card-num,
@@ -1155,9 +1447,9 @@ p {
 }
 
 
-/* =========================================================
+/* ==========================================================
    PROCESS LIST
-   ========================================================= */
+   ========================================================== */
 
 .process-list {
   border-top:
@@ -1176,7 +1468,7 @@ p {
   gap: 28px;
 
   padding:
-    34px
+    36px
     0;
 
   border-bottom:
@@ -1198,24 +1490,21 @@ p {
 .process-row p {
   color: var(--muted);
 
-  font-family:
-    "Instrument Serif",
-    Georgia,
-    serif;
+  font-size: 17px;
 
-  font-size: 20px;
+  line-height: 1.7;
 }
 
 
-/* =========================================================
+/* ==========================================================
    USE CASES
-   ========================================================= */
+   ========================================================== */
 
 .use-cases {
   display: grid;
 
   grid-template-columns:
-    repeat(2,1fr);
+    repeat(2, 1fr);
 
   border-top:
     1px solid
@@ -1259,18 +1548,15 @@ p {
 
   color: var(--muted);
 
-  font-family:
-    "Instrument Serif",
-    Georgia,
-    serif;
+  font-size: 17px;
 
-  font-size: 20px;
+  line-height: 1.7;
 }
 
 
-/* =========================================================
+/* ==========================================================
    OUTCOME LIST
-   ========================================================= */
+   ========================================================== */
 
 .outcome-list {
   border-top:
@@ -1289,7 +1575,7 @@ p {
   gap: 28px;
 
   padding:
-    34px
+    36px
     0;
 
   border-bottom:
@@ -1311,18 +1597,15 @@ p {
 .outcome-row p {
   color: var(--muted);
 
-  font-family:
-    "Instrument Serif",
-    Georgia,
-    serif;
+  font-size: 17px;
 
-  font-size: 20px;
+  line-height: 1.7;
 }
 
 
-/* =========================================================
+/* ==========================================================
    FAQ
-   ========================================================= */
+   ========================================================== */
 
 .faq-list {
   border-top:
@@ -1344,20 +1627,24 @@ summary {
   cursor: pointer;
 
   padding:
-    32px
+    34px
     60px
-    32px
+    34px
     0;
 
   color: var(--white);
 
   font-family:
-    "Instrument Serif",
-    Georgia,
-    serif;
+    "DM Sans",
+    Arial,
+    sans-serif;
 
   font-size:
-    clamp(24px,2.2vw,34px);
+    clamp(19px, 1.6vw, 23px);
+
+  line-height: 1.45;
+
+  font-weight: 500;
 }
 
 summary::-webkit-details-marker {
@@ -1370,17 +1657,13 @@ summary::after {
   position: absolute;
 
   right: 4px;
-
-  top: 27px;
+  top: 28px;
 
   color: var(--blue-light);
 
-  font-family:
-    "DM Sans",
-    Arial,
-    sans-serif;
+  font-size: 26px;
 
-  font-size: 25px;
+  font-weight: 400;
 }
 
 details[open] summary::after {
@@ -1398,27 +1681,40 @@ details[open] summary::after {
 
   color: var(--muted);
 
-  font-family:
-    "Instrument Serif",
-    Georgia,
-    serif;
+  font-size: 17px;
 
-  font-size: 20px;
-
-  line-height: 1.55;
+  line-height: 1.75;
 }
 
 
-/* =========================================================
+/* ==========================================================
    CTA
-   ========================================================= */
+   ========================================================== */
+
+.cta {
+  position: relative;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      ellipse at 30% 20%,
+      rgba(45, 124, 255, 0.42),
+      rgba(11, 30, 65, 0.4) 32%,
+      #060709 74%
+    );
+
+  border-top:
+    1px solid
+    var(--line);
+}
 
 .cta-grid {
   display: grid;
 
   grid-template-columns:
     1.5fr
-    .6fr;
+    0.6fr;
 
   gap: 100px;
 
@@ -1429,23 +1725,26 @@ details[open] summary::after {
   margin-bottom: 0;
 }
 
+.cta-copy p,
 .cta-grid > div:last-child p {
   margin-bottom: 30px;
 
-  color: var(--muted);
+  color: var(--text);
 
   font-family:
-    "Instrument Serif",
-    Georgia,
-    serif;
+    "DM Sans",
+    Arial,
+    sans-serif;
 
-  font-size: 22px;
+  font-size: 18px;
+
+  line-height: 1.7;
 }
 
 
-/* =========================================================
+/* ==========================================================
    FOOTER
-   ========================================================= */
+   ========================================================== */
 
 .footer {
   padding:
@@ -1472,18 +1771,36 @@ details[open] summary::after {
 }
 
 .footer-intro p {
-  max-width: 310px;
+  max-width: 320px;
 
   margin-top: 24px;
 
   color: var(--muted);
 
-  font-family:
-    "Instrument Serif",
-    Georgia,
-    serif;
+  font-size: 16px;
 
-  font-size: 19px;
+  line-height: 1.7;
+}
+
+.footer-label {
+  margin:
+    0
+    0
+    20px;
+
+  color: var(--blue-light);
+
+  font-size: 10px;
+
+  letter-spacing: 0.14em;
+
+  text-transform: uppercase;
+
+  font-weight: 600;
+}
+
+.footer .eyebrow {
+  margin-bottom: 20px;
 }
 
 .footer-links {
@@ -1499,7 +1816,9 @@ details[open] summary::after {
 
   color: var(--muted);
 
-  font-size: 14px;
+  font-size: 15px;
+
+  line-height: 1.4;
 }
 
 .footer-links a:hover {
@@ -1521,30 +1840,33 @@ details[open] summary::after {
 
   gap: 20px;
 
-  color: #666a71;
+  color: #7c838e;
 
-  font-size: 11px;
+  font-size: 12px;
 }
 
 
-/* =========================================================
+/* ==========================================================
    ACCESSIBILITY
-   ========================================================= */
+   ========================================================== */
 
 .skip-link {
   position: fixed;
 
   left: 16px;
-
   top: -100px;
 
   z-index: 1000;
 
-  padding: 12px 16px;
+  padding:
+    12px
+    16px;
 
   background: var(--white);
 
   color: var(--bg);
+
+  font-size: 14px;
 }
 
 .skip-link:focus {
@@ -1552,11 +1874,15 @@ details[open] summary::after {
 }
 
 
-/* =========================================================
-   MOBILE
-   ========================================================= */
+/* ==========================================================
+   TABLET
+   ========================================================== */
 
 @media (max-width: 920px) {
+
+  body {
+    font-size: 17px;
+  }
 
   .desktop-nav {
     display: none;
@@ -1585,11 +1911,11 @@ details[open] summary::after {
       50px;
 
     background:
-      rgba(8,9,11,.98);
-
-    color: var(--white);
+      rgba(7, 8, 10, 0.99);
 
     flex-direction: column;
+
+    overflow-y: auto;
   }
 
   .mobile-nav.is-open {
@@ -1598,12 +1924,14 @@ details[open] summary::after {
 
   .mobile-nav a {
     padding:
-      19px
+      18px
       0;
 
     border-bottom:
       1px solid
       var(--line);
+
+    color: var(--white);
 
     font-family:
       "Instrument Serif",
@@ -1613,23 +1941,84 @@ details[open] summary::after {
     font-size: 24px;
   }
 
-  .home-hero-grid,
-  .hero-grid,
+  .intro-grid,
   .statement-grid,
   .split,
   .split-intro,
   .section-heading,
+  .hero-grid,
   .cta-grid,
   .footer-grid {
     grid-template-columns: 1fr;
   }
 
-  .home-hero {
-    min-height: 800px;
+  .section-heading {
+    gap: 18px;
   }
 
-  .hero-copy {
-    max-width: 640px;
+  .hero-copy,
+  .service-hero .hero-copy {
+    max-width: 700px;
+  }
+
+  .service-row,
+  .service-index-row {
+    grid-template-columns:
+      45px
+      1fr
+      24px;
+  }
+
+  .service-row p,
+  .service-index-row p {
+    grid-column:
+      2 / 4;
+  }
+
+  .numbers-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .number-card,
+  .number-card:not(:first-child) {
+    min-height: 0;
+
+    padding:
+      55px
+      0;
+
+    border-right: 0;
+
+    border-bottom:
+      1px solid
+      var(--line);
+  }
+
+  .number-card:last-child {
+    border-bottom: 0;
+  }
+
+  .principle-row,
+  .principle-list > div,
+  .process-row,
+  .outcome-row {
+    grid-template-columns:
+      45px
+      1fr;
+  }
+
+  .principle-row p,
+  .principle-list > div p,
+  .process-row p,
+  .outcome-row p {
+    grid-column: 2;
+  }
+
+  .feature-grid,
+  .problem-grid {
+    grid-template-columns:
+      1fr
+      1fr;
   }
 
   .flow-diagram,
@@ -1644,56 +2033,19 @@ details[open] summary::after {
     border-right: 0;
   }
 
-  .flow-node:nth-child(-n+2),
-  .hero-flow-item:nth-child(-n+2) {
+  .flow-node:nth-child(-n + 2),
+  .hero-flow-item:nth-child(-n + 2) {
     border-bottom:
       1px solid
       var(--line);
   }
 
-  .service-index-row {
-    grid-template-columns:
-      45px
-      1fr
-      24px;
-  }
-
-  .service-index-row p {
-    grid-column:
-      2 / 4;
-  }
-
-  .principle-list > div {
-    grid-template-columns:
-      45px
-      1fr;
-  }
-
-  .principle-list > div p {
-    grid-column: 2;
-  }
-
-  .feature-grid,
-  .problem-grid {
-    grid-template-columns:
-      1fr
-      1fr;
-  }
-
-  .process-row,
-  .outcome-row {
-    grid-template-columns:
-      45px
-      1fr;
-  }
-
-  .process-row p,
-  .outcome-row p {
-    grid-column: 2;
-  }
-
 }
 
+
+/* ==========================================================
+   MOBILE
+   ========================================================== */
 
 @media (max-width: 620px) {
 
@@ -1701,58 +2053,108 @@ details[open] summary::after {
     --pad: 20px;
   }
 
+  body {
+    font-size: 17px;
+  }
+
   h1 {
     font-size:
-      clamp(62px,18vw,92px);
+      clamp(64px, 18vw, 96px);
+
+    line-height: 0.9;
   }
 
   h2 {
     font-size:
-      clamp(45px,13vw,65px);
+      clamp(46px, 13vw, 66px);
+
+    line-height: 0.97;
+  }
+
+  h3 {
+    font-size:
+      clamp(28px, 9vw, 38px);
   }
 
   .header-inner {
     min-height: 70px;
   }
 
+  .brand {
+    font-size: 23px;
+  }
+
+  .brand-mark {
+    width: 34px;
+    height: 34px;
+  }
+
+  .mobile-nav {
+    inset:
+      70px
+      0
+      0
+      0;
+  }
+
+  .section {
+    padding:
+      90px
+      0;
+  }
+
+  .hero,
   .home-hero {
-    min-height: 740px;
-
-    padding-top: 100px;
+    min-height: 720px;
   }
 
-  .service-hero {
-    min-height: auto;
+  .hero-inner {
+    min-height: 720px;
 
-    padding-top: 100px;
+    padding:
+      95px
+      0
+      90px;
   }
 
-  .flow-diagram,
-  .hero-flow,
-  .feature-grid,
-  .problem-grid,
-  .use-cases {
-    grid-template-columns: 1fr;
+  .home-hero {
+    padding:
+      95px
+      0
+      90px;
   }
 
-  .flow-node,
-  .hero-flow-item {
-    min-height: 112px;
-
-    border-right: 0;
-
-    border-bottom:
-      1px solid
-      var(--line);
-
-    padding-left: 0 !important;
+  .hero-copy,
+  .home-hero-copy {
+    margin-top: 28px;
   }
 
-  .flow-node:last-child,
-  .hero-flow-item:last-child {
-    border-bottom: 0;
+  .hero-copy p,
+  .home-hero-copy > p {
+    font-size: 18px;
+
+    line-height: 1.7;
   }
 
+  .button {
+    min-height: 56px;
+
+    padding:
+      0
+      28px;
+
+    font-size: 18px;
+  }
+
+  .intro-grid {
+    gap: 34px;
+  }
+
+  .intro-grid p {
+    font-size: 18px;
+  }
+
+  .service-row,
   .service-index-row {
     grid-template-columns:
       34px
@@ -1760,14 +2162,23 @@ details[open] summary::after {
       20px;
 
     gap: 14px;
+
+    padding:
+      30px
+      0;
   }
 
-  .principle-list > div {
-    grid-template-columns:
-      34px
-      1fr;
+  .service-row p,
+  .service-index-row p {
+    font-size: 17px;
+  }
 
-    gap: 14px;
+  .feature-grid,
+  .problem-grid,
+  .use-cases,
+  .flow-diagram,
+  .hero-flow {
+    grid-template-columns: 1fr;
   }
 
   .feature-card,
@@ -1775,8 +2186,88 @@ details[open] summary::after {
     min-height: 275px;
   }
 
+  .use-case {
+    min-height: 240px;
+  }
+
+  .use-case span {
+    margin-bottom: 55px;
+  }
+
+  .flow-node,
+  .hero-flow-item {
+    min-height: 115px;
+
+    padding:
+      24px
+      42px
+      24px
+      0 !important;
+
+    border-right: 0;
+
+    border-bottom:
+      1px solid
+      var(--line);
+  }
+
+  .flow-node:not(:first-child),
+  .hero-flow-item:not(:first-child) {
+    padding-left: 0;
+  }
+
+  .flow-node:last-child,
+  .hero-flow-item:last-child {
+    border-bottom: 0;
+  }
+
+  .principle-row,
+  .principle-list > div,
+  .process-row,
+  .outcome-row {
+    grid-template-columns:
+      34px
+      1fr;
+
+    gap: 14px;
+  }
+
+  summary {
+    padding:
+      28px
+      46px
+      28px
+      0;
+
+    font-size: 18px;
+  }
+
+  summary::after {
+    top: 22px;
+  }
+
+  .faq-answer {
+    padding:
+      0
+      20px
+      30px
+      0;
+
+    font-size: 17px;
+  }
+
+  .footer {
+    padding-top: 70px;
+  }
+
+  .footer-grid {
+    gap: 50px;
+  }
+
   .footer-bottom {
     flex-direction: column;
+
+    margin-top: 60px;
   }
 
 }
