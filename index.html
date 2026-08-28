@@ -17,18 +17,40 @@
 
   <meta name="robots" content="index,follow">
 
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap"
+    rel="stylesheet"
+  >
+
   <style>
     :root {
-      --ink: #11110f;
-      --paper: #f3f1ea;
-      --paper-2: #e8e5dc;
-      --white: #fffef8;
-      --line: rgba(17, 17, 15, 0.16);
-      --line-dark: rgba(255, 255, 255, 0.18);
-      --muted: #67675f;
-      --accent: #d8ff5a;
-      --max: 1240px;
-      --pad: clamp(20px, 4vw, 56px);
+      --bg: #060709;
+      --bg-soft: #0b0e13;
+      --nav: #252d38;
+
+      --white: #f8f8f5;
+      --text: #d2d5da;
+      --muted: #858b94;
+
+      --line: rgba(255,255,255,.12);
+      --line-soft: rgba(255,255,255,.07);
+
+      --blue: #2d7cff;
+      --blue-soft: #88b9ff;
+
+      --max: 1340px;
+      --pad: clamp(22px,4vw,64px);
     }
 
     * {
@@ -41,9 +63,9 @@
 
     body {
       margin: 0;
-      background: var(--paper);
-      color: var(--ink);
-      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "DM Sans", Arial, sans-serif;
       -webkit-font-smoothing: antialiased;
     }
 
@@ -69,33 +91,16 @@
     }
 
     .section {
-      padding: clamp(78px, 9vw, 150px) 0;
-    }
-
-    .section-rule {
-      border-top: 1px solid var(--line);
-    }
-
-    .dark-section {
-      background: var(--ink);
-      color: var(--white);
-    }
-
-    .tint-section {
-      background: var(--paper-2);
+      padding: clamp(105px,11vw,180px) 0;
     }
 
     .eyebrow {
-      margin: 0 0 22px;
+      margin: 0 0 24px;
+      color: var(--blue-soft);
       font-size: 11px;
-      line-height: 1;
-      letter-spacing: 0.15em;
+      letter-spacing: .14em;
       text-transform: uppercase;
-      font-weight: 700;
-    }
-
-    .eyebrow.light {
-      color: rgba(255, 255, 255, 0.6);
+      font-weight: 500;
     }
 
     h1,
@@ -105,103 +110,100 @@
       margin-top: 0;
     }
 
+    h1,
+    h2,
+    h3 {
+      color: var(--white);
+      font-family: "Instrument Serif", Georgia, serif;
+      font-weight: 400;
+    }
+
     h1 {
       margin-bottom: 0;
-      font-size: clamp(56px, 9vw, 142px);
-      line-height: 0.88;
-      letter-spacing: -0.065em;
-      font-weight: 500;
+      font-size: clamp(76px,10vw,164px);
+      line-height: .88;
+      letter-spacing: -.05em;
     }
 
     h2 {
       margin-bottom: 34px;
-      font-size: clamp(38px, 5.4vw, 76px);
-      line-height: 0.98;
-      letter-spacing: -0.045em;
-      font-weight: 500;
+      font-size: clamp(50px,6.2vw,96px);
+      line-height: .95;
+      letter-spacing: -.035em;
     }
 
     h3 {
-      font-size: clamp(22px, 2.1vw, 31px);
-      line-height: 1.04;
-      letter-spacing: -0.025em;
-      font-weight: 500;
+      font-size: clamp(28px,2.5vw,40px);
+      line-height: 1;
+      letter-spacing: -.02em;
     }
 
     p {
       line-height: 1.55;
     }
 
-    .large-copy {
-      max-width: 900px;
-      font-size: clamp(19px, 2vw, 27px);
-      line-height: 1.38;
-      letter-spacing: -0.018em;
-      color: #2d2d28;
-    }
-
-    .dark-section p {
-      color: rgba(255, 255, 255, 0.72);
-    }
-
-    /* ------------------------------
-       HEADER
-    ------------------------------ */
+    /* HEADER */
 
     .site-header {
       position: sticky;
       top: 0;
-      z-index: 50;
-      background: rgba(243, 241, 234, 0.92);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--line);
+      z-index: 100;
+      background: rgba(37,45,56,.96);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      backdrop-filter: blur(18px);
     }
 
     .header-inner {
-      height: 72px;
+      min-height: 80px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
 
     .brand {
-      display: inline-flex;
+      display: flex;
       align-items: center;
-      gap: 10px;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: -0.02em;
+      gap: 12px;
+      color: var(--white);
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: 26px;
     }
 
     .brand-mark {
-      display: inline-grid;
+      width: 36px;
+      height: 36px;
+      display: grid;
       place-items: center;
-      width: 32px;
-      height: 32px;
+      border: 1px solid rgba(255,255,255,.5);
       border-radius: 50%;
-      background: var(--ink);
-      color: var(--accent);
-      letter-spacing: -0.18em;
-      padding-right: 3px;
+      font-family: "DM Sans", sans-serif;
+      font-size: 10px;
     }
 
     .desktop-nav {
       display: flex;
       align-items: center;
-      gap: 28px;
+      gap: 44px;
     }
 
-    .nav-link {
-      font-size: 13px;
+    .nav-link,
+    .nav-button {
+      color: rgba(255,255,255,.72);
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: 18px;
+      transition: color .2s ease;
+    }
+
+    .nav-link:hover,
+    .nav-button:hover {
+      color: var(--white);
     }
 
     .nav-button {
-      padding: 24px 0;
       border: 0;
       background: none;
       cursor: pointer;
-      color: inherit;
+      padding: 26px 0;
     }
 
     .nav-dropdown {
@@ -210,16 +212,23 @@
 
     .nav-menu {
       position: absolute;
-      top: 58px;
-      left: -20px;
-      min-width: 360px;
-      padding: 8px;
-      background: var(--ink);
-      color: var(--white);
+      top: 64px;
+      left: -24px;
+      min-width: 390px;
+      padding: 10px;
+      background: #11151c;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      box-shadow: 0 28px 80px rgba(0,0,0,.45);
+
       opacity: 0;
       visibility: hidden;
       transform: translateY(8px);
-      transition: 0.2s ease;
+
+      transition:
+        opacity .18s ease,
+        transform .18s ease,
+        visibility .18s ease;
     }
 
     .nav-dropdown:hover .nav-menu,
@@ -231,10 +240,10 @@
 
     .nav-menu-item {
       display: grid;
-      grid-template-columns: 36px 1fr;
+      grid-template-columns: 34px 1fr;
       gap: 12px;
       padding: 16px;
-      border-bottom: 1px solid var(--line-dark);
+      border-bottom: 1px solid var(--line-soft);
       font-size: 14px;
     }
 
@@ -243,19 +252,52 @@
     }
 
     .nav-menu-item:hover {
-      background: rgba(255, 255, 255, 0.07);
+      background: rgba(255,255,255,.05);
+      border-radius: 8px;
     }
 
     .nav-num {
-      padding-top: 2px;
+      color: var(--blue-soft);
       font-size: 10px;
-      color: rgba(255, 255, 255, 0.4);
     }
+
+    /* BUTTON */
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 58px;
+      padding: 0 34px;
+      border-radius: 999px;
+      background: var(--white);
+      color: #12151a;
+      border: 1px solid rgba(255,255,255,.8);
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: 19px;
+      box-shadow: 0 0 0 3px rgba(255,255,255,.08);
+      transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 0 5px rgba(45,124,255,.18);
+    }
+
+    .button-small {
+      min-height: 54px;
+      padding: 0 30px;
+    }
+
+    /* MOBILE NAV */
 
     .menu-toggle {
       display: none;
       border: 0;
       background: transparent;
+      color: var(--white);
       cursor: pointer;
     }
 
@@ -263,349 +305,416 @@
       display: none;
     }
 
-    /* ------------------------------
-       BUTTONS
-    ------------------------------ */
+    /* HERO */
 
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      min-height: 50px;
-      padding: 0 20px;
-      border: 1px solid var(--ink);
-      font-size: 13px;
-      font-weight: 700;
-      transition:
-        transform 0.2s ease,
-        background 0.2s ease;
+    .hero {
+      position: relative;
+      min-height: calc(100vh - 80px);
+      overflow: hidden;
+
+      background:
+        radial-gradient(
+          ellipse at 54% 20%,
+          rgba(74,151,255,.95) 0%,
+          rgba(25,100,220,.78) 20%,
+          rgba(9,46,108,.72) 42%,
+          rgba(6,16,34,.92) 65%,
+          #050608 88%
+        );
     }
 
-    .button:hover {
-      transform: translateY(-2px);
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -20%;
+      left: -5%;
+      width: 110%;
+      height: 70%;
+
+      background:
+        radial-gradient(
+          ellipse at 70% 5%,
+          rgba(255,255,255,.95),
+          rgba(181,215,255,.48) 20%,
+          rgba(74,151,255,.22) 43%,
+          transparent 70%
+        );
+
+      filter: blur(34px);
+      opacity: .82;
     }
 
-    .button-small {
-      min-height: 40px;
-      padding: 0 15px;
-      background: var(--ink);
-      color: var(--white);
-      border: 0;
+    .hero::after {
+      content: "";
+      position: absolute;
+      left: -10%;
+      right: -10%;
+      bottom: -24%;
+      height: 62%;
+
+      background:
+        radial-gradient(
+          ellipse at center,
+          rgba(0,0,0,.1),
+          rgba(0,0,0,.9) 68%
+        );
+
+      filter: blur(28px);
     }
 
-    .button-light {
-      background: var(--accent);
-      border-color: var(--accent);
-      color: var(--ink);
-    }
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      min-height: calc(100vh - 80px);
+      padding: clamp(110px,13vw,205px) 0 110px;
 
-    .text-link {
-      font-size: 13px;
-      text-decoration: underline;
-      text-underline-offset: 5px;
-    }
-
-    .light-link {
-      color: rgba(255, 255, 255, 0.75);
-    }
-
-    .button-row {
-      display: flex;
-      gap: 22px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    /* ------------------------------
-       HERO
-    ------------------------------ */
-
-    .home-hero {
-      min-height: calc(100vh - 72px);
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      padding: clamp(60px, 8vw, 120px) 0 30px;
-      overflow: hidden;
+      justify-content: center;
+      align-items: center;
+
+      text-align: center;
     }
 
-    .home-hero-grid {
-      display: grid;
-      grid-template-columns:
-        minmax(0, 1.45fr)
-        minmax(280px, 0.55fr);
-      gap: clamp(40px, 8vw, 120px);
-      align-items: end;
+    .hero h1 {
+      max-width: 1220px;
+      margin: 0 auto;
     }
 
-    .home-title-wrap h1 em {
-      color: var(--accent);
-      font-style: normal;
+    .hero h1 em {
+      font-style: italic;
     }
 
-    .home-hero-copy {
-      max-width: 440px;
-      padding-bottom: 8px;
+    .hero-copy {
+      max-width: 850px;
+      margin: 38px auto 0;
     }
 
-    .home-hero-copy > p {
+    .hero-copy p {
       margin-bottom: 34px;
-      font-size: clamp(18px, 1.8vw, 24px);
+      color: rgba(255,255,255,.72);
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(21px,2vw,29px);
+      line-height: 1.42;
+    }
+
+    /* INTRO */
+
+    .intro {
+      background: #070809;
+      border-top: 1px solid var(--line);
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(70px,12vw,180px);
+      padding-bottom: 90px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .intro-grid p {
+      margin: 0;
+      color: var(--muted);
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(21px,2vw,28px);
       line-height: 1.4;
     }
 
-    .hero-visual {
-      margin-top: clamp(60px, 9vw, 120px);
-    }
+    /* SERVICES */
 
-    .flow-diagram {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      border-top: 1px solid var(--line-dark);
-      border-bottom: 1px solid var(--line-dark);
-    }
-
-    .flow-node {
-      position: relative;
-      min-height: 145px;
-      padding: 24px 42px 24px 0;
-      border-right: 1px solid var(--line-dark);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      font-size: 18px;
-    }
-
-    .flow-node:not(:first-child) {
-      padding-left: 24px;
-    }
-
-    .flow-node:last-child {
-      border-right: 0;
-    }
-
-    .flow-index {
-      font-size: 10px;
-      letter-spacing: 0.12em;
-      color: rgba(255, 255, 255, 0.4);
-    }
-
-    .flow-arrow {
-      position: absolute;
-      right: 16px;
-      bottom: 21px;
-      color: var(--accent);
-      font-size: 22px;
-    }
-
-    /* ------------------------------
-       CONTENT
-    ------------------------------ */
-
-    .statement-grid,
-    .split-intro,
-    .section-heading {
-      display: grid;
-      grid-template-columns: 1fr 3fr;
-      gap: 50px;
+    .services {
+      background:
+        radial-gradient(
+          circle at 50% 28%,
+          rgba(31,111,255,.08),
+          transparent 36%
+        ),
+        #070809;
     }
 
     .section-heading {
-      margin-bottom: 56px;
-    }
-
-    .section-heading .eyebrow {
-      padding-top: 10px;
+      display: grid;
+      grid-template-columns: .8fr 3fr;
+      gap: clamp(50px,8vw,120px);
+      margin-bottom: 72px;
     }
 
     .section-heading h2 {
-      margin: 0;
-      max-width: 920px;
+      max-width: 980px;
+      margin-bottom: 0;
     }
 
-    .service-index {
+    .service-list {
       border-top: 1px solid var(--line);
     }
 
-    .service-index-row {
+    .service-row {
       display: grid;
-      grid-template-columns: 70px 1.15fr 1.5fr 30px;
-      gap: 26px;
+      grid-template-columns: 70px 1.1fr 1.4fr 30px;
+      gap: 30px;
       align-items: start;
-      padding: 30px 0;
+
+      padding: 38px 0;
       border-bottom: 1px solid var(--line);
-      transition: padding 0.2s ease;
+
+      transition:
+        padding-left .2s ease,
+        background .2s ease;
     }
 
-    .service-index-row:hover {
-      padding-left: 12px;
+    .service-row:hover {
+      padding-left: 14px;
+      background: rgba(45,124,255,.025);
     }
 
-    .service-index-row h3,
-    .service-index-row p {
+    .service-num {
+      color: var(--blue-soft);
+      font-size: 11px;
+    }
+
+    .service-row h3,
+    .service-row p {
       margin: 0;
     }
 
-    .service-index-row p {
+    .service-row p {
       max-width: 560px;
       color: var(--muted);
-    }
-
-    .service-index-num {
-      font-size: 11px;
-      color: var(--muted);
-    }
-
-    .service-index-arrow {
+      font-family: "Instrument Serif", Georgia, serif;
       font-size: 20px;
     }
 
-    .principle-list > div {
-      display: grid;
-      grid-template-columns: 70px 1fr 1.4fr;
-      gap: 24px;
-      padding: 26px 0;
+    .service-arrow {
+      color: var(--blue-soft);
+      font-size: 22px;
+    }
+
+    /* NUMBERS */
+
+    .numbers {
+      position: relative;
+      overflow: hidden;
+      background: #050607;
       border-top: 1px solid var(--line);
     }
 
-    .principle-list > div:last-child {
-      border-bottom: 1px solid var(--line);
+    .numbers::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+
+      background-image:
+        radial-gradient(
+          rgba(45,124,255,.42) 1px,
+          transparent 1px
+        );
+
+      background-size: 34px 34px;
+      opacity: .18;
+
+      mask-image:
+        radial-gradient(
+          circle at center,
+          black,
+          transparent 70%
+        );
     }
 
-    .principle-list span {
-      font-size: 11px;
-      color: var(--muted);
+    .numbers-inner {
+      position: relative;
+      z-index: 2;
     }
 
-    .principle-list h3,
-    .principle-list p {
-      margin: 0;
-    }
-
-    .principle-list p {
-      color: var(--muted);
-    }
-
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      border-top: 1px solid var(--line);
-      border-left: 1px solid var(--line);
-    }
-
-    .feature-card {
-      min-height: 300px;
-      padding: 24px;
-      border-right: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
+    .numbers-label {
       display: flex;
-      flex-direction: column;
-    }
-
-    .feature-card h3 {
-      margin-top: auto;
-      margin-bottom: 18px;
-    }
-
-    .feature-card p {
-      margin-bottom: 0;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 80px;
       color: var(--muted);
-    }
-
-    .card-num {
-      font-size: 10px;
-      color: var(--muted);
-    }
-
-    /* ------------------------------
-       CTA
-    ------------------------------ */
-
-    .cta-grid {
-      display: grid;
-      grid-template-columns: 1.55fr 0.65fr;
-      gap: 90px;
-      align-items: end;
-    }
-
-    .cta-grid h2 {
-      margin-bottom: 0;
-    }
-
-    .cta-grid > div:last-child p {
-      margin-bottom: 28px;
+      font-family: "Instrument Serif", Georgia, serif;
       font-size: 18px;
     }
 
-    /* ------------------------------
-       FOOTER
-    ------------------------------ */
+    .numbers-dot {
+      width: 7px;
+      height: 7px;
+      background: var(--blue);
+    }
+
+    .numbers-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+    }
+
+    .number-card {
+      min-height: 300px;
+      padding: 0 40px 0 0;
+      border-right: 1px solid var(--line);
+    }
+
+    .number-card:not(:first-child) {
+      padding-left: 40px;
+    }
+
+    .number-card:last-child {
+      border-right: 0;
+    }
+
+    .number {
+      display: block;
+      margin-bottom: 24px;
+
+      color: var(--white);
+
+      font-family: "Instrument Serif", Georgia, serif;
+
+      font-size: clamp(86px,10vw,170px);
+      line-height: .82;
+      letter-spacing: -.05em;
+    }
+
+    .number small {
+      font-size: .42em;
+      vertical-align: top;
+    }
+
+    .number-card p {
+      max-width: 300px;
+      color: var(--muted);
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: 20px;
+    }
+
+    /* PRINCIPLES */
+
+    .principles {
+      background: #08090b;
+    }
+
+    .principle-list {
+      border-top: 1px solid var(--line);
+    }
+
+    .principle-row {
+      display: grid;
+      grid-template-columns: 70px 1fr 1.4fr;
+      gap: 30px;
+      padding: 36px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .principle-row span {
+      color: var(--blue-soft);
+      font-size: 11px;
+    }
+
+    .principle-row h3,
+    .principle-row p {
+      margin: 0;
+    }
+
+    .principle-row p {
+      color: var(--muted);
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: 20px;
+    }
+
+    /* CTA */
+
+    .cta {
+      position: relative;
+      overflow: hidden;
+
+      background:
+        radial-gradient(
+          ellipse at 30% 20%,
+          rgba(45,124,255,.42),
+          rgba(11,30,65,.4) 32%,
+          #060709 74%
+        );
+
+      border-top: 1px solid var(--line);
+    }
+
+    .cta-grid {
+      display: grid;
+      grid-template-columns: 1.5fr .6fr;
+      gap: 100px;
+      align-items: end;
+    }
+
+    .cta h2 {
+      margin-bottom: 0;
+    }
+
+    .cta-copy p {
+      margin-bottom: 30px;
+      color: var(--muted);
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: 22px;
+    }
+
+    /* FOOTER */
 
     .footer {
-      padding: 70px 0 24px;
-      background: #dcd9cf;
+      padding: 90px 0 30px;
+      background: #050607;
       border-top: 1px solid var(--line);
     }
 
     .footer-grid {
       display: grid;
       grid-template-columns: 1.4fr 1fr 1fr;
-      gap: 70px;
+      gap: 80px;
     }
 
     .footer-intro p {
-      max-width: 290px;
-      margin-top: 20px;
+      max-width: 310px;
+      margin-top: 24px;
       color: var(--muted);
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: 19px;
     }
 
-    .footer-brand {
-      margin-bottom: 16px;
+    .footer-label {
+      margin-bottom: 20px;
+      color: var(--blue-soft);
+      font-size: 10px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
     }
 
     .footer-links {
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 14px;
     }
 
     .footer-links a {
+      width: fit-content;
+      color: var(--muted);
       font-size: 14px;
     }
 
+    .footer-links a:hover {
+      color: var(--white);
+    }
+
     .footer-bottom {
-      margin-top: 70px;
-      padding-top: 22px;
+      margin-top: 85px;
+      padding-top: 25px;
       border-top: 1px solid var(--line);
+
       display: flex;
       justify-content: space-between;
       gap: 20px;
+
+      color: #656a73;
       font-size: 11px;
-      color: var(--muted);
     }
 
-    /* ------------------------------
-       ACCESSIBILITY
-    ------------------------------ */
-
-    .skip-link {
-      position: fixed;
-      left: 16px;
-      top: -100px;
-      z-index: 1000;
-      padding: 12px 16px;
-      background: var(--accent);
-      color: var(--ink);
-    }
-
-    .skip-link:focus {
-      top: 16px;
-    }
-
-    /* ------------------------------
-       MOBILE
-    ------------------------------ */
+    /* MOBILE */
 
     @media (max-width: 920px) {
       .desktop-nav {
@@ -618,17 +727,16 @@
 
       .mobile-nav {
         position: fixed;
-        inset: 72px 0 0 0;
-        z-index: 49;
+        inset: 80px 0 0 0;
+        z-index: 99;
+
         width: 100%;
-        padding:
-          28px
-          var(--pad)
-          48px;
-        background: var(--ink);
-        color: var(--white);
+
+        padding: 30px var(--pad) 50px;
+
+        background: rgba(7,8,10,.98);
+
         flex-direction: column;
-        gap: 0;
       }
 
       .mobile-nav.is-open {
@@ -637,92 +745,73 @@
 
       .mobile-nav a {
         padding: 18px 0;
-        border-bottom: 1px solid var(--line-dark);
-        font-size: 18px;
+        border-bottom: 1px solid var(--line);
+
+        color: var(--white);
+
+        font-family: "Instrument Serif", Georgia, serif;
+        font-size: 24px;
       }
 
-      .home-hero-grid,
-      .statement-grid,
-      .split-intro,
+      .intro-grid,
       .section-heading,
       .cta-grid,
       .footer-grid {
         grid-template-columns: 1fr;
       }
 
-      .home-hero {
-        min-height: auto;
-      }
-
-      .home-hero-copy {
-        max-width: 620px;
-      }
-
-      .flow-diagram {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .flow-node:nth-child(2) {
-        border-right: 0;
-      }
-
-      .flow-node:nth-child(-n + 2) {
-        border-bottom: 1px solid var(--line-dark);
-      }
-
-      .service-index-row {
+      .service-row {
         grid-template-columns: 45px 1fr 24px;
       }
 
-      .service-index-row p {
+      .service-row p {
         grid-column: 2 / 4;
       }
 
-      .principle-list > div {
+      .numbers-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .number-card,
+      .number-card:not(:first-child) {
+        padding: 50px 0;
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .principle-row {
         grid-template-columns: 45px 1fr;
       }
 
-      .principle-list > div p {
+      .principle-row p {
         grid-column: 2;
-      }
-
-      .feature-grid {
-        grid-template-columns: 1fr 1fr;
       }
     }
 
     @media (max-width: 620px) {
+      :root {
+        --pad: 20px;
+      }
+
       h1 {
-        font-size: clamp(50px, 17vw, 78px);
+        font-size: clamp(66px,18vw,96px);
       }
 
-      .home-hero {
-        padding-top: 54px;
+      h2 {
+        font-size: clamp(46px,13vw,66px);
       }
 
-      .flow-diagram,
-      .feature-grid {
-        grid-template-columns: 1fr;
+      .hero-inner {
+        min-height: 720px;
+        padding-top: 100px;
       }
 
-      .flow-node {
-        min-height: 110px;
-        border-right: 0;
-        border-bottom: 1px solid var(--line-dark);
-        padding-left: 0 !important;
+      .hero-copy {
+        margin-top: 28px;
       }
 
-      .flow-node:last-child {
-        border-bottom: 0;
-      }
-
-      .service-index-row {
-        grid-template-columns: 36px 1fr 20px;
-        gap: 12px;
-      }
-
-      .principle-list > div {
-        grid-template-columns: 34px 1fr;
+      .service-row {
+        grid-template-columns: 34px 1fr 20px;
         gap: 14px;
       }
 
@@ -735,23 +824,15 @@
 
 <body>
 
-  <a class="skip-link" href="#main">
-    Skip to content
-  </a>
-
   <header class="site-header">
 
     <div class="shell header-inner">
 
       <a
-        class="brand"
         href="./"
-        aria-label="Home"
+        class="brand"
       >
-        <span
-          class="brand-mark"
-          aria-hidden="true"
-        >
+        <span class="brand-mark">
           //
         </span>
 
@@ -760,94 +841,82 @@
         </span>
       </a>
 
-      <nav
-        class="desktop-nav"
-        aria-label="Primary navigation"
-      >
+      <nav class="desktop-nav">
 
         <div class="nav-dropdown">
 
           <button
-            class="nav-link nav-button"
+            class="nav-button"
             type="button"
           >
-            Services ↘
+            Solutions
           </button>
 
           <div class="nav-menu">
 
             <a
-              class="nav-menu-item"
               href="business-process-automation/"
+              class="nav-menu-item"
             >
               <span class="nav-num">01</span>
-              <span>
-                Business Process Automation
-              </span>
+              <span>Business Process Automation</span>
             </a>
 
             <a
-              class="nav-menu-item"
               href="workflow-automation/"
+              class="nav-menu-item"
             >
               <span class="nav-num">02</span>
-              <span>
-                Workflow Automation
-              </span>
+              <span>Workflow Automation</span>
             </a>
 
             <a
-              class="nav-menu-item"
               href="ai-automation/"
+              class="nav-menu-item"
             >
               <span class="nav-num">03</span>
-              <span>
-                AI Automation
-              </span>
+              <span>AI Automation</span>
             </a>
 
             <a
-              class="nav-menu-item"
               href="business-process-improvement/"
+              class="nav-menu-item"
             >
               <span class="nav-num">04</span>
-              <span>
-                Business Process Improvement
-              </span>
+              <span>Business Process Improvement</span>
             </a>
 
             <a
-              class="nav-menu-item"
               href="internal-tools/"
+              class="nav-menu-item"
             >
               <span class="nav-num">05</span>
-              <span>
-                Internal Tools Development
-              </span>
+              <span>Internal Tools</span>
             </a>
 
           </div>
+
         </div>
 
         <a
-          class="nav-link"
           href="#approach"
+          class="nav-link"
         >
           Approach
         </a>
 
         <a
+          href="#services"
           class="nav-link"
-          href="#insights"
         >
-          Insights
+          Learn
         </a>
 
         <a
-          class="button button-small"
           href="contact/"
+          class="button button-small"
         >
-          Start a project
+          Start a Project
         </a>
 
       </nav>
@@ -856,18 +925,13 @@
         class="menu-toggle"
         type="button"
         aria-expanded="false"
-        aria-controls="mobile-nav"
       >
         Menu
       </button>
 
     </div>
 
-    <nav
-      id="mobile-nav"
-      class="mobile-nav"
-      aria-label="Mobile navigation"
-    >
+    <nav class="mobile-nav" id="mobile-nav">
 
       <a href="business-process-automation/">
         Business Process Automation
@@ -886,97 +950,49 @@
       </a>
 
       <a href="internal-tools/">
-        Internal Tools Development
+        Internal Tools
       </a>
 
       <a href="contact/">
-        Start a project ↗
+        Start a Project
       </a>
 
     </nav>
 
   </header>
 
-  <main id="main">
+  <main>
 
     <!-- HERO -->
 
-    <section class="home-hero dark-section">
+    <section class="hero">
 
-      <div class="shell home-hero-grid">
+      <div class="shell hero-inner">
 
-        <div class="home-title-wrap">
+        <p class="eyebrow">
+          Business systems / automation / AI
+        </p>
 
-          <p class="eyebrow light">
-            Business systems / automation / AI
-          </p>
+        <h1>
+          Make your business
+          <em>easier to run.</em>
+        </h1>
 
-          <h1>
-            Make your business
-            <em>easier</em>
-            to run.
-          </h1>
-
-        </div>
-
-        <div class="home-hero-copy">
+        <div class="hero-copy">
 
           <p>
-            We improve workflows, automate
-            repetitive work, connect existing
-            systems, and build practical internal
-            tools for growing teams.
+            We improve the systems behind your business:
+            redesigning workflows, automating repetitive work,
+            connecting your tools, and building practical
+            internal systems.
           </p>
 
-          <div class="button-row">
-
-            <a
-              href="contact/"
-              class="button button-light"
-            >
-              Start a project
-              <span>↗</span>
-            </a>
-
-            <a
-              href="#services"
-              class="text-link light-link"
-            >
-              Explore services ↓
-            </a>
-
-          </div>
-
-        </div>
-
-      </div>
-
-      <div class="shell hero-visual">
-
-        <div class="flow-diagram">
-
-          <div class="flow-node">
-            <span class="flow-index">01</span>
-            <span>Manual work</span>
-            <span class="flow-arrow">→</span>
-          </div>
-
-          <div class="flow-node">
-            <span class="flow-index">02</span>
-            <span>Process redesign</span>
-            <span class="flow-arrow">→</span>
-          </div>
-
-          <div class="flow-node">
-            <span class="flow-index">03</span>
-            <span>Automation + AI</span>
-            <span class="flow-arrow">→</span>
-          </div>
-
-          <div class="flow-node">
-            <span class="flow-index">04</span>
-            <span>Better-run business</span>
-          </div>
+          <a
+            href="contact/"
+            class="button"
+          >
+            Start a Project
+          </a>
 
         </div>
 
@@ -986,37 +1002,24 @@
 
     <!-- INTRO -->
 
-    <section class="section">
+    <section class="section intro">
 
-      <div class="shell statement-grid">
+      <div class="shell intro-grid">
 
-        <p class="eyebrow">
-          Introduction
+        <p>
+          As businesses grow, simple processes become
+          complicated. Spreadsheets multiply. Reporting becomes
+          manual. Information gets copied between systems.
+          Approvals live in inboxes. People spend more time
+          managing work than doing it.
         </p>
 
-        <div>
-
-          <h2>
-            Most businesses do not need more software.
-            They need better systems.
-          </h2>
-
-          <p class="large-copy">
-            Growth creates operational debt:
-            duplicate spreadsheets, manual reporting,
-            fragile handoffs, disconnected tools, and
-            processes that only work because somebody
-            remembers what to do next.
-          </p>
-
-          <p class="large-copy">
-            We start with how the work should happen,
-            then use automation, AI, integrations, or
-            lightweight software only where they make
-            the process simpler.
-          </p>
-
-        </div>
+        <p>
+          We identify the operational friction underneath those
+          problems, redesign how the work should happen, then use
+          automation, AI, integrations, or lightweight internal
+          tools to make the new system work.
+        </p>
 
       </div>
 
@@ -1025,7 +1028,7 @@
     <!-- SERVICES -->
 
     <section
-      class="section section-rule"
+      class="section services"
       id="services"
     >
 
@@ -1034,24 +1037,23 @@
         <div class="section-heading">
 
           <p class="eyebrow">
-            Services
+            What we improve
           </p>
 
           <h2>
-            Improve the system,
-            not just the task.
+            Better systems for how work gets done.
           </h2>
 
         </div>
 
-        <div class="service-index">
+        <div class="service-list">
 
           <a
             href="business-process-automation/"
-            class="service-index-row"
+            class="service-row"
           >
 
-            <span class="service-index-num">
+            <span class="service-num">
               01
             </span>
 
@@ -1060,12 +1062,12 @@
             </h3>
 
             <p>
-              Turn repetitive, rules-based work into
-              reliable systems that move without
-              constant human intervention.
+              Turn recurring manual work into reliable
+              processes that move without constant human
+              intervention.
             </p>
 
-            <span class="service-index-arrow">
+            <span class="service-arrow">
               ↗
             </span>
 
@@ -1073,10 +1075,10 @@
 
           <a
             href="workflow-automation/"
-            class="service-index-row"
+            class="service-row"
           >
 
-            <span class="service-index-num">
+            <span class="service-num">
               02
             </span>
 
@@ -1085,12 +1087,11 @@
             </h3>
 
             <p>
-              Connect handoffs, approvals, systems,
-              and tasks so work progresses without
-              chasing status or copying data.
+              Connect systems, approvals, handoffs, and
+              recurring tasks so work progresses automatically.
             </p>
 
-            <span class="service-index-arrow">
+            <span class="service-arrow">
               ↗
             </span>
 
@@ -1098,10 +1099,10 @@
 
           <a
             href="ai-automation/"
-            class="service-index-row"
+            class="service-row"
           >
 
-            <span class="service-index-num">
+            <span class="service-num">
               03
             </span>
 
@@ -1110,12 +1111,12 @@
             </h3>
 
             <p>
-              Put AI inside real operating workflows:
-              classification, extraction, research,
-              drafting, routing, and decision support.
+              Put AI inside actual workflows for research,
+              classification, extraction, drafting, routing,
+              and decision support.
             </p>
 
-            <span class="service-index-arrow">
+            <span class="service-arrow">
               ↗
             </span>
 
@@ -1123,10 +1124,10 @@
 
           <a
             href="business-process-improvement/"
-            class="service-index-row"
+            class="service-row"
           >
 
-            <span class="service-index-num">
+            <span class="service-num">
               04
             </span>
 
@@ -1135,12 +1136,11 @@
             </h3>
 
             <p>
-              Redesign the process before adding
-              technology. Fewer steps. Cleaner
-              ownership. Better outcomes.
+              Simplify the underlying process before introducing
+              more technology or another tool.
             </p>
 
-            <span class="service-index-arrow">
+            <span class="service-arrow">
               ↗
             </span>
 
@@ -1148,28 +1148,86 @@
 
           <a
             href="internal-tools/"
-            class="service-index-row"
+            class="service-row"
           >
 
-            <span class="service-index-num">
+            <span class="service-num">
               05
             </span>
 
             <h3>
-              Internal Tools Development
+              Internal Tools
             </h3>
 
             <p>
-              Build focused dashboards, portals,
-              intake systems, and operational apps
-              when off-the-shelf software does not fit.
+              Build focused dashboards, portals, intake systems,
+              and internal applications when off-the-shelf
+              software does not fit.
             </p>
 
-            <span class="service-index-arrow">
+            <span class="service-arrow">
               ↗
             </span>
 
           </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- NUMBERS -->
+
+    <section class="section numbers">
+
+      <div class="shell numbers-inner">
+
+        <div class="numbers-label">
+          <span class="numbers-dot"></span>
+          The cost of operational friction
+        </div>
+
+        <div class="numbers-grid">
+
+          <div class="number-card">
+
+            <span class="number">
+              ↓
+            </span>
+
+            <p>
+              Fewer manual steps between the start
+              and finish of recurring work.
+            </p>
+
+          </div>
+
+          <div class="number-card">
+
+            <span class="number">
+              ↑
+            </span>
+
+            <p>
+              More capacity from the people and
+              systems you already have.
+            </p>
+
+          </div>
+
+          <div class="number-card">
+
+            <span class="number">
+              1<small>×</small>
+            </span>
+
+            <p>
+              One clear operating system instead
+              of a stack of disconnected workarounds.
+            </p>
+
+          </div>
 
         </div>
 
@@ -1180,71 +1238,93 @@
     <!-- APPROACH -->
 
     <section
-      class="section tint-section"
+      class="section principles"
       id="approach"
     >
 
-      <div class="shell split-intro">
+      <div class="shell">
 
-        <p class="eyebrow">
-          How we think
-        </p>
+        <div class="section-heading">
 
-        <div>
+          <p class="eyebrow">
+            Our approach
+          </p>
 
           <h2>
             Technology follows the workflow.
           </h2>
 
-          <div class="principle-list">
+        </div>
 
-            <div>
+        <div class="principle-list">
 
-              <span>01</span>
+          <div class="principle-row">
 
-              <h3>
-                Fix the process first.
-              </h3>
+            <span>
+              01
+            </span>
 
-              <p>
-                Automating a bad process only makes
-                the bad process happen faster.
-              </p>
+            <h3>
+              Understand the work.
+            </h3>
 
-            </div>
+            <p>
+              Map what actually happens today: people, systems,
+              decisions, handoffs, delays, and repeated effort.
+            </p>
 
-            <div>
+          </div>
 
-              <span>02</span>
+          <div class="principle-row">
 
-              <h3>
-                Use what already works.
-              </h3>
+            <span>
+              02
+            </span>
 
-              <p>
-                Before adding another subscription,
-                we look for ways to extend and connect
-                the systems you already pay for.
-              </p>
+            <h3>
+              Simplify first.
+            </h3>
 
-            </div>
+            <p>
+              Remove unnecessary steps before automating
+              anything. Automating a bad process only makes the
+              bad process happen faster.
+            </p>
 
-            <div>
+          </div>
 
-              <span>03</span>
+          <div class="principle-row">
 
-              <h3>
-                Build only what earns its keep.
-              </h3>
+            <span>
+              03
+            </span>
 
-              <p>
-                Every automation or internal tool
-                should produce a measurable
-                improvement in time, cost, capacity,
-                quality, or visibility.
-              </p>
+            <h3>
+              Use the simplest solution.
+            </h3>
 
-            </div>
+            <p>
+              Sometimes that means AI. Sometimes automation.
+              Sometimes a lightweight internal tool. Sometimes
+              simply redesigning the process.
+            </p>
+
+          </div>
+
+          <div class="principle-row">
+
+            <span>
+              04
+            </span>
+
+            <h3>
+              Measure what changed.
+            </h3>
+
+            <p>
+              Better systems should reduce time, errors,
+              complexity, delays, or unnecessary headcount.
+            </p>
 
           </div>
 
@@ -1254,151 +1334,15 @@
 
     </section>
 
-    <!-- USE CASES -->
-
-    <section
-      class="section"
-      id="insights"
-    >
-
-      <div class="shell">
-
-        <div class="section-heading">
-
-          <p class="eyebrow">
-            Common friction
-          </p>
-
-          <h2>
-            Where better systems
-            create leverage.
-          </h2>
-
-        </div>
-
-        <div class="feature-grid">
-
-          <article class="feature-card">
-
-            <span class="card-num">
-              01
-            </span>
-
-            <h3>
-              Manual reporting
-            </h3>
-
-            <p>
-              Recurring reports that require exports,
-              spreadsheet cleanup, copy-paste, and
-              status chasing.
-            </p>
-
-          </article>
-
-          <article class="feature-card">
-
-            <span class="card-num">
-              02
-            </span>
-
-            <h3>
-              Client onboarding
-            </h3>
-
-            <p>
-              Forms, documents, scheduling, setup
-              tasks, and communications spread across
-              too many systems.
-            </p>
-
-          </article>
-
-          <article class="feature-card">
-
-            <span class="card-num">
-              03
-            </span>
-
-            <h3>
-              Approvals & handoffs
-            </h3>
-
-            <p>
-              Work waiting in inboxes because the
-              next owner does not know it is theirs.
-            </p>
-
-          </article>
-
-          <article class="feature-card">
-
-            <span class="card-num">
-              04
-            </span>
-
-            <h3>
-              Operational visibility
-            </h3>
-
-            <p>
-              Leaders asking for updates because no
-              reliable source of truth exists.
-            </p>
-
-          </article>
-
-          <article class="feature-card">
-
-            <span class="card-num">
-              05
-            </span>
-
-            <h3>
-              Document-heavy work
-            </h3>
-
-            <p>
-              Teams reading, classifying, extracting,
-              rewriting, and routing the same types of
-              documents repeatedly.
-            </p>
-
-          </article>
-
-          <article class="feature-card">
-
-            <span class="card-num">
-              06
-            </span>
-
-            <h3>
-              Tool sprawl
-            </h3>
-
-            <p>
-              Software added one problem at a time
-              until the stack itself becomes an
-              operating problem.
-            </p>
-
-          </article>
-
-        </div>
-
-      </div>
-
-    </section>
-
     <!-- CTA -->
 
-    <section class="section dark-section">
+    <section class="section cta">
 
       <div class="shell cta-grid">
 
         <div>
 
-          <p class="eyebrow light">
+          <p class="eyebrow">
             Start here
           </p>
 
@@ -1409,21 +1353,19 @@
 
         </div>
 
-        <div>
+        <div class="cta-copy">
 
           <p>
-            Bring us the process that wastes time,
-            breaks under volume, depends on one
-            person, or feels held together by
-            workarounds. We will start there.
+            Bring us the workflow that wastes time,
+            breaks under volume, depends on one person,
+            or feels held together by workarounds.
           </p>
 
           <a
             href="contact/"
-            class="button button-light"
+            class="button"
           >
-            Start a project
-            <span>↗</span>
+            Start a Project
           </a>
 
         </div>
@@ -1440,8 +1382,10 @@
 
       <div class="footer-intro">
 
-        <div class="brand footer-brand">
-
+        <a
+          href="./"
+          class="brand"
+        >
           <span class="brand-mark">
             //
           </span>
@@ -1449,8 +1393,7 @@
           <span>
             Your Company
           </span>
-
-        </div>
+        </a>
 
         <p>
           Better systems for how work gets done.
@@ -1460,7 +1403,7 @@
 
       <div>
 
-        <p class="eyebrow">
+        <p class="footer-label">
           Services
         </p>
 
@@ -1479,11 +1422,11 @@
           </a>
 
           <a href="business-process-improvement/">
-            Business Process Improvement
+            Process Improvement
           </a>
 
           <a href="internal-tools/">
-            Internal Tools Development
+            Internal Tools
           </a>
 
         </div>
@@ -1492,14 +1435,14 @@
 
       <div>
 
-        <p class="eyebrow">
+        <p class="footer-label">
           Company
         </p>
 
         <div class="footer-links">
 
           <a href="contact/">
-            Start a project
+            Start a Project
           </a>
 
           <a href="mailto:hello@example.com">
@@ -1515,8 +1458,7 @@
     <div class="shell footer-bottom">
 
       <span>
-        © <span id="year"></span>
-        Your Company
+        © <span id="year"></span> Your Company
       </span>
 
       <span>
@@ -1535,21 +1477,23 @@
       document.querySelector("#mobile-nav");
 
     toggle.addEventListener("click", function () {
+
       const isOpen =
         mobileNav.classList.toggle("is-open");
+
+      toggle.textContent =
+        isOpen ? "Close" : "Menu";
 
       toggle.setAttribute(
         "aria-expanded",
         isOpen
       );
 
-      toggle.textContent =
-        isOpen ? "Close" : "Menu";
-
       document.body.classList.toggle(
         "menu-open",
         isOpen
       );
+
     });
 
     document.getElementById("year").textContent =
