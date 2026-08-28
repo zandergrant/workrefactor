@@ -1,27 +1,35 @@
 /* ==========================================================
    GLOBAL DESIGN SYSTEM
+   Dark editorial / business systems resource
    ========================================================== */
 
 :root {
   --background: #07090d;
   --background-deep: #040507;
   --background-soft: #0c1017;
-  --background-card: #0e131b;
+  --background-raised: #101720;
+  --background-reading: #0d121a;
+  --background-card: #111821;
 
   --nav-background: #252e3a;
 
-  --white: #f8f8f5;
-  --text: #e2e6ec;
-  --muted: #b5bbc5;
-  --quiet: #878e99;
+  --white: #fbfbf8;
+
+  /* Reading colors intentionally higher contrast */
+  --text: #e9edf2;
+  --text-soft: #d7dce3;
+  --muted: #c0c6cf;
+  --quiet: #969eaa;
 
   --blue: #3985ff;
-  --blue-light: #9bc7ff;
+  --blue-light: #a7ceff;
+  --blue-pale: #d4e7ff;
 
-  --line: rgba(255, 255, 255, 0.13);
-  --line-soft: rgba(255, 255, 255, 0.075);
+  --line: rgba(255, 255, 255, 0.15);
+  --line-soft: rgba(255, 255, 255, 0.085);
 
   --container: 1320px;
+  --reading-width: 740px;
 
   --page-padding:
     clamp(22px, 4vw, 64px);
@@ -63,7 +71,7 @@ body {
 
   font-size: 18px;
 
-  line-height: 1.7;
+  line-height: 1.75;
 
   -webkit-font-smoothing:
     antialiased;
@@ -216,7 +224,7 @@ h3 {
 
 
 p {
-  line-height: 1.72;
+  line-height: 1.75;
 }
 
 
@@ -273,7 +281,7 @@ strong {
       255,
       255,
       255,
-      0.08
+      0.09
     );
 
   backdrop-filter:
@@ -328,7 +336,7 @@ strong {
       255,
       255,
       255,
-      0.55
+      0.58
     );
 
   border-radius:
@@ -368,7 +376,7 @@ strong {
       255,
       255,
       255,
-      0.78
+      0.82
     );
 
   font-size: 15px;
@@ -444,7 +452,7 @@ strong {
       255,
       255,
       255,
-      0.75
+      0.78
     );
 
   border-radius:
@@ -509,12 +517,7 @@ strong {
   gap: 10px;
 
   color:
-    rgba(
-      255,
-      255,
-      255,
-      0.82
-    );
+    var(--blue-pale);
 
   font-size: 16px;
 }
@@ -711,7 +714,7 @@ strong {
       255,
       255,
       255,
-      0.7
+      0.78
     );
 }
 
@@ -739,7 +742,7 @@ strong {
       255,
       255,
       255,
-      0.86
+      0.92
     );
 
   font-size:
@@ -750,7 +753,7 @@ strong {
     );
 
   line-height:
-    1.72;
+    1.75;
 }
 
 
@@ -883,9 +886,9 @@ strong {
 .intro-section {
   padding:
     clamp(
-      100px,
-      10vw,
-      160px
+      95px,
+      9vw,
+      145px
     )
     0;
 
@@ -904,11 +907,11 @@ strong {
   grid-template-columns:
     minmax(
       0,
-      0.9fr
+      0.82fr
     )
     minmax(
       0,
-      1.1fr
+      1.18fr
     );
 
   gap:
@@ -922,13 +925,13 @@ strong {
 
 .intro-copy {
   max-width:
-    720px;
+    var(--reading-width);
 }
 
 
 .intro-copy p {
   color:
-    var(--muted);
+    var(--text-soft);
 
   font-size:
     clamp(
@@ -938,7 +941,16 @@ strong {
     );
 
   line-height:
-    1.78;
+    1.8;
+
+  margin-bottom:
+    24px;
+}
+
+
+.intro-copy p:last-child {
+  margin-bottom:
+    0;
 }
 
 
@@ -957,9 +969,9 @@ strong {
 .section {
   padding:
     clamp(
-      105px,
-      11vw,
-      180px
+      100px,
+      10vw,
+      165px
     )
     0;
 
@@ -989,7 +1001,7 @@ strong {
     );
 
   margin-bottom:
-    70px;
+    64px;
 }
 
 
@@ -1017,7 +1029,7 @@ strong {
       280px,
       1.3fr
     )
-    30px;
+    42px;
 
   gap: 30px;
 
@@ -1037,7 +1049,7 @@ strong {
 }
 
 
-.service-row:hover {
+a.service-row:hover {
   padding-left:
     14px;
 
@@ -1046,7 +1058,7 @@ strong {
       57,
       133,
       255,
-      0.025
+      0.035
     );
 }
 
@@ -1063,16 +1075,16 @@ strong {
 
 .service-row p {
   max-width:
-    570px;
+    600px;
 
   margin-bottom: 0;
 
   color:
-    var(--muted);
+    var(--text-soft);
 
   font-size: 17px;
 
-  line-height: 1.72;
+  line-height: 1.75;
 }
 
 
@@ -1080,9 +1092,11 @@ strong {
   color:
     var(--blue-light);
 
-  font-size: 21px;
+  font-size: 17px;
 
-  line-height: 1;
+  line-height: 1.2;
+
+  text-align: right;
 }
 
 
@@ -1101,12 +1115,12 @@ strong {
         45,
         121,
         255,
-        0.09
+        0.075
       ),
       transparent
-      33%
+      34%
     ),
-    var(--background-soft);
+    var(--background-reading);
 
   border-top:
     1px solid
@@ -1124,55 +1138,73 @@ strong {
   grid-template-columns:
     minmax(
       0,
-      0.9fr
+      0.82fr
     )
     minmax(
       0,
-      1.1fr
+      1.18fr
     );
 
   gap:
     clamp(
       70px,
       10vw,
-      150px
+      145px
     );
 }
 
 
 .philosophy-copy {
   max-width:
-    720px;
+    var(--reading-width);
 }
 
 
 .philosophy-copy p {
   color:
-    var(--muted);
+    var(--text-soft);
 
-  font-size: 18px;
+  font-size:
+    18px;
 
   line-height:
-    1.75;
+    1.82;
+
+  margin-bottom:
+    24px;
+}
+
+
+.philosophy-copy p:last-child {
+  margin-bottom:
+    0;
 }
 
 
 .philosophy-copy .large-statement {
   margin-bottom:
-    38px;
+    34px;
 
   color:
-    var(--text);
+    var(--white);
+
+  font-family:
+    "Instrument Serif",
+    Georgia,
+    serif;
 
   font-size:
     clamp(
-      22px,
-      1.9vw,
-      28px
+      26px,
+      2vw,
+      31px
     );
 
   line-height:
-    1.55;
+    1.45;
+
+  letter-spacing:
+    -0.015em;
 }
 
 
@@ -1200,17 +1232,17 @@ strong {
     64px
     minmax(
       220px,
-      0.95fr
+      0.85fr
     )
     minmax(
-      300px,
+      320px,
       1.35fr
     );
 
   gap: 30px;
 
   padding:
-    38px
+    36px
     0;
 
   border-bottom:
@@ -1228,15 +1260,18 @@ strong {
 
 
 .approach-row p {
+  max-width:
+    650px;
+
   margin-bottom: 0;
 
   color:
-    var(--muted);
+    var(--text-soft);
 
   font-size: 17px;
 
   line-height:
-    1.72;
+    1.78;
 }
 
 
@@ -1249,6 +1284,10 @@ strong {
     var(--background-deep);
 
   border-top:
+    1px solid
+    var(--line);
+
+  border-bottom:
     1px solid
     var(--line);
 }
@@ -1275,10 +1314,10 @@ strong {
 
 .friction-card {
   min-height:
-    330px;
+    320px;
 
   padding:
-    30px;
+    32px;
 
   display: flex;
 
@@ -1297,7 +1336,7 @@ strong {
       255,
       255,
       255,
-      0.012
+      0.016
     );
 
   transition:
@@ -1311,7 +1350,7 @@ a.friction-card:hover {
       57,
       133,
       255,
-      0.045
+      0.055
     );
 }
 
@@ -1343,12 +1382,12 @@ a.friction-card:hover {
   margin-bottom: 0;
 
   color:
-    var(--muted);
+    var(--text-soft);
 
   font-size: 17px;
 
   line-height:
-    1.7;
+    1.75;
 }
 
 
@@ -1363,9 +1402,9 @@ a.friction-card:hover {
 
   padding:
     clamp(
-      110px,
-      12vw,
-      190px
+      105px,
+      11vw,
+      175px
     )
     0;
 
@@ -1465,7 +1504,357 @@ a.friction-card:hover {
     18px;
 
   line-height:
-    1.72;
+    1.75;
+}
+
+
+/* ==========================================================
+   RESOURCE PAGE READING SYSTEM
+
+   The Workflow Automation page contains #start.
+   These rules deliberately make resource pages feel more
+   like a publication and less like a landing page.
+   ========================================================== */
+
+body:has(#start) .hero {
+  min-height:
+    680px;
+}
+
+
+body:has(#start) .hero-inner {
+  min-height:
+    680px;
+
+  padding:
+    115px
+    0
+    100px;
+}
+
+
+body:has(#start) .hero h1 {
+  max-width:
+    980px;
+
+  font-size:
+    clamp(
+      72px,
+      8.2vw,
+      128px
+    );
+}
+
+
+body:has(#start) .hero-copy {
+  max-width:
+    720px;
+
+  font-size:
+    19px;
+
+  line-height:
+    1.78;
+}
+
+
+body:has(#start) .section {
+  padding:
+    clamp(
+      82px,
+      8vw,
+      125px
+    )
+    0;
+}
+
+
+body:has(#start) .intro-section {
+  padding:
+    clamp(
+      82px,
+      8vw,
+      125px
+    )
+    0;
+}
+
+
+body:has(#start) .section-heading {
+  margin-bottom:
+    48px;
+}
+
+
+body:has(#start) .section-heading h2,
+body:has(#start) .philosophy-grid h2 {
+  max-width:
+    780px;
+
+  font-size:
+    clamp(
+      42px,
+      4.4vw,
+      66px
+    );
+
+  line-height:
+    1.02;
+
+  letter-spacing:
+    -0.025em;
+}
+
+
+body:has(#start) .intro-grid {
+  grid-template-columns:
+    minmax(
+      220px,
+      0.7fr
+    )
+    minmax(
+      0,
+      1.3fr
+    );
+}
+
+
+body:has(#start) .intro-copy {
+  max-width:
+    720px;
+}
+
+
+body:has(#start) .intro-copy p {
+  color:
+    var(--text);
+
+  font-size:
+    19px;
+
+  line-height:
+    1.82;
+
+  margin-bottom:
+    26px;
+}
+
+
+body:has(#start) .intro-copy p:last-child {
+  color:
+    var(--muted);
+
+  font-size:
+    15px;
+
+  line-height:
+    1.6;
+}
+
+
+body:has(#start) .philosophy-grid {
+  grid-template-columns:
+    minmax(
+      220px,
+      0.68fr
+    )
+    minmax(
+      0,
+      1.32fr
+    );
+
+  gap:
+    clamp(
+      55px,
+      8vw,
+      110px
+    );
+}
+
+
+body:has(#start) .philosophy-copy {
+  max-width:
+    720px;
+}
+
+
+body:has(#start) .philosophy-copy p {
+  color:
+    var(--text);
+
+  font-size:
+    19px;
+
+  line-height:
+    1.82;
+
+  margin-bottom:
+    28px;
+}
+
+
+body:has(#start) .philosophy-copy .large-statement {
+  color:
+    var(--white);
+
+  font-size:
+    clamp(
+      26px,
+      2vw,
+      32px
+    );
+
+  line-height:
+    1.5;
+}
+
+
+body:has(#start) .friction-grid {
+  grid-template-columns:
+    repeat(
+      2,
+      minmax(
+        0,
+        1fr
+      )
+    );
+}
+
+
+body:has(#start) .friction-card {
+  min-height:
+    275px;
+
+  padding:
+    34px;
+}
+
+
+body:has(#start) .friction-card p {
+  color:
+    var(--text-soft);
+
+  font-size:
+    18px;
+
+  line-height:
+    1.78;
+}
+
+
+body:has(#start) .approach-row {
+  grid-template-columns:
+    54px
+    minmax(
+      210px,
+      0.8fr
+    )
+    minmax(
+      0,
+      1.45fr
+    );
+
+  padding:
+    34px
+    0;
+}
+
+
+body:has(#start) .approach-row h3 {
+  font-size:
+    clamp(
+      26px,
+      2vw,
+      34px
+    );
+}
+
+
+body:has(#start) .approach-row p {
+  max-width:
+    680px;
+
+  color:
+    var(--text);
+
+  font-size:
+    18px;
+
+  line-height:
+    1.8;
+}
+
+
+body:has(#start) .service-row {
+  padding:
+    30px
+    0;
+}
+
+
+body:has(#start) .service-row h3 {
+  font-size:
+    clamp(
+      25px,
+      2vw,
+      34px
+    );
+}
+
+
+body:has(#start) .service-row p {
+  color:
+    var(--text-soft);
+
+  font-size:
+    17px;
+
+  line-height:
+    1.75;
+}
+
+
+/* ==========================================================
+   RESOURCE READING ACCENTS
+   ========================================================== */
+
+body:has(#start) .philosophy-section {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(
+        19,
+        27,
+        39,
+        0.96
+      ),
+      rgba(
+        12,
+        17,
+        25,
+        0.98
+      )
+    );
+}
+
+
+body:has(#start) .philosophy-section:nth-of-type(even) {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(
+        13,
+        19,
+        28,
+        0.98
+      ),
+      rgba(
+        8,
+        12,
+        18,
+        0.98
+      )
+    );
 }
 
 
@@ -1640,18 +2029,13 @@ a.friction-card:hover {
 
 .contact-hero-copy p {
   color:
-    rgba(
-      255,
-      255,
-      255,
-      0.82
-    );
+    var(--text);
 
   font-size:
     18px;
 
   line-height:
-    1.72;
+    1.75;
 }
 
 
@@ -1747,13 +2131,13 @@ a.friction-card:hover {
     30px;
 
   color:
-    var(--muted);
+    var(--text-soft);
 
   font-size:
     18px;
 
   line-height:
-    1.75;
+    1.78;
 }
 
 
@@ -1809,7 +2193,7 @@ a.friction-card:hover {
     22px;
 
   color:
-    var(--muted);
+    var(--text-soft);
 
   border-bottom:
     1px solid
@@ -1819,7 +2203,7 @@ a.friction-card:hover {
     15px;
 
   line-height:
-    1.55;
+    1.6;
 }
 
 
@@ -1849,12 +2233,7 @@ a.friction-card:hover {
     28px;
 
   background:
-    rgba(
-      255,
-      255,
-      255,
-      0.025
-    );
+    var(--background-raised);
 
   border:
     1px solid
@@ -1889,13 +2268,13 @@ a.friction-card:hover {
     16px;
 
   color:
-    var(--muted);
+    var(--text-soft);
 
   font-size:
     15px;
 
   line-height:
-    1.65;
+    1.68;
 }
 
 
@@ -2134,7 +2513,7 @@ a.friction-card:hover {
       255,
       255,
       255,
-      0.14
+      0.16
     );
 
   border-radius:
@@ -2148,7 +2527,7 @@ a.friction-card:hover {
       255,
       255,
       255,
-      0.025
+      0.03
     );
 
   color:
@@ -2204,7 +2583,7 @@ a.friction-card:hover {
       255,
       255,
       255,
-      0.24
+      0.28
     );
 }
 
@@ -2220,7 +2599,7 @@ a.friction-card:hover {
       57,
       133,
       255,
-      0.045
+      0.055
     );
 
   box-shadow:
@@ -2229,7 +2608,7 @@ a.friction-card:hover {
       57,
       133,
       255,
-      0.09
+      0.1
     );
 }
 
@@ -2237,7 +2616,7 @@ a.friction-card:hover {
 .form-field input::placeholder,
 .form-field textarea::placeholder {
   color:
-    #737b88;
+    #89919c;
 
   opacity: 1;
 }
@@ -2356,7 +2735,7 @@ a.friction-card:hover {
       255,
       255,
       255,
-      0.018
+      0.024
     );
 
   transition:
@@ -2372,7 +2751,7 @@ a.friction-card:hover {
       155,
       199,
       255,
-      0.42
+      0.48
     );
 
   background:
@@ -2380,7 +2759,7 @@ a.friction-card:hover {
       57,
       133,
       255,
-      0.04
+      0.05
     );
 }
 
@@ -2394,7 +2773,7 @@ a.friction-card:hover {
       57,
       133,
       255,
-      0.09
+      0.1
     );
 
   box-shadow:
@@ -2436,13 +2815,13 @@ a.friction-card:hover {
 
 .form-choice-box > span {
   color:
-    var(--muted);
+    var(--text-soft);
 
   font-size:
     14px;
 
   line-height:
-    1.55;
+    1.58;
 }
 
 
@@ -2451,17 +2830,23 @@ a.friction-card:hover {
    ========================================================== */
 
 .form-honeypot {
-  position: absolute !important;
+  position:
+    absolute !important;
 
-  left: -9999px !important;
+  left:
+    -9999px !important;
 
-  width: 1px !important;
+  width:
+    1px !important;
 
-  height: 1px !important;
+  height:
+    1px !important;
 
-  opacity: 0 !important;
+  opacity:
+    0 !important;
 
-  pointer-events: none !important;
+  pointer-events:
+    none !important;
 }
 
 
@@ -2484,7 +2869,7 @@ a.friction-card:hover {
       255,
       255,
       255,
-      0.018
+      0.022
     );
 
   border-top:
@@ -2569,7 +2954,7 @@ a.friction-card:hover {
     320px;
 
   color:
-    var(--muted);
+    var(--text-soft);
 
   font-size: 16px;
 
@@ -2742,7 +3127,8 @@ a.friction-card:hover {
     color:
       var(--text);
 
-    font-size: 16px;
+    font-size:
+      16px;
   }
 
 
@@ -2792,17 +3178,11 @@ a.friction-card:hover {
   }
 
 
-  .project-sidebar-block {
-    max-width:
-      600px;
-  }
-
-
   .service-row {
     grid-template-columns:
       46px
       1fr
-      28px;
+      34px;
   }
 
 
@@ -2832,6 +3212,42 @@ a.friction-card:hover {
       );
   }
 
+
+  /* Resource pages */
+
+  body:has(#start) .intro-grid,
+  body:has(#start) .philosophy-grid {
+    grid-template-columns:
+      1fr;
+  }
+
+
+  body:has(#start) .intro-grid,
+  body:has(#start) .philosophy-grid {
+    gap:
+      38px;
+  }
+
+
+  body:has(#start) .intro-copy,
+  body:has(#start) .philosophy-copy {
+    max-width:
+      760px;
+  }
+
+
+  body:has(#start) .approach-row {
+    grid-template-columns:
+      46px
+      1fr;
+  }
+
+
+  body:has(#start) .approach-row p {
+    grid-column:
+      2;
+  }
+
 }
 
 
@@ -2851,6 +3267,9 @@ a.friction-card:hover {
   body {
     font-size:
       17px;
+
+    line-height:
+      1.75;
   }
 
 
@@ -2878,35 +3297,35 @@ a.friction-card:hover {
   h1 {
     font-size:
       clamp(
-        62px,
-        18vw,
-        94px
+        60px,
+        17vw,
+        90px
       );
 
     line-height:
-      0.91;
+      0.92;
   }
 
 
   h2 {
     font-size:
       clamp(
-        44px,
-        13vw,
-        64px
+        43px,
+        12vw,
+        60px
       );
 
     line-height:
-      0.99;
+      1;
   }
 
 
   h3 {
     font-size:
       clamp(
-        28px,
-        8.5vw,
-        36px
+        27px,
+        8vw,
+        35px
       );
   }
 
@@ -2918,15 +3337,15 @@ a.friction-card:hover {
   .hero,
   .hero-inner {
     min-height:
-      700px;
+      680px;
   }
 
 
   .hero-inner {
     padding:
-      95px
+      92px
       0
-      85px;
+      82px;
   }
 
 
@@ -2936,6 +3355,9 @@ a.friction-card:hover {
 
     font-size:
       18px;
+
+    line-height:
+      1.75;
   }
 
 
@@ -2970,13 +3392,28 @@ a.friction-card:hover {
   .section,
   .final-cta {
     padding:
-      88px
+      78px
       0;
   }
 
 
   .intro-grid {
-    gap: 36px;
+    gap: 34px;
+  }
+
+
+  .intro-copy p {
+    font-size:
+      18px;
+
+    line-height:
+      1.78;
+  }
+
+
+  .section-heading {
+    margin-bottom:
+      44px;
   }
 
 
@@ -2984,12 +3421,12 @@ a.friction-card:hover {
     grid-template-columns:
       34px
       1fr
-      22px;
+      28px;
 
     gap: 14px;
 
     padding:
-      30px
+      28px
       0;
   }
 
@@ -2997,6 +3434,9 @@ a.friction-card:hover {
   .service-row p {
     font-size:
       17px;
+
+    line-height:
+      1.75;
   }
 
 
@@ -3008,8 +3448,17 @@ a.friction-card:hover {
     gap: 14px;
 
     padding:
-      30px
+      28px
       0;
+  }
+
+
+  .approach-row p {
+    font-size:
+      17px;
+
+    line-height:
+      1.75;
   }
 
 
@@ -3021,7 +3470,150 @@ a.friction-card:hover {
 
   .friction-card {
     min-height:
-      270px;
+      245px;
+
+    padding:
+      26px;
+  }
+
+
+  .friction-card p {
+    font-size:
+      17px;
+
+    line-height:
+      1.75;
+  }
+
+
+  .philosophy-copy p {
+    font-size:
+      17px;
+
+    line-height:
+      1.78;
+  }
+
+
+  /* ========================================================
+     RESOURCE PAGE MOBILE
+     ======================================================== */
+
+  body:has(#start) .hero,
+  body:has(#start) .hero-inner {
+    min-height:
+      620px;
+  }
+
+
+  body:has(#start) .hero-inner {
+    padding:
+      88px
+      0
+      76px;
+  }
+
+
+  body:has(#start) .hero h1 {
+    font-size:
+      clamp(
+        58px,
+        16vw,
+        84px
+      );
+  }
+
+
+  body:has(#start) .hero-copy {
+    font-size:
+      18px;
+
+    line-height:
+      1.78;
+  }
+
+
+  body:has(#start) .section,
+  body:has(#start) .intro-section {
+    padding:
+      72px
+      0;
+  }
+
+
+  body:has(#start) .section-heading h2,
+  body:has(#start) .philosophy-grid h2 {
+    font-size:
+      clamp(
+        40px,
+        11vw,
+        55px
+      );
+
+    line-height:
+      1.02;
+  }
+
+
+  body:has(#start) .intro-copy p,
+  body:has(#start) .philosophy-copy p {
+    font-size:
+      18px;
+
+    line-height:
+      1.82;
+
+    margin-bottom:
+      24px;
+  }
+
+
+  body:has(#start) .philosophy-copy .large-statement {
+    font-size:
+      25px;
+
+    line-height:
+      1.5;
+  }
+
+
+  body:has(#start) .friction-grid {
+    grid-template-columns:
+      1fr;
+  }
+
+
+  body:has(#start) .friction-card {
+    min-height:
+      230px;
+
+    padding:
+      26px;
+  }
+
+
+  body:has(#start) .friction-card p {
+    font-size:
+      17px;
+  }
+
+
+  body:has(#start) .approach-row {
+    grid-template-columns:
+      34px
+      1fr;
+  }
+
+
+  body:has(#start) .approach-row p {
+    grid-column:
+      2;
+
+    font-size:
+      17px;
+
+    line-height:
+      1.78;
   }
 
 
@@ -3040,9 +3632,9 @@ a.friction-card:hover {
   .contact-hero h1 {
     font-size:
       clamp(
-        60px,
-        17vw,
-        88px
+        58px,
+        16vw,
+        84px
       );
   }
 
