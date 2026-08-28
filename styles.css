@@ -1,1923 +1,1244 @@
-/* ==========================================================
-   GLOBAL DESIGN SYSTEM
-   ========================================================== */
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-:root {
-  --background: #07090d;
-  --background-deep: #040507;
-  --background-soft: #0c1017;
-  --background-card: #0e131b;
+  <title>Business Systems, Automation & AI Resources</title>
 
-  --nav-background: #252e3a;
+  <meta
+    name="description"
+    content="A curated library of practical guides, tools, frameworks, and resources for improving business systems, workflows, automation, AI, and internal operations."
+  >
+
+  <meta
+    name="robots"
+    content="index, follow"
+  >
 
-  --white: #f8f8f5;
-  --text: #e2e6ec;
-  --muted: #b5bbc5;
-  --quiet: #878e99;
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
 
-  --blue: #3985ff;
-  --blue-light: #9bc7ff;
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap"
+    rel="stylesheet"
+  >
 
-  --line: rgba(255, 255, 255, 0.13);
-  --line-soft: rgba(255, 255, 255, 0.075);
+  <link
+    rel="stylesheet"
+    href="styles.css"
+  >
+</head>
 
-  --container: 1320px;
 
-  --page-padding:
-    clamp(22px, 4vw, 64px);
-}
+<body>
 
+  <!-- ======================================================
+       HEADER
+       ====================================================== -->
 
-/* ==========================================================
-   RESET
-   ========================================================== */
+  <header class="site-header">
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+    <div class="container header-inner">
 
+      <a
+        class="brand"
+        href="index.html"
+        aria-label="Home"
+      >
+        <span class="brand-symbol">∕∕</span>
 
-html {
-  scroll-behavior: smooth;
-}
+        <span class="brand-name">
+          Your Company
+        </span>
+      </a>
 
 
-body {
-  margin: 0;
+      <nav
+        class="desktop-nav"
+        aria-label="Primary navigation"
+      >
+        <a href="#library">
+          Library
+        </a>
 
-  overflow-x: hidden;
+        <a href="#guides">
+          Guides
+        </a>
 
-  background:
-    var(--background);
+        <a href="#tools">
+          Tools
+        </a>
 
-  color:
-    var(--text);
+        <a href="#services">
+          Services
+        </a>
 
-  font-family:
-    "DM Sans",
-    Arial,
-    Helvetica,
-    sans-serif;
+        <a href="#method">
+          Our Method
+        </a>
 
-  font-size: 18px;
+        <a
+          class="nav-cta"
+          href="contact/"
+        >
+          Get support
+        </a>
+      </nav>
 
-  line-height: 1.7;
 
-  -webkit-font-smoothing:
-    antialiased;
+      <details class="mobile-menu">
 
-  text-rendering:
-    optimizeLegibility;
-}
+        <summary>
+          Menu
+        </summary>
 
+        <div class="mobile-menu-panel">
 
-a {
-  color: inherit;
+          <a href="#library">
+            Library
+          </a>
 
-  text-decoration: none;
-}
+          <a href="#guides">
+            Guides
+          </a>
 
+          <a href="#tools">
+            Tools
+          </a>
 
-button,
-input,
-textarea,
-select {
-  font: inherit;
-}
+          <a href="#services">
+            Services
+          </a>
 
+          <a href="#method">
+            Our Method
+          </a>
 
-img {
-  display: block;
+          <a href="contact/">
+            Get support
+          </a>
 
-  max-width: 100%;
-}
+        </div>
 
+      </details>
 
-::selection {
-  background:
-    var(--blue);
+    </div>
 
-  color:
-    white;
-}
+  </header>
 
 
-/* ==========================================================
-   CONTAINER
-   ========================================================== */
+  <main>
 
-.container {
-  width:
-    min(
-      var(--container),
-      calc(
-        100% -
-        (var(--page-padding) * 2)
-      )
-    );
+    <!-- ======================================================
+         HERO
+         ====================================================== -->
 
-  margin:
-    0 auto;
-}
+    <section class="hero">
 
+      <div class="hero-glow hero-glow-one"></div>
+      <div class="hero-glow hero-glow-two"></div>
 
-/* ==========================================================
-   TYPOGRAPHY
-   ========================================================== */
+      <div class="container hero-inner">
 
-h1,
-h2,
-h3,
-p {
-  margin-top: 0;
-}
+        <p class="eyebrow hero-eyebrow">
+          Business systems · automation · AI
+        </p>
 
+        <h1>
+          Better systems for
+          <em>how work gets done.</em>
+        </h1>
 
-h1,
-h2,
-h3 {
-  color:
-    var(--white);
+        <p class="hero-copy">
+          A curated library of practical guides, frameworks,
+          tools, and examples for improving workflows,
+          reducing manual work, using AI thoughtfully,
+          and building businesses that are easier to run.
+        </p>
 
-  font-family:
-    "Instrument Serif",
-    Georgia,
-    serif;
+        <div class="hero-actions">
 
-  font-weight: 400;
+          <a
+            class="button button-primary"
+            href="#library"
+          >
+            Explore the library
+          </a>
 
-  text-wrap: balance;
-}
+          <a
+            class="button-link"
+            href="contact/"
+          >
+            Need implementation help?
+            <span aria-hidden="true">↗</span>
+          </a>
 
+        </div>
 
-h1 {
-  margin-bottom: 0;
+      </div>
 
-  font-size:
-    clamp(
-      72px,
-      9.6vw,
-      158px
-    );
+      <div
+        class="hero-grid-pattern"
+        aria-hidden="true"
+      ></div>
 
-  line-height: 0.9;
+    </section>
 
-  letter-spacing:
-    -0.05em;
-}
 
+    <!-- ======================================================
+         INTRODUCTION
+         ====================================================== -->
 
-h1 em {
-  display: block;
+    <section class="intro-section">
 
-  font-style: italic;
-}
+      <div class="container intro-grid">
 
+        <div>
 
-h2 {
-  margin-bottom: 0;
+          <p class="eyebrow">
+            Why this exists
+          </p>
 
-  font-size:
-    clamp(
-      48px,
-      6vw,
-      92px
-    );
+          <h2>
+            Running a business should get more systematic as it grows.
+          </h2>
 
-  line-height: 0.97;
+        </div>
 
-  letter-spacing:
-    -0.035em;
-}
 
+        <div class="intro-copy">
 
-h3 {
-  margin-bottom: 0;
+          <p>
+            Instead, growth often creates operational friction.
+          </p>
 
-  font-size:
-    clamp(
-      27px,
-      2.25vw,
-      38px
-    );
+          <p>
+            Spreadsheets multiply. Reporting becomes manual.
+            Information gets copied between systems. Approvals
+            live in inboxes. Important processes depend on one
+            person knowing what happens next.
+          </p>
 
-  line-height: 1.08;
+          <p>
+            This site exists to help you understand those
+            problems, improve the underlying systems, and make
+            better decisions about where process redesign,
+            automation, AI, integrations, or internal tools can
+            actually help.
+          </p>
 
-  letter-spacing:
-    -0.025em;
-}
+        </div>
 
+      </div>
 
-p {
-  line-height: 1.72;
-}
+    </section>
 
 
-.eyebrow {
-  margin-bottom: 24px;
+    <!-- ======================================================
+         LIBRARY
+         ====================================================== -->
 
-  color:
-    var(--blue-light);
+    <section
+      class="section"
+      id="library"
+    >
 
-  font-size: 11px;
+      <div class="container">
 
-  line-height: 1;
+        <div class="section-heading">
 
-  letter-spacing:
-    0.15em;
+          <div>
+            <p class="eyebrow">
+              The library
+            </p>
+          </div>
 
-  text-transform:
-    uppercase;
+          <div>
+            <h2>
+              Start with the problem you are trying to solve.
+            </h2>
+          </div>
 
-  font-weight: 600;
-}
+        </div>
 
 
-/* ==========================================================
-   HEADER
-   ========================================================== */
+        <div class="service-list">
 
-.site-header {
-  position: sticky;
+          <a
+            class="service-row"
+            href="business-process-improvement/"
+          >
 
-  top: 0;
+            <span class="service-number">
+              01
+            </span>
 
-  z-index: 100;
+            <h3>
+              Business Systems
+            </h3>
 
-  background:
-    rgba(
-      37,
-      46,
-      58,
-      0.96
-    );
+            <p>
+              Learn how recurring work should be structured,
+              documented, measured, and improved as a
+              business grows.
+            </p>
 
-  border-bottom:
-    1px solid
-    rgba(
-      255,
-      255,
-      255,
-      0.08
-    );
+            <span
+              class="service-arrow"
+              aria-hidden="true"
+            >
+              ↗
+            </span>
 
-  backdrop-filter:
-    blur(18px);
+          </a>
 
-  -webkit-backdrop-filter:
-    blur(18px);
-}
 
+          <a
+            class="service-row"
+            href="workflow-automation/"
+          >
 
-.header-inner {
-  min-height: 78px;
+            <span class="service-number">
+              02
+            </span>
 
-  display: flex;
+            <h3>
+              Workflows
+            </h3>
 
-  align-items: center;
+            <p>
+              Understand handoffs, approvals, ownership,
+              bottlenecks, and how work should move from
+              beginning to end.
+            </p>
 
-  justify-content:
-    space-between;
+            <span
+              class="service-arrow"
+              aria-hidden="true"
+            >
+              ↗
+            </span>
 
-  gap: 40px;
-}
+          </a>
 
 
-.brand {
-  display:
-    inline-flex;
+          <a
+            class="service-row"
+            href="business-process-automation/"
+          >
 
-  align-items:
-    center;
+            <span class="service-number">
+              03
+            </span>
 
-  gap: 12px;
+            <h3>
+              Automation
+            </h3>
 
-  color:
-    var(--white);
-}
+            <p>
+              Find repetitive work worth automating,
+              understand what should remain human, and
+              evaluate the ROI of changing the process.
+            </p>
 
+            <span
+              class="service-arrow"
+              aria-hidden="true"
+            >
+              ↗
+            </span>
 
-.brand-symbol {
-  width: 37px;
+          </a>
 
-  height: 37px;
 
-  display: grid;
+          <a
+            class="service-row"
+            href="ai-automation/"
+          >
 
-  place-items:
-    center;
+            <span class="service-number">
+              04
+            </span>
 
-  border:
-    1px solid
-    rgba(
-      255,
-      255,
-      255,
-      0.55
-    );
+            <h3>
+              AI for Operations
+            </h3>
 
-  border-radius:
-    50%;
+            <p>
+              Explore practical uses of AI inside real
+              business workflows instead of treating AI
+              as a standalone productivity trick.
+            </p>
 
-  font-size: 11px;
+            <span
+              class="service-arrow"
+              aria-hidden="true"
+            >
+              ↗
+            </span>
 
-  letter-spacing:
-    -0.15em;
-}
+          </a>
 
 
-.brand-name {
-  font-family:
-    "Instrument Serif",
-    Georgia,
-    serif;
+          <a
+            class="service-row"
+            href="internal-tools/"
+          >
 
-  font-size: 25px;
+            <span class="service-number">
+              05
+            </span>
 
-  line-height: 1;
-}
+            <h3>
+              Internal Tools
+            </h3>
 
+            <p>
+              Learn when a spreadsheet is enough, when
+              software should be connected, and when a
+              lightweight internal application makes sense.
+            </p>
 
-.desktop-nav {
-  display: flex;
+            <span
+              class="service-arrow"
+              aria-hidden="true"
+            >
+              ↗
+            </span>
 
-  align-items: center;
+          </a>
 
-  gap: 42px;
-}
+        </div>
 
+      </div>
 
-.desktop-nav > a {
-  color:
-    rgba(
-      255,
-      255,
-      255,
-      0.78
-    );
+    </section>
 
-  font-size: 15px;
 
-  transition:
-    color 0.2s ease;
-}
+    <!-- ======================================================
+         FEATURED GUIDES
+         ====================================================== -->
 
+    <section
+      class="section friction-section"
+      id="guides"
+    >
 
-.desktop-nav > a:hover {
-  color:
-    var(--white);
-}
+      <div class="container">
 
+        <div class="section-heading">
 
-.desktop-nav .nav-cta {
-  min-height: 48px;
+          <div>
+            <p class="eyebrow">
+              Essential guides
+            </p>
+          </div>
 
-  display:
-    inline-flex;
+          <div>
+            <h2>
+              Practical starting points for better-run businesses.
+            </h2>
+          </div>
 
-  align-items:
-    center;
+        </div>
 
-  padding:
-    0 26px;
 
-  border-radius:
-    999px;
+        <div class="friction-grid">
 
-  background:
-    var(--white);
+          <a
+            class="friction-card"
+            href="business-process-automation/"
+          >
 
-  color:
-    #11151b;
+            <span>
+              Guide 01
+            </span>
 
-  font-family:
-    "Instrument Serif",
-    Georgia,
-    serif;
+            <h3>
+              Business Process Automation
+            </h3>
 
-  font-size: 18px;
-}
+            <p>
+              What business process automation actually is,
+              where it creates value, what to automate, and
+              what should remain manual.
+            </p>
 
+          </a>
 
-.mobile-menu {
-  display: none;
-}
 
+          <a
+            class="friction-card"
+            href="workflow-automation/"
+          >
 
-/* ==========================================================
-   BUTTONS
-   ========================================================== */
+            <span>
+              Guide 02
+            </span>
 
-.button {
-  min-height: 58px;
+            <h3>
+              Workflow Automation
+            </h3>
 
-  display:
-    inline-flex;
+            <p>
+              How to connect recurring tasks, approvals,
+              systems, and handoffs without automating a
+              broken process.
+            </p>
 
-  align-items:
-    center;
+          </a>
 
-  justify-content:
-    center;
 
-  padding:
-    0 34px;
+          <a
+            class="friction-card"
+            href="business-process-improvement/"
+          >
 
-  border:
-    1px solid
-    rgba(
-      255,
-      255,
-      255,
-      0.75
-    );
+            <span>
+              Guide 03
+            </span>
 
-  border-radius:
-    999px;
+            <h3>
+              Business Process Improvement
+            </h3>
 
-  font-family:
-    "Instrument Serif",
-    Georgia,
-    serif;
+            <p>
+              A practical framework for finding bottlenecks,
+              unnecessary steps, weak ownership, and recurring
+              operational friction.
+            </p>
 
-  font-size: 20px;
+          </a>
 
-  line-height: 1;
 
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
-}
+          <a
+            class="friction-card"
+            href="ai-automation/"
+          >
 
+            <span>
+              Guide 04
+            </span>
 
-.button-primary {
-  background:
-    var(--white);
+            <h3>
+              AI Automation for Business
+            </h3>
 
-  color:
-    #10141a;
+            <p>
+              Where AI belongs inside real operating
+              workflows, where it does not, and how to
+              evaluate whether the implementation is useful.
+            </p>
 
-  box-shadow:
-    0 0 0 3px
-    rgba(
-      255,
-      255,
-      255,
-      0.08
-    );
-}
+          </a>
 
 
-.button:hover {
-  transform:
-    translateY(-2px);
+          <a
+            class="friction-card"
+            href="internal-tools/"
+          >
 
-  box-shadow:
-    0 0 0 5px
-    rgba(
-      57,
-      133,
-      255,
-      0.18
-    );
-}
+            <span>
+              Guide 05
+            </span>
 
+            <h3>
+              Internal Tools
+            </h3>
 
-.button-link {
-  display:
-    inline-flex;
+            <p>
+              When to build, when to buy, and how lightweight
+              internal systems can replace fragile manual
+              workflows.
+            </p>
 
-  align-items:
-    center;
+          </a>
 
-  gap: 10px;
 
-  color:
-    rgba(
-      255,
-      255,
-      255,
-      0.82
-    );
+          <article class="friction-card">
 
-  font-size: 16px;
-}
+            <span>
+              Framework
+            </span>
 
+            <h3>
+              Fix the Process First
+            </h3>
 
-.button-link:hover {
-  color:
-    var(--white);
-}
+            <p>
+              A simple principle for avoiding one of the most
+              common automation mistakes: making an inefficient
+              workflow happen faster.
+            </p>
 
+          </article>
 
-/* ==========================================================
-   HERO
-   ========================================================== */
+        </div>
 
-.hero {
-  position: relative;
+      </div>
 
-  min-height:
-    calc(
-      100vh -
-      78px
-    );
+    </section>
 
-  overflow: hidden;
 
-  background:
-    radial-gradient(
-      ellipse
-      at
-      52%
-      18%,
-      rgba(
-        86,
-        161,
-        255,
-        0.95
-      )
-      0%,
-      rgba(
-        35,
-        111,
-        225,
-        0.78
-      )
-      19%,
-      rgba(
-        13,
-        56,
-        128,
-        0.67
-      )
-      40%,
-      rgba(
-        6,
-        20,
-        43,
-        0.91
-      )
-      64%,
-      #05070a
-      88%
-    );
-}
+    <!-- ======================================================
+         TOOLS
+         ====================================================== -->
 
+    <section
+      class="section"
+      id="tools"
+    >
 
-.hero::before {
-  content: "";
+      <div class="container">
 
-  position: absolute;
+        <div class="section-heading">
 
-  width: 125%;
+          <div>
+            <p class="eyebrow">
+              Practical tools
+            </p>
+          </div>
 
-  height: 72%;
+          <div>
+            <h2>
+              Move from reading about the problem to measuring it.
+            </h2>
+          </div>
 
-  top: -33%;
+        </div>
 
-  left: -10%;
 
-  background:
-    radial-gradient(
-      ellipse
-      at
-      67%
-      17%,
-      rgba(
-        255,
-        255,
-        255,
-        0.96
-      ),
-      rgba(
-        186,
-        220,
-        255,
-        0.5
-      )
-      19%,
-      rgba(
-        71,
-        145,
-        255,
-        0.18
-      )
-      47%,
-      transparent
-      70%
-    );
+        <div class="approach-list">
 
-  filter:
-    blur(38px);
+          <div class="approach-row">
 
-  opacity: 0.82;
+            <span class="approach-number">
+              01
+            </span>
 
-  pointer-events: none;
-}
+            <h3>
+              Automation ROI Calculator
+            </h3>
 
+            <p>
+              Estimate what a repetitive process is costing
+              today and how much time or capacity could be
+              recovered through automation.
+            </p>
 
-.hero::after {
-  content: "";
+          </div>
 
-  position: absolute;
 
-  left: -10%;
+          <div class="approach-row">
 
-  right: -10%;
+            <span class="approach-number">
+              02
+            </span>
 
-  bottom: -25%;
+            <h3>
+              Process Cost Calculator
+            </h3>
 
-  height: 55%;
+            <p>
+              Calculate the annual labor cost behind a
+              recurring workflow using time, frequency,
+              staffing, and loaded hourly cost.
+            </p>
 
-  background:
-    radial-gradient(
-      ellipse
-      at
-      center,
-      rgba(
-        0,
-        0,
-        0,
-        0.05
-      ),
-      rgba(
-        0,
-        0,
-        0,
-        0.88
-      )
-      68%
-    );
+          </div>
 
-  filter:
-    blur(30px);
 
-  pointer-events: none;
-}
+          <div class="approach-row">
 
+            <span class="approach-number">
+              03
+            </span>
 
-.hero-inner {
-  position: relative;
+            <h3>
+              Systems Assessment
+            </h3>
 
-  z-index: 3;
+            <p>
+              Evaluate where your business relies on manual
+              work, disconnected tools, weak documentation,
+              unclear ownership, or individual memory.
+            </p>
 
-  min-height:
-    calc(
-      100vh -
-      78px
-    );
+          </div>
 
-  padding:
-    clamp(
-      110px,
-      12vw,
-      190px
-    )
-    0
-    115px;
 
-  display: flex;
+          <div class="approach-row">
 
-  flex-direction: column;
+            <span class="approach-number">
+              04
+            </span>
 
-  align-items: center;
+            <h3>
+              AI Opportunity Assessment
+            </h3>
 
-  justify-content: center;
+            <p>
+              Identify workflows where AI may improve speed,
+              consistency, research, document handling, or
+              decision support without forcing AI where it
+              does not belong.
+            </p>
 
-  text-align: center;
-}
+          </div>
 
+        </div>
 
-.hero-eyebrow {
-  color:
-    rgba(
-      255,
-      255,
-      255,
-      0.7
-    );
-}
+      </div>
 
+    </section>
 
-.hero h1 {
-  max-width:
-    1180px;
 
-  margin:
-    0 auto;
-}
+    <!-- ======================================================
+         HOW TO USE THE SITE
+         ====================================================== -->
 
+    <section class="section philosophy-section">
 
-.hero-copy {
-  max-width:
-    800px;
+      <div class="container philosophy-grid">
 
-  margin:
-    38px
-    auto
-    0;
+        <div>
 
-  color:
-    rgba(
-      255,
-      255,
-      255,
-      0.86
-    );
+          <p class="eyebrow">
+            How to use this resource
+          </p>
 
-  font-size:
-    clamp(
-      18px,
-      1.45vw,
-      21px
-    );
+          <h2>
+            Learn it. Apply it. Get help when you need it.
+          </h2>
 
-  line-height:
-    1.72;
-}
+        </div>
 
 
-.hero-actions {
-  margin-top:
-    34px;
+        <div class="philosophy-copy">
 
-  display: flex;
+          <p class="large-statement">
+            The goal is not to make you dependent on a
+            consultant.
+          </p>
 
-  align-items: center;
+          <p>
+            If a guide, framework, or tool gives you enough
+            information to improve the process yourself,
+            use it.
+          </p>
 
-  justify-content: center;
+          <p>
+            If you identify an important opportunity but do
+            not have the time, expertise, or internal capacity
+            to design and implement the solution, that is
+            where our services come in.
+          </p>
 
-  gap: 28px;
+        </div>
 
-  flex-wrap: wrap;
-}
+      </div>
 
+    </section>
 
-.hero-glow {
-  position: absolute;
 
-  pointer-events: none;
+    <!-- ======================================================
+         SERVICES
+         ====================================================== -->
 
-  border-radius:
-    50%;
+    <section
+      class="section"
+      id="services"
+    >
 
-  filter:
-    blur(80px);
-}
+      <div class="container">
 
+        <div class="section-heading">
 
-.hero-glow-one {
-  width: 450px;
+          <div>
+            <p class="eyebrow">
+              Need more support?
+            </p>
+          </div>
 
-  height: 450px;
+          <div>
+            <h2>
+              We can help turn the idea into a working system.
+            </h2>
+          </div>
 
-  top: 20%;
+        </div>
 
-  left: -180px;
 
-  background:
-    rgba(
-      21,
-      95,
-      231,
-      0.18
-    );
-}
+        <div class="service-list">
 
+          <a
+            class="service-row"
+            href="contact/"
+          >
 
-.hero-glow-two {
-  width: 500px;
+            <span class="service-number">
+              01
+            </span>
 
-  height: 500px;
+            <h3>
+              Systems Audit
+            </h3>
 
-  right: -190px;
+            <p>
+              Review how work currently happens, identify
+              operational friction, and prioritize the
+              highest-value opportunities for improvement.
+            </p>
 
-  bottom: 5%;
+            <span
+              class="service-arrow"
+              aria-hidden="true"
+            >
+              ↗
+            </span>
 
-  background:
-    rgba(
-      47,
-      126,
-      255,
-      0.14
-    );
-}
+          </a>
 
 
-.hero-grid-pattern {
-  position: absolute;
+          <a
+            class="service-row"
+            href="business-process-improvement/"
+          >
 
-  inset:
-    auto
-    0
-    0;
+            <span class="service-number">
+              02
+            </span>
 
-  height: 190px;
+            <h3>
+              Process Redesign
+            </h3>
 
-  opacity: 0.13;
+            <p>
+              Simplify recurring work, clarify ownership,
+              remove unnecessary steps, and design a cleaner
+              future-state workflow.
+            </p>
 
-  background-image:
-    linear-gradient(
-      rgba(
-        255,
-        255,
-        255,
-        0.14
-      )
-      1px,
-      transparent
-      1px
-    ),
-    linear-gradient(
-      90deg,
-      rgba(
-        255,
-        255,
-        255,
-        0.14
-      )
-      1px,
-      transparent
-      1px
-    );
+            <span
+              class="service-arrow"
+              aria-hidden="true"
+            >
+              ↗
+            </span>
 
-  background-size:
-    52px
-    52px;
+          </a>
 
-  -webkit-mask-image:
-    linear-gradient(
-      transparent,
-      black
-    );
 
-  mask-image:
-    linear-gradient(
-      transparent,
-      black
-    );
-}
+          <a
+            class="service-row"
+            href="business-process-automation/"
+          >
 
+            <span class="service-number">
+              03
+            </span>
 
-/* ==========================================================
-   INTRO
-   ========================================================== */
+            <h3>
+              Automation Implementation
+            </h3>
 
-.intro-section {
-  padding:
-    clamp(
-      100px,
-      10vw,
-      160px
-    )
-    0;
+            <p>
+              Connect systems and automate repetitive work
+              once the underlying process is clear and worth
+              automating.
+            </p>
 
-  background:
-    var(--background);
+            <span
+              class="service-arrow"
+              aria-hidden="true"
+            >
+              ↗
+            </span>
 
-  border-top:
-    1px solid
-    var(--line);
-}
+          </a>
 
 
-.intro-grid {
-  display: grid;
+          <a
+            class="service-row"
+            href="internal-tools/"
+          >
 
-  grid-template-columns:
-    minmax(
-      0,
-      0.9fr
-    )
-    minmax(
-      0,
-      1.1fr
-    );
+            <span class="service-number">
+              04
+            </span>
 
-  gap:
-    clamp(
-      60px,
-      9vw,
-      140px
-    );
-}
+            <h3>
+              Internal Tool Builds
+            </h3>
 
+            <p>
+              Build lightweight dashboards, portals, intake
+              systems, operational applications, and other
+              focused internal tools.
+            </p>
 
-.intro-copy {
-  max-width:
-    720px;
-}
+            <span
+              class="service-arrow"
+              aria-hidden="true"
+            >
+              ↗
+            </span>
 
+          </a>
 
-.intro-copy p {
-  color:
-    var(--muted);
+        </div>
 
-  font-size:
-    clamp(
-      18px,
-      1.35vw,
-      20px
-    );
+      </div>
 
-  line-height:
-    1.78;
-}
+    </section>
 
 
-.intro-copy p:first-child {
-  color:
-    var(--text);
+    <!-- ======================================================
+         EDITORIAL METHOD
+         ====================================================== -->
 
-  font-weight: 500;
-}
+    <section
+      class="section philosophy-section"
+      id="method"
+    >
 
+      <div class="container philosophy-grid">
 
-/* ==========================================================
-   STANDARD SECTION
-   ========================================================== */
+        <div>
 
-.section {
-  padding:
-    clamp(
-      105px,
-      11vw,
-      180px
-    )
-    0;
+          <p class="eyebrow">
+            Our editorial method
+          </p>
 
-  background:
-    var(--background);
-}
+          <h2>
+            Curated for usefulness, not content volume.
+          </h2>
 
+        </div>
 
-.section-heading {
-  display: grid;
 
-  grid-template-columns:
-    minmax(
-      0,
-      0.75fr
-    )
-    minmax(
-      0,
-      2.4fr
-    );
+        <div class="philosophy-copy">
 
-  gap:
-    clamp(
-      50px,
-      8vw,
-      120px
-    );
+          <p class="large-statement">
+            The internet does not need another library of
+            generic AI-generated business advice.
+          </p>
 
-  margin-bottom:
-    70px;
-}
+          <p>
+            We use a combination of research, primary and
+            industry sources, practical examples, AI-assisted
+            research and drafting, and editorial judgment to
+            develop the resources on this site.
+          </p>
 
+          <p>
+            Topics are selected, structured, reviewed, edited,
+            and maintained around a simple standard:
+            does this actually help someone understand or
+            improve how work gets done?
+          </p>
 
-/* ==========================================================
-   SERVICES
-   ========================================================== */
+          <p>
+            The objective is curation rather than volume —
+            bringing together the concepts, tools, examples,
+            and practical guidance that are worth keeping.
+          </p>
 
-.service-list {
-  border-top:
-    1px solid
-    var(--line);
-}
+        </div>
 
+      </div>
 
-.service-row {
-  display: grid;
+    </section>
 
-  grid-template-columns:
-    64px
-    minmax(
-      230px,
-      0.95fr
-    )
-    minmax(
-      280px,
-      1.3fr
-    )
-    30px;
 
-  gap: 30px;
+    <!-- ======================================================
+         CORE PRINCIPLES
+         ====================================================== -->
 
-  align-items: start;
+    <section class="section approach-section">
 
-  padding:
-    38px
-    0;
+      <div class="container">
 
-  border-bottom:
-    1px solid
-    var(--line);
+        <div class="section-heading">
 
-  transition:
-    padding-left 0.2s ease,
-    background 0.2s ease;
-}
+          <div>
+            <p class="eyebrow">
+              The principles
+            </p>
+          </div>
 
+          <div>
+            <h2>
+              A practical approach to better business systems.
+            </h2>
+          </div>
 
-.service-row:hover {
-  padding-left:
-    14px;
+        </div>
 
-  background:
-    rgba(
-      57,
-      133,
-      255,
-      0.025
-    );
-}
 
+        <div class="approach-list">
 
-.service-number {
-  color:
-    var(--blue-light);
+          <div class="approach-row">
 
-  font-size: 11px;
+            <span class="approach-number">
+              01
+            </span>
 
-  line-height: 1.3;
-}
+            <h3>
+              Understand the work.
+            </h3>
 
+            <p>
+              Map what actually happens today: people,
+              systems, decisions, handoffs, delays,
+              workarounds, and repeated effort.
+            </p>
 
-.service-row p {
-  max-width:
-    570px;
+          </div>
 
-  margin-bottom: 0;
 
-  color:
-    var(--muted);
+          <div class="approach-row">
 
-  font-size: 17px;
+            <span class="approach-number">
+              02
+            </span>
 
-  line-height: 1.72;
-}
+            <h3>
+              Simplify first.
+            </h3>
 
+            <p>
+              Remove unnecessary steps before automating
+              anything. Automating a bad process only makes
+              the bad process happen faster.
+            </p>
 
-.service-arrow {
-  color:
-    var(--blue-light);
+          </div>
 
-  font-size: 21px;
 
-  line-height: 1;
-}
+          <div class="approach-row">
 
+            <span class="approach-number">
+              03
+            </span>
 
-/* ==========================================================
-   PHILOSOPHY
-   ========================================================== */
+            <h3>
+              Use what you already have.
+            </h3>
 
-.philosophy-section {
-  background:
-    radial-gradient(
-      circle
-      at
-      74%
-      25%,
-      rgba(
-        45,
-        121,
-        255,
-        0.09
-      ),
-      transparent
-      33%
-    ),
-    var(--background-soft);
+            <p>
+              Existing tools should be connected or extended
+              before another subscription is automatically
+              added to the technology stack.
+            </p>
 
-  border-top:
-    1px solid
-    var(--line);
+          </div>
 
-  border-bottom:
-    1px solid
-    var(--line);
-}
 
+          <div class="approach-row">
 
-.philosophy-grid {
-  display: grid;
+            <span class="approach-number">
+              04
+            </span>
 
-  grid-template-columns:
-    minmax(
-      0,
-      0.9fr
-    )
-    minmax(
-      0,
-      1.1fr
-    );
+            <h3>
+              Let technology follow the problem.
+            </h3>
 
-  gap:
-    clamp(
-      70px,
-      10vw,
-      150px
-    );
-}
+            <p>
+              Sometimes the answer is AI. Sometimes automation.
+              Sometimes an internal tool. Sometimes simply a
+              clearer process.
+            </p>
 
+          </div>
 
-.philosophy-copy {
-  max-width:
-    720px;
-}
 
+          <div class="approach-row">
 
-.philosophy-copy p {
-  color:
-    var(--muted);
+            <span class="approach-number">
+              05
+            </span>
 
-  font-size: 18px;
+            <h3>
+              Measure what changed.
+            </h3>
 
-  line-height:
-    1.75;
-}
+            <p>
+              Better systems should reduce time, errors,
+              delays, complexity, cost, or unnecessary
+              administrative effort.
+            </p>
 
+          </div>
 
-.philosophy-copy .large-statement {
-  margin-bottom:
-    38px;
+        </div>
 
-  color:
-    var(--text);
+      </div>
 
-  font-size:
-    clamp(
-      22px,
-      1.9vw,
-      28px
-    );
+    </section>
 
-  line-height:
-    1.55;
-}
 
+    <!-- ======================================================
+         FINAL CTA
+         ====================================================== -->
 
-/* ==========================================================
-   APPROACH
-   ========================================================== */
+    <section class="final-cta">
 
-.approach-section {
-  background:
-    var(--background);
-}
+      <div class="final-cta-glow"></div>
 
+      <div class="container final-cta-grid">
 
-.approach-list {
-  border-top:
-    1px solid
-    var(--line);
-}
+        <div>
 
+          <p class="eyebrow">
+            When the guide is not enough
+          </p>
 
-.approach-row {
-  display: grid;
+          <h2>
+            Need help improving the system itself?
+          </h2>
 
-  grid-template-columns:
-    64px
-    minmax(
-      220px,
-      0.95fr
-    )
-    minmax(
-      300px,
-      1.35fr
-    );
+        </div>
 
-  gap: 30px;
 
-  padding:
-    38px
-    0;
+        <div class="final-cta-copy">
 
-  border-bottom:
-    1px solid
-    var(--line);
-}
+          <p>
+            Bring us the workflow that wastes time, breaks
+            under volume, depends on one person, or feels
+            held together by workarounds.
+          </p>
 
+          <a
+            class="button button-primary"
+            href="contact/"
+          >
+            Get implementation help
+          </a>
 
-.approach-number {
-  color:
-    var(--blue-light);
+        </div>
 
-  font-size: 11px;
-}
+      </div>
 
+    </section>
 
-.approach-row p {
-  margin-bottom: 0;
+  </main>
 
-  color:
-    var(--muted);
 
-  font-size: 17px;
+  <!-- ======================================================
+       FOOTER
+       ====================================================== -->
 
-  line-height:
-    1.72;
-}
+  <footer class="site-footer">
 
+    <div class="container footer-grid">
 
-/* ==========================================================
-   FRICTION CARDS
-   ========================================================== */
+      <div>
 
-.friction-section {
-  background:
-    var(--background-deep);
+        <a
+          class="brand footer-brand"
+          href="index.html"
+        >
+          <span class="brand-symbol">∕∕</span>
 
-  border-top:
-    1px solid
-    var(--line);
-}
+          <span class="brand-name">
+            Your Company
+          </span>
+        </a>
 
+        <p class="footer-description">
+          A curated resource for better business systems,
+          workflows, automation, and operations.
+        </p>
 
-.friction-grid {
-  display: grid;
+      </div>
 
-  grid-template-columns:
-    repeat(
-      3,
-      1fr
-    );
 
-  border-top:
-    1px solid
-    var(--line);
+      <div>
 
-  border-left:
-    1px solid
-    var(--line);
-}
+        <p class="footer-heading">
+          Explore
+        </p>
 
+        <div class="footer-links">
 
-.friction-card {
-  min-height:
-    330px;
+          <a href="#library">
+            Library
+          </a>
 
-  padding:
-    30px;
+          <a href="#guides">
+            Guides
+          </a>
 
-  display: flex;
+          <a href="#tools">
+            Tools
+          </a>
 
-  flex-direction: column;
+          <a href="#method">
+            Editorial Method
+          </a>
 
-  border-right:
-    1px solid
-    var(--line);
+        </div>
 
-  border-bottom:
-    1px solid
-    var(--line);
+      </div>
 
-  background:
-    rgba(
-      255,
-      255,
-      255,
-      0.012
-    );
 
-  transition:
-    background 0.2s ease;
-}
+      <div>
 
+        <p class="footer-heading">
+          Get support
+        </p>
 
-.friction-card:hover {
-  background:
-    rgba(
-      57,
-      133,
-      255,
-      0.045
-    );
-}
+        <div class="footer-links">
 
+          <a href="#services">
+            Services
+          </a>
 
-.friction-card > span {
-  color:
-    var(--blue-light);
+          <a href="contact/">
+            Start a project
+          </a>
 
-  font-size: 10px;
-}
+          <a href="mailto:hello@example.com">
+            hello@example.com
+          </a>
 
+        </div>
 
-.friction-card h3 {
-  margin-top:
-    auto;
+      </div>
 
-  margin-bottom:
-    18px;
-}
+    </div>
 
 
-.friction-card p {
-  margin-bottom: 0;
+    <div class="container footer-bottom">
 
-  color:
-    var(--muted);
+      <span>
+        © 2026 Your Company
+      </span>
 
-  font-size: 17px;
+      <span>
+        Curated for practical use.
+      </span>
 
-  line-height:
-    1.7;
-}
+    </div>
 
+  </footer>
 
-/* ==========================================================
-   FINAL CTA
-   ========================================================== */
+</body>
 
-.final-cta {
-  position: relative;
-
-  overflow: hidden;
-
-  padding:
-    clamp(
-      110px,
-      12vw,
-      190px
-    )
-    0;
-
-  background:
-    radial-gradient(
-      ellipse
-      at
-      25%
-      20%,
-      rgba(
-        57,
-        133,
-        255,
-        0.38
-      ),
-      rgba(
-        15,
-        40,
-        83,
-        0.35
-      )
-      31%,
-      var(--background)
-      72%
-    );
-
-  border-top:
-    1px solid
-    var(--line);
-}
-
-
-.final-cta-glow {
-  position: absolute;
-
-  width: 600px;
-
-  height: 600px;
-
-  top: -380px;
-
-  right: 2%;
-
-  border-radius:
-    50%;
-
-  background:
-    rgba(
-      141,
-      194,
-      255,
-      0.19
-    );
-
-  filter:
-    blur(90px);
-}
-
-
-.final-cta-grid {
-  position: relative;
-
-  z-index: 2;
-
-  display: grid;
-
-  grid-template-columns:
-    minmax(
-      0,
-      1.45fr
-    )
-    minmax(
-      300px,
-      0.55fr
-    );
-
-  gap:
-    clamp(
-      70px,
-      9vw,
-      130px
-    );
-
-  align-items:
-    end;
-}
-
-
-.final-cta-copy p {
-  margin-bottom:
-    30px;
-
-  color:
-    var(--text);
-
-  font-size:
-    18px;
-
-  line-height:
-    1.72;
-}
-
-
-/* ==========================================================
-   FOOTER
-   ========================================================== */
-
-.site-footer {
-  padding:
-    85px
-    0
-    28px;
-
-  background:
-    #040507;
-
-  border-top:
-    1px solid
-    var(--line);
-}
-
-
-.footer-grid {
-  display: grid;
-
-  grid-template-columns:
-    1.4fr
-    1fr
-    1fr;
-
-  gap: 80px;
-}
-
-
-.footer-brand {
-  margin-bottom:
-    22px;
-}
-
-
-.footer-description {
-  max-width:
-    300px;
-
-  color:
-    var(--muted);
-
-  font-size: 16px;
-
-  line-height:
-    1.7;
-}
-
-
-.footer-heading {
-  margin-bottom:
-    20px;
-
-  color:
-    var(--blue-light);
-
-  font-size: 10px;
-
-  letter-spacing:
-    0.15em;
-
-  text-transform:
-    uppercase;
-
-  font-weight: 600;
-}
-
-
-.footer-links {
-  display: flex;
-
-  flex-direction: column;
-
-  gap: 13px;
-}
-
-
-.footer-links a {
-  width:
-    fit-content;
-
-  color:
-    var(--muted);
-
-  font-size: 15px;
-
-  transition:
-    color 0.2s ease;
-}
-
-
-.footer-links a:hover {
-  color:
-    var(--white);
-}
-
-
-.footer-bottom {
-  margin-top:
-    80px;
-
-  padding-top:
-    24px;
-
-  border-top:
-    1px solid
-    var(--line);
-
-  display: flex;
-
-  justify-content:
-    space-between;
-
-  gap: 20px;
-
-  color:
-    var(--quiet);
-
-  font-size: 12px;
-}
-
-
-/* ==========================================================
-   TABLET
-   ========================================================== */
-
-@media
-(max-width: 900px) {
-
-  .desktop-nav {
-    display: none;
-  }
-
-
-  .mobile-menu {
-    position: relative;
-
-    display: block;
-  }
-
-
-  .mobile-menu summary {
-    list-style: none;
-
-    cursor: pointer;
-
-    color:
-      var(--white);
-
-    font-size: 15px;
-  }
-
-
-  .mobile-menu summary::-webkit-details-marker {
-    display: none;
-  }
-
-
-  .mobile-menu-panel {
-    position: absolute;
-
-    top: 42px;
-
-    right: 0;
-
-    width:
-      min(
-        360px,
-        calc(
-          100vw -
-          44px
-        )
-      );
-
-    padding: 12px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    background:
-      #111722;
-
-    border:
-      1px solid
-      var(--line);
-
-    border-radius:
-      14px;
-
-    box-shadow:
-      0 25px 70px
-      rgba(
-        0,
-        0,
-        0,
-        0.45
-      );
-  }
-
-
-  .mobile-menu-panel a {
-    padding:
-      15px
-      14px;
-
-    border-bottom:
-      1px solid
-      var(--line-soft);
-
-    color:
-      var(--text);
-
-    font-size: 16px;
-  }
-
-
-  .mobile-menu-panel a:last-child {
-    border-bottom: 0;
-  }
-
-
-  .intro-grid,
-  .philosophy-grid,
-  .section-heading,
-  .final-cta-grid,
-  .footer-grid {
-    grid-template-columns:
-      1fr;
-  }
-
-
-  .section-heading {
-    gap: 15px;
-  }
-
-
-  .service-row {
-    grid-template-columns:
-      46px
-      1fr
-      28px;
-  }
-
-
-  .service-row p {
-    grid-column:
-      2 / 4;
-  }
-
-
-  .approach-row {
-    grid-template-columns:
-      46px
-      1fr;
-  }
-
-
-  .approach-row p {
-    grid-column: 2;
-  }
-
-
-  .friction-grid {
-    grid-template-columns:
-      repeat(
-        2,
-        1fr
-      );
-  }
-
-}
-
-
-/* ==========================================================
-   MOBILE
-   ========================================================== */
-
-@media
-(max-width: 620px) {
-
-  :root {
-    --page-padding:
-      20px;
-  }
-
-
-  body {
-    font-size:
-      17px;
-  }
-
-
-  .header-inner {
-    min-height:
-      70px;
-  }
-
-
-  .brand-name {
-    font-size:
-      22px;
-  }
-
-
-  .brand-symbol {
-    width:
-      34px;
-
-    height:
-      34px;
-  }
-
-
-  h1 {
-    font-size:
-      clamp(
-        62px,
-        18vw,
-        94px
-      );
-
-    line-height:
-      0.91;
-  }
-
-
-  h2 {
-    font-size:
-      clamp(
-        44px,
-        13vw,
-        64px
-      );
-
-    line-height:
-      0.99;
-  }
-
-
-  h3 {
-    font-size:
-      clamp(
-        28px,
-        8.5vw,
-        36px
-      );
-  }
-
-
-  .hero,
-  .hero-inner {
-    min-height:
-      700px;
-  }
-
-
-  .hero-inner {
-    padding:
-      95px
-      0
-      85px;
-  }
-
-
-  .hero-copy {
-    margin-top:
-      28px;
-
-    font-size:
-      18px;
-  }
-
-
-  .hero-actions {
-    width: 100%;
-
-    flex-direction:
-      column;
-
-    gap: 20px;
-  }
-
-
-  .button {
-    min-height:
-      56px;
-
-    padding:
-      0
-      28px;
-
-    font-size:
-      19px;
-  }
-
-
-  .intro-section,
-  .section,
-  .final-cta {
-    padding:
-      88px
-      0;
-  }
-
-
-  .intro-grid {
-    gap: 36px;
-  }
-
-
-  .service-row {
-    grid-template-columns:
-      34px
-      1fr
-      22px;
-
-    gap: 14px;
-
-    padding:
-      30px
-      0;
-  }
-
-
-  .service-row p {
-    font-size:
-      17px;
-  }
-
-
-  .approach-row {
-    grid-template-columns:
-      34px
-      1fr;
-
-    gap: 14px;
-
-    padding:
-      30px
-      0;
-  }
-
-
-  .friction-grid {
-    grid-template-columns:
-      1fr;
-  }
-
-
-  .friction-card {
-    min-height:
-      270px;
-  }
-
-
-  .footer-grid {
-    gap: 48px;
-  }
-
-
-  .footer-bottom {
-    margin-top:
-      55px;
-
-    flex-direction:
-      column;
-  }
-
-}
+</html>
