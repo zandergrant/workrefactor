@@ -1,1265 +1,337 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
+
+  <meta charset="UTF-8">
 
   <meta
     name="viewport"
-    content="width=device-width, initial-scale=1"
+    content="width=device-width, initial-scale=1.0"
   >
 
-  <title>Business Process Automation | Your Company</title>
+  <title>
+    Business Process Automation: A Practical Guide to Automating End-to-End Processes
+  </title>
 
   <meta
     name="description"
-    content="Business process automation services for growing companies. Reduce manual work, connect systems, improve consistency, and build workflows that scale."
+    content="A practical guide to business process automation: what BPA is, examples, process redesign, what to automate, ROI, AI, implementation, tools, and common mistakes."
   >
 
-  <meta name="robots" content="index,follow">
-
-  <style>
-    :root {
-      --ink: #11110f;
-      --paper: #f3f1ea;
-      --paper-2: #e8e5dc;
-      --white: #fffef8;
-      --line: rgba(17,17,15,.16);
-      --line-dark: rgba(255,255,255,.18);
-      --muted: #67675f;
-      --accent: #d8ff5a;
-      --max: 1240px;
-      --pad: clamp(20px,4vw,56px);
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      background: var(--paper);
-      color: var(--ink);
-      font-family: Arial, Helvetica, sans-serif;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    body.menu-open {
-      overflow: hidden;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    button {
-      font: inherit;
-    }
-
-    .shell {
-      width: min(
-        var(--max),
-        calc(100% - (var(--pad) * 2))
-      );
-      margin: 0 auto;
-    }
-
-    .section {
-      padding: clamp(78px,9vw,145px) 0;
-    }
-
-    .section-rule {
-      border-top: 1px solid var(--line);
-    }
-
-    .dark-section {
-      background: var(--ink);
-      color: var(--white);
-    }
-
-    .tint-section {
-      background: var(--paper-2);
-    }
-
-    .eyebrow {
-      margin: 0 0 22px;
-      font-size: 11px;
-      line-height: 1;
-      letter-spacing: .15em;
-      text-transform: uppercase;
-      font-weight: 700;
-    }
-
-    .eyebrow.light {
-      color: rgba(255,255,255,.6);
-    }
-
-    h1,
-    h2,
-    h3,
-    p {
-      margin-top: 0;
-    }
-
-    h1 {
-      margin-bottom: 0;
-      max-width: 1000px;
-      font-size: clamp(54px,8vw,124px);
-      line-height: .91;
-      letter-spacing: -.06em;
-      font-weight: 500;
-    }
-
-    h2 {
-      margin-bottom: 32px;
-      font-size: clamp(38px,5.2vw,74px);
-      line-height: .98;
-      letter-spacing: -.045em;
-      font-weight: 500;
-    }
-
-    h3 {
-      font-size: clamp(22px,2vw,30px);
-      line-height: 1.05;
-      letter-spacing: -.025em;
-      font-weight: 500;
-    }
-
-    p {
-      line-height: 1.55;
-    }
-
-    .large-copy {
-      max-width: 900px;
-      font-size: clamp(19px,2vw,27px);
-      line-height: 1.4;
-      letter-spacing: -.018em;
-      color: #2d2d28;
-    }
-
-    .dark-section p {
-      color: rgba(255,255,255,.72);
-    }
-
-    /* HEADER */
-
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      background: rgba(243,241,234,.92);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .header-inner {
-      height: 72px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: -.02em;
-    }
-
-    .brand-mark {
-      display: inline-grid;
-      place-items: center;
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      background: var(--ink);
-      color: var(--accent);
-      letter-spacing: -.18em;
-      padding-right: 3px;
-    }
-
-    .desktop-nav {
-      display: flex;
-      align-items: center;
-      gap: 28px;
-    }
-
-    .nav-link {
-      font-size: 13px;
-    }
-
-    .nav-button {
-      padding: 24px 0;
-      border: 0;
-      background: none;
-      cursor: pointer;
-      color: inherit;
-    }
-
-    .nav-dropdown {
-      position: relative;
-    }
-
-    .nav-menu {
-      position: absolute;
-      top: 58px;
-      left: -20px;
-      min-width: 360px;
-      padding: 8px;
-      background: var(--ink);
-      color: var(--white);
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(8px);
-      transition: .2s ease;
-    }
-
-    .nav-dropdown:hover .nav-menu,
-    .nav-dropdown:focus-within .nav-menu {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
-    }
-
-    .nav-menu-item {
-      display: grid;
-      grid-template-columns: 36px 1fr;
-      gap: 12px;
-      padding: 16px;
-      border-bottom: 1px solid var(--line-dark);
-      font-size: 14px;
-    }
-
-    .nav-menu-item:last-child {
-      border-bottom: 0;
-    }
-
-    .nav-menu-item:hover {
-      background: rgba(255,255,255,.07);
-    }
-
-    .nav-num {
-      padding-top: 2px;
-      font-size: 10px;
-      color: rgba(255,255,255,.4);
-    }
-
-    .menu-toggle {
-      display: none;
-      border: 0;
-      background: transparent;
-      cursor: pointer;
-    }
-
-    .mobile-nav {
-      display: none;
-    }
-
-    /* BUTTONS */
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      min-height: 50px;
-      padding: 0 20px;
-      border: 1px solid var(--ink);
-      font-size: 13px;
-      font-weight: 700;
-      transition:
-        transform .2s ease,
-        background .2s ease;
-    }
-
-    .button:hover {
-      transform: translateY(-2px);
-    }
-
-    .button-small {
-      min-height: 40px;
-      padding: 0 15px;
-      background: var(--ink);
-      color: var(--white);
-      border: 0;
-    }
-
-    .button-light {
-      background: var(--accent);
-      border-color: var(--accent);
-      color: var(--ink);
-    }
-
-    .text-link {
-      font-size: 13px;
-      text-decoration: underline;
-      text-underline-offset: 5px;
-    }
-
-    .light-link {
-      color: rgba(255,255,255,.75);
-    }
-
-    .button-row {
-      display: flex;
-      gap: 22px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    /* HERO */
-
-    .service-hero {
-      padding: clamp(72px,9vw,130px) 0 34px;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns:
-        minmax(0,1.45fr)
-        minmax(280px,.55fr);
-      gap: clamp(50px,8vw,110px);
-      align-items: end;
-    }
-
-    .hero-copy {
-      max-width: 470px;
-    }
-
-    .hero-copy p {
-      font-size: clamp(18px,1.8vw,24px);
-      line-height: 1.4;
-    }
-
-    .hero-flow {
-      margin-top: clamp(60px,8vw,110px);
-      display: grid;
-      grid-template-columns: repeat(4,1fr);
-      border-top: 1px solid var(--line-dark);
-      border-bottom: 1px solid var(--line-dark);
-    }
-
-    .hero-flow-item {
-      position: relative;
-      min-height: 130px;
-      padding: 22px 40px 22px 0;
-      border-right: 1px solid var(--line-dark);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .hero-flow-item:not(:first-child) {
-      padding-left: 22px;
-    }
-
-    .hero-flow-item:last-child {
-      border-right: 0;
-    }
-
-    .hero-flow-num {
-      font-size: 10px;
-      color: rgba(255,255,255,.38);
-      letter-spacing: .12em;
-    }
-
-    .hero-flow-label {
-      font-size: 18px;
-    }
-
-    .hero-flow-arrow {
-      position: absolute;
-      right: 14px;
-      bottom: 18px;
-      color: var(--accent);
-      font-size: 21px;
-    }
-
-    /* CONTENT */
-
-    .split,
-    .section-heading {
-      display: grid;
-      grid-template-columns: 1fr 3fr;
-      gap: 50px;
-    }
-
-    .section-heading {
-      margin-bottom: 54px;
-    }
-
-    .section-heading .eyebrow {
-      padding-top: 10px;
-    }
-
-    .section-heading h2 {
-      margin-bottom: 0;
-      max-width: 920px;
-    }
-
-    .body-copy {
-      max-width: 860px;
-    }
-
-    .body-copy p {
-      font-size: 18px;
-      color: var(--muted);
-    }
-
-    .body-copy p:last-child {
-      margin-bottom: 0;
-    }
-
-    .problem-grid {
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-      border-top: 1px solid var(--line);
-      border-left: 1px solid var(--line);
-      margin-top: 54px;
-    }
-
-    .problem-card {
-      min-height: 270px;
-      padding: 24px;
-      border-right: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      display: flex;
-      flex-direction: column;
-    }
-
-    .problem-card span {
-      font-size: 10px;
-      color: var(--muted);
-    }
-
-    .problem-card h3 {
-      margin-top: auto;
-      margin-bottom: 18px;
-    }
-
-    .problem-card p {
-      margin-bottom: 0;
-      color: var(--muted);
-    }
-
-    .process-list {
-      border-top: 1px solid var(--line);
-    }
-
-    .process-row {
-      display: grid;
-      grid-template-columns: 70px 1fr 1.35fr;
-      gap: 24px;
-      padding: 28px 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .process-row span {
-      font-size: 11px;
-      color: var(--muted);
-    }
-
-    .process-row h3,
-    .process-row p {
-      margin: 0;
-    }
-
-    .process-row p {
-      color: var(--muted);
-    }
-
-    .use-cases {
-      display: grid;
-      grid-template-columns: repeat(2,1fr);
-      border-top: 1px solid var(--line);
-      border-left: 1px solid var(--line);
-    }
-
-    .use-case {
-      min-height: 250px;
-      padding: 28px;
-      border-right: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .use-case span {
-      display: block;
-      margin-bottom: 68px;
-      font-size: 10px;
-      color: var(--muted);
-    }
-
-    .use-case h3 {
-      margin-bottom: 16px;
-    }
-
-    .use-case p {
-      color: var(--muted);
-      margin-bottom: 0;
-    }
-
-    .outcome-list {
-      border-top: 1px solid var(--line-dark);
-    }
-
-    .outcome-row {
-      display: grid;
-      grid-template-columns: 70px 1fr 1.35fr;
-      gap: 24px;
-      padding: 26px 0;
-      border-bottom: 1px solid var(--line-dark);
-    }
-
-    .outcome-row span {
-      font-size: 11px;
-      color: rgba(255,255,255,.4);
-    }
-
-    .outcome-row h3,
-    .outcome-row p {
-      margin: 0;
-    }
-
-    .outcome-row p {
-      color: rgba(255,255,255,.65);
-    }
-
-    /* FAQ */
-
-    .faq-list {
-      border-top: 1px solid var(--line);
-    }
-
-    details {
-      border-bottom: 1px solid var(--line);
-    }
-
-    summary {
-      position: relative;
-      list-style: none;
-      cursor: pointer;
-      padding: 28px 52px 28px 0;
-      font-size: clamp(19px,1.8vw,25px);
-      line-height: 1.25;
-      letter-spacing: -.02em;
-    }
-
-    summary::-webkit-details-marker {
-      display: none;
-    }
-
-    summary::after {
-      content: "+";
-      position: absolute;
-      right: 4px;
-      top: 25px;
-      font-size: 24px;
-      font-weight: 300;
-    }
-
-    details[open] summary::after {
-      content: "−";
-    }
-
-    .faq-answer {
-      max-width: 820px;
-      padding: 0 52px 28px 0;
-      color: var(--muted);
-      font-size: 17px;
-    }
-
-    /* CTA */
-
-    .cta-grid {
-      display: grid;
-      grid-template-columns: 1.55fr .65fr;
-      gap: 90px;
-      align-items: end;
-    }
-
-    .cta-grid h2 {
-      margin-bottom: 0;
-    }
-
-    .cta-grid > div:last-child p {
-      margin-bottom: 28px;
-      font-size: 18px;
-    }
-
-    /* FOOTER */
-
-    .footer {
-      padding: 70px 0 24px;
-      background: #dcd9cf;
-      border-top: 1px solid var(--line);
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.4fr 1fr 1fr;
-      gap: 70px;
-    }
-
-    .footer-intro p {
-      max-width: 290px;
-      margin-top: 20px;
-      color: var(--muted);
-    }
-
-    .footer-brand {
-      margin-bottom: 16px;
-    }
-
-    .footer-links {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .footer-links a {
-      font-size: 14px;
-    }
-
-    .footer-bottom {
-      margin-top: 70px;
-      padding-top: 22px;
-      border-top: 1px solid var(--line);
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      font-size: 11px;
-      color: var(--muted);
-    }
-
-    .skip-link {
-      position: fixed;
-      left: 16px;
-      top: -100px;
-      z-index: 1000;
-      padding: 12px 16px;
-      background: var(--accent);
-      color: var(--ink);
-    }
-
-    .skip-link:focus {
-      top: 16px;
-    }
-
-    /* MOBILE */
-
-    @media (max-width: 920px) {
-      .desktop-nav {
-        display: none;
+  <meta
+    name="robots"
+    content="index, follow"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="../styles.css"
+  >
+
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Business Process Automation: A Practical Guide to Automating End-to-End Processes",
+    "description": "A practical guide to business process automation, including process redesign, examples, automation opportunities, ROI, AI use cases, implementation principles, and common mistakes.",
+    "dateModified": "2026-08-31",
+    "author": {
+      "@type": "Organization",
+      "name": "Your Company"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Your Company"
+    }
+  }
+  </script>
+
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is business process automation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Business process automation uses technology to redesign and automate recurring end-to-end business processes across multiple steps, systems, teams, decisions, and handoffs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What business processes should be automated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The strongest candidates are frequent, repeatable processes with clear outcomes, significant manual coordination, measurable delays or errors, and enough stability to justify redesign and automation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should not be automated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Processes that are unnecessary, poorly understood, constantly changing, highly judgment-dependent, or fundamentally broken should usually be simplified, clarified, or redesigned before automation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is business process automation different from workflow automation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Workflow automation usually improves a specific sequence of tasks or handoffs, while business process automation operates at a broader scale and may redesign several connected workflows, systems, teams, business rules, and outcomes."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does business process automation require AI?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Many business processes can be automated with rules, integrations, APIs, scripts, and existing software. AI is most useful where the process requires interpretation of unstructured information, drafting, classification, extraction, or other language-heavy work."
+        }
       }
+    ]
+  }
+  </script>
 
-      .menu-toggle {
-        display: block;
-      }
-
-      .mobile-nav {
-        position: fixed;
-        inset: 72px 0 0 0;
-        z-index: 49;
-        width: 100%;
-        padding: 28px var(--pad) 48px;
-        background: var(--ink);
-        color: var(--white);
-        flex-direction: column;
-      }
-
-      .mobile-nav.is-open {
-        display: flex;
-      }
-
-      .mobile-nav a {
-        padding: 18px 0;
-        border-bottom: 1px solid var(--line-dark);
-        font-size: 18px;
-      }
-
-      .hero-grid,
-      .split,
-      .section-heading,
-      .cta-grid,
-      .footer-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-copy {
-        max-width: 640px;
-      }
-
-      .hero-flow {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .hero-flow-item:nth-child(2) {
-        border-right: 0;
-      }
-
-      .hero-flow-item:nth-child(-n+2) {
-        border-bottom: 1px solid var(--line-dark);
-      }
-
-      .problem-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .process-row,
-      .outcome-row {
-        grid-template-columns: 45px 1fr;
-      }
-
-      .process-row p,
-      .outcome-row p {
-        grid-column: 2;
-      }
-    }
-
-    @media (max-width: 620px) {
-      h1 {
-        font-size: clamp(50px,16vw,76px);
-      }
-
-      .hero-flow,
-      .problem-grid,
-      .use-cases {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-flow-item {
-        min-height: 110px;
-        border-right: 0;
-        border-bottom: 1px solid var(--line-dark);
-        padding-left: 0 !important;
-      }
-
-      .hero-flow-item:last-child {
-        border-bottom: 0;
-      }
-
-      .footer-bottom {
-        flex-direction: column;
-      }
-    }
-  </style>
 </head>
+
 
 <body>
 
-  <a class="skip-link" href="#main">
-    Skip to content
-  </a>
+
+  <!-- ======================================================
+       HEADER
+       ====================================================== -->
 
   <header class="site-header">
 
-    <div class="shell header-inner">
+    <div class="container header-inner">
 
       <a
         class="brand"
-        href="../"
+        href="../index.html"
         aria-label="Home"
       >
-        <span class="brand-mark">
-          //
+
+        <span class="brand-symbol">
+          ∕∕
         </span>
 
-        <span>
+        <span class="brand-name">
           Your Company
         </span>
+
       </a>
+
 
       <nav
         class="desktop-nav"
         aria-label="Primary navigation"
       >
 
-        <div class="nav-dropdown">
+        <a href="../index.html#library">
+          Library
+        </a>
 
-          <button
-            class="nav-link nav-button"
-            type="button"
-          >
-            Services ↘
-          </button>
+        <a href="../index.html#guides">
+          Guides
+        </a>
 
-          <div class="nav-menu">
+        <a href="../index.html#tools">
+          Tools
+        </a>
 
-            <a
-              class="nav-menu-item"
-              href="../business-process-automation/"
-            >
-              <span class="nav-num">01</span>
-              <span>
-                Business Process Automation
-              </span>
-            </a>
-
-            <a
-              class="nav-menu-item"
-              href="../workflow-automation/"
-            >
-              <span class="nav-num">02</span>
-              <span>
-                Workflow Automation
-              </span>
-            </a>
-
-            <a
-              class="nav-menu-item"
-              href="../ai-automation/"
-            >
-              <span class="nav-num">03</span>
-              <span>
-                AI Automation
-              </span>
-            </a>
-
-            <a
-              class="nav-menu-item"
-              href="../business-process-improvement/"
-            >
-              <span class="nav-num">04</span>
-              <span>
-                Business Process Improvement
-              </span>
-            </a>
-
-            <a
-              class="nav-menu-item"
-              href="../internal-tools/"
-            >
-              <span class="nav-num">05</span>
-              <span>
-                Internal Tools Development
-              </span>
-            </a>
-
-          </div>
-        </div>
-
-        <a
-          class="nav-link"
-          href="#process"
-        >
-          Process
+        <a href="../index.html#services">
+          Services
         </a>
 
         <a
-          class="nav-link"
-          href="#faq"
-        >
-          FAQ
-        </a>
-
-        <a
-          class="button button-small"
+          class="nav-cta"
           href="../contact/"
         >
-          Start a project
+          Get support
         </a>
 
       </nav>
 
-      <button
-        class="menu-toggle"
-        type="button"
-        aria-expanded="false"
-        aria-controls="mobile-nav"
-      >
-        Menu
-      </button>
+
+      <details class="mobile-menu">
+
+        <summary>
+          Menu
+        </summary>
+
+        <div class="mobile-menu-panel">
+
+          <a href="../index.html">
+            Home
+          </a>
+
+          <a href="../index.html#library">
+            Library
+          </a>
+
+          <a href="../index.html#guides">
+            Guides
+          </a>
+
+          <a href="../index.html#tools">
+            Tools
+          </a>
+
+          <a href="../index.html#services">
+            Services
+          </a>
+
+          <a href="../contact/">
+            Get support
+          </a>
+
+        </div>
+
+      </details>
 
     </div>
 
-    <nav
-      id="mobile-nav"
-      class="mobile-nav"
-      aria-label="Mobile navigation"
-    >
-
-      <a href="../">
-        Home
-      </a>
-
-      <a href="../business-process-automation/">
-        Business Process Automation
-      </a>
-
-      <a href="../workflow-automation/">
-        Workflow Automation
-      </a>
-
-      <a href="../ai-automation/">
-        AI Automation
-      </a>
-
-      <a href="../business-process-improvement/">
-        Business Process Improvement
-      </a>
-
-      <a href="../internal-tools/">
-        Internal Tools Development
-      </a>
-
-      <a href="../contact/">
-        Start a project ↗
-      </a>
-
-    </nav>
-
   </header>
 
-  <main id="main">
 
-    <!-- HERO -->
+  <main>
 
-    <section class="service-hero dark-section">
 
-      <div class="shell hero-grid">
+    <!-- ======================================================
+         HERO
+         ====================================================== -->
 
-        <div>
+    <section class="hero">
 
-          <p class="eyebrow light">
-            Business Process Automation
-          </p>
+      <div class="hero-glow hero-glow-one"></div>
+      <div class="hero-glow hero-glow-two"></div>
 
-          <h1>
-            Remove work that should not require
-            a person.
-          </h1>
+      <div class="container hero-inner">
 
-        </div>
-
-        <div class="hero-copy">
-
-          <p>
-            We redesign repetitive business processes
-            and automate the parts that waste time,
-            create errors, or slow your team down.
-          </p>
-
-          <div class="button-row">
-
-            <a
-              href="../contact/"
-              class="button button-light"
-            >
-              Start a project
-              <span>↗</span>
-            </a>
-
-            <a
-              href="#process"
-              class="text-link light-link"
-            >
-              See how it works ↓
-            </a>
-
-          </div>
-
-        </div>
-
-      </div>
-
-      <div class="shell hero-flow">
-
-        <div class="hero-flow-item">
-          <span class="hero-flow-num">01</span>
-          <span class="hero-flow-label">
-            Find the friction
-          </span>
-          <span class="hero-flow-arrow">→</span>
-        </div>
-
-        <div class="hero-flow-item">
-          <span class="hero-flow-num">02</span>
-          <span class="hero-flow-label">
-            Redesign the process
-          </span>
-          <span class="hero-flow-arrow">→</span>
-        </div>
-
-        <div class="hero-flow-item">
-          <span class="hero-flow-num">03</span>
-          <span class="hero-flow-label">
-            Automate the right steps
-          </span>
-          <span class="hero-flow-arrow">→</span>
-        </div>
-
-        <div class="hero-flow-item">
-          <span class="hero-flow-num">04</span>
-          <span class="hero-flow-label">
-            Measure the result
-          </span>
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- WHAT IT IS -->
-
-    <section class="section">
-
-      <div class="shell split">
-
-        <p class="eyebrow">
-          What it is
+        <p class="eyebrow hero-eyebrow">
+          Curated Guide · Business Process Automation
         </p>
 
-        <div>
+        <h1>
+          Business process
+          <em>automation.</em>
+        </h1>
 
-          <h2>
-            Business process automation is not
-            about automating everything.
-          </h2>
+        <p class="hero-copy">
+          A practical guide to redesigning and automating
+          end-to-end business processes across systems,
+          departments, decisions, and recurring operational work.
+        </p>
 
-          <p class="large-copy">
-            It is about finding recurring work that
-            consumes time without requiring much
-            judgment, then redesigning the process so
-            software can handle more of it reliably.
-          </p>
+        <div class="hero-actions">
 
-          <div class="body-copy">
+          <a
+            class="button button-primary"
+            href="#start"
+          >
+            Read the guide
+          </a>
 
-            <p>
-              The strongest opportunities usually sit
-              between systems and people: copying
-              information, sending reminders,
-              preparing reports, routing requests,
-              creating documents, updating records,
-              scheduling tasks, and checking whether
-              something happened.
-            </p>
-
-            <p>
-              We start with the workflow itself.
-              If the process is unnecessarily complex,
-              we simplify it before adding automation.
-            </p>
-
-          </div>
+          <a
+            class="button-link"
+            href="#checklist"
+          >
+            Find process opportunities
+            <span aria-hidden="true">↓</span>
+          </a>
 
         </div>
 
       </div>
 
-    </section>
-
-    <!-- PROBLEMS -->
-
-    <section class="section section-rule">
-
-      <div class="shell">
-
-        <div class="section-heading">
-
-          <p class="eyebrow">
-            Common problems
-          </p>
-
-          <h2>
-            Signs a process is ready
-            for automation.
-          </h2>
-
-        </div>
-
-        <div class="problem-grid">
-
-          <article class="problem-card">
-            <span>01</span>
-
-            <h3>
-              Repetitive data entry
-            </h3>
-
-            <p>
-              Employees copy the same information
-              between spreadsheets, CRMs, forms,
-              documents, or project systems.
-            </p>
-          </article>
-
-          <article class="problem-card">
-            <span>02</span>
-
-            <h3>
-              Manual reporting
-            </h3>
-
-            <p>
-              Recurring reports require exports,
-              cleanup, formatting, calculations,
-              and status chasing.
-            </p>
-          </article>
-
-          <article class="problem-card">
-            <span>03</span>
-
-            <h3>
-              Inbox-based workflows
-            </h3>
-
-            <p>
-              Requests, approvals, and handoffs
-              depend on people remembering to
-              respond to email.
-            </p>
-          </article>
-
-          <article class="problem-card">
-            <span>04</span>
-
-            <h3>
-              Repeated document creation
-            </h3>
-
-            <p>
-              Teams repeatedly produce proposals,
-              reports, summaries, forms, or
-              standardized documents.
-            </p>
-          </article>
-
-          <article class="problem-card">
-            <span>05</span>
-
-            <h3>
-              Status chasing
-            </h3>
-
-            <p>
-              People spend time asking whether
-              work is complete because there is
-              no reliable system of record.
-            </p>
-          </article>
-
-          <article class="problem-card">
-            <span>06</span>
-
-            <h3>
-              Administrative bottlenecks
-            </h3>
-
-            <p>
-              One employee becomes responsible
-              for manually moving work between
-              people and systems.
-            </p>
-          </article>
-
-        </div>
-
-      </div>
+      <div
+        class="hero-grid-pattern"
+        aria-hidden="true"
+      ></div>
 
     </section>
 
-    <!-- PROCESS -->
+
+    <!-- ======================================================
+         GUIDE META / QUICK ANSWER
+         ====================================================== -->
 
     <section
-      class="section tint-section"
-      id="process"
+      class="intro-section"
+      id="start"
     >
 
-      <div class="shell">
+      <div class="container intro-grid">
 
-        <div class="section-heading">
+        <div>
 
           <p class="eyebrow">
-            Our process
+            Quick answer
           </p>
 
           <h2>
-            Fix the process.
-            Then automate it.
+            What is business process automation?
           </h2>
 
         </div>
 
-        <div class="process-list">
 
-          <div class="process-row">
-            <span>01</span>
+        <div class="intro-copy">
 
-            <h3>
-              Map the current workflow
-            </h3>
+          <p>
+            Business process automation, often shortened to BPA,
+            uses technology to redesign and automate recurring
+            end-to-end business processes across multiple steps,
+            systems, teams, decisions, and handoffs.
+          </p>
 
-            <p>
-              We document how work actually moves
-              today: systems, people, decisions,
-              handoffs, delays, and manual steps.
-            </p>
-          </div>
+          <p>
+            The important word is
+            <strong>end-to-end.</strong>
+            BPA is not simply making one task faster. It asks how
+            work moves from an initial trigger to a finished
+            business outcome — and how that entire path can be
+            simplified, standardized, connected, and automated.
+          </p>
 
-          <div class="process-row">
-            <span>02</span>
+          <p>
+            A client onboarding process, for example, may begin
+            when a contract is signed and end when the client is
+            fully provisioned, billed, introduced to the delivery
+            team, and ready to begin work. That process may cross
+            sales, finance, operations, project management,
+            document systems, and client communication.
+          </p>
 
-            <h3>
-              Remove unnecessary work
-            </h3>
-
-            <p>
-              Before adding technology, we question
-              whether each step, approval, field,
-              meeting, or handoff needs to exist.
-            </p>
-          </div>
-
-          <div class="process-row">
-            <span>03</span>
-
-            <h3>
-              Design the future workflow
-            </h3>
-
-            <p>
-              We define what should happen, who
-              should own it, and where automation
-              can reliably replace manual effort.
-            </p>
-          </div>
-
-          <div class="process-row">
-            <span>04</span>
-
-            <h3>
-              Connect the systems
-            </h3>
-
-            <p>
-              We use integrations, APIs, automation
-              platforms, scripts, AI, or lightweight
-              custom tools where appropriate.
-            </p>
-          </div>
-
-          <div class="process-row">
-            <span>05</span>
-
-            <h3>
-              Measure the improvement
-            </h3>
-
-            <p>
-              The result should show up in reduced
-              hours, fewer errors, faster turnaround,
-              better visibility, or greater capacity.
-            </p>
-          </div>
+          <p>
+            <strong>
+              Last reviewed:
+            </strong>
+            August 2026
+          </p>
 
         </div>
 
@@ -1267,110 +339,704 @@
 
     </section>
 
-    <!-- USE CASES -->
+
+    <!-- ======================================================
+         CONTENTS
+         ====================================================== -->
 
     <section class="section">
 
-      <div class="shell">
+      <div class="container">
 
         <div class="section-heading">
 
+          <div>
+
+            <p class="eyebrow">
+              In this guide
+            </p>
+
+          </div>
+
+          <div>
+
+            <h2>
+              Start with the process, not the technology.
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <div class="service-list">
+
+          <a
+            class="service-row"
+            href="#how-it-works"
+          >
+
+            <span class="service-number">
+              01
+            </span>
+
+            <h3>
+              How business process automation works
+            </h3>
+
+            <p>
+              The stages, systems, rules, handoffs, records,
+              and exceptions that make up an end-to-end process.
+            </p>
+
+            <span class="service-arrow">
+              ↓
+            </span>
+
+          </a>
+
+
+          <a
+            class="service-row"
+            href="#examples"
+          >
+
+            <span class="service-number">
+              02
+            </span>
+
+            <h3>
+              Business process automation examples
+            </h3>
+
+            <p>
+              Practical examples across client delivery,
+              finance, HR, sales, and internal operations.
+            </p>
+
+            <span class="service-arrow">
+              ↓
+            </span>
+
+          </a>
+
+
+          <a
+            class="service-row"
+            href="#checklist"
+          >
+
+            <span class="service-number">
+              03
+            </span>
+
+            <h3>
+              What processes are worth automating?
+            </h3>
+
+            <p>
+              A practical test for identifying processes
+              with enough friction, volume, and value.
+            </p>
+
+            <span class="service-arrow">
+              ↓
+            </span>
+
+          </a>
+
+
+          <a
+            class="service-row"
+            href="#redesign"
+          >
+
+            <span class="service-number">
+              04
+            </span>
+
+            <h3>
+              Redesign before you automate
+            </h3>
+
+            <p>
+              How to remove unnecessary work before
+              technology makes the process harder to change.
+            </p>
+
+            <span class="service-arrow">
+              ↓
+            </span>
+
+          </a>
+
+
+          <a
+            class="service-row"
+            href="#avoid"
+          >
+
+            <span class="service-number">
+              05
+            </span>
+
+            <h3>
+              What should not be automated?
+            </h3>
+
+            <p>
+              Where human judgment, uncertainty, instability,
+              or unnecessary work make automation a poor fit.
+            </p>
+
+            <span class="service-arrow">
+              ↓
+            </span>
+
+          </a>
+
+
+          <a
+            class="service-row"
+            href="#roi"
+          >
+
+            <span class="service-number">
+              06
+            </span>
+
+            <h3>
+              Business process automation ROI
+            </h3>
+
+            <p>
+              How to estimate the value of a process
+              improvement before you build it.
+            </p>
+
+            <span class="service-arrow">
+              ↓
+            </span>
+
+          </a>
+
+
+          <a
+            class="service-row"
+            href="#ai"
+          >
+
+            <span class="service-number">
+              07
+            </span>
+
+            <h3>
+              AI and business process automation
+            </h3>
+
+            <p>
+              Where AI expands what can be automated —
+              and where deterministic systems remain better.
+            </p>
+
+            <span class="service-arrow">
+              ↓
+            </span>
+
+          </a>
+
+
+          <a
+            class="service-row"
+            href="#implementation"
+          >
+
+            <span class="service-number">
+              08
+            </span>
+
+            <h3>
+              How to automate a business process
+            </h3>
+
+            <p>
+              A practical implementation framework from
+              current-state mapping through measurement.
+            </p>
+
+            <span class="service-arrow">
+              ↓
+            </span>
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ======================================================
+         HOW IT WORKS
+         ====================================================== -->
+
+    <section
+      class="section philosophy-section"
+      id="how-it-works"
+    >
+
+      <div class="container philosophy-grid">
+
+        <div>
+
           <p class="eyebrow">
-            Examples
+            01 · The mechanics
           </p>
 
           <h2>
-            Processes businesses
-            commonly automate.
+            How business process automation works.
           </h2>
 
         </div>
 
-        <div class="use-cases">
 
-          <article class="use-case">
-            <span>01</span>
+        <div class="philosophy-copy">
+
+          <p class="large-statement">
+            A business process is the path from a business event
+            to a business outcome.
+          </p>
+
+          <p>
+            Something starts the process: a lead becomes a
+            customer, an invoice arrives, an employee is hired,
+            a request is submitted, a project closes, or a renewal
+            approaches.
+          </p>
+
+          <p>
+            The work then moves across people and systems. Data
+            is collected. Decisions are made. Documents are
+            generated. Approvals happen. Records are updated.
+            Employees perform tasks. Customers or vendors receive
+            communication. Exceptions are handled.
+          </p>
+
+          <p>
+            BPA examines that entire sequence rather than
+            automating isolated tasks in place. It asks which
+            steps should disappear, which should be standardized,
+            which should happen automatically, which system should
+            own the record, and where a person should remain
+            involved.
+          </p>
+
+          <p>
+            The result is not necessarily a fully automated
+            process. The better goal is a process that is easier
+            to run, easier to understand, more reliable at higher
+            volume, and less dependent on people remembering what
+            happens next.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ======================================================
+         PROCESS ANATOMY
+         ====================================================== -->
+
+    <section class="section">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div>
+
+            <p class="eyebrow">
+              Anatomy
+            </p>
+
+          </div>
+
+          <div>
+
+            <h2>
+              The seven parts of an automated business process.
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <div class="friction-grid">
+
+
+          <article class="friction-card">
+
+            <span>
+              01
+            </span>
+
+            <h3>
+              Trigger
+            </h3>
+
+            <p>
+              The event that begins the process: a signed
+              contract, new hire, incoming request, invoice,
+              status change, deadline, or other business event.
+            </p>
+
+          </article>
+
+
+          <article class="friction-card">
+
+            <span>
+              02
+            </span>
+
+            <h3>
+              Inputs
+            </h3>
+
+            <p>
+              The information, documents, approvals, and context
+              required for the process to proceed correctly.
+            </p>
+
+          </article>
+
+
+          <article class="friction-card">
+
+            <span>
+              03
+            </span>
+
+            <h3>
+              Rules
+            </h3>
+
+            <p>
+              Business logic determines what happens next,
+              who owns the work, what requires approval,
+              and which path the process should follow.
+            </p>
+
+          </article>
+
+
+          <article class="friction-card">
+
+            <span>
+              04
+            </span>
+
+            <h3>
+              Workflows
+            </h3>
+
+            <p>
+              The smaller sequences of tasks, actions, handoffs,
+              and decisions that make up the larger process.
+            </p>
+
+          </article>
+
+
+          <article class="friction-card">
+
+            <span>
+              05
+            </span>
+
+            <h3>
+              Systems
+            </h3>
+
+            <p>
+              CRMs, project tools, accounting platforms,
+              databases, document systems, communication tools,
+              and internal applications that hold or move data.
+            </p>
+
+          </article>
+
+
+          <article class="friction-card">
+
+            <span>
+              06
+            </span>
+
+            <h3>
+              Exceptions
+            </h3>
+
+            <p>
+              The non-standard cases that require another path,
+              additional information, escalation, or human
+              judgment.
+            </p>
+
+          </article>
+
+
+          <article class="friction-card">
+
+            <span>
+              07
+            </span>
+
+            <h3>
+              Outcome
+            </h3>
+
+            <p>
+              The defined business result that tells you the
+              process is complete and whether it succeeded.
+            </p>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ======================================================
+         PROCESS VS WORKFLOW
+         ====================================================== -->
+
+    <section class="section philosophy-section">
+
+      <div class="container philosophy-grid">
+
+        <div>
+
+          <p class="eyebrow">
+            Terminology
+          </p>
+
+          <h2>
+            Business process automation vs. workflow automation.
+          </h2>
+
+        </div>
+
+
+        <div class="philosophy-copy">
+
+          <p class="large-statement">
+            The difference is mostly one of scope.
+          </p>
+
+          <p>
+            A workflow is usually a specific sequence of work:
+            review a request, approve it, update a record, notify
+            the requester.
+          </p>
+
+          <p>
+            A business process may contain several connected
+            workflows, multiple departments, shared data,
+            business rules, system integrations, and a larger
+            outcome.
+          </p>
+
+          <p>
+            Employee onboarding, for example, can include an HR
+            workflow, an IT provisioning workflow, a payroll
+            workflow, a manager checklist, a compliance workflow,
+            and a series of employee communications.
+          </p>
+
+          <p>
+            Workflow automation makes individual flows more
+            efficient. Business process automation looks across
+            those flows and redesigns how the complete process
+            operates.
+          </p>
+
+          <p>
+            In practice, the labels matter less than the design
+            question: are you fixing one sequence of tasks, or
+            the broader operating process that contains them?
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ======================================================
+         EXAMPLES
+         ====================================================== -->
+
+    <section
+      class="section"
+      id="examples"
+    >
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div>
+
+            <p class="eyebrow">
+              02 · Examples
+            </p>
+
+          </div>
+
+          <div>
+
+            <h2>
+              What business process automation looks like in practice.
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <div class="friction-grid">
+
+
+          <article class="friction-card">
+
+            <span>
+              Client delivery
+            </span>
 
             <h3>
               Client onboarding
             </h3>
 
             <p>
-              Intake forms, document requests,
-              account creation, scheduling,
-              notifications, and internal tasks.
+              A signed contract initiates structured intake,
+              billing setup, project creation, folder and document
+              generation, internal assignments, client
+              communication, and kickoff scheduling.
             </p>
+
           </article>
 
-          <article class="use-case">
-            <span>02</span>
+
+          <article class="friction-card">
+
+            <span>
+              Sales
+            </span>
 
             <h3>
-              Reporting
+              Lead-to-customer process
             </h3>
 
             <p>
-              Collect data, calculate metrics,
-              generate reports, distribute results,
-              and flag exceptions automatically.
+              Leads are captured, enriched, scored, routed,
+              followed up, moved through defined stages, handed to
+              delivery, and converted into the systems needed
+              after the sale.
             </p>
+
           </article>
 
-          <article class="use-case">
-            <span>03</span>
+
+          <article class="friction-card">
+
+            <span>
+              Finance
+            </span>
 
             <h3>
-              Lead management
+              Procure-to-pay
             </h3>
 
             <p>
-              Capture leads, enrich records,
-              assign ownership, trigger follow-up,
-              and update the CRM.
+              Purchase requests, approvals, vendor information,
+              purchase orders, invoices, payment status, and
+              accounting records move through one controlled
+              process instead of separate inboxes and spreadsheets.
             </p>
+
           </article>
 
-          <article class="use-case">
-            <span>04</span>
+
+          <article class="friction-card">
+
+            <span>
+              HR
+            </span>
 
             <h3>
-              Approvals
+              Employee onboarding
             </h3>
 
             <p>
-              Route requests to the right person,
-              capture decisions, send reminders,
-              and maintain a clear record.
+              A new hire triggers documents, payroll setup,
+              equipment requests, account provisioning, policy
+              acknowledgments, manager tasks, orientation, and
+              follow-up.
             </p>
+
           </article>
 
-          <article class="use-case">
-            <span>05</span>
+
+          <article class="friction-card">
+
+            <span>
+              Operations
+            </span>
 
             <h3>
-              Document workflows
+              Request-to-resolution
             </h3>
 
             <p>
-              Generate, classify, summarize,
-              review, route, and store recurring
-              business documents.
+              Internal requests enter through structured intake,
+              are categorized and prioritized, assigned to an
+              owner, tracked, escalated when necessary, and closed
+              with a record of the outcome.
             </p>
+
           </article>
 
-          <article class="use-case">
-            <span>06</span>
+
+          <article class="friction-card">
+
+            <span>
+              Customer success
+            </span>
 
             <h3>
-              Internal requests
+              Renewal management
             </h3>
 
             <p>
-              Replace scattered email and chat
-              requests with structured intake,
-              routing, tracking, and resolution.
+              Upcoming renewals trigger account review, health
+              checks, usage analysis, internal preparation,
+              customer outreach, approvals, contract steps, and
+              updated records.
             </p>
+
           </article>
+
 
         </div>
 
@@ -1378,94 +1044,822 @@
 
     </section>
 
-    <!-- OUTCOMES -->
 
-    <section class="section dark-section">
+    <!-- ======================================================
+         BEFORE / AFTER
+         ====================================================== -->
 
-      <div class="shell">
+    <section class="section philosophy-section">
 
-        <div class="section-heading">
+      <div class="container philosophy-grid">
 
-          <p class="eyebrow light">
-            Outcomes
+        <div>
+
+          <p class="eyebrow">
+            Example
           </p>
 
           <h2>
-            Automation should earn
-            its place.
+            From a chain of tasks to a designed process.
           </h2>
 
         </div>
 
-        <div class="outcome-list">
 
-          <div class="outcome-row">
-            <span>01</span>
+        <div class="philosophy-copy">
+
+          <p class="large-statement">
+            Imagine a professional-services firm handles every
+            new client with a series of emails.
+          </p>
+
+          <p>
+            Sales tells operations the deal closed. Operations
+            requests missing information. Finance asks for billing
+            details. Someone creates the client folder. Someone
+            else creates the project. A manager decides who should
+            own the work. The client receives a welcome email when
+            somebody remembers to send it.
+          </p>
+
+          <p>
+            Each individual task may be manageable. The process
+            becomes fragile because there is no single definition
+            of the handoff, no shared status, no required input,
+            and no reliable sequence.
+          </p>
+
+          <p>
+            In the redesigned version, the process begins with a
+            complete structured handoff. Required information is
+            validated before work starts. The correct records,
+            folders, projects, tasks, and billing setup are created.
+            Employees are assigned based on defined rules. The
+            client receives the right communication. Exceptions
+            are surfaced to an owner.
+          </p>
+
+          <p>
+            Automation is valuable here because the process was
+            redesigned first. The company did not simply teach
+            software to reproduce its existing email chain faster.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ======================================================
+         CANDIDATE CHECKLIST
+         ====================================================== -->
+
+    <section
+      class="section"
+      id="checklist"
+    >
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div>
+
+            <p class="eyebrow">
+              03 · Opportunity test
+            </p>
+
+          </div>
+
+          <div>
+
+            <h2>
+              Is this business process worth automating?
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <div class="approach-list">
+
+
+          <div class="approach-row">
+
+            <span class="approach-number">
+              01
+            </span>
 
             <h3>
-              Fewer manual hours
+              Does it happen often enough?
             </h3>
 
             <p>
-              Reduce time spent on recurring
-              administrative work.
+              A process that consumes small amounts of time can
+              still become expensive when it repeats hundreds or
+              thousands of times. Frequency creates leverage.
             </p>
+
           </div>
 
-          <div class="outcome-row">
-            <span>02</span>
+
+          <div class="approach-row">
+
+            <span class="approach-number">
+              02
+            </span>
 
             <h3>
-              Fewer errors
+              Does it cross people or systems?
             </h3>
 
             <p>
-              Remove fragile copy-paste workflows
-              and inconsistent handoffs.
+              Processes become strong BPA candidates when work
+              repeatedly moves between departments, applications,
+              inboxes, spreadsheets, or databases.
             </p>
+
           </div>
 
-          <div class="outcome-row">
-            <span>03</span>
+
+          <div class="approach-row">
+
+            <span class="approach-number">
+              03
+            </span>
 
             <h3>
-              Faster turnaround
+              Is coordination consuming time?
             </h3>
 
             <p>
-              Let work move immediately when
-              conditions are met instead of waiting
-              for manual intervention.
+              Repeated follow-ups, status questions, reminders,
+              approvals, handoffs, and “did you do this?” messages
+              are signs the process lacks a reliable operating
+              system.
             </p>
+
           </div>
 
-          <div class="outcome-row">
-            <span>04</span>
+
+          <div class="approach-row">
+
+            <span class="approach-number">
+              04
+            </span>
 
             <h3>
-              More capacity
+              Is the outcome reasonably predictable?
             </h3>
 
             <p>
-              Let existing teams handle greater
-              volume without proportional increases
-              in administrative headcount.
+              The process does not need to be identical every
+              time, but the major paths, decisions, inputs, and
+              outcomes should be understandable enough to design.
             </p>
+
           </div>
 
-          <div class="outcome-row">
-            <span>05</span>
+
+          <div class="approach-row">
+
+            <span class="approach-number">
+              05
+            </span>
+
+            <h3>
+              Are delays or errors expensive?
+            </h3>
+
+            <p>
+              Automation becomes more valuable when missed steps,
+              bad data, slow handoffs, rework, inconsistent
+              execution, or poor visibility create real business
+              cost.
+            </p>
+
+          </div>
+
+
+          <div class="approach-row">
+
+            <span class="approach-number">
+              06
+            </span>
+
+            <h3>
+              Can the process be measured?
+            </h3>
+
+            <p>
+              You should be able to define success using time,
+              cycle length, error rate, throughput, capacity,
+              customer experience, compliance, or another
+              meaningful metric.
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ======================================================
+         REDESIGN FIRST
+         ====================================================== -->
+
+    <section
+      class="section philosophy-section"
+      id="redesign"
+    >
+
+      <div class="container philosophy-grid">
+
+        <div>
+
+          <p class="eyebrow">
+            04 · Process redesign
+          </p>
+
+          <h2>
+            Fix the process before you automate it.
+          </h2>
+
+        </div>
+
+
+        <div class="philosophy-copy">
+
+          <p class="large-statement">
+            Automation makes a process faster. It does not
+            automatically make the process better.
+          </p>
+
+          <p>
+            If a process contains unnecessary approvals,
+            duplicate entry, unclear ownership, inconsistent
+            requirements, redundant communication, or steps that
+            exist only because of old software, automating those
+            steps preserves the underlying problem.
+          </p>
+
+          <p>
+            Before choosing a tool, map the current process.
+            Identify where work waits, where information is
+            recreated, where decisions are unclear, where people
+            compensate for system limitations, and where no one
+            knows the current status.
+          </p>
+
+          <p>
+            Then design the future process as if you were not
+            required to preserve the current one. Remove work.
+            Consolidate inputs. Clarify ownership. Standardize the
+            parts that should be consistent. Decide where human
+            judgment is actually valuable.
+          </p>
+
+          <p>
+            Only then should technology enter the design.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ======================================================
+         REDESIGN QUESTIONS
+         ====================================================== -->
+
+    <section class="section">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div>
+
+            <p class="eyebrow">
+              Redesign questions
+            </p>
+
+          </div>
+
+          <div>
+
+            <h2>
+              Challenge the process before you reproduce it.
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <div class="friction-grid">
+
+
+          <article class="friction-card">
+
+            <span>
+              Remove
+            </span>
+
+            <h3>
+              Does this step need to exist?
+            </h3>
+
+            <p>
+              The cleanest improvement is often deleting work
+              rather than performing it more efficiently.
+            </p>
+
+          </article>
+
+
+          <article class="friction-card">
+
+            <span>
+              Combine
+            </span>
+
+            <h3>
+              Are we collecting the same information twice?
+            </h3>
+
+            <p>
+              Repeated forms, duplicate data entry, and parallel
+              records are signals that inputs or systems should
+              be consolidated.
+            </p>
+
+          </article>
+
+
+          <article class="friction-card">
+
+            <span>
+              Clarify
+            </span>
+
+            <h3>
+              Who owns the next decision?
+            </h3>
+
+            <p>
+              A process should make ownership explicit instead of
+              relying on employees to infer who should act.
+            </p>
+
+          </article>
+
+
+          <article class="friction-card">
+
+            <span>
+              Standardize
+            </span>
+
+            <h3>
+              Which parts should happen the same way?
+            </h3>
+
+            <p>
+              Standardization creates the stable rules that make
+              reliable automation possible.
+            </p>
+
+          </article>
+
+
+          <article class="friction-card">
+
+            <span>
+              Protect
+            </span>
+
+            <h3>
+              Where does judgment create value?
+            </h3>
+
+            <p>
+              Keep people involved where relationships, context,
+              negotiation, ethics, ambiguity, or consequential
+              decisions matter.
+            </p>
+
+          </article>
+
+
+          <article class="friction-card">
+
+            <span>
+              Measure
+            </span>
+
+            <h3>
+              What should improve?
+            </h3>
+
+            <p>
+              A redesigned process should have a clear target:
+              faster cycle time, lower cost, fewer errors, better
+              visibility, or another business result.
+            </p>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ======================================================
+         WHAT NOT TO AUTOMATE
+         ====================================================== -->
+
+    <section
+      class="section friction-section"
+      id="avoid"
+    >
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div>
+
+            <p class="eyebrow">
+              05 · Restraint
+            </p>
+
+          </div>
+
+          <div>
+
+            <h2>
+              What should not be automated?
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <div class="friction-grid">
+
+
+          <article class="friction-card">
+
+            <span>
+              Avoid
+            </span>
+
+            <h3>
+              A process that should disappear
+            </h3>
+
+            <p>
+              If the work does not create enough value to justify
+              doing it, automation is not the answer. Eliminate it.
+            </p>
+
+          </article>
+
+
+          <article class="friction-card">
+
+            <span>
+              Avoid
+            </span>
+
+            <h3>
+              A process nobody understands
+            </h3>
+
+            <p>
+              If employees disagree about how the work should
+              happen, technology will encode confusion rather than
+              resolve it.
+            </p>
+
+          </article>
+
+
+          <article class="friction-card">
+
+            <span>
+              Avoid
+            </span>
+
+            <h3>
+              A process that changes every week
+            </h3>
+
+            <p>
+              Work that is still being invented or frequently
+              redesigned may not be stable enough to justify
+              automation yet.
+            </p>
+
+          </article>
+
+
+          <article class="friction-card">
+
+            <span>
+              Avoid
+            </span>
+
+            <h3>
+              Rare, low-cost work
+            </h3>
+
+            <p>
+              Building and maintaining automation can cost more
+              than simply completing an infrequent task manually.
+            </p>
+
+          </article>
+
+
+          <article class="friction-card">
+
+            <span>
+              Protect
+            </span>
+
+            <h3>
+              Consequential human judgment
+            </h3>
+
+            <p>
+              High-stakes decisions, relationship-sensitive work,
+              negotiation, ethics, and unusual cases may benefit
+              from system support without full automation.
+            </p>
+
+          </article>
+
+
+          <article class="friction-card">
+
+            <span>
+              Avoid
+            </span>
+
+            <h3>
+              Complexity with no business case
+            </h3>
+
+            <p>
+              A technically impressive process is still a poor
+              investment when the expected improvement is small,
+              vague, or impossible to measure.
+            </p>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ======================================================
+         ROI
+         ====================================================== -->
+
+    <section
+      class="section"
+      id="roi"
+    >
+
+      <div class="container philosophy-grid">
+
+        <div>
+
+          <p class="eyebrow">
+            06 · ROI
+          </p>
+
+          <h2>
+            How to calculate business process automation ROI.
+          </h2>
+
+        </div>
+
+
+        <div class="philosophy-copy">
+
+          <p class="large-statement">
+            Measure the cost of the process before measuring
+            the value of the automation.
+          </p>
+
+          <p>
+            Start with process volume. How many times does the
+            process occur in a month or year? Then estimate how
+            much employee time the full process consumes across
+            everyone involved.
+          </p>
+
+          <p>
+            A simple starting formula is:
+          </p>
+
+          <p class="large-statement">
+            Process frequency × total labor time × loaded labor
+            cost = current labor cost.
+          </p>
+
+          <p>
+            Then add costs that labor alone misses: rework,
+            mistakes, delays, missed follow-ups, customer churn,
+            compliance risk, poor visibility, or capacity
+            constraints.
+          </p>
+
+          <p>
+            Estimate the improvement the redesigned process could
+            create and subtract the cost to design, build,
+            implement, operate, and maintain the new system.
+          </p>
+
+          <p>
+            A good process automation project can create value
+            through reduced labor, but also through faster cycle
+            times, increased throughput, fewer errors, better
+            customer experience, improved control, and the ability
+            to scale without adding coordination overhead at the
+            same rate.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ======================================================
+         ROI FRAMEWORK
+         ====================================================== -->
+
+    <section class="section philosophy-section">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div>
+
+            <p class="eyebrow">
+              ROI framework
+            </p>
+
+          </div>
+
+          <div>
+
+            <h2>
+              Look beyond hours saved.
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <div class="friction-grid">
+
+
+          <article class="friction-card">
+
+            <span>
+              Cost
+            </span>
+
+            <h3>
+              Labor removed
+            </h3>
+
+            <p>
+              Estimate the amount of employee time that disappears
+              or can be redirected to higher-value work.
+            </p>
+
+          </article>
+
+
+          <article class="friction-card">
+
+            <span>
+              Speed
+            </span>
+
+            <h3>
+              Cycle time reduced
+            </h3>
+
+            <p>
+              Faster approvals, onboarding, fulfillment,
+              responses, and handoffs can create business value
+              even when labor savings are modest.
+            </p>
+
+          </article>
+
+
+          <article class="friction-card">
+
+            <span>
+              Quality
+            </span>
+
+            <h3>
+              Errors prevented
+            </h3>
+
+            <p>
+              Standardized inputs and automated controls can reduce
+              missing information, incorrect records, missed
+              steps, and rework.
+            </p>
+
+          </article>
+
+
+          <article class="friction-card">
+
+            <span>
+              Capacity
+            </span>
+
+            <h3>
+              More volume handled
+            </h3>
+
+            <p>
+              A better process can absorb growth without requiring
+              coordination headcount to increase at the same rate.
+            </p>
+
+          </article>
+
+
+          <article class="friction-card">
+
+            <span>
+              Experience
+            </span>
+
+            <h3>
+              Less customer friction
+            </h3>
+
+            <p>
+              Faster, clearer, more consistent processes improve
+              the experience for clients, employees, vendors, and
+              partners.
+            </p>
+
+          </article>
+
+
+          <article class="friction-card">
+
+            <span>
+              Control
+            </span>
 
             <h3>
               Better visibility
             </h3>
 
             <p>
-              Create reliable status, tracking,
-              and reporting without constant
-              follow-up.
+              Reliable status, ownership, records, and exception
+              handling can be valuable even when the process is
+              not dramatically faster.
             </p>
-          </div>
+
+          </article>
+
 
         </div>
 
@@ -1473,165 +1867,1070 @@
 
     </section>
 
-    <!-- FAQ -->
+
+    <!-- ======================================================
+         AI
+         ====================================================== -->
 
     <section
       class="section"
-      id="faq"
+      id="ai"
     >
 
-      <div class="shell split">
+      <div class="container philosophy-grid">
 
         <div>
+
           <p class="eyebrow">
-            FAQ
+            07 · AI
           </p>
-        </div>
-
-        <div>
 
           <h2>
-            Business process
-            automation questions.
+            Where AI changes business process automation.
           </h2>
 
-          <div class="faq-list">
+        </div>
 
-            <details>
-              <summary>
-                What is business process automation?
-              </summary>
 
-              <div class="faq-answer">
-                Business process automation uses
-                software to handle recurring steps
-                within a business workflow. This can
-                include moving data, sending
-                notifications, creating documents,
-                routing requests, updating systems,
-                generating reports, or triggering
-                follow-up actions.
-              </div>
-            </details>
+        <div class="philosophy-copy">
 
-            <details>
-              <summary>
-                What business processes should be automated?
-              </summary>
+          <p class="large-statement">
+            AI expands the range of process steps that software
+            can assist with, but it does not replace process design.
+          </p>
 
-              <div class="faq-answer">
-                Good candidates are repetitive,
-                rules-based, high-volume processes
-                with predictable inputs and outcomes.
-                Processes involving excessive manual
-                entry, repeated handoffs, recurring
-                reports, reminders, or status updates
-                are often strong starting points.
-              </div>
-            </details>
+          <p>
+            Traditional automation works best when the rules are
+            explicit: if a contract is signed, create a project;
+            if an invoice exceeds a threshold, request approval;
+            if a task is overdue, send a reminder.
+          </p>
 
-            <details>
-              <summary>
-                Do we need to replace our existing software?
-              </summary>
+          <p>
+            AI becomes useful when the process includes
+            unstructured information. It can classify incoming
+            requests, extract information from documents,
+            summarize conversations, draft content, search
+            internal knowledge, or interpret natural language.
+          </p>
 
-              <div class="faq-answer">
-                Usually not. We prefer to first
-                determine whether the systems you
-                already use can be connected or
-                extended before recommending another
-                platform.
-              </div>
-            </details>
+          <p>
+            The most reliable process designs often combine both.
+            Deterministic automation handles predictable rules.
+            AI is inserted only where interpretation, language,
+            matching, or generation adds useful capability.
+          </p>
 
-            <details>
-              <summary>
-                Do you use AI in business process automation?
-              </summary>
+          <p>
+            This matters because an end-to-end business process
+            may include several different kinds of work. There is
+            no advantage in using AI for a step that a simple rule
+            can perform more reliably and cheaply.
+          </p>
 
-              <div class="faq-answer">
-                When it improves the workflow. AI can
-                be useful for tasks such as document
-                classification, extraction,
-                summarization, research, drafting,
-                routing, and working with
-                unstructured information. It should
-                be used where it creates measurable
-                value rather than added automatically.
-              </div>
-            </details>
+        </div>
 
-            <details>
-              <summary>
-                How do you identify automation opportunities?
-              </summary>
+      </div>
 
-              <div class="faq-answer">
-                We examine recurring workflows for
-                manual effort, delays, repeated data
-                entry, unnecessary handoffs,
-                inconsistent execution, and work that
-                depends heavily on employees
-                remembering what happens next.
-              </div>
-            </details>
+    </section>
 
-            <details>
-              <summary>
-                What happens before you automate a process?
-              </summary>
 
-              <div class="faq-answer">
-                We first map and challenge the
-                existing process. Unnecessary steps
-                should be removed before automation.
-                Otherwise, technology simply makes an
-                inefficient workflow happen faster.
-              </div>
-            </details>
+    <!-- ======================================================
+         AI USE CASES
+         ====================================================== -->
+
+    <section class="section philosophy-section">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div>
+
+            <p class="eyebrow">
+              AI process examples
+            </p>
+
+          </div>
+
+          <div>
+
+            <h2>
+              Give AI a specific job inside the process.
+            </h2>
 
           </div>
 
         </div>
 
+
+        <div class="friction-grid">
+
+
+          <article class="friction-card">
+
+            <span>
+              Intake
+            </span>
+
+            <h3>
+              Understand incoming requests
+            </h3>
+
+            <p>
+              Classify emails, forms, documents, or messages and
+              route each item into the correct process.
+            </p>
+
+          </article>
+
+
+          <article class="friction-card">
+
+            <span>
+              Documents
+            </span>
+
+            <h3>
+              Extract structured data
+            </h3>
+
+            <p>
+              Pull relevant information from contracts, invoices,
+              applications, reports, PDFs, and other unstructured
+              files.
+            </p>
+
+          </article>
+
+
+          <article class="friction-card">
+
+            <span>
+              Knowledge
+            </span>
+
+            <h3>
+              Assemble context
+            </h3>
+
+            <p>
+              Retrieve relevant policies, account history,
+              documentation, or prior work before a person makes a
+              decision.
+            </p>
+
+          </article>
+
+
+          <article class="friction-card">
+
+            <span>
+              Communication
+            </span>
+
+            <h3>
+              Draft process outputs
+            </h3>
+
+            <p>
+              Prepare first drafts of emails, summaries, reports,
+              responses, proposals, or other standardized content
+              for review.
+            </p>
+
+          </article>
+
+
+          <article class="friction-card">
+
+            <span>
+              Review
+            </span>
+
+            <h3>
+              Summarize complex inputs
+            </h3>
+
+            <p>
+              Condense long documents, conversations, or research
+              so employees can review the relevant information
+              faster.
+            </p>
+
+          </article>
+
+
+          <article class="friction-card">
+
+            <span>
+              Decision support
+            </span>
+
+            <h3>
+              Surface patterns and options
+            </h3>
+
+            <p>
+              Compare information, identify anomalies, or
+              recommend next steps while keeping consequential
+              decisions with the appropriate person.
+            </p>
+
+          </article>
+
+
+        </div>
+
       </div>
 
     </section>
 
-    <!-- CTA -->
 
-    <section class="section dark-section">
+    <!-- ======================================================
+         IMPLEMENTATION
+         ====================================================== -->
 
-      <div class="shell cta-grid">
+    <section
+      class="section"
+      id="implementation"
+    >
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div>
+
+            <p class="eyebrow">
+              08 · Implementation
+            </p>
+
+          </div>
+
+          <div>
+
+            <h2>
+              How to automate a business process.
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <div class="approach-list">
+
+
+          <div class="approach-row">
+
+            <span class="approach-number">
+              01
+            </span>
+
+            <h3>
+              Define the process boundary.
+            </h3>
+
+            <p>
+              Decide where the process begins, where it ends, what
+              outcome it is supposed to create, and which teams
+              and systems are inside the scope.
+            </p>
+
+          </div>
+
+
+          <div class="approach-row">
+
+            <span class="approach-number">
+              02
+            </span>
+
+            <h3>
+              Map the current state.
+            </h3>
+
+            <p>
+              Document major steps, handoffs, systems, data,
+              approvals, ownership, delays, exceptions, rework,
+              and the current measurement baseline.
+            </p>
+
+          </div>
+
+
+          <div class="approach-row">
+
+            <span class="approach-number">
+              03
+            </span>
+
+            <h3>
+              Identify friction and waste.
+            </h3>
+
+            <p>
+              Look for duplicate entry, unclear ownership,
+              repeated follow-up, unnecessary approvals, missing
+              information, manual data movement, waiting, and
+              workarounds.
+            </p>
+
+          </div>
+
+
+          <div class="approach-row">
+
+            <span class="approach-number">
+              04
+            </span>
+
+            <h3>
+              Design the future process.
+            </h3>
+
+            <p>
+              Remove unnecessary steps. Standardize inputs.
+              Clarify decisions. Define the system of record.
+              Decide what should happen automatically and where a
+              person remains involved.
+            </p>
+
+          </div>
+
+
+          <div class="approach-row">
+
+            <span class="approach-number">
+              05
+            </span>
+
+            <h3>
+              Choose the simplest technology.
+            </h3>
+
+            <p>
+              Start with capabilities already available in your
+              current software. Add automation platforms, APIs,
+              scripts, AI, or internal tools only where the
+              process actually requires them.
+            </p>
+
+          </div>
+
+
+          <div class="approach-row">
+
+            <span class="approach-number">
+              06
+            </span>
+
+            <h3>
+              Build the happy path first.
+            </h3>
+
+            <p>
+              Implement the normal process before trying to encode
+              every unusual edge case. Then add exception handling
+              deliberately.
+            </p>
+
+          </div>
+
+
+          <div class="approach-row">
+
+            <span class="approach-number">
+              07
+            </span>
+
+            <h3>
+              Test with real work.
+            </h3>
+
+            <p>
+              Run the process with representative inputs and the
+              employees who actually use it. Watch where people
+              hesitate, bypass the system, or encounter missing
+              information.
+            </p>
+
+          </div>
+
+
+          <div class="approach-row">
+
+            <span class="approach-number">
+              08
+            </span>
+
+            <h3>
+              Measure and maintain.
+            </h3>
+
+            <p>
+              Compare the new process against the baseline.
+              Monitor failures, exceptions, cycle time, quality,
+              and adoption. Assign an owner who can keep the
+              process working as the business changes.
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ======================================================
+         TOOL CHOICE
+         ====================================================== -->
+
+    <section class="section philosophy-section">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div>
+
+            <p class="eyebrow">
+              Technology
+            </p>
+
+          </div>
+
+          <div>
+
+            <h2>
+              What tools are used for business process automation?
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <div class="friction-grid">
+
+
+          <article class="friction-card">
+
+            <span>
+              Existing software
+            </span>
+
+            <h3>
+              Native process features
+            </h3>
+
+            <p>
+              CRMs, project systems, accounting platforms,
+              databases, and other tools may already include
+              approvals, automations, routing, forms, and rules.
+            </p>
+
+          </article>
+
+
+          <article class="friction-card">
+
+            <span>
+              Connectors
+            </span>
+
+            <h3>
+              Automation platforms
+            </h3>
+
+            <p>
+              No-code and low-code tools can coordinate triggers,
+              actions, branching, data movement, and handoffs
+              between different applications.
+            </p>
+
+          </article>
+
+
+          <article class="friction-card">
+
+            <span>
+              Integration
+            </span>
+
+            <h3>
+              APIs
+            </h3>
+
+            <p>
+              APIs allow systems to exchange information directly
+              when prebuilt connectors are too limited or the
+              process needs greater control.
+            </p>
+
+          </article>
+
+
+          <article class="friction-card">
+
+            <span>
+              Flexible logic
+            </span>
+
+            <h3>
+              Scripts and lightweight code
+            </h3>
+
+            <p>
+              Custom code can handle calculations, transformations,
+              validation, scheduling, or logic that packaged tools
+              do not support cleanly.
+            </p>
+
+          </article>
+
+
+          <article class="friction-card">
+
+            <span>
+              Unstructured work
+            </span>
+
+            <h3>
+              AI models
+            </h3>
+
+            <p>
+              AI adds classification, extraction, summarization,
+              generation, matching, and natural-language
+              understanding where fixed rules are not enough.
+            </p>
+
+          </article>
+
+
+          <article class="friction-card">
+
+            <span>
+              Specialized process
+            </span>
+
+            <h3>
+              Internal tools
+            </h3>
+
+            <p>
+              A focused internal application can combine workflow,
+              data, interface, permissions, status, and controls
+              when existing products do not fit the process.
+            </p>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ======================================================
+         COMMON MISTAKES
+         ====================================================== -->
+
+    <section class="section friction-section">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div>
+
+            <p class="eyebrow">
+              Common mistakes
+            </p>
+
+          </div>
+
+          <div>
+
+            <h2>
+              Where business process automation goes wrong.
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <div class="friction-grid">
+
+
+          <article class="friction-card">
+
+            <span>
+              01
+            </span>
+
+            <h3>
+              Starting with software
+            </h3>
+
+            <p>
+              “We bought an automation tool — what should we do
+              with it?” reverses the correct order. Start with the
+              business problem.
+            </p>
+
+          </article>
+
+
+          <article class="friction-card">
+
+            <span>
+              02
+            </span>
+
+            <h3>
+              Automating the current process exactly
+            </h3>
+
+            <p>
+              The existing process is evidence of how work happens
+              today, not proof that every current step belongs in
+              the future design.
+            </p>
+
+          </article>
+
+
+          <article class="friction-card">
+
+            <span>
+              03
+            </span>
+
+            <h3>
+              Solving one department only
+            </h3>
+
+            <p>
+              Optimizing one team can push work or complexity
+              downstream. End-to-end process design considers the
+              complete business outcome.
+            </p>
+
+          </article>
+
+
+          <article class="friction-card">
+
+            <span>
+              04
+            </span>
+
+            <h3>
+              Ignoring data ownership
+            </h3>
+
+            <p>
+              If several systems contain competing versions of the
+              same record, automation can move bad or inconsistent
+              data faster.
+            </p>
+
+          </article>
+
+
+          <article class="friction-card">
+
+            <span>
+              05
+            </span>
+
+            <h3>
+              Ignoring exceptions
+            </h3>
+
+            <p>
+              Real processes eventually leave the happy path. Good
+              automation makes exceptions visible and assigns them
+              to the right person.
+            </p>
+
+          </article>
+
+
+          <article class="friction-card">
+
+            <span>
+              06
+            </span>
+
+            <h3>
+              No process owner
+            </h3>
+
+            <p>
+              Someone should understand the process, monitor it,
+              maintain the automation, and improve it as the
+              business changes.
+            </p>
+
+          </article>
+
+
+          <article class="friction-card">
+
+            <span>
+              07
+            </span>
+
+            <h3>
+              Using AI where rules are better
+            </h3>
+
+            <p>
+              Deterministic logic is usually preferable for
+              deterministic work. Use AI where interpretation is
+              useful, not everywhere it is possible.
+            </p>
+
+          </article>
+
+
+          <article class="friction-card">
+
+            <span>
+              08
+            </span>
+
+            <h3>
+              No baseline
+            </h3>
+
+            <p>
+              If you never measure the current process, you cannot
+              tell whether the redesign actually improved it.
+            </p>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ======================================================
+         FAQ
+         ====================================================== -->
+
+    <section class="section">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div>
+
+            <p class="eyebrow">
+              FAQ
+            </p>
+
+          </div>
+
+          <div>
+
+            <h2>
+              Business process automation questions.
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <div class="approach-list">
+
+
+          <div class="approach-row">
+
+            <span class="approach-number">
+              01
+            </span>
+
+            <h3>
+              What is business process automation?
+            </h3>
+
+            <p>
+              Business process automation uses technology to
+              redesign and automate recurring end-to-end business
+              processes across multiple steps, systems, teams,
+              decisions, and handoffs.
+            </p>
+
+          </div>
+
+
+          <div class="approach-row">
+
+            <span class="approach-number">
+              02
+            </span>
+
+            <h3>
+              What is an example of business process automation?
+            </h3>
+
+            <p>
+              Client onboarding is a common example. A signed
+              contract can trigger structured intake, billing
+              setup, project creation, internal assignments,
+              document generation, client communication, and
+              kickoff scheduling across several systems.
+            </p>
+
+          </div>
+
+
+          <div class="approach-row">
+
+            <span class="approach-number">
+              03
+            </span>
+
+            <h3>
+              How is BPA different from workflow automation?
+            </h3>
+
+            <p>
+              Workflow automation usually focuses on one sequence
+              of tasks or handoffs. BPA operates at a broader
+              level and may redesign several connected workflows,
+              systems, teams, rules, and outcomes.
+            </p>
+
+          </div>
+
+
+          <div class="approach-row">
+
+            <span class="approach-number">
+              04
+            </span>
+
+            <h3>
+              What processes should be automated first?
+            </h3>
+
+            <p>
+              Start with processes that occur frequently, cross
+              people or systems, create visible delays or errors,
+              have reasonably stable rules, and produce an outcome
+              you can measure.
+            </p>
+
+          </div>
+
+
+          <div class="approach-row">
+
+            <span class="approach-number">
+              05
+            </span>
+
+            <h3>
+              Does business process automation require AI?
+            </h3>
+
+            <p>
+              No. Many processes can be improved with existing
+              software, rules, integrations, APIs, and scripts.
+              AI is most useful when the process requires
+              interpretation of unstructured information.
+            </p>
+
+          </div>
+
+
+          <div class="approach-row">
+
+            <span class="approach-number">
+              06
+            </span>
+
+            <h3>
+              Do you need to replace your existing software?
+            </h3>
+
+            <p>
+              Usually not. A strong process redesign starts by
+              determining whether current systems can be
+              configured, connected, or extended before another
+              platform is added.
+            </p>
+
+          </div>
+
+
+          <div class="approach-row">
+
+            <span class="approach-number">
+              07
+            </span>
+
+            <h3>
+              Can a business process be partially automated?
+            </h3>
+
+            <p>
+              Yes. Many of the best designs automate predictable
+              work while keeping people involved for approvals,
+              exceptions, relationships, and judgment-heavy
+              decisions.
+            </p>
+
+          </div>
+
+
+          <div class="approach-row">
+
+            <span class="approach-number">
+              08
+            </span>
+
+            <h3>
+              How do you start with BPA?
+            </h3>
+
+            <p>
+              Pick one recurring process, define where it begins
+              and ends, map the current state, identify friction,
+              redesign the process, and only then choose the
+              technology needed to support the future state.
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ======================================================
+         EDITORIAL NOTE
+         ====================================================== -->
+
+    <section class="section philosophy-section">
+
+      <div class="container philosophy-grid">
 
         <div>
 
-          <p class="eyebrow light">
-            Start with one process
+          <p class="eyebrow">
+            About this guide
           </p>
 
           <h2>
-            Show us the work your team
-            should not still be doing manually.
+            Curated for practical use.
           </h2>
 
         </div>
 
-        <div>
 
-          <p>
-            Bring us one recurring workflow that
-            wastes time, creates errors, or breaks
-            under volume. We will start by figuring
-            out how it should work.
+        <div class="philosophy-copy">
+
+          <p class="large-statement">
+            This guide is designed to help you make a better
+            operational decision, not simply define a term.
           </p>
 
+          <p>
+            Our resources combine research, industry material,
+            practical frameworks, AI-assisted research and
+            drafting, and editorial review.
+          </p>
+
+          <p>
+            We curate around usefulness: what should be
+            understood, which distinctions matter, where process
+            design commonly fails, what should be measured, and
+            what someone can actually do next.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ======================================================
+         RELATED RESOURCE
+         ====================================================== -->
+
+    <section class="section">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div>
+
+            <p class="eyebrow">
+              Keep learning
+            </p>
+
+          </div>
+
+          <div>
+
+            <h2>
+              Go one level deeper.
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <div class="service-list">
+
           <a
-            href="../contact/"
-            class="button button-light"
+            class="service-row"
+            href="../workflow-automation/"
           >
-            Start a project
-            <span>↗</span>
+
+            <span class="service-number">
+              Next
+            </span>
+
+            <h3>
+              Workflow Automation
+            </h3>
+
+            <p>
+              Explore how individual workflows are designed,
+              automated, measured, and improved inside the
+              broader business processes described above.
+            </p>
+
+            <span class="service-arrow">
+              ↗
+            </span>
+
           </a>
 
         </div>
@@ -1640,75 +2939,128 @@
 
     </section>
 
-  </main>
 
-  <footer class="footer">
+    <!-- ======================================================
+         CONSULTING CTA
+         ====================================================== -->
 
-    <div class="shell footer-grid">
+    <section class="final-cta">
 
-      <div class="footer-intro">
+      <div class="final-cta-glow"></div>
 
-        <a
-          href="../"
-          class="brand footer-brand"
-        >
-          <span class="brand-mark">
-            //
-          </span>
+      <div class="container final-cta-grid">
 
-          <span>
-            Your Company
-          </span>
-        </a>
+        <div>
 
-        <p>
-          Better systems for how work gets done.
-        </p>
+          <p class="eyebrow">
+            When the guide is not enough
+          </p>
 
-      </div>
+          <h2>
+            Found a process worth fixing?
+          </h2>
 
-      <div>
+        </div>
 
-        <p class="eyebrow">
-          Services
-        </p>
 
-        <div class="footer-links">
+        <div class="final-cta-copy">
 
-          <a href="../business-process-automation/">
-            Business Process Automation
-          </a>
+          <p>
+            Use the framework above yourself. If the process is
+            important but spans multiple systems, teams, or
+            technical constraints, we can help redesign and
+            implement the better version.
+          </p>
 
-          <a href="../workflow-automation/">
-            Workflow Automation
-          </a>
-
-          <a href="../ai-automation/">
-            AI Automation
-          </a>
-
-          <a href="../business-process-improvement/">
-            Business Process Improvement
-          </a>
-
-          <a href="../internal-tools/">
-            Internal Tools Development
+          <a
+            class="button button-primary"
+            href="../contact/"
+          >
+            Get implementation help
           </a>
 
         </div>
 
       </div>
 
+    </section>
+
+
+  </main>
+
+
+  <!-- ======================================================
+       FOOTER
+       ====================================================== -->
+
+  <footer class="site-footer">
+
+    <div class="container footer-grid">
+
       <div>
 
-        <p class="eyebrow">
-          Company
+        <a
+          class="brand footer-brand"
+          href="../index.html"
+        >
+
+          <span class="brand-symbol">
+            ∕∕
+          </span>
+
+          <span class="brand-name">
+            Your Company
+          </span>
+
+        </a>
+
+        <p class="footer-description">
+          A curated resource for better business systems,
+          workflows, automation, and operations.
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <p class="footer-heading">
+          Explore
         </p>
 
         <div class="footer-links">
 
-          <a href="../">
-            Home
+          <a href="../index.html#library">
+            Library
+          </a>
+
+          <a href="../index.html#guides">
+            Guides
+          </a>
+
+          <a href="../index.html#tools">
+            Tools
+          </a>
+
+          <a href="../index.html#method">
+            Editorial Method
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div>
+
+        <p class="footer-heading">
+          Get support
+        </p>
+
+        <div class="footer-links">
+
+          <a href="../index.html#services">
+            Services
           </a>
 
           <a href="../contact/">
@@ -1725,49 +3077,22 @@
 
     </div>
 
-    <div class="shell footer-bottom">
+
+    <div class="container footer-bottom">
 
       <span>
-        © <span id="year"></span>
-        Your Company
+        © 2026 Your Company
       </span>
 
       <span>
-        Systems first. Technology second.
+        Curated for practical use.
       </span>
 
     </div>
 
   </footer>
 
-  <script>
-    const toggle =
-      document.querySelector(".menu-toggle");
-
-    const mobileNav =
-      document.querySelector("#mobile-nav");
-
-    toggle.addEventListener("click", function () {
-      const isOpen =
-        mobileNav.classList.toggle("is-open");
-
-      toggle.setAttribute(
-        "aria-expanded",
-        isOpen
-      );
-
-      toggle.textContent =
-        isOpen ? "Close" : "Menu";
-
-      document.body.classList.toggle(
-        "menu-open",
-        isOpen
-      );
-    });
-
-    document.getElementById("year").textContent =
-      new Date().getFullYear();
-  </script>
 
 </body>
+
 </html>
