@@ -1,22 +1,13 @@
-// Edit these values once and the visible brand/contact details update site-wide.
-const SITE = {
-  name: "Your Company",
-  email: "hello@example.com"
-};
+// howworkruns — small progressive enhancements. The site works without JavaScript.
 
-document.querySelectorAll('[data-site-name]').forEach(el => el.textContent = SITE.name);
-document.querySelectorAll('[data-site-email]').forEach(el => {
-  el.textContent = SITE.email;
-  if (el.tagName === 'A') el.href = `mailto:${SITE.email}`;
+// Keep the footer year current.
+document.querySelectorAll('[data-current-year]').forEach(function (el) {
+  el.textContent = new Date().getFullYear();
 });
-document.querySelectorAll('[data-current-year]').forEach(el => el.textContent = new Date().getFullYear());
 
-const toggle = document.querySelector('.menu-toggle');
-const mobile = document.querySelector('#mobile-nav');
-if (toggle && mobile) {
-  toggle.addEventListener('click', () => {
-    const open = mobile.classList.toggle('is-open');
-    toggle.setAttribute('aria-expanded', String(open));
-    toggle.textContent = open ? 'Close' : 'Menu';
+// Close the mobile menu after choosing a link (same-page anchors otherwise leave it open).
+document.querySelectorAll('.mobile-menu').forEach(function (menu) {
+  menu.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', function () { menu.removeAttribute('open'); });
   });
-}
+});
