@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css?v=9">
+  <link rel="stylesheet" href="../styles.css?v=10">
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -95,7 +95,7 @@
   <meta property="og:description" content="Practical uses of AI inside business workflows for classification, extraction, research, drafting, decision support, and knowledge access.">
   <meta property="og:url" content="https://zandergrant.github.io/workrefactor/ai-for-operations/">
   <meta name="twitter:card" content="summary">
-  <script defer src="../site.js?v=9"></script>
+  <script defer src="../site.js?v=10"></script>
 </head>
 <body class="guide-page">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -199,7 +199,7 @@
 <li><strong>Act:</strong> Let application logic perform only approved actions, with checks for duplicate processing and conflicting updates.</li>
 <li><strong>Record:</strong> Keep enough information to trace the result, the review decision, the version used, and any resulting action.</li>
 </ol>
-<p>A prompt is one component. The surrounding application decides what data can be accessed and which actions are permitted. Asking the model to respect a rule does not enforce that rule.</p>
+<p>A prompt is one component, the surrounding application decides what data can be accessed and which actions are permitted. Asking the model to respect a rule does not enforce that rule.</p>
 <p>A self-reported confidence score is not a calibrated probability of correctness. Establish routing thresholds from observed task performance and failure consequences. If you cannot justify automatic handling, retain review.</p>
 <p>Plan for unavailable services, malformed output, stale source material, duplicate inputs, and reviewer absence. An exception queue needs an owner and a time expectation.</p></div>
   </div>
@@ -219,7 +219,7 @@
 <li><strong>Next action:</strong> Approved routing updates the existing request record. A stable request ID prevents duplicate work.</li>
 </ul>
 <h3>Example output contract</h3>
-<p>This example describes a possible result format. The application still needs to validate it and apply its own routing policy.</p>
+<p>This example describes a possible result format, the application still needs to validate it and apply its own routing policy.</p>
 <pre><code>{
   "category": "client_change",
   "summary": "The client requests a later workshop date.",
@@ -254,7 +254,7 @@ Return category, summary, missing_information, and source_excerpts.
 Use needs_review when the request is ambiguous or outside the definitions.
 Do not invent missing dates, client details, approvals, or commitments.
 Do not approve the request or take an external action.</code></pre>
-<p>These instructions make the task clearer. They do not replace application checks, access controls, or adversarial testing.</p></div>
+<p>These instructions make the task clearer, they don’t replace application checks, access controls, or adversarial testing.</p></div>
   </div>
 </section>
 <section class="section" id="evaluation">
@@ -271,7 +271,7 @@ Do not approve the request or take an external action.</code></pre>
 <li><strong>Workflow performance:</strong> Track review time, correction rate, exceptions, duplicate actions, completion time, and cost per accepted case.</li>
 </ul>
 <p>Compare against the existing process and a simpler alternative. Run the pilot in a mode where suggestions can be compared with normal work before permitting operational actions. A good demonstration on a few selected examples does not establish reliable performance across the queue.</p>
-<p>Version the prompt, model configuration, source collection, and validation rules. Re-run the relevant evaluation when one changes. Sampling approved output after launch helps detect problems that were absent from the test set.</p></div>
+<p>Version the prompt, model configuration, source collection, and validation rules, and re-run the relevant evaluation when one changes. Sampling approved output after launch helps detect problems that were absent from the test set.</p></div>
   </div>
 </section>
 <section class="section philosophy-section" id="boundaries">
@@ -281,7 +281,7 @@ Do not approve the request or take an external action.</code></pre>
 <p>Decide which data the task actually needs. Use approved services and account settings, and check the applicable retention, training, and access terms for that configuration before sending business information. The answer depends on the service and agreement.</p>
 <p>Permissions must apply before retrieval. A knowledge assistant should not receive records the requesting employee cannot access. Reducing what appears in the final answer is insufficient if restricted material was already supplied to the model.</p>
 <p>Retrieved files and messages may contain instructions designed to redirect the model. <a href="https://genai.owasp.org/llmrisk/llm01-prompt-injection/">OWASP’s prompt-injection guidance</a> explains why external content can affect behavior and why retrieval alone does not remove this risk. Limit privileges, validate outputs, and keep sensitive actions behind explicit application checks and approval.</p>
-<p>Store credentials outside prompts and browser code. Give integrations only the permissions they need. Keep a record of actions and provide an owner with a way to pause execution and recover failed cases.</p>
+<p>Store credentials outside prompts and browser code, and give integrations only the permissions they need. Keep a record of actions and provide an owner with a way to pause execution and recover failed cases.</p>
 <p><a href="https://www.nist.gov/itl/ai-risk-management-framework">NIST’s AI Risk Management Framework and Generative AI Profile</a> provide broader risk-management resources. Use them to inform the controls appropriate to the context; the pilot checklist here is an operating aid, not a compliance certification.</p></div>
   </div>
 </section>
@@ -350,7 +350,7 @@ Do not approve the request or take an external action.</code></pre>
       <div>
         <a class="brand footer-brand" href="../" aria-label="howworkruns home"><svg class="hdot" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path class="hdot-h" d="M4.2 4.5v23M4.2 17.2c0-3.7 2.7-6.2 6.2-6.2s6 2.5 6 6.2v10.3"/><path class="hdot-echo" d="M24.45 22.91A2.75 2.75 0 1 0 24.45 28.29A3.85 3.85 0 0 1 24.45 22.91Z" opacity="0.55"/><path class="hdot-echo" d="M21.35 23.28A2.35 2.35 0 1 0 21.35 27.92A3.45 3.45 0 0 1 21.35 23.28Z" opacity="0.28"/><circle class="hdot-dot" cx="27.2" cy="25.6" r="3.1"/></svg><span class="brand-name">how<span class="brand-name-mid">work</span>runs</span></a>
         <p class="footer-description">
-          Business systems, workflow design &amp; automation for growing companies.
+          Business systems and operations for growing service and knowledge-work companies.
         </p>
         <p class="footer-founder">Founded by Zander.</p>
       </div>
@@ -375,7 +375,7 @@ Do not approve the request or take an external action.</code></pre>
     </div>
     <div class="container footer-bottom">
       <span>&copy; <span data-current-year>2026</span> howworkruns</span>
-      <span>Fix the process. Then automate it.</span>
+      <span>Better systems, so your people can do the human work.</span>
     </div>
   </footer>
 </body>
