@@ -5117,3 +5117,18 @@ h3 {
 .guide-page .hero {
   overflow: hidden;
 }
+
+/* ---------- Headings: one more step smaller (v8) ---------- */
+h1 { font-size: clamp(34px, 4.4vw, 64px); line-height: 1.02; }
+h2 { font-size: clamp(26px, 2.8vw, 40px); line-height: 1.08; }
+h3 { font-size: clamp(19px, 1.45vw, 23px); line-height: 1.15; }
+.contact-hero h1 { font-size: clamp(34px, 4vw, 58px); }
+.project-sidebar h2 { font-size: clamp(26px, 2.5vw, 36px); }
+
+@media (max-width: 620px) {
+  h1 { font-size: clamp(30px, 8.2vw, 36px); line-height: 1.04; }
+  h2 { font-size: clamp(23px, 6vw, 27px); line-height: 1.1; }
+  h3 { font-size: clamp(18px, 4.6vw, 20px); }
+  .contact-hero h1 { font-size: clamp(30px, 8vw, 36px); }
+  .project-sidebar h2 { font-size: clamp(23px, 6vw, 27px); }
+}
