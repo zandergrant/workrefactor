@@ -40,7 +40,7 @@
 
   <link
     rel="stylesheet"
-    href="../styles.css?v=10"
+    href="../styles.css?v=11"
   >
 
 
@@ -57,8 +57,11 @@
     },
     "publisher": {
       "@type": "Organization",
-      "name": "howworkruns"
-    }
+      "name": "howworkruns",
+      "url": "https://zandergrant.github.io/workrefactor/"
+    },
+    "url": "https://zandergrant.github.io/workrefactor/business-process-automation/",
+    "mainEntityOfPage": "https://zandergrant.github.io/workrefactor/business-process-automation/"
   }
   </script>
 
@@ -78,26 +81,26 @@
       },
       {
         "@type": "Question",
-        "name": "What business processes should be automated?",
+        "name": "What is an example of business process automation?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The strongest candidates are frequent, repeatable processes with clear outcomes, significant manual coordination, measurable delays or errors, and enough stability to justify redesign and automation."
+          "text": "Client onboarding is a common example. A signed contract can trigger structured intake, billing setup, project creation, internal assignments, document generation, client communication, and kickoff scheduling across several systems."
         }
       },
       {
         "@type": "Question",
-        "name": "What should not be automated?",
+        "name": "How is BPA different from workflow automation?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Processes that are unnecessary, poorly understood, constantly changing, highly judgment-dependent, or fundamentally broken should usually be simplified, clarified, or redesigned before automation."
+          "text": "Workflow automation usually focuses on one sequence of tasks or handoffs. BPA operates at a broader level and may redesign several connected workflows, systems, teams, rules, and outcomes."
         }
       },
       {
         "@type": "Question",
-        "name": "How is business process automation different from workflow automation?",
+        "name": "What processes should be automated first?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Workflow automation usually improves a specific sequence of tasks or handoffs, while business process automation operates at a broader scale and may redesign several connected workflows, systems, teams, business rules, and outcomes."
+          "text": "Start with processes that occur frequently, cross people or systems, create visible delays or errors, have reasonably stable rules, and produce an outcome you can measure."
         }
       },
       {
@@ -105,7 +108,31 @@
         "name": "Does business process automation require AI?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. Many business processes can be automated with rules, integrations, APIs, scripts, and existing software. AI is most useful where the process requires interpretation of unstructured information, drafting, classification, extraction, or other language-heavy work."
+          "text": "No. Many processes can be improved with existing software, rules, integrations, APIs, and scripts. AI is most useful when the process requires interpretation of unstructured information."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you need to replace your existing software?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Usually not. Start by checking whether current systems can be configured, connected, or extended before adding another platform."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can a business process be partially automated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Many of the best designs automate predictable work while keeping people involved for approvals, exceptions, relationships, and judgment-heavy decisions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you start with BPA?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pick one recurring process, define where it begins and ends, map the current state, identify friction, redesign the process, and only then choose the technology needed to support the future state."
         }
       }
     ]
@@ -121,11 +148,11 @@
   <meta property="og:description" content="A practical guide to business process automation: what BPA is, examples, process redesign, what to automate, ROI, AI, implementation, tools, and common mistakes.">
   <meta property="og:url" content="https://zandergrant.github.io/workrefactor/business-process-automation/">
   <meta name="twitter:card" content="summary">
-  <script defer src="../site.js?v=10"></script>
+  <script defer src="../site.js?v=11"></script>
 </head>
 
 
-<body>
+<body class="guide-page">
 
 
   <!-- ======================================================
@@ -164,13 +191,13 @@
 
     <section class="hero">
 
-      <div class="hero-glow hero-glow-one"></div>
-      <div class="hero-glow hero-glow-two"></div>
+      <div class="hero-glow hero-glow-one" aria-hidden="true"></div>
+      <div class="hero-glow hero-glow-two" aria-hidden="true"></div>
 
       <div class="container hero-inner">
 
         <p class="eyebrow hero-eyebrow">
-          Curated Guide · Business Process Automation
+          Practical guide · Business Process Automation
         </p>
 
         <h1>
@@ -195,13 +222,16 @@
 
           <a
             class="button-link"
-            href="#checklist"
+            href="../#guides"
           >
-            Find process opportunities
-            <span aria-hidden="true">↓</span>
+            Back to all guides
           </a>
 
         </div>
+
+        <p class="eyebrow hero-eyebrow">
+          Updated <time datetime="2026-08-31">August 2026</time>
+        </p>
 
       </div>
 
@@ -218,11 +248,11 @@
          ====================================================== -->
 
     <section
-      class="intro-section"
+      class="section"
       id="start"
     >
 
-      <div class="container intro-grid">
+      <div class="container philosophy-grid">
 
         <div>
 
@@ -237,7 +267,7 @@
         </div>
 
 
-        <div class="intro-copy">
+        <div class="philosophy-copy">
 
           <p>
             Business process automation, often shortened to BPA,
@@ -259,13 +289,6 @@
             team, and ready to begin work. That process may cross
             sales, finance, operations, project management,
             document systems, and client communication.
-          </p>
-
-          <p>
-            <strong>
-              Last reviewed:
-            </strong>
-            August 2026
           </p>
 
         </div>
@@ -304,7 +327,7 @@
         </div>
 
 
-        <div class="service-list">
+        <nav class="service-list" aria-label="Guide contents">
 
           <a
             class="service-row"
@@ -324,7 +347,7 @@
               and exceptions that make up an end-to-end process.
             </p>
 
-            <span class="service-arrow">
+            <span class="service-arrow" aria-hidden="true">
               ↓
             </span>
 
@@ -349,7 +372,7 @@
               finance, HR, sales, and internal operations.
             </p>
 
-            <span class="service-arrow">
+            <span class="service-arrow" aria-hidden="true">
               ↓
             </span>
 
@@ -374,7 +397,7 @@
               with enough friction, volume, and value.
             </p>
 
-            <span class="service-arrow">
+            <span class="service-arrow" aria-hidden="true">
               ↓
             </span>
 
@@ -399,7 +422,7 @@
               technology makes the process harder to change.
             </p>
 
-            <span class="service-arrow">
+            <span class="service-arrow" aria-hidden="true">
               ↓
             </span>
 
@@ -424,7 +447,7 @@
               or unnecessary work make automation a poor fit.
             </p>
 
-            <span class="service-arrow">
+            <span class="service-arrow" aria-hidden="true">
               ↓
             </span>
 
@@ -449,7 +472,7 @@
               improvement before you build it.
             </p>
 
-            <span class="service-arrow">
+            <span class="service-arrow" aria-hidden="true">
               ↓
             </span>
 
@@ -473,7 +496,7 @@
               Where AI expands what can be automated, and where plain rules still work better.
             </p>
 
-            <span class="service-arrow">
+            <span class="service-arrow" aria-hidden="true">
               ↓
             </span>
 
@@ -498,13 +521,13 @@
               current-state mapping through measurement.
             </p>
 
-            <span class="service-arrow">
+            <span class="service-arrow" aria-hidden="true">
               ↓
             </span>
 
           </a>
 
-        </div>
+        </nav>
 
       </div>
 
@@ -2523,7 +2546,7 @@
          FAQ
          ====================================================== -->
 
-    <section class="section">
+    <section class="section" id="faq">
 
       <div class="container">
 
@@ -2720,7 +2743,7 @@
          EDITORIAL NOTE
          ====================================================== -->
 
-    <section class="section philosophy-section">
+    <section class="section philosophy-section" id="editorial">
 
       <div class="container philosophy-grid">
 
@@ -2781,7 +2804,7 @@
           <div>
 
             <h2>
-              Go one level deeper.
+              Connect the next part of the system.
             </h2>
 
           </div>
@@ -2797,7 +2820,7 @@
           >
 
             <span class="service-number">
-              Next
+              Related
             </span>
 
             <h3>
@@ -2808,11 +2831,34 @@
               How individual workflows are designed, automated, and measured inside the larger processes described above.
             </p>
 
-            <span class="service-arrow">
+            <span class="service-arrow" aria-hidden="true">
               ↗
             </span>
 
           </a>
+          <a
+            class="service-row"
+            href="../business-systems/"
+          >
+
+            <span class="service-number">
+              Related
+            </span>
+
+            <h3>
+              Business Systems
+            </h3>
+
+            <p>
+              Learn how recurring work should be structured, documented, owned, measured, and improved as a business grows.
+            </p>
+
+            <span class="service-arrow" aria-hidden="true">
+              ↗
+            </span>
+
+          </a>
+
 
         </div>
 
@@ -2827,14 +2873,14 @@
 
     <section class="final-cta">
 
-      <div class="final-cta-glow"></div>
+      <div class="final-cta-glow" aria-hidden="true"></div>
 
       <div class="container final-cta-grid">
 
         <div>
 
           <p class="eyebrow">
-            When the guide is not enough
+            Implementation support
           </p>
 
           <h2>

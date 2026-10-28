@@ -40,7 +40,7 @@
 
   <link
     rel="stylesheet"
-    href="../styles.css?v=10"
+    href="../styles.css?v=11"
   >
 
 
@@ -57,8 +57,11 @@
     },
     "publisher": {
       "@type": "Organization",
-      "name": "howworkruns"
-    }
+      "name": "howworkruns",
+      "url": "https://zandergrant.github.io/workrefactor/"
+    },
+    "url": "https://zandergrant.github.io/workrefactor/workflow-automation/",
+    "mainEntityOfPage": "https://zandergrant.github.io/workrefactor/workflow-automation/"
   }
   </script>
 
@@ -73,7 +76,7 @@
         "name": "What is workflow automation?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Workflow automation uses technology to automatically move recurring work through a defined sequence of steps, triggers, decisions, handoffs, and actions with less manual intervention."
+          "text": "Workflow automation uses technology to move recurring work through triggers, decisions, actions, and handoffs with less manual intervention."
         }
       },
       {
@@ -81,23 +84,39 @@
         "name": "What workflows should be automated?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The strongest candidates are frequent, repetitive, predictable workflows with clear rules, measurable costs, and significant manual coordination or data movement."
+          "text": "Frequent, repetitive, predictable workflows with measurable costs and clear rules are usually the strongest candidates."
         }
       },
       {
         "@type": "Question",
-        "name": "What should not be automated?",
+        "name": "Can workflow automation use AI?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Processes that are rare, poorly understood, constantly changing, highly judgment-dependent, or fundamentally unnecessary should usually be improved or clarified before automation."
+          "text": "Yes. AI is especially useful when a workflow needs to understand unstructured information, such as emails, documents, natural language, images, or large bodies of internal knowledge."
         }
       },
       {
         "@type": "Question",
-        "name": "How is workflow automation different from business process automation?",
+        "name": "Do you need to replace your existing software?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Workflow automation typically focuses on moving work through a sequence of tasks and handoffs, while business process automation can encompass broader end-to-end processes involving multiple workflows, departments, systems, and business rules."
+          "text": "Usually not. Start by checking whether existing systems can be connected, extended, or configured differently before adding another platform."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is workflow automation only for large businesses?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Smaller teams often get a lot out of it, because recurring admin work can eat a large share of a small team’s week."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you start?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pick one recurring workflow, measure its current cost or friction, map how it works today, remove unnecessary steps, and only then determine what should be automated."
         }
       }
     ]
@@ -113,11 +132,11 @@
   <meta property="og:description" content="A practical guide to workflow automation: what it is, how it works, examples, what to automate, what not to automate, ROI, AI use cases, and how to get started.">
   <meta property="og:url" content="https://zandergrant.github.io/workrefactor/workflow-automation/">
   <meta name="twitter:card" content="summary">
-  <script defer src="../site.js?v=10"></script>
+  <script defer src="../site.js?v=11"></script>
 </head>
 
 
-<body>
+<body class="guide-page">
 
 
   <!-- ======================================================
@@ -156,13 +175,13 @@
 
     <section class="hero">
 
-      <div class="hero-glow hero-glow-one"></div>
-      <div class="hero-glow hero-glow-two"></div>
+      <div class="hero-glow hero-glow-one" aria-hidden="true"></div>
+      <div class="hero-glow hero-glow-two" aria-hidden="true"></div>
 
       <div class="container hero-inner">
 
         <p class="eyebrow hero-eyebrow">
-          Curated Guide · Workflow Automation
+          Practical guide · Workflow Automation
         </p>
 
         <h1>
@@ -188,13 +207,16 @@
 
           <a
             class="button-link"
-            href="#checklist"
+            href="../#guides"
           >
-            Find automation opportunities
-            <span aria-hidden="true">↓</span>
+            Back to all guides
           </a>
 
         </div>
+
+        <p class="eyebrow hero-eyebrow">
+          Updated <time datetime="2026-08-28">August 2026</time>
+        </p>
 
       </div>
 
@@ -211,11 +233,11 @@
          ====================================================== -->
 
     <section
-      class="intro-section"
+      class="section"
       id="start"
     >
 
-      <div class="container intro-grid">
+      <div class="container philosophy-grid">
 
         <div>
 
@@ -230,7 +252,7 @@
         </div>
 
 
-        <div class="intro-copy">
+        <div class="philosophy-copy">
 
           <p>
             Workflow automation uses technology to move
@@ -248,13 +270,6 @@
             The value comes from making the entire sequence
             happen reliably without somebody coordinating
             each step by hand.
-          </p>
-
-          <p>
-            <strong>
-              Last reviewed:
-            </strong>
-            August 2026
           </p>
 
         </div>
@@ -293,7 +308,7 @@
         </div>
 
 
-        <div class="service-list">
+        <nav class="service-list" aria-label="Guide contents">
 
           <a
             class="service-row"
@@ -313,7 +328,7 @@
               integrations, and exceptions.
             </p>
 
-            <span class="service-arrow">
+            <span class="service-arrow" aria-hidden="true">
               ↓
             </span>
 
@@ -338,7 +353,7 @@
               operations, finance, HR, and client service.
             </p>
 
-            <span class="service-arrow">
+            <span class="service-arrow" aria-hidden="true">
               ↓
             </span>
 
@@ -362,7 +377,7 @@
               Six questions that show whether a workflow is worth changing.
             </p>
 
-            <span class="service-arrow">
+            <span class="service-arrow" aria-hidden="true">
               ↓
             </span>
 
@@ -387,7 +402,7 @@
               redesigned, or eliminated instead.
             </p>
 
-            <span class="service-arrow">
+            <span class="service-arrow" aria-hidden="true">
               ↓
             </span>
 
@@ -411,7 +426,7 @@
               How to estimate whether the improvement will pay for itself.
             </p>
 
-            <span class="service-arrow">
+            <span class="service-arrow" aria-hidden="true">
               ↓
             </span>
 
@@ -436,7 +451,7 @@
               rules-based automation cannot.
             </p>
 
-            <span class="service-arrow">
+            <span class="service-arrow" aria-hidden="true">
               ↓
             </span>
 
@@ -461,13 +476,13 @@
               can use inside your own business.
             </p>
 
-            <span class="service-arrow">
+            <span class="service-arrow" aria-hidden="true">
               ↓
             </span>
 
           </a>
 
-        </div>
+        </nav>
 
       </div>
 
@@ -2023,7 +2038,7 @@
          FAQ
          ====================================================== -->
 
-    <section class="section">
+    <section class="section" id="faq">
 
       <div class="container">
 
@@ -2175,7 +2190,7 @@
          EDITORIAL NOTE
          ====================================================== -->
 
-    <section class="section philosophy-section">
+    <section class="section philosophy-section" id="editorial">
 
       <div class="container philosophy-grid">
 
@@ -2236,7 +2251,7 @@
           <div>
 
             <h2>
-              Go one level broader.
+              Connect the next part of the system.
             </h2>
 
           </div>
@@ -2252,7 +2267,7 @@
           >
 
             <span class="service-number">
-              Next
+              Related
             </span>
 
             <h3>
@@ -2263,11 +2278,34 @@
               How individual workflows fit into larger end-to-end processes, and where automation pays off across teams.
             </p>
 
-            <span class="service-arrow">
+            <span class="service-arrow" aria-hidden="true">
               ↗
             </span>
 
           </a>
+          <a
+            class="service-row"
+            href="../business-systems/"
+          >
+
+            <span class="service-number">
+              Related
+            </span>
+
+            <h3>
+              Business Systems
+            </h3>
+
+            <p>
+              Learn how recurring work should be structured, documented, owned, measured, and improved as a business grows.
+            </p>
+
+            <span class="service-arrow" aria-hidden="true">
+              ↗
+            </span>
+
+          </a>
+
 
         </div>
 
@@ -2282,14 +2320,14 @@
 
     <section class="final-cta">
 
-      <div class="final-cta-glow"></div>
+      <div class="final-cta-glow" aria-hidden="true"></div>
 
       <div class="container final-cta-grid">
 
         <div>
 
           <p class="eyebrow">
-            When the guide is not enough
+            Implementation support
           </p>
 
           <h2>
