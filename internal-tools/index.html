@@ -1,137 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Internal Tools: When to Use a Spreadsheet, Connect Systems, or Build an App | howworkruns</title>
-
-  <meta
-    name="description"
-    content="A practical guide to internal tools: when a spreadsheet is enough, when systems should be connected, when to configure existing software, and when a focused internal application makes sense."
-  >
-
-  <meta
-    name="robots"
-    content="index, follow"
-  >
-
-  <link
-    rel="preconnect"
-    href="https://fonts.googleapis.com"
-  >
-
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
-  >
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap"
-    rel="stylesheet"
-  >
-
-  <link
-    rel="stylesheet"
-    href="../styles.css?v=6"
-  >
-
-
+  <meta name="description" content="A practical guide to internal tools: when a spreadsheet is enough, when systems should be connected, when to configure existing software, and when a focused internal application makes sense.">
+  <meta name="robots" content="index, follow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css?v=7">
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Internal Tools: When to Use a Spreadsheet, Connect Systems, or Build an App",
-    "description": "A practical guide to deciding when a spreadsheet is enough, when existing systems should be connected, and when a focused internal application is worth building.",
-    "dateModified": "2026-08-31",
-    "author": {
-      "@type": "Organization",
-      "name": "howworkruns"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "howworkruns"
-    }
-  }
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Internal Tools: When to Use a Spreadsheet, Connect Systems, or Build an App",
+  "description": "A practical guide to deciding when a spreadsheet is enough, when existing systems should be connected, and when a focused internal application is worth building.",
+  "dateModified": "2026-10-27",
+  "author": {
+    "@type": "Organization",
+    "name": "howworkruns"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "howworkruns",
+    "url": "https://zandergrant.github.io/workrefactor/"
+  },
+  "url": "https://zandergrant.github.io/workrefactor/internal-tools/",
+  "mainEntityOfPage": "https://zandergrant.github.io/workrefactor/internal-tools/"
+}
   </script>
-
-
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What is an internal tool?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "An internal tool is software built or configured for employees to perform recurring business work more reliably, usually by combining workflow, data, rules, permissions, and a focused interface."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "When is a spreadsheet enough?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A spreadsheet is often enough when the process is low-volume, owned by a small number of people, easy to understand, low-risk, and does not require complex permissions, automation, audit history, or integrations."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "When should systems be connected instead of building a new app?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Connect systems when the main problem is duplicate data entry, repeated data movement, or broken handoffs between tools that already handle their individual jobs well."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "When should a business build an internal application?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A focused internal application makes sense when the process is important, recurring, poorly served by existing software, spans multiple systems or roles, and the operating benefit justifies ongoing ownership and maintenance."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Should you build or buy internal software?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Use existing software when it solves the problem well enough. Configure or connect tools before building. Build only when the process is differentiated or constrained enough that available products create more friction than they remove."
-        }
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is an internal tool?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "An internal tool is software built or configured for employees to perform recurring business work more reliably, often by combining workflow, data, rules, permissions, and a focused interface."
       }
-    ]
-  }
+    },
+    {
+      "@type": "Question",
+      "name": "When is a spreadsheet enough?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A spreadsheet is often enough when the process is low-volume, owned by a small number of people, low-risk, easy to understand, and does not require complicated permissions, workflow, or integrations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When should systems be integrated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Connect systems when the primary problem is duplicate entry, recurring data movement, broken handoffs, or manual reconciliation between tools that otherwise perform their individual jobs well."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When should you build an internal application?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Build when the process is important, recurring, reasonably stable, poorly served by available software, and valuable enough to justify ongoing ownership and maintenance."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should you build or buy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use existing software when it solves the problem well enough. Configure and connect tools before building. Build when your operating process is specific enough that general products create substantial ongoing friction."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can an internal tool use existing systems underneath?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Often the best design is a focused employee interface that connects to existing systems of record through APIs or automations instead of replacing them."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can internal tools include AI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. AI can handle bounded tasks such as classification, extraction, summarization, drafting, or knowledge retrieval while the application manages permissions, workflow, validation, and human review."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you know if an internal tool is worth it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Compare the full cost of the current process with the expected improvement in labor, speed, quality, capacity, control, and employee experience, then subtract the long-term cost of owning the software."
+      }
+    }
+  ]
+}
   </script>
-
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <meta name="theme-color" content="#0b1220">
   <link rel="canonical" href="https://zandergrant.github.io/workrefactor/internal-tools/">
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="article">
   <meta property="og:site_name" content="howworkruns">
   <meta property="og:title" content="Internal Tools: When to Use a Spreadsheet, Connect Systems, or Build an App | howworkruns">
   <meta property="og:description" content="A practical guide to internal tools: when a spreadsheet is enough, when systems should be connected, when to configure existing software, and when a focused internal application makes sense.">
   <meta property="og:url" content="https://zandergrant.github.io/workrefactor/internal-tools/">
   <meta name="twitter:card" content="summary">
-  <script defer src="../site.js?v=6"></script>
+  <script defer src="../site.js?v=7"></script>
 </head>
-
-
-<body>
-
-
-  <!-- ======================================================
-       HEADER
-       ====================================================== -->
-
+<body class="guide-page">
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
@@ -153,7 +135,6 @@
       </details>
     </div>
   </header>
-
 
   <main id="main">
 
@@ -268,9 +249,9 @@
 
           <p>
             <strong>
-              Last reviewed:
+              Updated:
             </strong>
-            August 2026
+            October 27, 2026
           </p>
 
         </div>
@@ -3098,9 +3079,9 @@
           </p>
 
           <p>
-            Our resources combine research, industry material,
-            practical frameworks, AI-assisted research and
-            drafting, and editorial review.
+            This guide was recovered from the earlier site source and
+            prepared with AI assistance. Its examples describe possible
+            workflows, not measured client results.
           </p>
 
           <p>
@@ -3282,11 +3263,6 @@
 
   </main>
 
-
-  <!-- ======================================================
-       FOOTER
-       ====================================================== -->
-
   <footer class="site-footer">
     <div class="container footer-grid">
       <div>
@@ -3320,8 +3296,5 @@
       <span>Fix the process. Then automate it.</span>
     </div>
   </footer>
-
-
 </body>
-
 </html>

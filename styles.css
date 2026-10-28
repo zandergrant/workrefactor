@@ -4899,3 +4899,221 @@ h3 {
     height: 28px;
   }
 }
+
+
+/* ==========================================================
+   V7 — RESOURCE GUIDES (business-systems, ai-for-operations,
+   internal-tools): single reading column, ~760px, 18px body
+   ========================================================== */
+
+.guide-page main > .section,
+.guide-page main > .intro-section {
+  padding-block: clamp(56px, 7vw, 96px);
+}
+
+.guide-page main > .section > .container,
+.guide-page main > .intro-section > .container {
+  width: min(760px, calc(100% - (var(--page-padding) * 2)));
+}
+
+/* Stack heading above copy */
+.guide-page .philosophy-grid,
+.guide-page .section-heading,
+.guide-page .intro-grid {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 18px;
+}
+
+.guide-page .section-heading {
+  margin-bottom: 36px;
+}
+
+.guide-page .philosophy-grid h2,
+.guide-page .section-heading h2 {
+  max-width: 22ch;
+}
+
+.guide-page .philosophy-copy {
+  max-width: none;
+  min-width: 0;
+}
+
+.guide-page .philosophy-copy p,
+.guide-page .philosophy-copy li,
+.guide-page .philosophy-copy dd,
+.guide-page .intro-copy p {
+  font-size: 18px;
+  line-height: 1.75;
+  color: var(--muted);
+}
+
+.guide-page .philosophy-copy p + p,
+.guide-page .philosophy-copy > * + p {
+  margin-top: 1em;
+}
+
+.guide-page .philosophy-copy .large-statement {
+  font-size: clamp(21px, 2vw, 24px);
+  line-height: 1.5;
+  color: var(--text);
+  margin-bottom: 28px;
+}
+
+.guide-page .philosophy-copy strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.guide-page .philosophy-copy a {
+  color: #2f7df6;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  overflow-wrap: anywhere;
+}
+
+.guide-page .philosophy-copy ul,
+.guide-page .philosophy-copy ol {
+  margin: 1.1em 0;
+  padding-left: 1.3em;
+}
+
+.guide-page .philosophy-copy li + li {
+  margin-top: 0.55em;
+}
+
+.guide-page .philosophy-copy li::marker {
+  color: #2f7df6;
+}
+
+.guide-page .philosophy-copy dl {
+  margin: 1.4em 0;
+  border-top: 1px solid var(--line);
+}
+
+.guide-page .philosophy-copy dt {
+  padding-top: 18px;
+  font-size: 18px;
+  color: var(--text);
+}
+
+.guide-page .philosophy-copy dd {
+  margin: 4px 0 0;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+/* Code / prompt examples: scroll inside the block, never the page */
+.guide-page pre {
+  max-width: 100%;
+  margin: 1.4em 0;
+  padding: 18px 20px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  background: #0b1220;
+  color: #e6edf7;
+  border-radius: 12px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.guide-page pre code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  white-space: pre;
+  background: none;
+  padding: 0;
+  color: inherit;
+}
+
+.guide-page :not(pre) > code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.86em;
+  padding: 0.1em 0.35em;
+  border-radius: 5px;
+  background: rgba(47, 125, 246, 0.08);
+  color: var(--text);
+  overflow-wrap: anywhere;
+}
+
+/* Tables (if any) scroll inside a wrapper */
+.guide-page .table-wrap {
+  max-width: 100%;
+  overflow-x: auto;
+  margin: 1.4em 0;
+}
+
+.guide-page .table-wrap table {
+  min-width: 560px;
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 16px;
+}
+
+.guide-page .table-wrap th,
+.guide-page .table-wrap td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+/* Rows / cards inside the narrower column */
+.guide-page .service-row {
+  grid-template-columns: 44px minmax(0, 1fr) 24px;
+  gap: 6px 18px;
+}
+
+.guide-page .service-row h3 {
+  grid-column: 2;
+}
+
+.guide-page .service-row p {
+  grid-column: 2;
+  grid-row: 2;
+  margin: 0;
+}
+
+.guide-page .service-row .service-arrow {
+  grid-column: 3;
+  grid-row: 1 / span 2;
+  align-self: center;
+}
+
+.guide-page .approach-row {
+  grid-template-columns: 44px minmax(0, 1fr);
+  gap: 8px 18px;
+  padding: 28px 0;
+}
+
+.guide-page .approach-row > :not(.approach-number) {
+  grid-column: 2;
+}
+
+.guide-page .friction-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (max-width: 620px) {
+  .guide-page .friction-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .guide-page .service-row {
+    grid-template-columns: 34px minmax(0, 1fr) 18px;
+    gap: 4px 12px;
+  }
+
+  .guide-page .approach-row {
+    grid-template-columns: 34px minmax(0, 1fr);
+    gap: 6px 12px;
+  }
+
+  .guide-page pre {
+    font-size: 13px;
+    padding: 14px 16px;
+  }
+}
+
+/* Decorative hero glows must never widen the page */
+.guide-page .hero {
+  overflow: hidden;
+}
