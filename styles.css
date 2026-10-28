@@ -4686,3 +4686,179 @@ h2 {
 .mobile-menu:not([open]) .mobile-menu-panel {
   display: none;
 }
+
+/* =========================================================
+   V3 — typographic wordmark, smaller headings, padded form
+   ========================================================= */
+
+/* ---------- Wordmark: lowercase DM Sans, "work" in accent blue ---------- */
+
+.brand {
+  gap: 0;
+}
+
+.brand-mark {
+  display: none;
+}
+
+.brand-name {
+  font-family: "DM Sans", Arial, sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.035em;
+  text-transform: lowercase;
+  color: var(--white);
+}
+
+.brand-name-mid {
+  color: #2f7df6;
+}
+
+/* ---------- Headings: about 25% smaller, slightly tighter ---------- */
+
+h1 {
+  font-size: clamp(40px, 5.6vw, 86px);
+  line-height: 0.93;
+}
+
+h2 {
+  font-size: clamp(30px, 3.5vw, 50px);
+  line-height: 0.99;
+}
+
+h3 {
+  font-size: clamp(21px, 1.7vw, 28px);
+  line-height: 1.05;
+}
+
+.contact-hero h1 {
+  font-size: clamp(40px, 5vw, 78px);
+}
+
+.project-sidebar h2 {
+  font-size: clamp(30px, 3vw, 44px);
+}
+
+.principle-grid h3,
+.home-page .principle-grid h3 {
+  font-size: clamp(19px, 1.35vw, 21px);
+}
+
+.home-page .guide-grid .friction-card h3 {
+  font-size: clamp(20px, 1.5vw, 22px);
+}
+
+.hero-copy,
+.home-hero .hero-copy {
+  margin-top: 28px;
+}
+
+/* ---------- Contact form: padded card ---------- */
+
+.project-form {
+  padding: clamp(32px, 3.6vw, 48px);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--white);
+  box-shadow: 0 12px 40px rgba(34, 58, 84, 0.06);
+}
+
+.form-group {
+  min-width: 0;
+  margin: 0 0 36px;
+  padding: 0 0 36px;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.form-group:last-of-type {
+  margin-bottom: 0;
+}
+
+/* Float the legend so it sits inside the card instead of on the fieldset edge */
+.form-group legend {
+  float: left;
+  width: 100%;
+  margin: 0 0 24px;
+  padding: 0;
+  font-size: clamp(24px, 2vw, 30px);
+}
+
+.form-group legend + * {
+  clear: both;
+}
+
+.form-group-intro {
+  margin: 0 0 24px;
+}
+
+.form-row {
+  gap: 20px 24px;
+}
+
+.form-field {
+  margin-bottom: 22px;
+}
+
+.form-field label {
+  margin-bottom: 8px;
+}
+
+.form-submit-area {
+  margin-top: 32px;
+  padding: 0;
+  background: transparent;
+  border-top: 0;
+}
+
+@media (max-width: 620px) {
+  h1 {
+    font-size: clamp(34px, 9.6vw, 44px);
+    line-height: 0.96;
+  }
+
+  h2 {
+    font-size: clamp(26px, 7vw, 32px);
+    line-height: 1.02;
+  }
+
+  h3 {
+    font-size: clamp(19px, 5vw, 22px);
+  }
+
+  .contact-hero h1 {
+    font-size: clamp(34px, 9.4vw, 42px);
+  }
+
+  .project-sidebar h2 {
+    font-size: clamp(26px, 7vw, 32px);
+  }
+
+  .brand-name {
+    font-size: 20px;
+  }
+
+  .project-form {
+    padding: 22px;
+    border-radius: 16px;
+  }
+
+  .form-group {
+    margin-bottom: 28px;
+    padding: 0 0 28px;
+  }
+
+  .form-group legend {
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+
+  .form-row {
+    gap: 0;
+  }
+
+  .form-field {
+    margin-bottom: 18px;
+  }
+}
