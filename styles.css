@@ -4863,7 +4863,7 @@ h3 {
   }
 }
 
-/* ---------- h-dot mark: static dot with speed streaks ---------- */
+/* ---------- h-dot mark: dot with trailing crescent echoes ---------- */
 
 .hdot {
   width: 30px;
@@ -4881,16 +4881,8 @@ h3 {
 }
 
 .hdot-dot,
-.hdot-streak {
+.hdot-echo {
   fill: #2f7df6;
-}
-
-.hdot-streak {
-  opacity: 0.9;
-}
-
-.hdot-streak--soft {
-  opacity: 0.55;
 }
 
 .brand {

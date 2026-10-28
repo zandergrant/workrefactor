@@ -1,13 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
   <style>
     .hdot-h { fill: none; stroke: #17202b; stroke-width: 3.6; stroke-linecap: round; stroke-linejoin: round; }
-    .hdot-dot, .hdot-streak { fill: #2f7df6; }
-    .hdot-streak { opacity: 0.9; }
-    .hdot-streak--soft { opacity: 0.55; }
+    .hdot-dot, .hdot-echo { fill: #2f7df6; }
     @media (prefers-color-scheme: dark) { .hdot-h { stroke: #f5f7fa; } }
   </style>
   <path class="hdot-h" d="M4.2 4.5v23M4.2 17.2c0-3.7 2.7-6.2 6.2-6.2s6 2.5 6 6.2v10.3"/>
-  <path class="hdot-streak" d="M19.3 25.6L22.9 24.8a.8.8 0 0 1 0 1.6z"/>
-  <path class="hdot-streak hdot-streak--soft" d="M20.2 22.5L23.2 21.95a.55.55 0 0 1 0 1.1zM20.2 28.7L23.2 28.15a.55.55 0 0 1 0 1.1z"/>
-  <ellipse class="hdot-dot" cx="27.2" cy="25.6" rx="3.35" ry="3.05"/>
+  <path class="hdot-echo" d="M24.45 22.91A2.75 2.75 0 1 0 24.45 28.29A3.85 3.85 0 0 1 24.45 22.91Z" opacity="0.55"/><path class="hdot-echo" d="M21.35 23.28A2.35 2.35 0 1 0 21.35 27.92A3.45 3.45 0 0 1 21.35 23.28Z" opacity="0.28"/><circle class="hdot-dot" cx="27.2" cy="25.6" r="3.1"/>
 </svg>
