@@ -5132,3 +5132,82 @@ h3 { font-size: clamp(19px, 1.45vw, 23px); line-height: 1.15; }
   .contact-hero h1 { font-size: clamp(30px, 8vw, 36px); }
   .project-sidebar h2 { font-size: clamp(23px, 6vw, 27px); }
 }
+
+
+/* ==========================================================
+   SELECTED WORK — 2026-11-06
+   Scope: homepage only. Keeps the existing editorial styling.
+   ========================================================== */
+.home-page .selected-work-section {
+  background: var(--background-soft);
+  border-top: 1px solid var(--line);
+}
+.home-page .work-list {
+  border-top: 1px solid var(--line);
+}
+.home-page .work-entry {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.35fr);
+  column-gap: clamp(30px, 5.5vw, 82px);
+  padding: clamp(28px, 3.6vw, 48px) 0;
+  border-bottom: 1px solid var(--line);
+}
+.home-page .work-entry-heading,
+.home-page .work-entry-body {
+  min-width: 0;
+}
+.home-page .work-type {
+  margin: 0 0 15px;
+  color: var(--blue-light);
+  font-family: "DM Sans", Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+  font-weight: 600;
+}
+.home-page .work-entry h3 {
+  max-width: 23ch;
+  margin: 0;
+  color: var(--text);
+  font-size: clamp(25px, 2.3vw, 34px);
+  line-height: 1.13;
+}
+.home-page .work-entry-body p {
+  margin: 0 0 17px;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.7;
+}
+.home-page .work-entry-body p:last-child {
+  margin-bottom: 0;
+}
+.home-page .work-entry-body .work-impact {
+  margin-top: 23px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line-soft);
+  color: var(--text);
+}
+.home-page .work-impact strong {
+  color: var(--text);
+  font-weight: 600;
+}
+@media (max-width: 800px) {
+  .home-page .work-entry {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 17px;
+  }
+  .home-page .work-entry h3 {
+    max-width: 30ch;
+  }
+}
+@media (max-width: 620px) {
+  .home-page .work-entry {
+    padding: 27px 0 30px;
+  }
+  .home-page .work-entry h3 {
+    font-size: 25px;
+    max-width: none;
+  }
+  .home-page .work-entry-body p {
+    font-size: 15px;
+  }
+}
