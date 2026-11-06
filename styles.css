@@ -5215,3 +5215,41 @@ h3 { font-size: clamp(19px, 1.45vw, 23px); line-height: 1.15; }
     font-size: 15px;
   }
 }
+
+/* ==========================================================
+   SCROLL-REVEAL HEADER — homepage only
+   Transparent on the hero; transitions to original header color
+   when scrolling or when the mobile menu is expanded.
+   Without JS, the existing opaque sticky header remains.
+   ========================================================== */
+.home-page.scroll-header-enabled .site-header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(30, 39, 52, 0);
+  border-bottom-color: rgba(255, 255, 255, 0);
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  transition: background-color 340ms ease, border-bottom-color 340ms ease, box-shadow 340ms ease;
+}
+.home-page.scroll-header-enabled .site-header.is-scrolled {
+  background: rgba(30, 39, 52, 0.98);
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 22px rgba(4, 10, 18, 0.12);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+/* Account for the header now overlaying the hero instead of occupying document flow. */
+.home-page.scroll-header-enabled .home-hero .hero-inner {
+  padding-top: clamp(154px, calc(7.5vw + 78px), 186px);
+}
+@media (max-width: 620px) {
+  .home-page.scroll-header-enabled .home-hero .hero-inner { padding-top: 142px; }
+}
+.home-page.scroll-header-enabled { scroll-padding-top: 88px; }
+@media (prefers-reduced-motion: reduce) {
+  .home-page.scroll-header-enabled .site-header { transition: none; }
+}

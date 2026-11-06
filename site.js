@@ -20,3 +20,20 @@ document.querySelectorAll('[data-current-year]').forEach(function (el) {
   window.addEventListener('hashchange', closeAll);
   window.addEventListener('pageshow', closeAll);
 })();
+
+
+// Homepage: transparent header over hero, original dark header when scrolled.
+(function () {
+  var header = document.querySelector('.home-page .site-header');
+  if (!header) return;
+  document.body.classList.add('scroll-header-enabled');
+  function syncHeader() {
+    var menuIsOpen = !!header.querySelector('.mobile-menu[open]');
+    header.classList.toggle('is-scrolled', window.scrollY > 24 || menuIsOpen);
+  }
+  syncHeader();
+  window.addEventListener('scroll', syncHeader, { passive: true });
+  window.addEventListener('pageshow', syncHeader);
+  var menu = header.querySelector('.mobile-menu');
+  if (menu) menu.addEventListener('toggle', syncHeader);
+})();
