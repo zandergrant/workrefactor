@@ -5253,3 +5253,80 @@ h3 { font-size: clamp(19px, 1.45vw, 23px); line-height: 1.15; }
 @media (prefers-reduced-motion: reduce) {
   .home-page.scroll-header-enabled .site-header { transition: none; }
 }
+
+
+/* ==========================================================
+   SELECTED WORK TYPOGRAPHY REFINEMENT
+   Preserve the site's serif section headings, but make the
+   project titles compact and restore a clear reading hierarchy.
+   ========================================================== */
+.home-page .selected-work-section .section-heading h2 {
+  font-size: clamp(28px, 3.2vw, 42px);
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+}
+
+.home-page .selected-work-section .section-lede {
+  max-width: 580px;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.home-page .work-entry h3 {
+  font-family: "DM Sans", Arial, sans-serif;
+  font-size: clamp(20px, 1.75vw, 24px);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 1.26;
+  max-width: 34ch;
+}
+
+.home-page .work-entry-body p {
+  font-size: 15.5px;
+  line-height: 1.65;
+}
+
+@media (max-width: 620px) {
+  .home-page .selected-work-section .section-heading {
+    margin-bottom: 28px;
+  }
+
+  .home-page .selected-work-section .section-heading h2 {
+    font-size: 26px;
+    line-height: 1.1;
+  }
+
+  .home-page .selected-work-section .section-lede {
+    font-size: 15px;
+    line-height: 1.58;
+    margin-top: 12px;
+  }
+
+  .home-page .work-entry {
+    padding: 25px 0 27px;
+    gap: 12px;
+  }
+
+  .home-page .work-type {
+    margin-bottom: 11px;
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  .home-page .work-entry h3 {
+    font-size: 20px;
+    line-height: 1.27;
+    letter-spacing: -0.03em;
+  }
+
+  .home-page .work-entry-body p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 14px;
+  }
+
+  .home-page .work-entry-body .work-impact {
+    margin-top: 18px;
+    padding-top: 15px;
+  }
+}
