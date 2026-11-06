@@ -26,6 +26,7 @@
 
   /* Accent */
   --blue: #2f7df6;
+  --brand-accent: #9ecbff;
   --blue-light: #1765db;
   --blue-pale: #edf5ff;
 
@@ -3845,7 +3846,7 @@ h2 {
 }
 
 .brand-name-mid {
-  color: #8fbcff;
+  color: var(--brand-accent);
 }
 
 .desktop-nav {
@@ -4702,7 +4703,7 @@ h2 {
 }
 
 .brand-name-mid {
-  color: #2f7df6;
+  color: var(--brand-accent);
 }
 
 .brand-name-runs {
@@ -4876,7 +4877,7 @@ h3 {
 
 .hdot-dot,
 .hdot-echo {
-  fill: #2f7df6;
+  fill: var(--brand-accent);
 }
 
 .brand {
