@@ -4715,6 +4715,10 @@ h2 {
   color: #2f7df6;
 }
 
+.brand-name-runs {
+  font-style: italic;
+}
+
 /* ---------- Headings: about 25% smaller, slightly tighter ---------- */
 
 h1 {
