@@ -5249,7 +5249,7 @@ h3 { font-size: clamp(19px, 1.45vw, 23px); line-height: 1.15; }
 @media (max-width: 620px) {
   .home-page.scroll-header-enabled .home-hero .hero-inner { padding-top: 142px; }
 }
-.home-page.scroll-header-enabled { scroll-padding-top: 88px; }
+.home-page.scroll-header-enabled section[id] { scroll-margin-top: 88px; }
 @media (prefers-reduced-motion: reduce) {
   .home-page.scroll-header-enabled .site-header { transition: none; }
 }
