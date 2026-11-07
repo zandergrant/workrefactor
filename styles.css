@@ -5708,24 +5708,21 @@ h3,
 .home-page.scroll-header-enabled .site-header.is-scrolled {
   background: rgba(19, 47, 37, .98);
 }
+/* Give the wordmark breathing room through typography, not outlines. */
+.home-page .brand-name {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.16em;
+  white-space: nowrap;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+}
 .home-page .brand-name-mid {
   color: #FFFFFF;
   font-weight: 600;
-  position: relative;
-  isolation: isolate;
-  z-index: 0;
 }
-/* A single thin offset outline, echoing the letterforms without colored fill. */
-.home-page .brand-name-mid::before {
-  content: "work";
-  position: absolute;
-  top: 2px;
-  left: 3px;
-  z-index: -1;
-  color: transparent;
-  -webkit-text-stroke: 0.9px rgba(255, 255, 255, 0.55);
-  white-space: nowrap;
-  pointer-events: none;
+.home-page .brand-name-runs {
+  font-weight: 500;
 }
 
 /* Informational labels take the deep green, without changing the white hero copy. */
