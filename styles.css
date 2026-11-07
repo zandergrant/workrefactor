@@ -5575,3 +5575,19 @@ h3,
 .home-page .method-phase h3 {
   letter-spacing: -0.01em;
 }
+
+/* Homepage section-heading refinement: larger type in a shorter line box. */
+.home-page .section-heading h2,
+.home-page .selected-work-section .section-heading h2,
+.home-page .final-cta h2 {
+  font-size: clamp(30px, 3vw, 40px);
+  line-height: 1.05;
+  letter-spacing: 0.005em;
+}
+@media (max-width: 620px) {
+  .home-page .section-heading h2,
+  .home-page .selected-work-section .section-heading h2,
+  .home-page .final-cta h2 {
+    font-size: 27px;
+  }
+}
