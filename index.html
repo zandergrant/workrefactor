@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=51">
+  <link rel="stylesheet" href="styles.css?v=52">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <meta name="theme-color" content="#0b1220">
   <link rel="canonical" href="https://howworkruns.com/">
@@ -24,7 +24,7 @@
   <meta property="og:image:alt" content="howworkruns: Your team is too good for busywork.">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://howworkruns.com/og-image.png">
-  <script defer src="site.js?v=19"></script>
+  <script defer src="site.js?v=20"></script>
   <script defer src="spreadsheet-demo.js?v=5"></script>
 <link rel="stylesheet" href="/footer.css?v=1"></head>
 <body class="home-page">
@@ -68,42 +68,59 @@
           <a class="button-link" href="#method">See how we work <span aria-hidden="true">↓</span></a>
         </div>
 
-        <figure class="hero-system" aria-label="Find the bottleneck, simplify the handoff, and keep work moving.">
-          <svg class="hero-system-drawing" viewBox="0 0 760 180" fill="none" aria-hidden="true" focusable="false">
-            <g class="hf-feeds">
-              <path d="M44 42H100L160 90M44 138H100L160 90M44 90H160"/>
-              <path d="M44 42H100L160 90M44 138H100L160 90M44 90H160" class="hf-arrivals"/>
+        <figure class="hero-system" aria-label="Blocks queue at a slow processing machine. A closer inspection reveals a blockage; removing it lets work flow smoothly and emerge as organized teal circles.">
+          <svg class="hero-system-drawing" viewBox="0 0 760 220" fill="none" aria-hidden="true" focusable="false">
+            <g class="hm-tracks">
+              <path d="M30 56H95L164 104M30 152H95L164 104M30 104H314M464 104H724"/>
+              <path d="M716 98l8 6-8 6"/>
             </g>
-            <path class="hf-baseline" d="M160 90H700"/>
-            <path class="hf-detour" d="M180 90H276V36H388V144H276V90H478"/>
-            <g class="hf-queue">
-              <rect x="209" y="83" width="14" height="14" rx="2"/>
-              <rect x="230" y="83" width="14" height="14" rx="2"/>
-              <rect x="251" y="83" width="14" height="14" rx="2"/>
+            <g class="hm-machine">
+              <rect class="hm-case" x="314" y="42" width="150" height="124" rx="12"/>
+              <path class="hm-case-detail" d="M314 66H464M329 54h13M348 54h7M327 153h18M351 153h9"/>
+              <circle class="hm-status" cx="448" cy="54" r="3"/>
+              <path class="hm-detour" d="M330 104H357V78H421V132H357V104H448"/>
+              <path class="hm-direct" d="M330 104H448"/>
+              <g class="hm-gate">
+                <path class="hm-gate-top" d="M390 76V96"/>
+                <path class="hm-gate-bottom" d="M390 112V132"/>
+              </g>
+              <g class="hm-inspection">
+                <rect x="365" y="69" width="50" height="70" rx="6"/>
+                <path d="M360 76v-12h12M408 64h12v12M360 132v12h12M408 144h12v-12"/>
+                <path class="hm-scan" d="M364 72H416"/>
+              </g>
             </g>
-            <g class="hf-junctions">
-              <circle cx="160" cy="90" r="7"/><circle cx="478" cy="90" r="7"/><circle cx="596" cy="90" r="7"/>
-              <path d="M694 84l6 6-6 6"/>
+            <g class="hm-particles">
+              <rect class="hm-input" opacity="0" data-hm-input="0" x="-10" y="-10" width="20" height="20" rx="3" transform="translate(295 104)"/>
+              <rect class="hm-input" opacity="0" data-hm-input="1" x="-10" y="-10" width="20" height="20" rx="3" transform="translate(268 104)"/>
+              <rect class="hm-input" opacity="0" data-hm-input="2" x="-10" y="-10" width="20" height="20" rx="3" transform="translate(241 104)"/>
+              <rect class="hm-input" opacity="0" data-hm-input="3" x="-10" y="-10" width="20" height="20" rx="3" transform="translate(214 104)"/>
+              <rect class="hm-input" opacity="0" data-hm-input="4" x="-10" y="-10" width="20" height="20" rx="3" transform="translate(187 104)"/>
+              <rect class="hm-input" opacity="0" data-hm-input="5" x="-10" y="-10" width="20" height="20" rx="3" transform="translate(160 104)"/>
+              <rect class="hm-input" opacity="0" data-hm-input="6" x="-10" y="-10" width="20" height="20" rx="3" transform="translate(133 104)"/>
+              <rect class="hm-input" opacity="0" data-hm-input="7" x="-10" y="-10" width="20" height="20" rx="3" transform="translate(106 104)"/>
+              <circle class="hm-output" data-hm-output="0" r="9" transform="translate(578 90)"/>
+              <circle class="hm-output" data-hm-output="1" r="9" transform="translate(612 90)"/>
+              <circle class="hm-output" data-hm-output="2" r="9" transform="translate(646 90)"/>
+              <circle class="hm-output" data-hm-output="3" r="9" transform="translate(680 90)"/>
+              <circle class="hm-output" data-hm-output="4" r="9" transform="translate(578 122)"/>
+              <circle class="hm-output" data-hm-output="5" r="9" transform="translate(612 122)"/>
+              <circle class="hm-output" data-hm-output="6" r="9" transform="translate(646 122)"/>
+              <circle class="hm-output" data-hm-output="7" r="9" transform="translate(680 122)"/>
+              <circle class="hm-slow-output" opacity="0" r="9" transform="translate(700 104)"/>
             </g>
-            <g class="hf-inspect">
-              <rect x="252" y="16" width="160" height="148" rx="14"/>
-              <path d="M266 31h12M266 31v12M398 31h-12M398 31v12M266 149h12M266 149v-12M398 149h-12M398 149v-12"/>
-              <path class="hf-scan" d="M264 32H400"/>
-            </g>
-            <path class="hf-clean-line" d="M160 90H700"/>
-            <path class="hf-polish" d="M276 90H414"/>
-            <path class="hf-flowing" d="M44 90H700"/>
-            <g class="hf-resolved">
-              <circle cx="332" cy="90" r="15"/>
-              <path d="M325 90l5 5 9-10"/>
-            </g>
+            <path class="hm-flow-line" d="M164 104H314M464 104H700"/>
           </svg>
           <figcaption class="hero-system-caption">
-            <span class="hf-caption-inspect" aria-hidden="true">Find the bottleneck.</span>
-            <span class="hf-caption-simplify" aria-hidden="true">Simplify the handoff.</span>
-            <span class="hf-caption-flow" aria-hidden="true">Keep work moving.</span>
+            <span class="hm-caption-jam" aria-hidden="true">Work piles up at a slow handoff.</span>
+            <span class="hm-caption-inspect" aria-hidden="true">Look closer to find the blockage.</span>
+            <span class="hm-caption-repair" aria-hidden="true">Remove the extra step.</span>
+            <span class="hm-caption-flow" aria-hidden="true">The same work, flowing smoothly.</span>
           </figcaption>
-          <button class="hero-system-replay" type="button" hidden>Replay animation <span aria-hidden="true">↻</span></button>
+          <div class="hero-system-controls" hidden>
+            <button class="hero-system-pause" type="button" aria-pressed="false">Pause animation</button>
+            <button class="hero-system-replay" type="button">Replay animation <span aria-hidden="true">↻</span></button>
+          </div>
         </figure>
       </div>
       <div class="hero-grid-pattern" aria-hidden="true"></div>
