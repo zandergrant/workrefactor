@@ -80,6 +80,7 @@
     put('[data-rw-done]', raw ? 'done' : 'Complete');
     put('[data-rw-sheet-status]', raw ? 'in progress' : (step >= 5 ? 'Complete' : 'Assigned'));
     put('[data-rw-app-status]', step >= 4 ? 'Complete' : 'Assigned');
+    root.querySelector('[data-rw-card="104"] .rw-app-state').dataset.rwState = step >= 4 ? 'complete' : 'assigned';
     put('[data-rw-sheet-owner]', raw ? '—' : (step >= 6 ? 'Maya' : 'Unassigned'));
     put('[data-rw-app-owner]', step >= 7 ? 'Maya' : 'Unassigned');
     put('[data-rw-assigned]', step >= 4 ? '81' : '82');

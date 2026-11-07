@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=48">
+  <link rel="stylesheet" href="styles.css?v=49">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <meta name="theme-color" content="#0b1220">
   <link rel="canonical" href="https://howworkruns.com/">
@@ -25,7 +25,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://howworkruns.com/og-image.png">
   <script defer src="site.js?v=18"></script>
-  <script defer src="spreadsheet-demo.js?v=4"></script>
+  <script defer src="spreadsheet-demo.js?v=5"></script>
 </head>
 <body class="home-page">
 
@@ -113,12 +113,39 @@
             <div class="rw-panel rw-app">
               <h3>A simple, useful web app</h3>
               <div class="rw-app-window">
-                <div class="rw-app-heading"><strong>Request desk</strong><span>128 requests</span></div>
-                <div class="rw-app-stats"><div><strong>24</strong><span>New</span></div><div><strong data-rw-assigned>81</strong><span>Assigned</span></div><div><strong data-rw-complete>23</strong><span>Complete</span></div></div>
-                <div class="rw-app-list">
-                  <article class="rw-app-request" data-rw-card="104"><span class="rw-request-id">#104</span><div><h4>Site visit</h4><p>Facilities request</p><span class="rw-owner">Alex</span></div><span class="rw-app-state"><span data-rw-app-status>Complete</span><svg class="rw-cursor" viewBox="0 0 24 28" aria-hidden="true"><path d="M2 2V23L8 17L12 26L16 24L12 15H21Z"/></svg></span></article>
-                  <article class="rw-app-request" data-rw-card="108"><span class="rw-request-id">#108</span><div><h4>New client setup</h4><p>Client delivery</p><span class="rw-owner" data-rw-app-owner>Maya</span></div><span class="rw-app-state">New</span></article>
-                  <article class="rw-app-request"><span class="rw-request-id">#112</span><div><h4>Survey follow-up</h4><p>Customer insights</p><span class="rw-owner">Sam</span></div><span class="rw-app-state">Complete</span></article>
+                <div class="rw-app-heading">
+                  <div class="rw-app-brand">
+                    <span class="rw-app-brandmark" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><rect x="3" y="3" width="8" height="8" rx="1.8"/><rect x="13" y="3" width="8" height="8" rx="1.8"/><rect x="3" y="13" width="8" height="8" rx="1.8"/><rect x="13" y="13" width="8" height="8" rx="1.8"/></svg></span>
+                    <strong>Request desk</strong>
+                  </div>
+                  <span class="rw-app-count">128 requests</span>
+                </div>
+                <div class="rw-app-body">
+                  <div class="rw-app-intro">
+                    <div><strong>Overview</strong><span>Every request, one clear view</span></div>
+                    <span class="rw-app-view-label">Team view</span>
+                  </div>
+                  <div class="rw-app-stats" aria-label="Request status summary">
+                    <div class="rw-app-stat rw-app-stat-new"><span class="rw-app-stat-label">New</span><strong>24</strong></div>
+                    <div class="rw-app-stat rw-app-stat-assigned"><span class="rw-app-stat-label">Assigned</span><strong data-rw-assigned>81</strong></div>
+                    <div class="rw-app-stat rw-app-stat-complete"><span class="rw-app-stat-label">Complete</span><strong data-rw-complete>23</strong></div>
+                  </div>
+                  <div class="rw-app-distribution" aria-hidden="true"><span></span><span></span><span></span></div>
+                  <div class="rw-app-list-heading"><strong>Requests</strong><span>3 shown of 128</span></div>
+                  <div class="rw-app-list">
+                    <article class="rw-app-request" data-rw-card="104">
+                      <div class="rw-app-request-info"><span class="rw-request-id">#104</span><h4>Site visit</h4><div class="rw-app-request-meta"><span>Facilities</span><span class="rw-owner">Alex</span></div></div>
+                      <span class="rw-app-state" data-rw-state="complete"><span data-rw-app-status>Complete</span><svg class="rw-cursor" viewBox="0 0 24 28" aria-hidden="true"><path d="M2 2V23L8 17L12 26L16 24L12 15H21Z"/></svg></span>
+                    </article>
+                    <article class="rw-app-request" data-rw-card="108">
+                      <div class="rw-app-request-info"><span class="rw-request-id">#108</span><h4>New client setup</h4><div class="rw-app-request-meta"><span>Client delivery</span><span class="rw-owner" data-rw-app-owner>Maya</span></div></div>
+                      <span class="rw-app-state" data-rw-state="new">New</span>
+                    </article>
+                    <article class="rw-app-request">
+                      <div class="rw-app-request-info"><span class="rw-request-id">#112</span><h4>Survey follow-up</h4><div class="rw-app-request-meta"><span>Customer insights</span><span class="rw-owner">Sam</span></div></div>
+                      <span class="rw-app-state" data-rw-state="complete">Complete</span>
+                    </article>
+                  </div>
                 </div>
               </div>
               <p class="rw-panel-note rw-app-foot">A clearer view, with the tools your team needs to work with the data.</p>
