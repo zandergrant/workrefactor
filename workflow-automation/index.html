@@ -1303,7 +1303,19 @@
          ROI
          ====================================================== -->
 
-    <section
+    
+<section class="section philosophy-section" id="operating-note">
+  <div class="container philosophy-grid">
+    <div><p class="eyebrow">From a real implementation</p><h2>The second run tells you more than the first.</h2></div>
+    <div class="philosophy-copy">
+      <p>I've built scheduling automation for programs delivered across multiple regions and launch waves. Creating calendar events was only the first step. The workflow also had to reconcile different schedule formats, handle time zones, update assignments without creating duplicates, and check that calendars still matched their source after a change. People continued to choose schedules and manage exceptions.</p>
+      <p>A demo that creates ten events once doesn't test that. A better pilot creates a small set, runs it again, changes an assignment, moves a session, and compares the resulting calendar with the source. Include a missing owner and an invalid time on purpose. The system should handle the case or flag it, not silently leave incorrect information behind.</p>
+      <p>Measure mismatches, time spent correcting them, and manual touches remaining, not just actions executed. Make one adjustment, run the test again, and expand only when the results hold. Coordinators should spend their attention on actual scheduling conflicts, not on keeping records in sync.</p>
+    </div>
+  </div>
+</section>
+
+<section
       class="section"
       id="roi"
     >
