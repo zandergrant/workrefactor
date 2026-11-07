@@ -6361,3 +6361,60 @@ h3,
 .resources-page .resource-hub-group[id] { scroll-margin-top: 100px; }
 @media (max-width: 960px) { .resources-page .resource-hub-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } }
 @media (max-width: 600px) { .resources-page .resource-hub-grid { grid-template-columns: 1fr; } .resources-page .resource-hub-group + .resource-hub-group { margin-top: 42px; } .resources-page .resource-hub-card { padding: 21px; } }
+
+/* Privacy page: quiet, readable legal information in the main site design system. */
+.privacy-page {background:#fff;}
+.privacy-page .privacy-hero {
+  background:radial-gradient(ellipse 80% 100% at 88% 0%,rgba(74,126,190,.16),transparent 65%),#162438;
+  color:#fff;padding:clamp(68px,8vw,118px) 0 clamp(58px,7vw,96px);
+}
+.privacy-page .privacy-hero-inner {max-width:1000px;}
+.privacy-page .privacy-eyebrow {
+  margin:0 0 19px;color:#a9d1ff;font:600 12px/1.4 "Helvetica Neue",Helvetica,Arial,sans-serif;letter-spacing:.06em;
+}
+.privacy-page .privacy-hero h1 {
+  margin:0;color:#fff;font-family:"Instrument Serif",Georgia,serif;
+  font-size:clamp(48px,7vw,92px);font-weight:400;line-height:1.04;letter-spacing:-.04em;
+}
+.privacy-page .privacy-hero-intro {
+  max-width:770px;margin:25px 0 0;color:#d8e3f0;font:400 clamp(17px,1.8vw,20px)/1.65 "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+.privacy-page .privacy-updated {
+  margin:27px 0 0;color:#afc2d8;font:500 13px/1.6 "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+.privacy-page .privacy-reading {padding:clamp(48px,6vw,84px) 0 clamp(70px,8vw,115px);}
+.privacy-page .privacy-reading-inner {max-width:850px;margin:0 auto;}
+.privacy-page .privacy-overview {
+  padding:26px 30px;border-left:3px solid #266dd8;background:#f1f5fa;
+}
+.privacy-page .privacy-overview strong {
+  display:block;margin-bottom:6px;color:#102235;font:600 15px/1.5 "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+.privacy-page .privacy-overview p {
+  margin:0;color:#32475a;font:400 16px/1.75 "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+.privacy-page .privacy-article {margin-top:45px;}
+.privacy-page .privacy-article section {
+  padding:27px 0 30px;border-bottom:1px solid #e0e5eb;scroll-margin-top:105px;
+}
+.privacy-page .privacy-article section:first-child {padding-top:0;}
+.privacy-page .privacy-article h2 {
+  margin:0 0 16px;color:#12283f;font-family:"Instrument Serif",Georgia,serif;
+  font-size:clamp(28px,3.1vw,36px);font-weight:400;letter-spacing:-.02em;line-height:1.15;
+}
+.privacy-page .privacy-article p,.privacy-page .privacy-article li {
+  color:#253749;font:400 16px/1.85 "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+.privacy-page .privacy-article p {margin:0 0 16px;}
+.privacy-page .privacy-article p:last-child {margin-bottom:0;}
+.privacy-page .privacy-article ul {margin:0 0 16px;padding-left:23px;}
+.privacy-page .privacy-article li {padding-left:3px;margin-bottom:6px;}
+.privacy-page .privacy-article a {color:#1457ac;text-decoration:underline;text-underline-offset:3px;}
+.privacy-page .privacy-article a:hover {color:#07356d;}
+.privacy-page .privacy-outro {margin:35px 0 0;color:#5b6876;font:400 14px/1.7 "Helvetica Neue",Helvetica,Arial,sans-serif;}
+@media(max-width:620px){
+  .privacy-page .privacy-hero {padding:65px 0 58px;}
+  .privacy-page .privacy-overview {padding:20px;}
+  .privacy-page .privacy-article {margin-top:26px;}
+  .privacy-page .privacy-article section {padding:25px 0;}
+}

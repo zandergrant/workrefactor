@@ -130,3 +130,14 @@
 @media (prefers-reduced-motion: reduce) {
   .site-footer .footer-links a { transition: none; }
 }
+
+/* Shared privacy link in the site-wide footer. */
+.site-footer .footer-privacy-link {
+  color:inherit;text-decoration:underline;text-decoration-color:rgba(255,255,255,.3);
+  text-underline-offset:3px;transition:color .2s ease,text-decoration-color .2s ease;
+}
+.site-footer .footer-privacy-link:hover,
+.site-footer .footer-privacy-link:focus-visible {
+  color:#fff;text-decoration-color:currentColor;
+}
+.site-footer .footer-legal-separator {padding:0 8px;color:rgba(255,255,255,.35);}
