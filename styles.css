@@ -6006,3 +6006,99 @@ h3,
   .home-page .work-entry h3 { font-size: 18px; line-height: 1.3; }
   .home-page .work-entry-heading .work-illustration { width: 116px; margin-bottom: 12px; }
 }
+
+/* Selected work: short accounts of the work, with outcomes easy to find. */
+.home-page .selected-work-section .work-entry {
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.5fr) minmax(0, .9fr);
+  gap: clamp(24px, 3vw, 44px);
+  align-items: start;
+  padding-block: 34px;
+}
+.home-page .selected-work-section .work-entry h3 {
+  max-width: 23ch;
+}
+.home-page .work-detail {
+  display: grid;
+  gap: 17px;
+  margin: 0;
+}
+.home-page .work-detail dt,
+.home-page .work-result .work-result-label {
+  margin: 0 0 5px;
+  color: #355679;
+  font: 600 12px/1.5 "DM Sans", sans-serif;
+  letter-spacing: .025em;
+}
+.home-page .work-detail dd {
+  margin: 0;
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.65;
+}
+.home-page .work-result {
+  min-width: 0;
+  padding: 18px 20px;
+  border-left: 2px solid #B6CAE1;
+  background: rgba(23, 59, 105, .045);
+}
+.home-page .work-result .work-result-lead {
+  margin: 0 0 8px;
+  color: #173B69;
+  font: 600 20px/1.3 "DM Sans", sans-serif;
+  letter-spacing: -.025em;
+  overflow-wrap: anywhere;
+}
+.home-page .work-result .work-result-number {
+  font-size: clamp(25px, 2.5vw, 34px);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.home-page .work-result .work-result-note {
+  margin: 0;
+  color: #293F58;
+  font-size: 14px;
+  line-height: 1.6;
+}
+@media (max-width: 1000px) {
+  .home-page .selected-work-section .work-entry {
+    grid-template-columns: minmax(0, .85fr) minmax(0, 1.4fr);
+  }
+  .home-page .work-entry .work-result {
+    grid-column: 2;
+  }
+}
+@media (max-width: 620px) {
+  .home-page .selected-work-section .work-entry {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+    padding-block: 28px;
+  }
+  .home-page .selected-work-section .work-entry-heading {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 88px;
+    align-items: center;
+    gap: 16px;
+  }
+  .home-page .selected-work-section .work-entry-heading .work-illustration {
+    grid-column: 2;
+    grid-row: 1;
+    width: 88px;
+    margin: 0;
+  }
+  .home-page .selected-work-section .work-entry h3 {
+    grid-column: 1;
+    grid-row: 1;
+    max-width: 24ch;
+  }
+  .home-page .work-entry .work-result {
+    grid-column: 1;
+    padding: 15px 18px;
+  }
+  .home-page .work-result .work-result-lead {
+    font-size: 19px;
+  }
+  .home-page .work-result .work-result-number {
+    font-size: 29px;
+  }
+}
+
