@@ -5668,7 +5668,7 @@ h3,
    Temporary homepage-only palette, modeled on the earlier luminous blue hero.
    Reversible without changing guide pages, contact, or free resources. */
 .home-page {
-  --brand-accent: #E8DAC0;
+  --brand-accent: #F1F2EE;
 }
 
 /* Muted, layered green gradient with a fine noninteractive grain overlay. */
@@ -5709,7 +5709,7 @@ h3,
   background: rgba(19, 47, 37, .98);
 }
 .home-page .brand-name-mid {
-  color: #E8DAC0;
+  color: #F1F2EE;
 }
 
 /* Informational labels take the deep green, without changing the white hero copy. */
@@ -5717,21 +5717,21 @@ h3,
   color: #163B2A;
 }
 
-/* Green "After" outcome with an accessible light foreground. */
+/* A nearly transparent hunter-green wash, with dark text for readability. */
 .home-page .ba-after {
-  background: #173C2D;
-  border-color: #285541;
-  color: #F7FBF8;
+  background: rgba(19, 47, 37, 0.065);
+  border-color: rgba(19, 47, 37, 0.20);
+  color: #132F25;
 }
 .home-page .ba-after .ba-label {
-  color: #E8DAC0;
+  color: #163B2A;
 }
 .home-page .ba-after .ba-steps li {
-  color: #F7FBF8;
+  color: #132F25;
 }
 .home-page .ba-after .ba-steps li::before {
-  background: #E8DAC0;
-  color: #132F25;
+  background: #132F25;
+  color: #FFFFFF;
 }
 .home-page .ba-arrow {
   color: #285541;
