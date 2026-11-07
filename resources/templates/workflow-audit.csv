@@ -1,4 +1,12 @@
-Workflow,Case reference,Trigger,Expected outcome,Owner,Current steps and handoffs,Tools,Active time minutes,Waiting time minutes,Repeated work or errors,Possible cause,One change to test,Baseline,After test,Review date
-EXAMPLE - client onboarding,CASE-001,Signed contract,Kickoff can be scheduled,Operations,Sales to finance to delivery,CRM and email,25,180,Missing billing details,Required input not collected,Make billing field mandatory,3 incomplete of 10,To be measured,2026-11-20
-,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,
+Workflow,Case ID,Trigger,Outcome expected,Current owner,Handoffs and systems,Active minutes,Waiting minutes,Rework minutes,Exception or interruption,What caused it,One change to test,Baseline quality,Follow-up quality,Review owner,Review date
+ILLUSTRATIVE - client kickoff,C-001,Contract signed,Delivery schedules kickoff,Sales lead,CRM → finance → delivery,24,180,15,Billing detail missing,No required intake field,Require billing detail at handoff,1 correction,TBD,Delivery lead,
+ILLUSTRATIVE - client kickoff,C-002,Contract signed,Delivery schedules kickoff,Sales lead,CRM → finance → delivery,18,45,0,None,Complete handoff,Compare with delayed cases,0 corrections,TBD,Delivery lead,
+ILLUSTRATIVE - client kickoff,C-003,Contract signed,Delivery schedules kickoff,Sales lead,CRM → finance → delivery,30,280,20,Scope confirmation missing,Approval owner unclear,Name approval owner and decision window,2 corrections,TBD,Delivery lead,
+,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,

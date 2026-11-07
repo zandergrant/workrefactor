@@ -1,3 +1,11 @@
-Workflow,Owner,Cases per month,Minutes per case,Monthly hours,What repeats,Can we remove the step,Rules stable,Exceptions,Current systems,Source of truth,Small pilot,Success measure,Maintenance owner,Decision
-EXAMPLE - copy intake details,Operations,100,6,=C2*D2/60,Manual re-entry,No,Yes,Low,CRM and project tracker,CRM,Sync five approved records,Re-entry time and mismatches,Operations,Test
-,,,,=IF(AND(ISNUMBER(C3),ISNUMBER(D3)),C3*D3/60,""),,,,,,,,,,
+Candidate workflow,Owner,Cases per month,Manual minutes per case,Monthly labor hours (formula),Current tools,Main failure or rework,Could the step be removed?,Rules stable?,Exceptions per 100 cases,Source of truth,Small pilot,Quality measure,Maintenance owner,Decision
+ILLUSTRATIVE - copy client details,Operations,100,6,"=IF(AND(ISNUMBER(C2),ISNUMBER(D2)),C2*D2/60,"""")",CRM and project tool,Copy and paste errors,No,Yes,2,CRM,Sync 5 records and rerun,Mismatch count,Operations,Pilot
+ILLUSTRATIVE - chase missing approvals,Delivery,40,12,"=IF(AND(ISNUMBER(C3),ISNUMBER(D3)),C3*D3/60,"""")",Email and shared tracker,Waiting on sign-off,Maybe,Mostly,18,Project tracker,Test clear approval rules,Time to decision,Delivery lead,Simplify first
+,,,,"=IF(AND(ISNUMBER(C4),ISNUMBER(D4)),C4*D4/60,"""")",,,,,,,,,,
+,,,,"=IF(AND(ISNUMBER(C5),ISNUMBER(D5)),C5*D5/60,"""")",,,,,,,,,,
+,,,,"=IF(AND(ISNUMBER(C6),ISNUMBER(D6)),C6*D6/60,"""")",,,,,,,,,,
+,,,,"=IF(AND(ISNUMBER(C7),ISNUMBER(D7)),C7*D7/60,"""")",,,,,,,,,,
+,,,,"=IF(AND(ISNUMBER(C8),ISNUMBER(D8)),C8*D8/60,"""")",,,,,,,,,,
+,,,,"=IF(AND(ISNUMBER(C9),ISNUMBER(D9)),C9*D9/60,"""")",,,,,,,,,,
+,,,,"=IF(AND(ISNUMBER(C10),ISNUMBER(D10)),C10*D10/60,"""")",,,,,,,,,,
+,,,,"=IF(AND(ISNUMBER(C11),ISNUMBER(D11)),C11*D11/60,"""")",,,,,,,,,,
