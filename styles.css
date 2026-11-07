@@ -5261,9 +5261,9 @@ h3 { font-size: clamp(19px, 1.45vw, 23px); line-height: 1.15; }
 }
 
 .home-page .work-entry h3 {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Instrument Serif", Georgia, serif;
   font-size: clamp(20px, 1.75vw, 24px);
-  font-weight: 600;
+  font-weight: 400;
   letter-spacing: -0.035em;
   line-height: 1.26;
   max-width: 34ch;
@@ -5340,9 +5340,9 @@ h3,
 .home-page .principle-grid h3,
 .home-page .method-phase h3,
 .guide-page .service-row h3 {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Instrument Serif", Georgia, serif;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 400;
   letter-spacing: -0.035em;
   text-wrap: pretty;
 }
