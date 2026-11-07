@@ -1,0 +1,64 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Build a dashboard that helps decisions | howworkruns</title><meta name="description" content="Operations dashboard definitions, spreadsheet example and practical review routine."><meta name="robots" content="index,follow"><link rel="canonical" href="https://howworkruns.com/resources/guides/dashboard/"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"><link rel="stylesheet" href="../library.css"><script defer src="../library.js"></script></head><body class="rl-body"><a class="rl-skip" href="#main">Skip to content</a><header class="rl-header"><div class="rl-wrap"><a class="rl-brand" href="../../../" aria-label="howworkruns home">how<b>work</b><em>runs</em></a><nav class="rl-nav" aria-label="Primary navigation"><a href="../../../#services">Services</a><a href="../">Resources</a><a class="rl-nav-button" href="../../../contact/">Start a project</a></nav></div></header>
+    <main id="main"><section class="rl-guide-hero"><div class="rl-wrap"><p class="rl-breadcrumb"><a href="../../../">Home</a> / <a href="../">Resources</a> / Workbook + guide</p><p class="rl-kicker">Free resource / Workbook + guide</p><h1>Build a dashboard that helps decisions</h1><p>Choose the handful of operational measures that help someone make a decision, then trace each one to source data.</p></div></section>
+    <div class="rl-wrap rl-guide-layout"><article class="rl-article"><p>A dashboard is useful when it makes a decision easier, not when it shows every metric the software can calculate. Teams tend to accumulate charts because data is available. Then the meeting starts and everyone asks the same question: what needs our attention?</p>
+<p>This guide uses a request workflow as the example. The goal is a small dashboard that helps the team spot delayed work, assign ownership and see whether the process is getting better.</p>
+<p><strong><a href="../assets/operations-dashboard-example.xlsx">Download the sample dashboard workbook</a></strong></p>
+<h2>Start with decisions, not charts</h2>
+<p>Ask who will use the dashboard and what they need to do differently after viewing it. For a team managing incoming requests, four questions may be enough:</p>
+<ol>
+<li>How much work is open right now?</li>
+<li>Which requests are overdue or blocked, and who owns them?</li>
+<li>Is new work arriving faster than the team completes it?</li>
+<li>Is the time to completion improving without an increase in errors?</li>
+</ol>
+<p>You don't need a chart for everything. A small table of overdue items with an owner and next action may be more useful than a decorative pie chart.</p>
+<h2>Use definitions people can agree on</h2>
+<table>
+<thead>
+<tr>
+  <th>Metric</th>
+  <th>Working definition</th>
+  <th>Risk if unclear</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Open requests</td>
+  <td>Requests not marked Complete or Cancelled</td>
+  <td>Counts differ between teams</td>
+</tr>
+<tr>
+  <td>Overdue requests</td>
+  <td>Open requests with due date earlier than today</td>
+  <td>Excludes requests with missing dates unless separately flagged</td>
+</tr>
+<tr>
+  <td>Unassigned work</td>
+  <td>Open requests with a blank owner</td>
+  <td>Work can sit without anyone noticing</td>
+</tr>
+<tr>
+  <td>Completion rate</td>
+  <td>Completed requests / requests received in the same defined cohort or period</td>
+  <td>Backlog changes can distort a raw ratio</td>
+</tr>
+<tr>
+  <td>Cycle time</td>
+  <td>Completed timestamp minus created timestamp</td>
+  <td>Calendar time is not the same as active effort</td>
+</tr>
+<tr>
+  <td>Blocked share</td>
+  <td>Blocked requests / all open requests</td>
+  <td>Teams may avoid using Blocked if it's treated as failure</td>
+</tr>
+</tbody>
+</table>
+<p>Document the time window, exclusions and timezone. A KPI that changes definition every month cannot reliably show progress.</p>
+<h2>The sample workbook</h2>
+<p>The workbook contains fictional request records and a simple, formula-driven summary. It is meant to show the structure, not represent actual performance. Replace the data with your own only after confirming that status values and date fields are consistent.</p>
+<p>The useful part isn't the appearance of the dashboard; it is the connection to the underlying records. Every total should be explainable by filtering the source data. If the dashboard and the sheet disagree, don't polish the chart. Fix the definition or transformation.</p>
+<h2>Establish a meeting routine</h2>
+<p>Review exceptions first: overdue, blocked and unassigned. Decide the next action and owner. Then review whether arrival volume or completion capacity has changed enough to require staffing or process changes. End by checking whether last week's actions actually resolved the issues.</p>
+<p>The dashboard should reduce status preparation, not create another reporting assignment. If the team has to manually assemble the same chart every Monday, it may be time to automate the extraction rather than redesign the slide.</p>
+<div class="rl-callout"><strong>Need something more specific?</strong><p>A template may solve the problem. When the workflow needs a different system, we can help design and build it around the work your team actually does.</p><a href="../../../contact/">Talk about a project</a></div></article><aside class="rl-aside" aria-label="Other resources"><div class="rl-aside-box"><h3>Explore the library</h3><ul><li class=""><a href="../busywork-audit/">Find the busywork in your business</a></li><li class=""><a href="../spreadsheet-to-app/">Turn a spreadsheet into an operations app</a></li><li class=""><a href="../request-tracker/">The business request tracker</a></li><li class=""><a href="../automations/">Ten automations worth building</a></li><li class=""><a href="../sop/">Write an SOP your team will use</a></li><li class="current"><a href="../dashboard/">Build a dashboard that helps decisions</a></li><li class=""><a href="../meeting-actions/">Turn meetings into decisions and actions</a></li><li class=""><a href="../spreadsheet-or-app/">When a spreadsheet is enough</a></li></ul><p class="rl-aside-note">All downloads are free, editable and available without an email gate. Examples use fictional data.</p></div></aside></div></main><footer class="rl-footer"><div class="rl-wrap"><div><a class="rl-brand" href="../../../">how<b>work</b><em>runs</em></a><p>Less busywork. Clearer systems. More useful work.</p></div><div class="rl-footer-links"><a href="../">Free resources</a><a href="../../../contact/">Work with us</a></div></div></footer></body></html>

@@ -1,0 +1,5 @@
+<PARSED TEXT FOR SHEET: 1 / 1 TABS
+TAB NAME: assets__meeting-actions.csv>index,Item ID,Item Type,Meeting Date,Meeting,Decision or action,Owner or approver,Due / effective date,Status,Source link,Needs confirmation,Notes
+0,ACT-001,Action,2026-11-05,Weekly delivery review,Compare two status exports and list mismatched fields,Morgan,2026-11-12,Open,,No,Fictional sample
+1,DEC-001,Decision,2026-11-05,Weekly delivery review,Use the request tracker as the reporting source,Delivery lead,2026-11-09,Confirmed,,No,Fictional sample
+2,ACT-002,Action,2026-11-05,Weekly delivery review,Confirm who owns blocked vendor requests,,2026-11-10,Needs confirmation,,Yes,Fictional sample

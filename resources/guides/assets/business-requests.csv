@@ -1,0 +1,7 @@
+<PARSED TEXT FOR SHEET: 1 / 1 TABS
+TAB NAME: assets__business-requests.csv>index,ID,Created At,Updated At,Request,Category,Owner,Priority,Status,Due Date,Next Action
+0,REQ-1001,2026-10-26,2026-10-28,Create new client workspace,Client delivery,Jordan,High,In Progress,2026-11-10,Confirm client access
+1,REQ-1002,2026-10-29,2026-10-29,Update vendor details,Finance,Sam,Medium,Assigned,2026-11-12,Validate legal name
+2,REQ-1003,2026-11-01,2026-11-02,Review survey exception,Customer insights,,High,New,2026-11-08,Assign responsible owner
+3,REQ-1004,2026-11-02,2026-11-03,Fix weekly status report,Operations,Maya,Medium,Blocked,2026-11-06,Confirm source field definitions
+4,REQ-1005,2026-11-03,2026-11-05,Prepare onboarding checklist,People Ops,Lee,Low,Complete,2026-11-05,No action

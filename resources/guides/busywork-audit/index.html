@@ -1,0 +1,110 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Find the busywork in your business | howworkruns</title><meta name="description" content="Operations audit tool with an annual-hours estimate, practical workflow mapping and a small pilot plan."><meta name="robots" content="index,follow"><link rel="canonical" href="https://howworkruns.com/resources/guides/busywork-audit/"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"><link rel="stylesheet" href="../library.css"><script defer src="../library.js"></script></head><body class="rl-body"><a class="rl-skip" href="#main">Skip to content</a><header class="rl-header"><div class="rl-wrap"><a class="rl-brand" href="../../../" aria-label="howworkruns home">how<b>work</b><em>runs</em></a><nav class="rl-nav" aria-label="Primary navigation"><a href="../../../#services">Services</a><a href="../">Resources</a><a class="rl-nav-button" href="../../../contact/">Start a project</a></nav></div></header>
+    <main id="main"><section class="rl-guide-hero"><div class="rl-wrap"><p class="rl-breadcrumb"><a href="../../../">Home</a> / <a href="../">Resources</a> / Interactive audit</p><p class="rl-kicker">Free resource / Interactive audit</p><h1>Find the busywork in your business</h1><p>Identify the repeat entry, handoffs, waiting and unclear ownership that consume your team’s time. Leave with one experiment to run.</p></div></section>
+    <div class="rl-wrap rl-guide-layout"><article class="rl-article"><p>A process can look perfectly reasonable on paper and still eat hours every week. A request arrives, someone copies a few details, another person asks who owns it, and the team checks the status in three different places. No single step seems especially wasteful. Together, they turn straightforward work into a small coordination project.</p>
+<p>This audit is a way to spot that friction without committing to a new platform or a six-week process-mapping exercise. Start with <strong>one recurring task</strong>, look at three recent examples, and work out what makes it harder than it needs to be.</p>
+<section class="rl-widget" id="rl-audit" aria-label="Interactive busywork audit">
+  <h3 class="rl-tool-heading">Estimate the scale of one recurring task</h3>
+  <p class="rl-widget-desc">Inputs stay in this browser. This calculates active time spent, not money saved or hours you are guaranteed to recover.</p>
+  <form><div class="rl-form-grid">
+  <label class="rl-field-wide"><span class="rl-form-label">Which recurring task would you improve?</span><input class="rl-field" name="process" required maxlength="100" placeholder="E.g. compiling the Friday status report"></label>
+  <label><span class="rl-form-label">How many times per week?</span><input class="rl-field" name="frequency" type="number" value="20" min="1" max="20000" step="1" required></label>
+  <label><span class="rl-form-label">Active minutes each time?</span><input class="rl-field" name="activeMinutes" type="number" value="8" min="0" max="1440" step="0.5" required></label>
+  <label><span class="rl-form-label">How many handoffs per case?</span><select class="rl-select" name="handoffs"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option></select></label>
+  <label><span class="rl-form-label">How many times is data copied?</span><select class="rl-select" name="reentry"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></label>
+  <label><span class="rl-form-label">Is one owner clear?</span><select class="rl-select" name="owner"><option value="clear">Yes — one accountable person</option><option value="unclear">Not consistently</option></select></label>
+  <label><span class="rl-form-label">Can people find the current status?</span><select class="rl-select" name="visibility"><option value="clear">Usually, without asking</option><option value="poor">Often needs a message</option></select></label>
+  <label><span class="rl-form-label">How often are exceptions?</span><select class="rl-select" name="exceptions"><option value="rare">Rare / documented</option><option value="sometimes">Sometimes</option><option value="frequent">Frequent / judgment-heavy</option></select></label>
+  </div><div class="rl-widget-actions"><button class="rl-action" type="submit">Evaluate this workflow</button></div></form>
+  <div class="rl-result" hidden aria-live="polite"><span class="rl-result-title">A first look at the workload</span><div class="rl-result-metrics"><div><strong id="rl-audit-weekly">—</strong><span>Active hours / week</span></div><div><strong id="rl-audit-hours">—</strong><span>Active hours / 48 weeks</span></div></div><p><strong>First thing to test:</strong> <span id="rl-audit-recommendation"></span></p><p id="rl-audit-detail"></p><p id="rl-audit-next"></p><button class="rl-action secondary" id="rl-audit-export" type="button">Download this assessment (CSV)</button><small>These are effort estimates based on your entries, not a business case or an automation return forecast. Waiting time is excluded.</small></div>
+  <small>You can also download the <a href="../assets/workflow-audit.csv">three-case worksheet</a> for a closer look.</small>
+</section>
+
+<h2>1. Trace three real examples</h2>
+<p>Pick three instances of the same workflow, ideally one ordinary case, one that went smoothly and one that caused trouble. Walk through what actually happened rather than the process described in a procedure. For each case, capture:</p>
+<table>
+<thead>
+<tr>
+  <th>Look for</th>
+  <th>Ask yourself</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>The trigger</td>
+  <td>Where did this work enter the business? Form, email, Slack, conversation?</td>
+</tr>
+<tr>
+  <td>The first owner</td>
+  <td>Who knew they were responsible for picking it up?</td>
+</tr>
+<tr>
+  <td>Re-entry</td>
+  <td>How many times did someone copy, reformat or look up the same information?</td>
+</tr>
+<tr>
+  <td>Waiting</td>
+  <td>What happened while nobody was actively working on it?</td>
+</tr>
+<tr>
+  <td>Decisions</td>
+  <td>Who could approve, reject or escalate the next step?</td>
+</tr>
+<tr>
+  <td>Exceptions</td>
+  <td>What happened when the case didn't follow the normal path?</td>
+</tr>
+<tr>
+  <td>Finish line</td>
+  <td>How did anyone know it was complete?</td>
+</tr>
+</tbody>
+</table>
+<p>Use timestamps where they exist. Don't estimate twenty minutes of work simply because twenty minutes elapsed between two messages. <strong>Active effort and elapsed time are different measurements.</strong></p>
+<h2>2. Identify the constraint before choosing the tool</h2>
+<p>There are five common patterns. They call for different fixes.</p>
+<table>
+<thead>
+<tr>
+  <th>Pattern</th>
+  <th>What it looks like</th>
+  <th>Try first</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Repeated entry</td>
+  <td>Names, dates or status are copied between systems</td>
+  <td>Use one source of truth; connect or import only when necessary</td>
+</tr>
+<tr>
+  <td>Missing ownership</td>
+  <td>Requests linger because nobody is clearly responsible</td>
+  <td>Add an owner and an agreed escalation rule</td>
+</tr>
+<tr>
+  <td>Invisible status</td>
+  <td>People ask for updates because they cannot see progress</td>
+  <td>Give them a shared, accurate view</td>
+</tr>
+<tr>
+  <td>Inconsistent decisions</td>
+  <td>Similar cases get different treatment</td>
+  <td>Write down the rule, examples and exception owner</td>
+</tr>
+<tr>
+  <td>Unnecessary step</td>
+  <td>A report, approval or check exists because it always has</td>
+  <td>Remove it and monitor what happens</td>
+</tr>
+</tbody>
+</table>
+<p>A process that nobody needs should be retired, not automated. A process with unclear decision rights should be clarified before a bot starts forwarding reminders.</p>
+<h2>3. Run a small experiment</h2>
+<p>Write one sentence describing the problem: <em>“We spend about 90 minutes each week finding and reconciling open facility requests before the Monday meeting.”</em> Then make one change: a single intake form, a consistent ID, a summary view, or an explicit rule for who can close a request.</p>
+<p>For two weeks, compare the same measures with your original three examples. Did the number of status chases fall? Did processing time drop? Did errors rise? Did the new approach move work onto somebody else? If the intervention helps, keep it. If it introduces new friction, revise or stop it.</p>
+<h2>4. Decide whether automation makes sense</h2>
+<p>Good early candidates are frequent, repeatable and rule-based, with information already available in a reasonably consistent format. Work that calls for nuanced judgment, handles sensitive data, or routinely produces new exceptions deserves more caution and human review.</p>
+<p>Use the audit's annual-hours figure as a <strong>size-of-problem estimate</strong>, not promised savings. The figure assumes 48 operating weeks; it does not include waiting time, rework, interruption costs or the full labor burden. A useful pilot measures accepted output and real effort after the change.</p>
+<h2>Your next step</h2>
+<p>Download the <a href="../assets/workflow-audit.csv">workflow audit worksheet</a>, use it to record three cases, then choose one small problem to fix. If the issue is request intake or shared visibility, the <a href="../request-tracker/">business request tracker</a> is a practical next step. If the work is repetitive and clearly specified, browse the <a href="../automations/">automation recipes</a>.</p>
+<div class="rl-callout"><strong>Need something more specific?</strong><p>A template may solve the problem. When the workflow needs a different system, we can help design and build it around the work your team actually does.</p><a href="../../../contact/">Talk about a project</a></div></article><aside class="rl-aside" aria-label="Other resources"><div class="rl-aside-box"><h3>Explore the library</h3><ul><li class="current"><a href="../busywork-audit/">Find the busywork in your business</a></li><li class=""><a href="../spreadsheet-to-app/">Turn a spreadsheet into an operations app</a></li><li class=""><a href="../request-tracker/">The business request tracker</a></li><li class=""><a href="../automations/">Ten automations worth building</a></li><li class=""><a href="../sop/">Write an SOP your team will use</a></li><li class=""><a href="../dashboard/">Build a dashboard that helps decisions</a></li><li class=""><a href="../meeting-actions/">Turn meetings into decisions and actions</a></li><li class=""><a href="../spreadsheet-or-app/">When a spreadsheet is enough</a></li></ul><p class="rl-aside-note">All downloads are free, editable and available without an email gate. Examples use fictional data.</p></div></aside></div></main><footer class="rl-footer"><div class="rl-wrap"><div><a class="rl-brand" href="../../../">how<b>work</b><em>runs</em></a><p>Less busywork. Clearer systems. More useful work.</p></div><div class="rl-footer-links"><a href="../">Free resources</a><a href="../../../contact/">Work with us</a></div></div></footer></body></html>

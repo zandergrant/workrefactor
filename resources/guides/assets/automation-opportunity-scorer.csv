@@ -1,0 +1,4 @@
+<PARSED TEXT FOR SHEET: 1 / 1 TABS
+TAB NAME: assets__automation-opportunity-scorer.csv>index,Opportunity,Trigger,Frequency per week,Active minutes each,Consistency (low/medium/high),Error risk (low/medium/high),Exception owner,Source system,Destination system,Current failure mode,Proposed smallest pilot,Success metric
+0,New request routing,Form submission,25,4,High,Low,Operations lead,Form,Shared tracker,Manual re-entry and assignment,Create records with clear category rules,Accepted records without rework
+1,Status digest,Friday afternoon,1,45,High,Low,Team lead,Shared tracker,Team email,Manual status compilation,Auto-generate a draft for review,Preparation minutes

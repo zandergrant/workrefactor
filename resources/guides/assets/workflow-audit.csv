@@ -1,0 +1,5 @@
+<PARSED TEXT FOR SHEET: 1 / 1 TABS
+TAB NAME: assets__workflow-audit.csv>index,Case ID,Trigger / source,Request type,Owner,Active minutes,Waiting hours,Number of handoffs,Re-entry events,Error / exception,Where it slowed,Smallest change to test,Outcome after pilot
+0,CASE-01 [example],Email,Customer request,Jordan,18,46,3,2,Missing account ID,Request bounced between two owners,Single intake field and owner rule,Not tested
+1,CASE-02 [example],Form,Customer request,Jordan,11,8,1,0,,No notable delay,Keep current path,Not tested
+2,CASE-03 [example],Slack,Customer request,Unassigned,27,72,4,3,Conflicting dates,No clear decision owner,Assign owner at intake and log exceptions,Not tested

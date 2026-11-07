@@ -1,0 +1,56 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>When a spreadsheet is enough | howworkruns</title><meta name="description" content="Free decision guide for choosing between spreadsheet, automation and custom internal application."><meta name="robots" content="index,follow"><link rel="canonical" href="https://howworkruns.com/resources/guides/spreadsheet-or-app/"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"><link rel="stylesheet" href="../library.css"><script defer src="../library.js"></script></head><body class="rl-body"><a class="rl-skip" href="#main">Skip to content</a><header class="rl-header"><div class="rl-wrap"><a class="rl-brand" href="../../../" aria-label="howworkruns home">how<b>work</b><em>runs</em></a><nav class="rl-nav" aria-label="Primary navigation"><a href="../../../#services">Services</a><a href="../">Resources</a><a class="rl-nav-button" href="../../../contact/">Start a project</a></nav></div></header>
+    <main id="main"><section class="rl-guide-hero"><div class="rl-wrap"><p class="rl-breadcrumb"><a href="../../../">Home</a> / <a href="../">Resources</a> / Decision tool</p><p class="rl-kicker">Free resource / Decision tool</p><h1>When a spreadsheet is enough</h1><p>Compare fixing the sheet, adding small automations, configuring existing software or building an app.</p></div></section>
+    <div class="rl-wrap rl-guide-layout"><article class="rl-article"><p>A spreadsheet can be a perfectly good operational system. It is familiar, flexible and easy to inspect. It can also become a tangle of permissions, formulas and manual updates. The important question isn't whether spreadsheets are professional enough. It's whether the current system lets the team do the job reliably.</p>
+<p>Use this guide before paying for another subscription or commissioning a custom app.</p>
+<section class="rl-widget" id="rl-chooser" aria-label="System choice guide"><h3 class="rl-tool-heading">A quick system choice check</h3><p class="rl-widget-desc">Answer four questions about the actual work. This provides a directional next step, not a security review or technology specification.</p><form><div class="rl-form-grid">
+<label><span class="rl-form-label">Who needs to access individual records?</span><select class="rl-select" name="permissions"><option value="simple">Small team, broadly shared access</option><option value="strict">Different record-level permissions</option></select></label>
+<label><span class="rl-form-label">How costly would a mistake be?</span><select class="rl-select" name="risk"><option value="low">Low; changes are recoverable</option><option value="high">High; sensitive or regulated records</option></select></label>
+<label><span class="rl-form-label">How complicated are the workflow rules?</span><select class="rl-select" name="logic"><option value="simple">Simple statuses and a few fields</option><option value="complex">Many steps, conditions or approvals</option></select></label>
+<label><span class="rl-form-label">How many people edit the same records?</span><select class="rl-select" name="concurrent"><option value="few">A handful, infrequent edits</option><option value="many">Many people, frequent simultaneous edits</option></select></label>
+<label><span class="rl-form-label">What is the main source of pain?</span><select class="rl-select" name="pain"><option value="clarity">Unclear ownership or inconsistent process</option><option value="entry">Repeated entry between tools</option><option value="interface">People struggle to find or update information</option><option value="none">The current sheet mostly works</option></select></label>
+</div><div class="rl-widget-actions"><button class="rl-action" type="submit">See a sensible starting point</button></div></form><div class="rl-result" hidden aria-live="polite"><strong id="rl-chooser-title" class="rl-result-title"></strong><p id="rl-chooser-copy" class="rl-choice-result"></p><p><strong>Next:</strong> Validate this against real examples, permissions and the ongoing maintenance burden.</p></div></section>
+
+<h2>Four options, from least to most involved</h2>
+<table>
+<thead>
+<tr>
+  <th>Option</th>
+  <th>Good when</th>
+  <th>Watch out for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>Improve the existing sheet</strong></td>
+  <td>A small team, simple records, occasional updates</td>
+  <td>Uncontrolled editing, fragile formulas, inconsistent field values</td>
+</tr>
+<tr>
+  <td><strong>Add forms, views and small scripts</strong></td>
+  <td>Data is fine but intake, status reporting or repetitive updates are painful</td>
+  <td>Permissions, ongoing script ownership, API limits and error handling</td>
+</tr>
+<tr>
+  <td><strong>Configure an existing platform</strong></td>
+  <td>Role-based access, notifications and integrations already exist in a tool you own</td>
+  <td>Paying for capabilities you don't use; duplicate systems</td>
+</tr>
+<tr>
+  <td><strong>Build a focused app</strong></td>
+  <td>People need a task-specific interface, multiple views or a precise workflow not served by current tools</td>
+  <td>Support, security, backups, maintenance and dependence on one builder</td>
+</tr>
+</tbody>
+</table>
+<h2>Questions that change the decision</h2>
+<p><strong>How many people edit the same record?</strong> A handful of editors can often coordinate in a spreadsheet. Frequent concurrent changes and complex approval rules are a warning sign.</p>
+<p><strong>Does each person need a different set of permissions?</strong> Spreadsheet sharing is usually a blunt instrument. If access must vary by client, department or individual record, examine a real application with enforceable authorization.</p>
+<p><strong>How expensive is an error?</strong> If a mistake affects an invoice, employee record, contractual obligation or regulated process, data validation, auditability and recovery are worth more than a quick build.</p>
+<p><strong>Can the work survive a script failure?</strong> A good internal tool should have an owner, a recovery path, documented dependencies and a known fallback.</p>
+<p><strong>Is the problem actually the interface?</strong> If the team hasn't agreed on what a request means or who can approve it, a new interface will make those disagreements more visible, not fix them.</p>
+<h2>A sensible escalation path</h2>
+<p>Start by cleaning up a few fields, documenting status meanings and agreeing on ownership. If the same problems remain, add a form and one well-defined script. Only then prototype a task-focused web interface using realistic examples. Before replacing the spreadsheet, compare the cost of maintenance, access control, reporting and future changes.</p>
+<h2>Decision checklist</h2>
+<p>Download the <a href="../assets/system-decision-checklist.md">system decision worksheet</a>. Use one row per requirement, record why it matters, identify your current system's limitation, and compare options on actual operational need rather than the appeal of a new interface.</p>
+<p>If you decide to prototype a small sheet-backed app, the <a href="../spreadsheet-to-app/">spreadsheet-to-app resource</a> includes a working browser demonstration and a starter Apps Script project.</p>
+<div class="rl-callout"><strong>Need something more specific?</strong><p>A template may solve the problem. When the workflow needs a different system, we can help design and build it around the work your team actually does.</p><a href="../../../contact/">Talk about a project</a></div></article><aside class="rl-aside" aria-label="Other resources"><div class="rl-aside-box"><h3>Explore the library</h3><ul><li class=""><a href="../busywork-audit/">Find the busywork in your business</a></li><li class=""><a href="../spreadsheet-to-app/">Turn a spreadsheet into an operations app</a></li><li class=""><a href="../request-tracker/">The business request tracker</a></li><li class=""><a href="../automations/">Ten automations worth building</a></li><li class=""><a href="../sop/">Write an SOP your team will use</a></li><li class=""><a href="../dashboard/">Build a dashboard that helps decisions</a></li><li class=""><a href="../meeting-actions/">Turn meetings into decisions and actions</a></li><li class="current"><a href="../spreadsheet-or-app/">When a spreadsheet is enough</a></li></ul><p class="rl-aside-note">All downloads are free, editable and available without an email gate. Examples use fictional data.</p></div></aside></div></main><footer class="rl-footer"><div class="rl-wrap"><div><a class="rl-brand" href="../../../">how<b>work</b><em>runs</em></a><p>Less busywork. Clearer systems. More useful work.</p></div><div class="rl-footer-links"><a href="../">Free resources</a><a href="../../../contact/">Work with us</a></div></div></footer></body></html>
