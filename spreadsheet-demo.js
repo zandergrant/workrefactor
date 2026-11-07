@@ -21,7 +21,7 @@
     '…and the app reflects the update too.',
     'Your team can work in either view, using the same underlying data.'
   ];
-  var delays = [2600, 2800, 3600, 3300, 1600, 2400, 1600, 2400];
+  var delays = [3000, 3400, 4200, 4000, 2600, 3000, 2600, 3000];
   var step = 8, started = false, userPaused = false;
   var inView = !('IntersectionObserver' in window);
   var timer = null, remaining = 0, deadline = 0;
@@ -30,10 +30,8 @@
     root.dataset.step = String(step);
     var view = step === 0 ? 'source' : ([1,2,5,6].indexOf(step) !== -1 ? 'sheet' : 'app');
     root.dataset.mobile = reduced ? 'all' : view;
-    root.querySelectorAll('[data-rw-stage]').forEach(function (element) {
-      if (element.getAttribute('data-rw-stage') === view) element.setAttribute('aria-current', 'step');
-      else element.removeAttribute('aria-current');
-    });
+    root.dataset.caption = step % 2 ? 'odd' : 'even';
+    put('[data-rw-chapter]', step < 1 ? '01 / Requests arrive' : (step < 3 ? '02 / Collect and organize' : (step < 4 ? '03 / A clearer way to work' : '04 / Connected in both directions')));
     narration.textContent = messages[step];
     var raw = step < 2;
     put('[data-rw-title="104"]', raw ? 'site visit' : 'Site visit');
