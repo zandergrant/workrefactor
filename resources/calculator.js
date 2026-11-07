@@ -47,7 +47,7 @@
     out('roi-payback', monthlyNet > 0 ? (implementation / monthlyNet).toFixed(1) + ' months' : 'No payback at these inputs');
     out('roi-conservative', currency.format(cautiousNet) + '/month');
     var note = 'Illustrative inputs. Replace them with observations from your own workflow.';
-    if (current <= proposed) note = 'The proposed process takes at least as long per case as today's. Account for quality or other benefits separately rather than assuming labor savings.';
+    if (current <= proposed) note = 'The proposed process takes at least as long per case as it does today. Account for quality or other benefits separately rather than assuming labor savings.';
     else if (monthlyNet <= 0) note = 'Under these assumptions, recurring costs outweigh the estimated time value. Simplify the process or revise the proposal before proceeding.';
     else if (cautiousNet <= 0) note = 'The cautious scenario is not financially positive. Pilot the change and check how much of the estimated time reduction is realistic.';
     out('roi-message', note);
