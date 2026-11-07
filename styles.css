@@ -6160,3 +6160,13 @@ h3,
   .rw-app-request .rw-request-id { display: none; }
   .rw-app-request .rw-app-state { grid-column: 2; grid-row: 1; }
 }
+
+/* Reserve all animated text variants; phase changes keep the same footprint. */
+.request-walkthrough .rw-text-slot { display: grid; }
+.request-walkthrough .rw-text-slot > span { grid-area: 1 / 1; min-width: 0; }
+.request-walkthrough .rw-text-measure { visibility: hidden; pointer-events: none; }
+.request-walkthrough .rw-controls button { white-space: nowrap; }
+.rw-playback { min-height: 36px; }
+
+.rw-script > span { flex-shrink: 0; white-space: nowrap; }
+.rw-script > div { min-width: 0; }

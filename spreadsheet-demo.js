@@ -3,9 +3,6 @@
   'use strict';
   var root = document.querySelector('.request-walkthrough');
   if (!root) return;
-  var narration = root.querySelector('[data-rw-narration]');
-  var scriptText = root.querySelector('[data-rw-script]');
-  var syncText = root.querySelector('[data-rw-sync]');
   var replay = root.querySelector('[data-rw-replay]');
   var pause = root.querySelector('[data-rw-pause]');
   var motion = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -25,14 +22,56 @@
   var step = 8, started = false, userPaused = false;
   var inView = !('IntersectionObserver' in window);
   var timer = null, remaining = 0, deadline = 0;
-  function put(selector, text) { root.querySelector(selector).textContent = text; }
+
+  // Reserve every text variant up front so playback never changes the layout.
+  function reserve(selector, values) {
+    var element = root.querySelector(selector);
+    var live = document.createElement('span');
+    live.className = 'rw-live-text';
+    live.textContent = element.textContent;
+    element.textContent = '';
+    var slot = document.createElement('span');
+    slot.className = 'rw-text-slot';
+    element.appendChild(slot);
+    slot.appendChild(live);
+    values.forEach(function (value) {
+      var measure = document.createElement('span');
+      measure.className = 'rw-text-measure';
+      measure.setAttribute('aria-hidden', 'true');
+      measure.textContent = value;
+      slot.appendChild(measure);
+    });
+  }
+  reserve('[data-rw-narration]', messages);
+  reserve('[data-rw-script]', [
+    'Standardizing fields, categorizing requests and flagging missing details…',
+    'Cleans and organizes the sheet as requests arrive.'
+  ]);
+  reserve('[data-rw-sync]', [
+    'App edit → shared spreadsheet',
+    'Spreadsheet edit → web app',
+    'Changes in the app update the sheet. Changes in the sheet update the app.'
+  ]);
+  reserve('[data-rw-app-status]', ['Assigned', 'Complete']);
+  reserve('[data-rw-sheet-status]', ['in progress', 'Assigned', 'Complete']);
+  reserve('[data-rw-sheet-owner]', ['—', 'Unassigned', 'Maya']);
+  reserve('[data-rw-app-owner]', ['Unassigned', 'Maya']);
+  reserve('[data-rw-title="104"]', ['site visit', 'Site visit']);
+  reserve('[data-rw-title="108"]', ['new client', 'New client setup']);
+  reserve('[data-rw-title="112"]', ['survey resp', 'Survey follow-up']);
+  reserve('[data-rw-done]', ['done', 'Complete']);
+
+  function put(selector, text) {
+    var element = root.querySelector(selector);
+    (element.querySelector('.rw-live-text') || element).textContent = text;
+  }
   function render() {
     root.dataset.step = String(step);
     var view = step === 0 ? 'source' : ([1,2,5,6].indexOf(step) !== -1 ? 'sheet' : 'app');
     root.dataset.mobile = reduced ? 'all' : view;
     root.dataset.caption = step % 2 ? 'odd' : 'even';
     put('[data-rw-chapter]', step < 1 ? '01 / Requests arrive' : (step < 3 ? '02 / Collect and organize' : (step < 4 ? '03 / A clearer way to work' : '04 / Connected in both directions')));
-    narration.textContent = messages[step];
+    put('[data-rw-narration]', messages[step]);
     var raw = step < 2;
     put('[data-rw-title="104"]', raw ? 'site visit' : 'Site visit');
     put('[data-rw-title="108"]', raw ? 'new client' : 'New client setup');
@@ -45,8 +84,8 @@
     put('[data-rw-app-owner]', step >= 7 ? 'Maya' : 'Unassigned');
     put('[data-rw-assigned]', step >= 4 ? '81' : '82');
     put('[data-rw-complete]', step >= 4 ? '23' : '22');
-    scriptText.textContent = step === 2 ? 'Standardizing fields, categorizing requests and flagging missing details…' : 'Cleans and organizes the sheet as requests arrive.';
-    syncText.textContent = step === 4 || step === 5 ? 'App edit → shared spreadsheet' : (step === 6 || step === 7 ? 'Spreadsheet edit → web app' : 'Changes in the app update the sheet. Changes in the sheet update the app.');
+    put('[data-rw-script]', step === 2 ? 'Standardizing fields, categorizing requests and flagging missing details…' : 'Cleans and organizes the sheet as requests arrive.');
+    put('[data-rw-sync]', step === 4 || step === 5 ? 'App edit → shared spreadsheet' : (step === 6 || step === 7 ? 'Spreadsheet edit → web app' : 'Changes in the app update the sheet. Changes in the sheet update the app.'));
   }
   function syncPlayback() {
     var running = started && step < 8 && !userPaused && inView && !document.hidden && !reduced;
