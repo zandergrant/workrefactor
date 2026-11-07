@@ -71,10 +71,7 @@ body {
     var(--text);
 
   font-family:
-    "DM Sans",
-    Arial,
-    Helvetica,
-    sans-serif;
+    "Helvetica Neue", Helvetica, Arial, sans-serif;
 
   font-size: 18px;
 
@@ -2108,9 +2105,7 @@ a.friction-card:hover {
     var(--blue-light);
 
   font-family:
-    "DM Sans",
-    Arial,
-    sans-serif;
+    "Helvetica Neue", Helvetica, Arial, sans-serif;
 
   font-size:
     10px;
@@ -2249,9 +2244,7 @@ a.friction-card:hover {
     var(--text);
 
   font-family:
-    "DM Sans",
-    Arial,
-    sans-serif;
+    "Helvetica Neue", Helvetica, Arial, sans-serif;
 
   font-size:
     16px;
@@ -3838,7 +3831,7 @@ h2 {
 }
 
 .brand-name {
-  font-family: "DM Sans", Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 21px;
   font-weight: 600;
   letter-spacing: -0.03em;
@@ -3860,7 +3853,7 @@ h2 {
 }
 
 .desktop-nav .nav-cta {
-  font-family: "DM Sans", Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 15px;
   font-weight: 600;
 }
@@ -3893,7 +3886,7 @@ h2 {
 /* ---------- Buttons ---------- */
 
 .button {
-  font-family: "DM Sans", Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 17px;
   font-weight: 600;
 }
@@ -3948,7 +3941,7 @@ h2 {
   display: block;
   margin-top: 6px;
   color: var(--muted);
-  font-family: "DM Sans", Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   letter-spacing: 0;
 }
@@ -4693,7 +4686,7 @@ h2 {
 }
 
 .brand-name {
-  font-family: "DM Sans", Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 22px;
   font-weight: 600;
   line-height: 1;
@@ -5154,7 +5147,7 @@ h3 { font-size: clamp(19px, 1.45vw, 23px); line-height: 1.15; }
 .home-page .work-type {
   margin: 0 0 15px;
   color: var(--blue-light);
-  font-family: "DM Sans", Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 13px;
   line-height: 1.5;
   font-weight: 600;
@@ -5264,7 +5257,7 @@ h3 { font-size: clamp(19px, 1.45vw, 23px); line-height: 1.15; }
 }
 
 .home-page .work-entry h3 {
-  font-family: "DM Sans", Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: clamp(20px, 1.75vw, 24px);
   font-weight: 600;
   letter-spacing: -0.035em;
@@ -5343,7 +5336,7 @@ h3,
 .home-page .principle-grid h3,
 .home-page .method-phase h3,
 .guide-page .service-row h3 {
-  font-family: "DM Sans", Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: 600;
   letter-spacing: -0.035em;
@@ -5410,7 +5403,7 @@ h3,
 
 /* Keep the editorial hero display font; compact the contact details. */
 .contact-hero-copy p:last-child {
-  font-family: "DM Sans", Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 18px;
   line-height: 1.5;
 }
@@ -5504,4 +5497,53 @@ h3,
   }
   .guide-page .service-number { font-size: 12px; line-height: 1.45; }
   .guide-page .service-row .service-arrow { font-size: 17px; align-self: center; }
+}
+
+/* Restrained site presentation: flat surfaces, readable type and compact controls. */
+.brand-name { font-family: "DM Sans", Arial, sans-serif; }
+.hero, .contact-hero, .service-hero { background: #152333; }
+.hero::before, .hero::after, .contact-hero::before,
+.hero-glow, .hero-grid-pattern, .contact-hero-glow, .final-cta-glow { display: none; }
+.hero, .contact-hero, .service-hero { min-height: 0; }
+.home-hero .hero-inner { padding-bottom: 72px; }
+.contact-hero, .service-hero { padding-block: 80px 64px; }
+.eyebrow, .method-phase-label, .ba-label, .footer-heading, .project-sidebar-label {
+  text-transform: none; letter-spacing: 0.025em;
+}
+.button, .desktop-nav .nav-cta, .mobile-menu summary, .mobile-menu-panel .mobile-menu-cta {
+  border-radius: 6px; box-shadow: none; min-height: 46px;
+}
+.button { padding: 12px 22px; font-size: 16px; }
+.button:hover, a.friction-card:hover { transform: none; box-shadow: none; }
+.home-page .symptom-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 32px; }
+.home-page .symptom-grid li {
+  padding: 12px 0 12px 18px; border: 0; border-bottom: 1px solid var(--line);
+  border-radius: 0; background: transparent; font-size: 16px;
+}
+.home-page .symptom-grid li::before {
+  left: 0; top: 22px; width: 4px; height: 4px; border: 0; border-radius: 50%; background: #000;
+}
+.ba-column, .friction-card, .method-phase, .project-form { border-radius: 4px; box-shadow: none; }
+.final-cta, .home-page .final-cta {
+  background: #f1f4f6; padding: 56px 0; border-top: 1px solid var(--line);
+}
+.final-cta h2, .final-cta-copy p, .final-cta .eyebrow { color: #000; }
+.final-cta .eyebrow { display: none; }
+.final-cta-grid, .home-page .final-cta-grid { grid-template-columns: minmax(0, 1fr); gap: 18px; align-items: start; }
+.final-cta h2 { max-width: 24ch; font-size: clamp(26px, 3vw, 36px); line-height: 1.2; }
+.final-cta-copy { max-width: 640px; }
+.final-cta-copy p { font-size: 17px; line-height: 1.6; margin: 0 0 22px; }
+.final-cta .button-primary { background: #152333; color: #fff; border-color: #152333; }
+.method-overview { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; }
+.method-step { padding-top: 20px; border-top: 1px solid var(--line); }
+.method-step h3 { margin: 0 0 12px; }
+.method-step p, .method-note { color: #000; font-size: 16px; line-height: 1.65; }
+.method-note { max-width: 800px; margin: 28px 0 0; }
+@media (max-width: 620px) {
+  .home-page .symptom-grid, .method-overview { grid-template-columns: minmax(0, 1fr); }
+  .method-overview { gap: 20px; }
+  .final-cta, .home-page .final-cta { padding: 40px 0; }
+  .final-cta-grid, .home-page .final-cta-grid { gap: 14px; }
+  .final-cta-copy p { font-size: 16px; line-height: 1.6; }
+  .contact-hero, .service-hero { padding-block: 56px 48px; }
 }
