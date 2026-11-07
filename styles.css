@@ -5562,3 +5562,16 @@ h3,
     padding-top: 126px;
   }
 }
+
+/* Homepage heading spacing trial. */
+.home-page h1 { letter-spacing: -0.02em; }
+.home-page h2,
+.home-page h3,
+.home-page .selected-work-section .section-heading h2,
+.home-page .work-entry h3,
+.home-page .service-row h3,
+.home-page .guide-grid .friction-card h3,
+.home-page .principle-grid h3,
+.home-page .method-phase h3 {
+  letter-spacing: -0.01em;
+}
