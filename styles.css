@@ -5668,7 +5668,7 @@ h3,
    Temporary homepage-only palette, modeled on the earlier luminous blue hero.
    Reversible without changing guide pages, contact, or free resources. */
 .home-page {
-  --brand-accent: #B6DDC3;
+  --brand-accent: #E8DAC0;
 }
 
 /* Muted, layered green gradient with a fine noninteractive grain overlay. */
@@ -5709,7 +5709,7 @@ h3,
   background: rgba(19, 47, 37, .98);
 }
 .home-page .brand-name-mid {
-  color: #B6DDC3;
+  color: #E8DAC0;
 }
 
 /* Informational labels take the deep green, without changing the white hero copy. */
@@ -5724,30 +5724,30 @@ h3,
   color: #F7FBF8;
 }
 .home-page .ba-after .ba-label {
-  color: #B6DDC3;
+  color: #E8DAC0;
 }
 .home-page .ba-after .ba-steps li {
   color: #F7FBF8;
 }
 .home-page .ba-after .ba-steps li::before {
-  background: #B6DDC3;
+  background: #E8DAC0;
   color: #132F25;
 }
 .home-page .ba-arrow {
   color: #285541;
 }
 
-/* Guides use the same sage as the "work" wordmark, with white reading cards. */
+/* Guides sit on a light stone background, keeping the white reading cards distinct. */
 .home-page #guides {
-  background: #B6DDC3;
-  border-top-color: #9BC7A9;
-  border-bottom-color: #9BC7A9;
+  background: #F1F2EE;
+  border-top-color: #DCE1D8;
+  border-bottom-color: #DCE1D8;
 }
 .home-page #guides .friction-card {
   background: #FFFFFF;
 }
 .home-page #guides a.friction-card:hover {
-  background: #ECF5EE;
+  background: #F7F8F5;
 }
 .home-page #guides .friction-card > span,
 .home-page #guides .resources-home-link a {
