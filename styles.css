@@ -5663,20 +5663,95 @@ h3,
 @media (max-width:760px) { .resources-page .resource-finder-tool { padding:18px; } }
 
 
+
 /* HOMEPAGE HUNTER GREEN COLOR TEST
-   A temporary, homepage-scoped palette experiment.
-   Removing this block restores the original blue/navy treatment.
-   All other pages retain their existing colors. */
+   Temporary homepage-only palette, modeled on the earlier luminous blue hero.
+   Reversible without changing guide pages, contact, or free resources. */
 .home-page {
   --brand-accent: #B6DDC3;
 }
-.home-page .home-hero,
+
+/* Muted, layered green gradient with a fine noninteractive grain overlay. */
+.home-page .home-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background-color: #132F25;
+  background-image:
+    radial-gradient(ellipse 75% 90% at 79% 0%, rgba(120, 177, 137, .34) 0%, rgba(62, 114, 81, .17) 37%, transparent 72%),
+    radial-gradient(ellipse 65% 80% at 2% 90%, rgba(56, 113, 82, .22), transparent 75%),
+    linear-gradient(122deg, #0C241B 3%, #1B4130 52%, #10291F 100%);
+}
+.home-page .home-hero::before {
+  content: "";
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: .28;
+  filter: none;
+  pointer-events: none;
+  mix-blend-mode: soft-light;
+  background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22160%22%20height%3D%22160%22%20viewBox%3D%220%200%20160%20160%22%3E%3Cfilter%20id%3D%22grain%22%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.78%22%20numOctaves%3D%223%22%20seed%3D%2212%22%20stitchTiles%3D%22stitch%22%2F%3E%3CfeColorMatrix%20type%3D%22saturate%22%20values%3D%220%22%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D%22160%22%20height%3D%22160%22%20fill%3D%22white%22%20filter%3D%22url(%23grain)%22%2F%3E%3C%2Fsvg%3E") repeat;
+  background-size: 160px 160px;
+  z-index: 1;
+}
+.home-page .home-hero .hero-inner {
+  position: relative;
+  z-index: 3;
+}
 .home-page .site-header,
 .home-page .site-footer {
   background: #132F25;
 }
 .home-page.scroll-header-enabled .site-header.is-scrolled {
-  background: rgba(19, 47, 37, 0.98);
+  background: rgba(19, 47, 37, .98);
+}
+.home-page .brand-name-mid {
+  color: #B6DDC3;
+}
+
+/* Informational labels take the deep green, without changing the white hero copy. */
+.home-page main .section-heading .eyebrow {
+  color: #163B2A;
+}
+
+/* Green "After" outcome with an accessible light foreground. */
+.home-page .ba-after {
+  background: #173C2D;
+  border-color: #285541;
+  color: #F7FBF8;
+}
+.home-page .ba-after .ba-label {
+  color: #B6DDC3;
+}
+.home-page .ba-after .ba-steps li {
+  color: #F7FBF8;
+}
+.home-page .ba-after .ba-steps li::before {
+  background: #B6DDC3;
+  color: #132F25;
+}
+.home-page .ba-arrow {
+  color: #285541;
+}
+
+/* Guides use the same sage as the "work" wordmark, with white reading cards. */
+.home-page #guides {
+  background: #B6DDC3;
+  border-top-color: #9BC7A9;
+  border-bottom-color: #9BC7A9;
+}
+.home-page #guides .friction-card {
+  background: #FFFFFF;
+}
+.home-page #guides a.friction-card:hover {
+  background: #ECF5EE;
+}
+.home-page #guides .friction-card > span,
+.home-page #guides .resources-home-link a {
+  color: #163B2A;
 }
 .home-page .final-cta .button-primary {
   background: #132F25;
