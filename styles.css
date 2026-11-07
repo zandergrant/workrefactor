@@ -5982,22 +5982,38 @@ h3,
 .site-footer .footer-heading {
   color: #FFFFFF;
 }
-/* The echo follows the bolder middle word without shifting the whole logo. */
+/* Two restrained echo contours sit just behind the word 'work'. */
 .home-page .brand-name-mid {
   position: relative;
   isolation: isolate;
   z-index: 0;
 }
+.home-page .brand-name-mid::before,
 .home-page .brand-name-mid::after {
   content: "work";
   position: absolute;
-  top: 1px;
-  left: 2px;
-  z-index: -1;
+  inset: 0 auto auto 0;
   color: transparent;
-  -webkit-text-stroke: 0.65px rgba(158,203,255,0.44);
+  font: inherit;
   white-space: nowrap;
   pointer-events: none;
+}
+.home-page .brand-name-mid::before {
+  z-index: -1;
+  transform: translate(3px, 2px);
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.82);
+}
+.home-page .brand-name-mid::after {
+  z-index: -2;
+  transform: translate(6px, 4px);
+  -webkit-text-stroke: 0.85px rgba(158, 203, 255, 0.42);
+}
+@supports not (-webkit-text-stroke: 1px white) {
+  .home-page .brand-name-mid {
+    text-shadow: 2px 2px 0 rgba(255,255,255,0.42), 4px 4px 0 rgba(158,203,255,0.25);
+  }
+  .home-page .brand-name-mid::before,
+  .home-page .brand-name-mid::after { display: none; }
 }
 @media (max-width: 800px) {
   .home-page .work-entry-heading .work-illustration { width: 124px; margin-bottom: 13px; }
@@ -6102,3 +6118,24 @@ h3,
   }
 }
 
+
+
+/* Two-line homepage value proposition: a statement, then the practical promise. */
+.home-page .home-hero .hero-promise {
+  margin: 24px auto 0;
+  max-width: 800px;
+  color: #FFFFFF;
+  font-family: "DM Sans", Arial, sans-serif;
+  font-size: clamp(22px, 2.1vw, 29px);
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -0.025em;
+}
+.home-page .home-hero .hero-copy { margin-top: 20px; }
+@media (max-width: 620px) {
+  .home-page .home-hero .hero-promise {
+    margin-top: 20px;
+    font-size: clamp(19px, 5.4vw, 24px);
+  }
+  .home-page .home-hero .hero-copy { margin-top: 18px; }
+}
