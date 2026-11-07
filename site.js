@@ -37,3 +37,37 @@ document.querySelectorAll('[data-current-year]').forEach(function (el) {
   var menu = header.querySelector('.mobile-menu');
   if (menu) menu.addEventListener('toggle', syncHeader);
 })();
+
+// A short hero illustration runs once when it enters view, then rests.
+(function () {
+  var scene = document.querySelector('.hero-system');
+  if (!scene) return;
+  var motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var replay = scene.querySelector('.hero-system-replay');
+  var started = false;
+  function play() {
+    if (motion.matches) return;
+    started = true;
+    scene.removeAttribute('data-running');
+    // Restart CSS animations without changing the scene's layout.
+    void scene.offsetWidth;
+    scene.setAttribute('data-running', '');
+  }
+  replay.hidden = motion.matches;
+  replay.addEventListener('click', play);
+  if (!motion.matches) {
+    if ('IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(function (entries) {
+        if (entries[0].isIntersecting && !started) {
+          play();
+          observer.disconnect();
+        }
+      }, { threshold: .3 });
+      observer.observe(scene);
+    } else play();
+  }
+  if (motion.addEventListener) motion.addEventListener('change', function (event) {
+    replay.hidden = event.matches;
+    if (event.matches) scene.removeAttribute('data-running');
+  });
+})();
