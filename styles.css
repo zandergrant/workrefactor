@@ -5668,7 +5668,7 @@ h3,
    Temporary homepage-only palette, modeled on the earlier luminous blue hero.
    Reversible without changing guide pages, contact, or free resources. */
 .home-page {
-  --brand-accent: #F1F2EE;
+  --brand-accent: #77C9FF;
 }
 
 /* Muted, layered green gradient with a fine noninteractive grain overlay. */
@@ -5709,7 +5709,8 @@ h3,
   background: rgba(19, 47, 37, .98);
 }
 .home-page .brand-name-mid {
-  color: #F1F2EE;
+  color: var(--brand-accent);
+  font-weight: 700;
 }
 
 /* Informational labels take the deep green, without changing the white hero copy. */
