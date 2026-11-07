@@ -5673,13 +5673,13 @@ h3,
 .home-page .home-hero,
 .home-page .site-header,
 .home-page .site-footer {
-  background: #234B3A;
+  background: #132F25;
 }
 .home-page.scroll-header-enabled .site-header.is-scrolled {
-  background: rgba(35, 75, 58, 0.98);
+  background: rgba(19, 47, 37, 0.98);
 }
 .home-page .final-cta .button-primary {
-  background: #234B3A;
-  border-color: #234B3A;
+  background: #132F25;
+  border-color: #132F25;
   color: #fff;
 }
