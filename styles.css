@@ -5591,3 +5591,60 @@ h3,
     font-size: 27px;
   }
 }
+
+
+/* Free resources: restrained editorial layout, accessible tools, responsive downloads */
+.resources-page .resources-hero { background:#152333; }
+.resources-page .resources-hero .hero-inner { padding:100px 0 88px; }
+.resources-page .resources-hero h1 { max-width:990px; font-size:clamp(44px,6vw,82px); line-height:1.06; }
+.resources-page .resources-hero .hero-copy { max-width:730px; font-size:18px; line-height:1.65; }
+.resources-page .resources-hero .hero-actions { margin-top:32px; }
+.resources-page .section { padding:78px 0; }
+.resources-page .resources-prose-grid { display:grid; grid-template-columns:minmax(0,.8fr) minmax(0,1.3fr); gap:clamp(32px,7vw,110px); align-items:start; }
+.resources-page .resources-prose-grid h2 { max-width:22ch; font-size:clamp(27px,2.7vw,37px); line-height:1.22; }
+.resources-page .resources-reading p { max-width:750px; margin:0 0 19px; font-size:17px; line-height:1.72; }
+.resources-page .resources-reading p:last-child { margin-bottom:0; }
+.resources-page .resources-reading a { color:#1256b0; text-decoration:underline; text-underline-offset:3px; }
+.resources-page .resources-reading a:hover { color:#082c65; }
+.resources-page .resources-intro,.resources-page .resources-calculator,.resources-page .resources-faq { background:#fff; }
+.resources-page .resources-library,.resources-page .resources-research,.resources-page .resources-guides { background:#f5f7fa; }
+.resources-page .resources-library .section-heading { margin-bottom:28px; }
+.resources-page .resource-list { border-top:1px solid #cbd5df; }
+.resources-page .resource-entry { display:grid; grid-template-columns:minmax(0,.85fr) minmax(0,1.25fr); gap:clamp(24px,6vw,90px); padding:34px 0 40px; border-bottom:1px solid #cbd5df; }
+.resources-page .resource-entry-heading { display:flex; gap:18px; align-items:flex-start; }
+.resources-page .resource-number { font-size:13px; padding-top:5px; color:#536479; font-weight:600; }
+.resources-page .resource-entry h3 { margin:0 0 9px; font-family:"DM Sans",Arial,sans-serif; font-size:clamp(20px,2vw,25px); line-height:1.25; letter-spacing:-.035em; font-weight:600; }
+.resources-page .resource-format { margin:0; color:#526175; font-size:14px; line-height:1.45; }
+.resources-page .resource-entry-detail p { margin:0 0 14px; font-size:16px; line-height:1.66; }
+.resources-page .resource-download { display:inline-flex; align-items:center; gap:12px; color:#1456ab; border-bottom:1px solid currentColor; font-size:15px; font-weight:600; margin-top:5px; padding-bottom:2px; }
+.resources-page .resource-download:hover { color:#082c65; }
+.resources-page .resources-roi-form { margin-top:22px; padding:25px; background:#f3f6f8; border:1px solid #dce3ea; border-radius:4px; }
+.resources-page .resources-roi-fields { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; }
+.resources-page .resource-field { display:flex; flex-direction:column; gap:7px; }
+.resources-page .resource-field label { font-size:14px; font-weight:600; line-height:1.5; }
+.resources-page .resource-field input { width:100%; min-width:0; padding:12px 14px; color:#000; background:#fff; border:1px solid #bac5d2; border-radius:4px; font-size:16px; }
+.resources-page .resource-field input:focus-visible { outline:3px solid #86b6ec; outline-offset:2px; }
+.resources-page .resources-roi-results { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:23px; border-top:1px solid #cbd5df; margin-top:24px; padding-top:23px; }
+.resources-page .resources-roi-results>div { display:flex; flex-direction:column; gap:5px; }
+.resources-page .resources-roi-results span { font-size:13px; line-height:1.45; color:#475569; }
+.resources-page .resources-roi-results output { font-family:"DM Sans",Arial,sans-serif; font-size:clamp(18px,2vw,25px); font-weight:600; line-height:1.3; }
+.resources-page .resources-footnote { font-size:14px!important; color:#536176; line-height:1.62!important; margin-top:18px!important; }
+.resources-page .resources-faq-item { border-bottom:1px solid #dce3ea; padding:18px 0; }
+.resources-page .resources-faq-item:first-child { border-top:1px solid #dce3ea; }
+.resources-page .resources-faq-item summary { cursor:pointer; font-size:17px; font-weight:600; line-height:1.5; }
+.resources-page .resources-faq-item p { font-size:16px; line-height:1.7; margin:13px 0 0; max-width:700px; }
+.resources-page section[id],.resources-page article[id] { scroll-margin-top:98px; }
+@media (max-width:760px) {
+ .resources-page .section { padding:55px 0; }
+ .resources-page .resources-hero .hero-inner { padding:72px 0 64px; }
+ .resources-page .resources-hero h1 { font-size:clamp(40px,9vw,55px); }
+ .resources-page .resources-hero .hero-copy { font-size:17px; }
+ .resources-page .resources-prose-grid,.resources-page .resource-entry { grid-template-columns:minmax(0,1fr); gap:18px; }
+ .resources-page .resources-reading p { font-size:16px; }
+ .resources-page .resource-entry { padding:26px 0 30px; }
+ .resources-page .resource-entry-detail p { font-size:15.5px; }
+ .resources-page .resources-roi-form { padding:18px; }
+}
+@media (max-width:430px) {
+ .resources-page .resources-roi-fields,.resources-page .resources-roi-results { grid-template-columns:minmax(0,1fr); gap:15px; }
+}

@@ -1,0 +1,3 @@
+Workflow,Owner,Cases per month,Minutes per case,Monthly hours,What repeats,Can we remove the step,Rules stable,Exceptions,Current systems,Source of truth,Small pilot,Success measure,Maintenance owner,Decision
+EXAMPLE - copy intake details,Operations,100,6,=C2*D2/60,Manual re-entry,No,Yes,Low,CRM and project tracker,CRM,Sync five approved records,Re-entry time and mismatches,Operations,Test
+,,,,=IF(AND(ISNUMBER(C3),ISNUMBER(D3)),C3*D3/60,""),,,,,,,,,,

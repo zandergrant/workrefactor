@@ -1,0 +1,4 @@
+Workflow,Case reference,Trigger,Expected outcome,Owner,Current steps and handoffs,Tools,Active time minutes,Waiting time minutes,Repeated work or errors,Possible cause,One change to test,Baseline,After test,Review date
+EXAMPLE - client onboarding,CASE-001,Signed contract,Kickoff can be scheduled,Operations,Sales to finance to delivery,CRM and email,25,180,Missing billing details,Required input not collected,Make billing field mandatory,3 incomplete of 10,To be measured,2026-11-20
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,

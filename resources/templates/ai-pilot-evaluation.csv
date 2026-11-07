@@ -1,0 +1,3 @@
+Case ID,Request type,Approved answer or routing label,Model suggestion,Accepted without change,Correction minutes,Escalation needed,Escalation correct,Missing input,Error severity,Notes,Version,Review date
+SYNTHETIC-001,Routing,Billing,Billing,Yes,0,No,Yes,No,None,Illustrative only,v1,2026-11-06
+,,,,,,,,,,,,
