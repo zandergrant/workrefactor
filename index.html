@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;1,600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=35">
+  <link rel="stylesheet" href="styles.css?v=36">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <meta name="theme-color" content="#0b1220">
   <link rel="canonical" href="https://howworkruns.com/">
@@ -25,6 +25,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://howworkruns.com/og-image.png">
   <script defer src="site.js?v=18"></script>
+  <script defer src="spreadsheet-demo.js?v=1"></script>
 </head>
 <body class="home-page">
 
@@ -70,6 +71,80 @@
       <div class="hero-grid-pattern" aria-hidden="true"></div>
     </section>
 
+    <section class="section sheet-story" id="spreadsheet-app" aria-labelledby="sheet-story-title">
+      <div class="container">
+        <div class="section-heading sheet-story-intro">
+          <h2 id="sheet-story-title">Your spreadsheet, with a better way to use it.</h2>
+          <p class="section-lede">A shared sheet can stay easy for everyone to access, while a custom web app makes the same information easier to understand and act on. Apps Script organizes the records, and changes made through either view update the same data.</p>
+        </div>
+        <figure class="sheet-flow" data-step="5" aria-labelledby="sheet-story-title" aria-describedby="sheet-flow-caption">
+          <div class="sheet-flow-toolbar">
+            <p class="sheet-flow-status" aria-live="polite" data-flow-status>The same records, accessible in the sheet and the app.</p>
+            <div class="sheet-flow-controls" data-flow-controls hidden>
+              <button type="button" data-flow-replay>Play example</button>
+              <button type="button" data-flow-pause hidden>Pause</button>
+            </div>
+          </div>
+          <div class="sheet-flow-mobile-views" role="group" aria-label="Example views" data-flow-views hidden>
+            <button type="button" data-flow-view="source" aria-pressed="false">Incoming records</button>
+            <button type="button" data-flow-view="sheet" aria-pressed="false">Spreadsheet</button>
+            <button type="button" data-flow-view="app" aria-pressed="true">Web app</button>
+          </div>
+          <div class="sheet-flow-grid">
+            <div class="sheet-flow-panel sheet-flow-source">
+              <div class="sheet-flow-panel-heading"><span class="sheet-flow-icon" aria-hidden="true">↘</span><h3>Incoming records</h3></div>
+              <p class="sheet-flow-panel-note">Different sources, different formats.</p>
+              <div class="sheet-flow-inbox" aria-label="Four incoming notes about three events">
+                <div class="sheet-flow-raw"><span>Email</span><strong>Design review</strong><small>nov 12 · Riley · please confirm</small></div>
+                <div class="sheet-flow-raw"><span>Form response</span><strong>TEAM ONBOARDING</strong><small>2026-11-14 · Sam · ready</small></div>
+                <div class="sheet-flow-raw"><span>Planning notes</span><strong>Customer workshop</strong><small>16/11/26 · Alex · TBC</small></div>
+                <div class="sheet-flow-raw"><span>Duplicate entry</span><strong>design review</strong><small>11/12/2026 · Riley · pending</small></div>
+              </div>
+              <p class="sheet-flow-source-foot">Four entries. Three events.</p>
+            </div>
+            <div class="sheet-flow-connector" aria-hidden="true"><span>→</span><i></i></div>
+            <div class="sheet-flow-panel sheet-flow-sheet">
+              <div class="sheet-flow-panel-heading"><span class="sheet-flow-icon sheet-flow-sheet-icon" aria-hidden="true">▦</span><h3>Shared Google Sheet</h3></div>
+              <p class="sheet-flow-panel-note">Still there. Still accessible to the team.</p>
+              <div class="sheet-flow-table-wrap">
+                <table class="sheet-flow-table" aria-label="Sample event spreadsheet">
+                  <thead><tr><th scope="col">Event</th><th scope="col">Date</th><th scope="col">Owner</th><th scope="col">Status</th></tr></thead>
+                  <tbody data-flow-sheet>
+                    <tr data-flow-row="review"><th scope="row">Design review</th><td>12 Nov</td><td>Riley</td><td><button type="button" class="sheet-flow-cell" data-sheet-edit="review" disabled>Needs confirmation</button></td></tr>
+                    <tr data-flow-row="onboarding"><th scope="row">Team onboarding</th><td>14 Nov</td><td>Sam</td><td><button type="button" class="sheet-flow-cell" data-sheet-edit="onboarding" disabled>Ready</button></td></tr>
+                    <tr data-flow-row="workshop"><th scope="row">Customer workshop</th><td>16 Nov</td><td>Alex</td><td><button type="button" class="sheet-flow-cell" data-sheet-edit="workshop" disabled>Needs confirmation</button></td></tr>
+                  <tr data-flow-duplicate hidden><th scope="row">design review</th><td>11/12/2026</td><td>Riley</td><td>pending</td></tr></tbody>
+                </table>
+              </div>
+              <div class="sheet-flow-script">
+                <span class="sheet-flow-script-icon" aria-hidden="true">{ }</span>
+                <div><strong>Apps Script</strong><span data-flow-script>Dates standardized · duplicates merged · status mapped</span></div>
+                <span class="sheet-flow-script-check" aria-hidden="true">✓</span>
+              </div>
+              <p class="sheet-flow-sheet-hint">Click a status to update the app.</p>
+            </div>
+            <div class="sheet-flow-connector sheet-flow-connector-app" aria-hidden="true"><span>→</span><i></i></div>
+            <div class="sheet-flow-panel sheet-flow-app">
+              <div class="sheet-flow-panel-heading"><span class="sheet-flow-icon" aria-hidden="true">▤</span><h3>Custom web app</h3></div>
+              <div class="sheet-flow-app-window">
+                <div class="sheet-flow-app-header"><strong>Event desk</strong><span data-flow-count>3 events · 2 to confirm</span></div>
+                <div class="sheet-flow-app-placeholder" aria-hidden="true"><i></i><i></i><i></i><span>A clearer view of the same information.</span></div>
+                <div class="sheet-flow-events" data-flow-app>
+                  <article class="sheet-flow-event" data-flow-card="review"><div class="sheet-flow-date"><strong>12</strong><span>Nov</span></div><div><h4>Design review</h4><p>Riley <span data-app-status="review">· Needs confirmation</span></p></div><button type="button" data-app-edit="review" disabled>Confirm</button></article>
+                  <article class="sheet-flow-event" data-flow-card="onboarding"><div class="sheet-flow-date"><strong>14</strong><span>Nov</span></div><div><h4>Team onboarding</h4><p>Sam <span data-app-status="onboarding">· Ready</span></p></div><button type="button" data-app-edit="onboarding" disabled>Reopen</button></article>
+                  <article class="sheet-flow-event" data-flow-card="workshop"><div class="sheet-flow-date"><strong>16</strong><span>Nov</span></div><div><h4>Customer workshop</h4><p>Alex <span data-app-status="workshop">· Needs confirmation</span></p></div><button type="button" data-app-edit="workshop" disabled>Confirm</button></article>
+                </div>
+              </div>
+              <p class="sheet-flow-app-hint">Confirm an event to update the sheet.</p>
+            </div>
+          </div>
+          <div class="sheet-flow-return" aria-hidden="true"><span>↶</span><i></i><span>Edits travel both ways.</span></div>
+          <figcaption id="sheet-flow-caption">An interactive illustration using sample event data. Try changing a status in either view; changes stay in this example.</figcaption>
+          <noscript><p class="sheet-flow-noscript">The illustration shows how a sheet and an app share records. Enable JavaScript to play the sequence and try editing the sample data.</p></noscript>
+        </figure>
+      </div>
+    </section>
+
     <!-- PROBLEM -->
     <section class="section problem-section" id="problem" aria-labelledby="problem-title">
       <div class="container">
@@ -96,34 +171,7 @@
           <li>New software added without fixing the process</li>
         </ul>
 
-        <figure class="before-after" aria-labelledby="ba-caption">
-          <div class="ba-column ba-before">
-            <p class="ba-label">Before</p>
-            <ol class="ba-steps">
-              <li>Request arrives by email</li>
-              <li>Details retyped into a spreadsheet</li>
-              <li>Someone chases the owner in chat</li>
-              <li>Data re-entered into the CRM</li>
-              <li>Status report rebuilt by hand each week</li>
-            </ol>
-          </div>
-          <div class="ba-arrow" aria-hidden="true">
-            <svg viewBox="0 0 48 48" width="48" height="48"><path d="M8 24h30M28 14l10 10-10 10" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div class="ba-column ba-after">
-            <p class="ba-label">After</p>
-            <ol class="ba-steps">
-              <li>Request submitted through one intake form</li>
-              <li>Information validated once</li>
-              <li>Owner assigned automatically</li>
-              <li>CRM record created and status tracked</li>
-              <li>Report generated from the same data</li>
-            </ol>
-          </div>
-          <figcaption id="ba-caption">
-            An illustrative workflow, not a client example, showing the same work with fewer handoffs and one place for the data.
-          </figcaption>
-        </figure>
+
       </div>
     </section>
 
