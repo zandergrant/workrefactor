@@ -5206,7 +5206,8 @@ h3 { font-size: clamp(19px, 1.45vw, 23px); line-height: 1.15; }
    when scrolling or when the mobile menu is expanded.
    Without JS, the existing opaque sticky header remains.
    ========================================================== */
-.home-page.scroll-header-enabled .site-header {
+.home-page.scroll-header-enabled .site-header,
+.contact-page.scroll-header-enabled .site-header {
   position: fixed;
   top: 0;
   right: 0;
@@ -5219,7 +5220,8 @@ h3 { font-size: clamp(19px, 1.45vw, 23px); line-height: 1.15; }
   -webkit-backdrop-filter: none;
   transition: background-color 340ms ease, border-bottom-color 340ms ease, box-shadow 340ms ease;
 }
-.home-page.scroll-header-enabled .site-header.is-scrolled {
+.home-page.scroll-header-enabled .site-header.is-scrolled,
+.contact-page.scroll-header-enabled .site-header.is-scrolled {
   background: rgba(30, 39, 52, 0.98);
   border-bottom-color: rgba(255, 255, 255, 0.08);
   box-shadow: 0 8px 22px rgba(4, 10, 18, 0.12);
@@ -5233,9 +5235,11 @@ h3 { font-size: clamp(19px, 1.45vw, 23px); line-height: 1.15; }
 @media (max-width: 620px) {
   .home-page.scroll-header-enabled .home-hero .hero-inner { padding-top: 142px; }
 }
-.home-page.scroll-header-enabled section[id] { scroll-margin-top: 88px; }
+.home-page.scroll-header-enabled section[id],
+.contact-page.scroll-header-enabled section[id] { scroll-margin-top: 88px; }
 @media (prefers-reduced-motion: reduce) {
-  .home-page.scroll-header-enabled .site-header { transition: none; }
+  .home-page.scroll-header-enabled .site-header,
+  .contact-page.scroll-header-enabled .site-header { transition: none; }
 }
 
 
@@ -5546,4 +5550,15 @@ h3,
   .final-cta-grid, .home-page .final-cta-grid { gap: 14px; }
   .final-cta-copy p { font-size: 16px; line-height: 1.6; }
   .contact-hero, .service-hero { padding-block: 56px 48px; }
+}
+
+/* Contact header overlays the hero, matching the homepage. Account for its height
+   so the contact headline remains in the original position and unobstructed. */
+.contact-page.scroll-header-enabled .contact-hero {
+  padding-top: 158px;
+}
+@media (max-width: 620px) {
+  .contact-page.scroll-header-enabled .contact-hero {
+    padding-top: 126px;
+  }
 }

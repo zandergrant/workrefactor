@@ -22,9 +22,9 @@ document.querySelectorAll('[data-current-year]').forEach(function (el) {
 })();
 
 
-// Homepage: transparent header over hero, original dark header when scrolled.
+// Homepage and contact page: transparent header over hero, dark header on scroll.
 (function () {
-  var header = document.querySelector('.home-page .site-header');
+  var header = document.querySelector('.home-page .site-header, .contact-page .site-header');
   if (!header) return;
   document.body.classList.add('scroll-header-enabled');
   function syncHeader() {
