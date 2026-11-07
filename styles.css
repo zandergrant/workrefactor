@@ -360,10 +360,7 @@ strong {
   color:
     var(--white);
 
-  font-family:
-    "Instrument Serif",
-    Georgia,
-    serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 
   font-size: 25px;
 
@@ -423,10 +420,7 @@ strong {
   color:
     #11151b;
 
-  font-family:
-    "Instrument Serif",
-    Georgia,
-    serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 
   font-size: 18px;
 }
@@ -463,10 +457,7 @@ strong {
   border-radius:
     999px;
 
-  font-family:
-    "Instrument Serif",
-    Georgia,
-    serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 
   font-size: 20px;
 
@@ -1756,10 +1747,7 @@ a.friction-card:hover {
   color:
     var(--white);
 
-  font-family:
-    "Instrument Serif",
-    Georgia,
-    serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 
   font-size:
     26px;
@@ -1972,10 +1960,7 @@ a.friction-card:hover {
   color:
     var(--text);
 
-  font-family:
-    "Instrument Serif",
-    Georgia,
-    serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 
   font-size:
     24px;
@@ -2083,10 +2068,7 @@ a.friction-card:hover {
   color:
     var(--text);
 
-  font-family:
-    "Instrument Serif",
-    Georgia,
-    serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 
   font-size:
     clamp(
@@ -2475,10 +2457,7 @@ a.friction-card:hover {
   color:
     var(--text);
 
-  font-family:
-    "Instrument Serif",
-    Georgia,
-    serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 
   font-size:
     24px;
@@ -3813,7 +3792,7 @@ h2 {
   background: linear-gradient(135deg, #1b4fa8, var(--navy));
   border: 1px solid rgba(255, 255, 255, 0.22);
   color: var(--white);
-  font-family: "Instrument Serif", Georgia, serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 24px;
   line-height: 1;
   position: relative;
@@ -5261,7 +5240,7 @@ h3 { font-size: clamp(19px, 1.45vw, 23px); line-height: 1.15; }
 }
 
 .home-page .work-entry h3 {
-  font-family: "Instrument Serif", Georgia, serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: clamp(20px, 1.75vw, 24px);
   font-weight: 400;
   letter-spacing: -0.035em;
@@ -5647,4 +5626,22 @@ h3,
 }
 @media (max-width:430px) {
  .resources-page .resources-roi-fields,.resources-page .resources-roi-results { grid-template-columns:minmax(0,1fr); gap:15px; }
+}
+
+/* Serif is reserved for hero titles and section headings. */
+h3,
+.home-page .work-entry h3,
+.home-page .service-row h3,
+.home-page .guide-grid .friction-card h3,
+.home-page .principle-grid h3,
+.home-page .method-phase h3,
+.guide-page .service-row h3 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+}
+/* Continue the compact section-heading trial on the homepage. */
+.home-page .section-heading h2,
+.home-page .selected-work-section .section-heading h2,
+.home-page .final-cta h2 {
+  line-height: 1;
 }
