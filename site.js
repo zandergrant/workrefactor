@@ -49,7 +49,7 @@ document.querySelectorAll('[data-current-year]').forEach(function (el) {
   var replay = scene.querySelector('.hero-system-replay');
   var pause = scene.querySelector('.hero-system-pause');
   var controls = scene.querySelector('.hero-system-controls');
-  var duration = 16500, elapsed = 0, last = null, frameId = null;
+  var duration = 21000, elapsed = 0, last = null, frameId = null;
   var started = false, userPaused = false, inView = !('IntersectionObserver' in window);
   function clamp(n) { return Math.max(0, Math.min(1, n)); }
   function position(node, x, y, opacity) {
@@ -57,19 +57,19 @@ document.querySelectorAll('[data-current-year]').forEach(function (el) {
     node.setAttribute('opacity', String(opacity));
   }
   function render(time) {
-    var phase = time < 5000 ? 'jam' : time < 8000 ? 'inspect' : time < 9500 ? 'repair' : 'flow';
+    var phase = time < 5500 ? 'jam' : time < 10000 ? 'inspect' : time < 14000 ? 'repair' : 'flow';
     if (scene.dataset.phase !== phase) scene.dataset.phase = phase;
     inputs.forEach(function (input, i) {
       var queueX = i === 0 ? 378 : 295 - (i - 1) * 27;
-      var jamTime = Math.min(time, 5000);
+      var jamTime = Math.min(time, 5500);
       var progress = i === 0
         ? (jamTime < 1100 ? jamTime / 1100 * .6 : jamTime < 2000 ? .6 : jamTime < 3000 ? .6 + (jamTime - 2000) / 1000 * .3 : .9 + clamp((jamTime - 3000) / 800) * .1)
         : clamp((jamTime - i * 140) / 2100);
       var x = 35 + (queueX - 35) * progress;
       var y = (56 + (i % 3) * 48) + (104 - (56 + (i % 3) * 48)) * progress;
       var output = outputs[i], endX = 578 + i % 4 * 34, endY = i < 4 ? 90 : 122;
-      if (time >= 9500) {
-        var flow = clamp((time - 9500 - i * 360) / 3400);
+      if (time >= 14000) {
+        var flow = clamp((time - 14000 - i * 360) / 3400);
         x = queueX + (endX - queueX) * flow;
         y = 104 + (endY - 104) * clamp((x - 464) / (endX - 464));
         var converted = clamp((x - 391) / 16);
