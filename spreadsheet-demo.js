@@ -12,10 +12,10 @@
     'Every request is sent to one shared spreadsheet.',
     'An automatic script cleans up fields and organizes the sheet.',
     'A simple web app makes the data easy to visualize and work with.',
-    'A status is changed in the web app…',
-    '…and that change is saved back to the spreadsheet.',
-    'An owner is changed in the spreadsheet…',
-    '…and the app reflects the update too.',
+    'Someone changes the status in the web app.',
+    'That change appears in the shared spreadsheet.',
+    'Someone updates the owner in the spreadsheet.',
+    'The web app shows the new owner as well.',
     'Your team can work in either view, using the same underlying data.'
   ];
   var delays = [3000, 3400, 4200, 4000, 2600, 3000, 2600, 3000];
@@ -44,13 +44,13 @@
   }
   reserve('[data-rw-narration]', messages);
   reserve('[data-rw-script]', [
-    'Standardizing fields, categorizing requests and flagging missing details…',
-    'Cleans and organizes the sheet as requests arrive.'
+    'The script standardizes fields, categorizes requests and flags missing details.',
+    'The script organizes new requests as they arrive.'
   ]);
   reserve('[data-rw-sync]', [
     'App edit → shared spreadsheet',
     'Spreadsheet edit → web app',
-    'Changes in the app update the sheet. Changes in the sheet update the app.'
+    'Both views use the same shared records, so an update made in either place appears in the other.'
   ]);
   reserve('[data-rw-app-status]', ['Assigned', 'Complete']);
   reserve('[data-rw-sheet-status]', ['in progress', 'Assigned', 'Complete']);
@@ -85,8 +85,8 @@
     put('[data-rw-app-owner]', step >= 7 ? 'Maya' : 'Unassigned');
     put('[data-rw-assigned]', step >= 4 ? '81' : '82');
     put('[data-rw-complete]', step >= 4 ? '23' : '22');
-    put('[data-rw-script]', step === 2 ? 'Standardizing fields, categorizing requests and flagging missing details…' : 'Cleans and organizes the sheet as requests arrive.');
-    put('[data-rw-sync]', step === 4 || step === 5 ? 'App edit → shared spreadsheet' : (step === 6 || step === 7 ? 'Spreadsheet edit → web app' : 'Changes in the app update the sheet. Changes in the sheet update the app.'));
+    put('[data-rw-script]', step === 2 ? 'The script standardizes fields, categorizes requests and flags missing details.' : 'The script organizes new requests as they arrive.');
+    put('[data-rw-sync]', step === 4 || step === 5 ? 'App edit → shared spreadsheet' : (step === 6 || step === 7 ? 'Spreadsheet edit → web app' : 'Both views use the same shared records, so an update made in either place appears in the other.'));
   }
   function syncPlayback() {
     var running = started && step < 8 && !userPaused && inView && !document.hidden && !reduced;

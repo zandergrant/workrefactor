@@ -2,14 +2,14 @@
 (function () {
   var problem = document.getElementById('resource-problem');
   var recommendations = {
-    chasing: ['Start with the workflow audit.', 'Follow three actual cases and capture where time was lost, who was waiting, and what required another message.', 1, 'Go to the workflow audit'],
-    copying: ['Start with the automation opportunity tracker.', 'Count how often employees transfer the same information and whether you could eliminate the step before automating it.', 2, 'Go to the automation tracker'],
-    experiment: ['Start with the small process experiment.', 'Document the baseline, change one thing, and decide what to keep using the results of a short test.', 3, 'Go to the experiment brief'],
-    handoff: ['Start with the client handoff brief.', 'Agree on what complete means for the receiving team, then test that definition against a delayed case.', 4, 'Go to the handoff brief'],
-    owner: ['Start with the decision ownership map.', 'Name the person who can decide, what authority they have, and the specific conditions requiring escalation.', 5, 'Go to the ownership map'],
-    sop: ['Start with the one-page SOP.', 'Document the ordinary case and its exceptions with the person doing the work, then ask someone else to follow it.', 6, 'Go to the SOP'],
-    ai: ['Start with the AI evaluation sheet.', 'Compare the model output with accepted answers on representative cases, including errors and escalations.', 7, 'Go to the AI evaluation sheet'],
-    tool: ['Start with the internal tool decision brief.', 'Watch a real task and compare improving existing software, connecting systems, and building a new tool.', 8, 'Go to the tool decision brief']
+    chasing: ['Use the workflow audit to locate the bottleneck.', 'Follow three actual cases and capture where time was lost, who was waiting, and what required another message.', 1, 'Go to the workflow audit'],
+    copying: ['Compare recurring tasks with the automation opportunity tracker.', 'Count how often employees transfer the same information and whether you could eliminate the step before automating it.', 2, 'Go to the automation tracker'],
+    experiment: ['Test one change with the process experiment brief.', 'Document the baseline, change one thing, and decide what to keep using the results of a short test.', 3, 'Go to the experiment brief'],
+    handoff: ['Clarify the handoff with the client brief.', 'Agree on what complete means for the receiving team, then test that definition against a delayed case.', 4, 'Go to the handoff brief'],
+    owner: ['Map who can make decisions and when to escalate.', 'Name the person who can decide, what authority they have, and the specific conditions requiring escalation.', 5, 'Go to the ownership map'],
+    sop: ['Make the recurring task easier to follow with a one-page SOP.', 'Document the ordinary case and its exceptions with the person doing the work, then ask someone else to follow it.', 6, 'Go to the SOP'],
+    ai: ['Evaluate AI output against accepted answers.', 'Compare the model output with accepted answers on representative cases, including errors and escalations.', 7, 'Go to the AI evaluation sheet'],
+    tool: ['Compare the options with the internal tool decision brief.', 'Watch a real task and compare improving existing software, connecting systems, and building a new tool.', 8, 'Go to the tool decision brief']
   };
   function selectResource() {
     var match = recommendations[problem.value] || recommendations.chasing;
@@ -46,10 +46,10 @@
     out('roi-net', currency.format(monthlyNet) + '/month');
     out('roi-payback', monthlyNet > 0 ? (implementation / monthlyNet).toFixed(1) + ' months' : 'No payback at these inputs');
     out('roi-conservative', currency.format(cautiousNet) + '/month');
-    var note = 'Illustrative inputs. Replace them with observations from your own workflow.';
+    var note = 'These figures are illustrative, so replace them with observations from your own workflow.';
     if (current <= proposed) note = 'The proposed process takes at least as long per case as it does today. Account for quality or other benefits separately rather than assuming labor savings.';
-    else if (monthlyNet <= 0) note = 'Under these assumptions, recurring costs outweigh the estimated time value. Simplify the process or revise the proposal before proceeding.';
-    else if (cautiousNet <= 0) note = 'The cautious scenario is not financially positive. Pilot the change and check how much of the estimated time reduction is realistic.';
+    else if (monthlyNet <= 0) note = 'With these assumptions, recurring costs outweigh the estimated value of the time saved, so it is worth simplifying the process or revising the proposed approach.';
+    else if (cautiousNet <= 0) note = 'The cautious scenario does not produce a positive financial result, so use a pilot to check how much of the estimated time reduction is realistic.';
     out('roi-message', note);
   }
   form.addEventListener('input', update);

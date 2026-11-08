@@ -43,7 +43,7 @@
       setText('#rl-audit-hours', fmt(annualHours, 1));
       setText('#rl-audit-weekly', fmt(frequency * activeMinutes / 60, 1));
       setText('#rl-audit-recommendation', first);
-      setText('#rl-audit-next', avoidAutomation ? 'First pilot: clarify ownership or exception handling, then re-measure the work before automating.' : 'First pilot: make one small change, run it for two weeks, and compare three real cases before and after.');
+      setText('#rl-audit-next', avoidAutomation ? 'A useful first test would be to clarify ownership or exception handling, then measure the work again before automating it.' : 'Try one small change over two weeks and compare three real cases with the original examples to see whether it helped.');
       setText('#rl-audit-detail', recommendations.slice(1).join(' '));
       result.hidden = false;
       result.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'nearest' });
