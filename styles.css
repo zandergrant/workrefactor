@@ -6418,3 +6418,93 @@ h3,
   .privacy-page .privacy-article {margin-top:26px;}
   .privacy-page .privacy-article section {padding:25px 0;}
 }
+
+/* Search-focused links between educational guides and practical tools. */
+.seo-resource-bridge { background:#f1f5fa;padding-block:clamp(58px,6vw,88px); }
+.seo-bridge-intro { max-width:760px;margin-bottom:26px; }
+.seo-bridge-intro .eyebrow { color:#1c5bad; }
+.seo-bridge-intro h2 { color:#152c44;font-size:clamp(30px,3.8vw,47px);margin:12px 0 15px;line-height:1.12; }
+.seo-bridge-intro p:not(.eyebrow) { font-size:17px;line-height:1.7;color:#394b60; }
+.seo-bridge-links { display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px; }
+.seo-bridge-card { display:flex;flex-direction:column;position:relative;min-width:0;gap:10px;padding:26px 55px 28px 26px;background:#fff;border:1px solid #d5e1ed;border-radius:6px;color:#152c44;text-decoration:none; }
+.seo-bridge-card strong { font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:20px;font-weight:600;letter-spacing:-.025em;line-height:1.3; }
+.seo-bridge-card > span:not(.seo-bridge-arrow) { font-size:15px;line-height:1.65;color:#42556b; }
+.seo-bridge-card .seo-bridge-arrow { position:absolute;right:23px;top:22px;color:#1b5fc1; }
+.seo-bridge-card:hover,.seo-bridge-card:focus-visible { border-color:#6c9bd2; }
+.seo-bridge-service { margin:24px 0 0;color:#344b65;font-size:15px;line-height:1.7; }
+.seo-bridge-service a { color:#1257ae;text-decoration:underline;text-underline-offset:3px; }
+.home-page .hero-seo-label { margin:0 0 18px;color:#c2dcfa;font:600 12px/1.5 "Helvetica Neue",Helvetica,Arial,sans-serif;letter-spacing:.055em;text-transform:uppercase; }
+
+/* Workflow automation consulting — buyer-focused service page. */
+.consult-page { background:#fff;color:#172a3e; }
+.consult-page .consult-hero { padding:clamp(85px,9vw,136px) 0 clamp(75px,8vw,112px);background:radial-gradient(ellipse 70% 90% at 76% 10%,rgba(53,126,211,.22),transparent 70%),#0d223a;color:#fff; }
+.consult-page .consult-hero-grid { display:grid;grid-template-columns:minmax(0,1.35fr) minmax(290px,.65fr);gap:clamp(34px,6vw,90px);align-items:center; }
+.consult-page .consult-eyebrow { margin:0 0 18px;color:#2965ae;font:600 12px/1.45 "Helvetica Neue",Helvetica,Arial,sans-serif;text-transform:uppercase;letter-spacing:.075em; }
+.consult-page .consult-hero .consult-eyebrow { color:#bddaff; }
+.consult-page .consult-hero h1 { margin:0;color:#fff;max-width:950px;font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(48px,6vw,86px);line-height:1.05;letter-spacing:-.03em; }
+.consult-page .consult-hero h1 em { color:#c8ddf5; }
+.consult-page .consult-hero-lede { max-width:780px;color:#e2ecf8;margin:26px 0 0;font:400 clamp(17px,1.8vw,20px)/1.68 "Helvetica Neue",Helvetica,Arial,sans-serif; }
+.consult-page .consult-actions { display:flex;flex-wrap:wrap;align-items:center;gap:24px;margin-top:32px; }
+.consult-page .consult-text-link { color:#dbeaff;font-size:15px;text-decoration:underline;text-underline-offset:4px; }
+.consult-page .consult-side { padding:30px;border:1px solid rgba(180,212,247,.27);background:rgba(11,27,45,.45);border-radius:8px; }
+.consult-page .consult-side-label { color:#a9cef7;font-size:12px;text-transform:uppercase;letter-spacing:.06em;font-weight:600; }
+.consult-page .consult-side p { padding:17px 0;border-bottom:1px solid rgba(255,255,255,.14);font:500 17px/1.5 "Helvetica Neue",Helvetica,Arial,sans-serif;color:#f0f6fc;margin:0; }
+.consult-page .consult-side-bottom { display:block;color:#b2c9e1;font-size:13px;line-height:1.6;padding-top:20px; }
+.consult-page .consult-section { padding:clamp(65px,7vw,105px) 0; }
+.consult-page .consult-section-alt { background:#f1f5f9; }
+.consult-page .consult-section-heading { max-width:780px;margin-bottom:34px; }
+.consult-page .consult-section-heading h2 { margin:0;color:#142b43;font-family:"Instrument Serif",Georgia,serif;font-size:clamp(38px,4.7vw,60px);font-weight:400;line-height:1.1;letter-spacing:-.028em; }
+.consult-page .consult-section-heading > p:not(.consult-eyebrow) { margin:18px 0 0;font:400 17px/1.7 "Helvetica Neue",Helvetica,Arial,sans-serif;color:#40546a; }
+.consult-page .consult-problem-grid { display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px; }
+.consult-page .consult-problem-grid article { padding:24px;background:#f4f7fb;border:1px solid #e1e8ef;border-radius:6px; }
+.consult-page .consult-problem-grid article > span { color:#1d5db2;font-size:13px;font-weight:600; }
+.consult-page .consult-problem-grid h3,.consult-page .consult-service-grid h3,.consult-page .consult-steps h3,.consult-page .consult-proof-grid h3 { margin:16px 0 11px;color:#172d44;font:600 21px/1.27 "Helvetica Neue",Helvetica,Arial,sans-serif;letter-spacing:-.025em; }
+.consult-page .consult-problem-grid p,.consult-page .consult-service-grid p,.consult-page .consult-steps p,.consult-page .consult-proof-grid p { margin:0;color:#3b4e61;font:400 15px/1.75 "Helvetica Neue",Helvetica,Arial,sans-serif; }
+.consult-page .consult-steps { max-width:1070px;border-top:1px solid #ccd7e3; }
+.consult-page .consult-steps article { display:grid;grid-template-columns:95px 1fr;gap:24px;padding:28px 0;border-bottom:1px solid #ccd7e3; }
+.consult-page .consult-steps h3 { margin:0 0 8px;font-size:23px; }
+.consult-page .consult-step-n { color:#1a5aa9;font-weight:600;font-size:14px;padding-top:5px; }
+.consult-page .consult-steps .consult-deliverable { margin-top:14px;font-size:14px;color:#2f435a; }
+.consult-page .consult-service-grid { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px; }
+.consult-page .consult-service-grid > div { padding:25px;border:1px solid #dce4eb;border-radius:6px; }
+.consult-page .consult-service-grid h3 { margin:0 0 11px; }
+.consult-page .consult-section-proof { background:#e9f0f8; }
+.consult-page .consult-proof-grid { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px; }
+.consult-page .consult-proof-grid article { padding:28px;background:#fff;border:1px solid #d7e2ee;border-radius:6px; }
+.consult-page .consult-proof-grid .consult-proof-label { font-size:12px;text-transform:uppercase;font-weight:600;letter-spacing:.04em;color:#245e9e; }
+.consult-page .consult-proof-grid h3 { font-size:21px;margin:10px 0 12px; }
+.consult-page .consult-proof-footnote { margin:25px 0 0;font-size:14px;color:#41556b; }
+.consult-page .consult-proof-footnote a { color:#1a5ba8;text-decoration:underline; }
+.consult-page .consult-faq { max-width:900px; }
+.consult-page .consult-faq details { padding:18px 0;border-bottom:1px solid #cbd5e1; }
+.consult-page .consult-faq details:first-child { border-top:1px solid #cbd5e1; }
+.consult-page .consult-faq summary { cursor:pointer;color:#203850;font:600 18px/1.5 "Helvetica Neue",Helvetica,Arial,sans-serif; }
+.consult-page .consult-faq p { margin:14px 0 5px;color:#41566b;font:400 16px/1.75 "Helvetica Neue",Helvetica,Arial,sans-serif; }
+.consult-page .consult-reading-links { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px; }
+.consult-page .consult-reading-links a { padding:24px;display:flex;flex-direction:column;gap:12px;border:1px solid #d9e2ec;border-radius:6px;color:#173e70;text-decoration:none;background:#fff; }
+.consult-page .consult-reading-links a:hover { border-color:#7a9fc9; }
+.consult-page .consult-reading-links strong { font-size:19px;line-height:1.35; }
+.consult-page .consult-reading-links span { color:#43566b;font-size:15px;line-height:1.6; }
+.consult-page .consult-end { background:#10263e;color:#fff;padding:clamp(58px,7vw,98px) 0; }
+.consult-page .consult-end-grid { display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center; }
+.consult-page .consult-end h2 { color:#fff;font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(39px,5vw,62px);line-height:1.06;margin:0; }
+.consult-page .consult-end p { color:#d4e0ed;font-size:17px;line-height:1.7;margin:0 0 22px; }
+.consult-page :is(.consult-text-link,.consult-faq summary,.consult-reading-links a):focus-visible { outline:3px solid #81b6fb;outline-offset:4px; }
+@media(max-width:1000px) {
+ .consult-page .consult-hero-grid { grid-template-columns:minmax(0,1fr); }
+ .consult-page .consult-side { max-width:720px; }
+ .consult-page .consult-problem-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+ .consult-page .consult-service-grid,.consult-page .consult-proof-grid,.consult-page .consult-reading-links { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media(max-width:620px){
+ .seo-bridge-links,.consult-page .consult-problem-grid,.consult-page .consult-service-grid,.consult-page .consult-proof-grid,.consult-page .consult-reading-links,.consult-page .consult-end-grid { grid-template-columns:1fr; }
+ .seo-bridge-card { padding:22px 42px 22px 22px; }
+ .consult-page .consult-hero { padding:65px 0; }
+ .consult-page .consult-side { padding:22px; }
+ .consult-page .consult-steps article { grid-template-columns:1fr;gap:3px; }
+ .consult-page .consult-end-grid { gap:20px; }
+}
+
+.home-page .service-consult-cta { margin:24px 0 0;text-align:right; }
+.home-page .service-consult-cta a { color:#155bb8;font:600 15px/1.6 "Helvetica Neue",Helvetica,Arial,sans-serif;text-decoration:underline;text-underline-offset:4px; }
+@media(max-width:620px){.home-page .service-consult-cta{text-align:left;}}
