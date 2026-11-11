@@ -11,20 +11,20 @@ This worksheet describes a fictional process and a possible redesign. It is not 
 - [ ] People escalate by seniority rather than by risk or authority.
 
 ## Current state: trace the work
-1. **Project manager** — Emails request. Scope context incomplete.
-2. **Team lead** — Forwards to manager. No decision authority.
-3. **Manager** — Sends to finance. Cost assumptions missing.
-4. **Finance** — Returns for clarification. Approval restarts.
+1. **Project manager**: Emails request. Scope context incomplete.
+2. **Team lead**: Forwards to manager. No decision authority.
+3. **Manager**: Sends to finance. Cost assumptions missing.
+4. **Finance**: Returns for clarification. Approval restarts.
 What happened in three recent cases? Who was waiting, who decided, and where did the information change?
 Case 1:
 Case 2:
 Case 3:
 
 ## Possible future state
-1. **Project manager** — Uses defined change form. Cost and impact required.
-2. **Routing rule** — Checks approval threshold. Low-risk change follows agreed rule.
-3. **Decision owner** — Approves or rejects. Reason recorded in same case.
-4. **Project team** — Receives decision. Work proceeds or escalates.
+1. **Project manager**: Uses defined change form. Cost and impact required.
+2. **Routing rule**: Checks approval threshold. Low-risk change follows agreed rule.
+3. **Decision owner**: Approves or rejects. Reason recorded in same case.
+4. **Project team**: Receives decision. Work proceeds or escalates.
 
 Why the redesign might help: In the revised process, the person making the request supplies the important context upfront, and the request goes directly to the right decision owner. The team has also agreed when a case needs escalation, which makes the status meaningful rather than just another label.
 
@@ -32,10 +32,10 @@ Why the redesign might help: In the revised process, the person making the reque
 I'd take the last ten approvals and write down who made the decision, who passed the request along, how often it came back for clarification, and how long it sat untouched. That separates the time spent making a decision from time spent waiting for someone to pick it up.
 
 ## Changes to test
-1. **Classify decisions** — Distinguish routine, reversible changes from decisions with meaningful financial, legal or customer consequences.
-2. **Document authority** — Write a short decision matrix with thresholds, substitutes when the owner is unavailable, and circumstances requiring escalation.
-3. **Require the right context** — Ask actual approvers which information they need; make those fields part of intake rather than requesting them after the handoff.
-4. **Set a visible exception route** — A request that exceeds a threshold or has conflicting information should enter an explicit review path, not disappear into an inbox.
+1. **Classify decisions**: Distinguish routine, reversible changes from decisions with meaningful financial, legal or customer consequences.
+2. **Document authority**: Write a short decision matrix with thresholds, substitutes when the owner is unavailable, and circumstances requiring escalation.
+3. **Require the right context**: Ask actual approvers which information they need; make those fields part of intake rather than requesting them after the handoff.
+4. **Set a visible exception route**: A request that exceeds a threshold or has conflicting information should enter an explicit review path, not disappear into an inbox.
 
 ## Baseline and measures
 - **Waiting time:** Track time between complete submission and first decision, excluding time spent collecting missing inputs.

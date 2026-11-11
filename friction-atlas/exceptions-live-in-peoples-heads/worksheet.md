@@ -11,20 +11,20 @@ This worksheet describes a fictional process and a possible redesign. It is not 
 - [ ] Similar exceptions receive different decisions without any documented reason.
 
 ## Current state: trace the work
-1. **Employee** — Follows standard checklist. Unusual case appears.
-2. **Employee** — Asks experienced colleague. Context in memory.
-3. **Expert** — Searches old messages. Decision hard to reproduce.
-4. **Team** — Applies one-off workaround. Learning not retained.
+1. **Employee**: Follows standard checklist. Unusual case appears.
+2. **Employee**: Asks experienced colleague. Context in memory.
+3. **Expert**: Searches old messages. Decision hard to reproduce.
+4. **Team**: Applies one-off workaround. Learning not retained.
 What happened in three recent cases? Who was waiting, who decided, and where did the information change?
 Case 1:
 Case 2:
 Case 3:
 
 ## Possible future state
-1. **Employee** — Flags exception type. Relevant context collected.
-2. **Decision guide** — Shows rule and authority. Safe defaults explicit.
-3. **Authorized owner** — Reviews unusual case. Reason documented.
-4. **Knowledge base** — Updates reusable guidance. Only meaningful patterns kept.
+1. **Employee**: Flags exception type. Relevant context collected.
+2. **Decision guide**: Shows rule and authority. Safe defaults explicit.
+3. **Authorized owner**: Reviews unusual case. Reason documented.
+4. **Knowledge base**: Updates reusable guidance. Only meaningful patterns kept.
 
 Why the redesign might help: I'd preserve room for judgment while making recurring exceptions easier to recognize. That could mean a short decision guide, a named escalation owner and a record of why similar cases were handled differently, without building a rigid rule for every possible situation.
 
@@ -32,10 +32,10 @@ Why the redesign might help: I'd preserve room for judgment while making recurri
 I'd look at the last ten unusual cases and ask what made them different, who decided, what information mattered and whether the same situation has come up before. Group the cases that are genuinely similar; there's little value in writing a new rule for every one-off problem.
 
 ## Changes to test
-1. **Define the ordinary path** — Keep the main SOP simple and show the conditions under which it does not apply.
-2. **Identify decision authority** — For each exception category, name the person or role able to approve a deviation and any non-negotiable boundaries.
-3. **Record decisions briefly** — Capture the reason, applicable policy and relevant evidence without transcribing every conversation.
-4. **Review recurring patterns** — If the same exception appears often, decide whether the standard workflow should change or whether a clearer playbook entry is enough.
+1. **Define the ordinary path**: Keep the main SOP simple and show the conditions under which it does not apply.
+2. **Identify decision authority**: For each exception category, name the person or role able to approve a deviation and any non-negotiable boundaries.
+3. **Record decisions briefly**: Capture the reason, applicable policy and relevant evidence without transcribing every conversation.
+4. **Review recurring patterns**: If the same exception appears often, decide whether the standard workflow should change or whether a clearer playbook entry is enough.
 
 ## Baseline and measures
 - **Expert interruptions:** How often colleagues must stop the designated expert for a recurring exception.

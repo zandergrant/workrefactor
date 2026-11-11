@@ -11,20 +11,20 @@ This worksheet describes a fictional process and a possible redesign. It is not 
 - [ ] People manage their own private list of messages from the shared inbox.
 
 ## Current state: trace the work
-1. **Customer** — Emails general address. No request type.
-2. **Employee A** — Marks as unread. Assumes someone will handle.
-3. **Employee B** — Forwards message. Ownership unclear.
-4. **Employee C** — Replies separately. Duplicate or delayed response.
+1. **Customer**: Emails general address. No request type.
+2. **Employee A**: Marks as unread. Assumes someone will handle.
+3. **Employee B**: Forwards message. Ownership unclear.
+4. **Employee C**: Replies separately. Duplicate or delayed response.
 What happened in three recent cases? Who was waiting, who decided, and where did the information change?
 Case 1:
 Case 2:
 Case 3:
 
 ## Possible future state
-1. **Inbox** — Captures incoming message. Classifies request type.
-2. **Triage owner** — Assigns one case owner. Due time based on urgency.
-3. **Case record** — Collects replies and notes. One visible status.
-4. **Owner** — Resolves and closes case. Customer knows the outcome.
+1. **Inbox**: Captures incoming message. Classifies request type.
+2. **Triage owner**: Assigns one case owner. Due time based on urgency.
+3. **Case record**: Collects replies and notes. One visible status.
+4. **Owner**: Resolves and closes case. Customer knows the outcome.
 
 Why the redesign might help: I'd give one person or a rotating role responsibility for triage, then assign each request to a named owner who can see its history and next action. The inbox still matters, but the team needs one place to understand what's happening with a request.
 
@@ -32,10 +32,10 @@ Why the redesign might help: I'd give one person or a rotating role responsibili
 I'd review a week's emails, group the messages that belong to the same request, and record who handled each one, when the customer received a useful response and when it was resolved. That usually makes the gaps in ownership much easier to see.
 
 ## Changes to test
-1. **Set triage rules** — Agree on the few categories that change who should respond. Specify how urgent or sensitive messages are recognized.
-2. **Assign one owner** — A request can involve multiple contributors, but one person should be responsible for its next action and outcome.
-3. **Make status visible** — Use a shared case identifier and clear states such as new, waiting on customer, in progress and complete.
-4. **Review the queue** — Check aging, ownerless and urgent cases at an agreed cadence. Close the loop with the requester rather than relying on a flag in the inbox.
+1. **Set triage rules**: Agree on the few categories that change who should respond. Specify how urgent or sensitive messages are recognized.
+2. **Assign one owner**: A request can involve multiple contributors, but one person should be responsible for its next action and outcome.
+3. **Make status visible**: Use a shared case identifier and clear states such as new, waiting on customer, in progress and complete.
+4. **Review the queue**: Check aging, ownerless and urgent cases at an agreed cadence. Close the loop with the requester rather than relying on a flag in the inbox.
 
 ## Baseline and measures
 - **Unassigned requests:** Count cases without a clear owner after triage.

@@ -11,20 +11,20 @@ This worksheet describes a fictional process and a possible redesign. It is not 
 - [ ] Work is marked done upstream but remains blocked downstream.
 
 ## Current state: trace the work
-1. **Sales** — Marks deal complete. Contract lives elsewhere.
-2. **Email** — Announces new client. Missing custom promises.
-3. **Delivery** — Searches for context. Requests clarification.
-4. **Client** — Waits for kickoff. Timeline becomes uncertain.
+1. **Sales**: Marks deal complete. Contract lives elsewhere.
+2. **Email**: Announces new client. Missing custom promises.
+3. **Delivery**: Searches for context. Requests clarification.
+4. **Client**: Waits for kickoff. Timeline becomes uncertain.
 What happened in three recent cases? Who was waiting, who decided, and where did the information change?
 Case 1:
 Case 2:
 Case 3:
 
 ## Possible future state
-1. **Sales** — Completes handoff brief. Scope and promises attached.
-2. **Validation** — Checks required information. Exceptions flagged.
-3. **Delivery owner** — Accepts or returns handoff. Named owner and reason.
-4. **Client** — Receives confirmed next step. Milestone is visible.
+1. **Sales**: Completes handoff brief. Scope and promises attached.
+2. **Validation**: Checks required information. Exceptions flagged.
+3. **Delivery owner**: Accepts or returns handoff. Named owner and reason.
+4. **Client**: Receives confirmed next step. Milestone is visible.
 
 Why the redesign might help: I would define what 'ready for delivery' means with the people receiving the work, then make acceptance an explicit part of the handoff. That way, sales can finish its job and delivery can start its own without having to discover the missing pieces later.
 
@@ -32,10 +32,10 @@ Why the redesign might help: I would define what 'ready for delivery' means with
 I'd compare three handoffs that went smoothly with three that created delays, then ask the receiving team what they needed but didn't have. The goal is a short, useful set of requirements, not a form that copies every field available in the CRM.
 
 ## Changes to test
-1. **Define ready** — Write the minimum conditions that make the next team able to start, including records, decisions, accountable owner and agreed first milestone.
-2. **Capture commitments** — List exceptions and customer promises in a structured field with a link to the authoritative agreement.
-3. **Introduce acceptance** — Allow the receiving owner to accept or return the handoff with a reason, so incomplete work does not quietly accumulate.
-4. **Close the feedback loop** — Review returns with the sending team and remove fields that nobody uses while tightening information that routinely goes missing.
+1. **Define ready**: Write the minimum conditions that make the next team able to start, including records, decisions, accountable owner and agreed first milestone.
+2. **Capture commitments**: List exceptions and customer promises in a structured field with a link to the authoritative agreement.
+3. **Introduce acceptance**: Allow the receiving owner to accept or return the handoff with a reason, so incomplete work does not quietly accumulate.
+4. **Close the feedback loop**: Review returns with the sending team and remove fields that nobody uses while tightening information that routinely goes missing.
 
 ## Baseline and measures
 - **First-pass acceptance:** Share of handoffs accepted without clarification or rework.

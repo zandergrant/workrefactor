@@ -11,20 +11,20 @@ This worksheet describes a fictional process and a possible redesign. It is not 
 - [ ] Employees avoid a sheet because a mistake can break unrelated work.
 
 ## Current state: trace the work
-1. **Employee** — Adds a row to regional tab. Fields vary by region.
-2. **Formula** — Infers status from cells. One edit can break rule.
-3. **Manager** — Copies rows into report. Parallel truth.
-4. **Colleague** — Asks what changed. No clear audit history.
+1. **Employee**: Adds a row to regional tab. Fields vary by region.
+2. **Formula**: Infers status from cells. One edit can break rule.
+3. **Manager**: Copies rows into report. Parallel truth.
+4. **Colleague**: Asks what changed. No clear audit history.
 What happened in three recent cases? Who was waiting, who decided, and where did the information change?
 Case 1:
 Case 2:
 Case 3:
 
 ## Possible future state
-1. **Employee** — Uses clear input form. Required fields validated.
-2. **Shared data** — Stores stable records. One ID and defined statuses.
-3. **Role-based view** — Shows appropriate actions. Permissions enforced in app.
-4. **Manager** — Reads decision dashboard. Changes and exceptions visible.
+1. **Employee**: Uses clear input form. Required fields validated.
+2. **Shared data**: Stores stable records. One ID and defined statuses.
+3. **Role-based view**: Shows appropriate actions. Permissions enforced in app.
+4. **Manager**: Reads decision dashboard. Changes and exceptions visible.
 
 Why the redesign might help: I'd start with clear fields, stable IDs, named owners and a history of important changes. If people still struggle to complete their tasks, a focused interface could make the work easier without replacing all the systems underneath it.
 
@@ -32,10 +32,10 @@ Why the redesign might help: I'd start with clear fields, stable IDs, named owne
 Ask an occasional user to complete three ordinary tasks while you watch, without explaining the workbook as they go. Notice when they have to inspect hidden columns, move between tabs or ask whether a change is allowed; those moments tell you much more than the number of rows in the file.
 
 ## Changes to test
-1. **Simplify the record** — Define columns, field types, required values, stable identifiers and a small status model. Remove unused tabs and ambiguous colors.
-2. **Separate data from workflow** — Decide which steps need validation, access control, an approval or a documented exception rather than another formula.
-3. **Compare options** — Test whether a protected sheet, form or configured platform solves the need before estimating a custom interface.
-4. **Pilot with real cases** — If building a web app, test simultaneous edits, permissions, invalid values, failures and recovery before replacing the familiar tool.
+1. **Simplify the record**: Define columns, field types, required values, stable identifiers and a small status model. Remove unused tabs and ambiguous colors.
+2. **Separate data from workflow**: Decide which steps need validation, access control, an approval or a documented exception rather than another formula.
+3. **Compare options**: Test whether a protected sheet, form or configured platform solves the need before estimating a custom interface.
+4. **Pilot with real cases**: If building a web app, test simultaneous edits, permissions, invalid values, failures and recovery before replacing the familiar tool.
 
 ## Baseline and measures
 - **Time to complete a task:** How long a new or occasional user needs to update a record correctly.

@@ -137,3 +137,7 @@
 .atlas-page .atlas-share-light a:hover{color:#fff}
 @media(max-width:680px){.atlas-page .atlas-entry-tools{align-items:flex-start;flex-direction:column}.atlas-page .atlas-share-links{gap:12px}}
 @media print{.atlas-page .atlas-share-links{display:none!important}}
+
+.atlas-page .atlas-utility{display:inline-flex;align-items:center;border:1px solid #b9cede;border-radius:4px;background:#fff;color:#215a8f;padding:10px 14px;font:700 12px/1.5 "DM Sans",sans-serif;text-decoration:none;cursor:pointer}
+.atlas-page .atlas-utility:hover{background:#eaf3fb;color:#174b7d}
+.atlas-page .atlas-utility:focus-visible{outline:3px solid #87baf5;outline-offset:2px}

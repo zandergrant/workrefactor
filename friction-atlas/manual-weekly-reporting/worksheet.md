@@ -11,20 +11,20 @@ This worksheet describes a fictional process and a possible redesign. It is not 
 - [ ] Nobody can reproduce last week's reported number from the available source files.
 
 ## Current state: trace the work
-1. **Analyst** — Downloads three exports. Inconsistent labels.
-2. **Spreadsheet** — VLOOKUPs and manual cleanup. Unmatched rows.
-3. **Lead** — Questions totals. Reconciliation round.
-4. **Team** — Receives slide summary. Data already aging.
+1. **Analyst**: Downloads three exports. Inconsistent labels.
+2. **Spreadsheet**: VLOOKUPs and manual cleanup. Unmatched rows.
+3. **Lead**: Questions totals. Reconciliation round.
+4. **Team**: Receives slide summary. Data already aging.
 What happened in three recent cases? Who was waiting, who decided, and where did the information change?
 Case 1:
 Case 2:
 Case 3:
 
 ## Possible future state
-1. **Sources** — Publish defined extracts. Each field has an owner.
-2. **Validation** — Checks IDs and expected totals. Exceptions isolated.
-3. **Shared view** — Calculates agreed measures. Refresh time visible.
-4. **Lead** — Reviews outliers and decisions. No rebuild from scratch.
+1. **Sources**: Publish defined extracts. Each field has an owner.
+2. **Validation**: Checks IDs and expected totals. Exceptions isolated.
+3. **Shared view**: Calculates agreed measures. Refresh time visible.
+4. **Lead**: Reviews outliers and decisions. No rebuild from scratch.
 
 Why the redesign might help: Before building the report, I'd document which records belong in it, how they're identified, when the data is refreshed and who investigates a surprising number. Once that is agreed, the repetitive preparation can be automated without hiding the exceptions people still need to review.
 
@@ -32,10 +32,10 @@ Why the redesign might help: Before building the report, I'd document which reco
 Take the last two reports and list the manual changes made before they were sent. Was someone formatting, matching records, fixing source errors, applying a rule or exercising judgment? Formatting and stable transformations are candidates for automation; arguments about what the numbers mean need to be settled first.
 
 ## Changes to test
-1. **Write metric definitions** — For each measure, specify the numerator, denominator, filters, exclusion rules and refresh frequency.
-2. **Give entities stable keys** — Prefer IDs that survive renaming, especially for clients, projects, events and employees.
-3. **Validate before publishing** — Check counts, missing matches, duplicates and unusual jumps. A failed validation should be visible, not silently ignored.
-4. **Separate data from narrative** — Let the data pipeline prepare a repeatable view while the accountable lead explains what changed and what action is needed.
+1. **Write metric definitions**: For each measure, specify the numerator, denominator, filters, exclusion rules and refresh frequency.
+2. **Give entities stable keys**: Prefer IDs that survive renaming, especially for clients, projects, events and employees.
+3. **Validate before publishing**: Check counts, missing matches, duplicates and unusual jumps. A failed validation should be visible, not silently ignored.
+4. **Separate data from narrative**: Let the data pipeline prepare a repeatable view while the accountable lead explains what changed and what action is needed.
 
 ## Baseline and measures
 - **Preparation time:** Hours spent gathering, cleaning and reconciling before publication.
