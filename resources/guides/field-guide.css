@@ -143,3 +143,20 @@
  .fg-page .fg-hero h1,.fg-page .fg-hero h1 em{color:#000}
  .fg-page .fg-board,.fg-page .fg-hero-actions,.fg-page .fg-breadcrumb{display:none}
 }
+
+/* Exported results should read like a decision card, not a code editor. */
+.fg-page .rl-result{border:1px solid #cfe0f0;border-radius:12px;background:linear-gradient(160deg,#f5f9ff,#edf4fb);padding:clamp(16px,2.5vw,23px)}
+.fg-page .rl-result-title{color:#183654;font-size:21px;letter-spacing:-.035em}
+.fg-page .rl-result-metrics strong{color:#245b9d}
+.fg-page .rl-lab-verdict{background:#fff;border:1px solid #d3e3f1;border-left:3px solid #528cd6;border-radius:6px}
+.fg-page .fg-export-preview{background:#fff;border:1px solid #dae5f0;border-radius:9px;overflow:hidden;margin:18px 0 10px}
+.fg-page .fg-export-preview summary{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 15px;color:#335575;font-size:12px;font-weight:750}
+.fg-page .fg-export-preview summary::-webkit-details-marker{display:none}
+.fg-page .fg-export-preview summary::after{content:"+";font-size:21px;line-height:1;color:#5084c1;font-weight:400}
+.fg-page .fg-export-preview[open] summary::after{content:"−"}
+.fg-page .fg-export-preview .rl-lab-output{margin:0;border:0;border-top:1px solid #e5edf6;border-radius:0;max-height:280px}
+@media(max-width:740px){
+ .fg-page .fg-board{animation:none!important}
+ .fg-page .rl-result-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .fg-page .rl-result-metrics strong{font-size:23px}
+}
