@@ -6526,3 +6526,26 @@ h3,
 .atlas-spotlight-middle{text-align:center;font-size:23px;color:#5c7893}
 @media(max-width:850px){.atlas-spotlight-inner{grid-template-columns:1fr}.atlas-spotlight-example{max-width:650px}}
 @media(max-width:440px){.atlas-spotlight-stage{padding:12px 9px}.atlas-spotlight-stage>div{font-size:11px;padding:9px 6px}.atlas-spotlight-example{grid-template-columns:minmax(0,1fr) 16px minmax(0,1fr);gap:5px}}
+
+/* Header wordmark: text-only, with a forward-leaning "runs". */
+.site-header .brand .hdot {
+  display: none;
+}
+.site-header .brand {
+  gap: 0;
+}
+.brand .brand-name-runs {
+  display: inline-block;
+  font-style: italic;
+  letter-spacing: -0.045em;
+  transform: skewX(-11deg);
+  transform-origin: left bottom;
+  transition: transform 320ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.brand:hover .brand-name-runs,
+.brand:focus-visible .brand-name-runs {
+  transform: translateX(4px) skewX(-15deg);
+}
+@media (prefers-reduced-motion: reduce) {
+  .brand .brand-name-runs { transition: none; }
+}
