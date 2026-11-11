@@ -157,3 +157,47 @@ body:is(.home-page,.contact-page,.resources-page,.guide-page,.consult-page,.atla
   .rl-body main h2.rl-tool-heading,
   .rl-body.fg-page main .fg-start h2 { font-size:19px!important; }
 }
+
+/* All page banners use a left-aligned editorial layout. */
+body:is(.home-page,.contact-page,.resources-page,.guide-page,.consult-page,.atlas-page,.rl-body,.privacy-page) main :is(
+  .hero,.contact-hero,.consult-hero,.atlas-hero,.rl-hero,.rl-guide-hero,
+  .fg-hero,.privacy-hero,.final-cta,.consult-end,.atlas-end
+) {
+  text-align: left !important;
+}
+body:is(.home-page,.resources-page,.guide-page) main .hero .hero-inner {
+  align-items: flex-start !important;
+  text-align: left !important;
+}
+body:is(.home-page,.resources-page,.guide-page) main .hero .hero-inner > :is(
+  h1,.hero-copy,.hero-promise,.hero-seo-label,.hero-eyebrow,.eyebrow,.hero-actions
+) {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+body:is(.home-page,.resources-page,.guide-page) main .hero .hero-actions {
+  justify-content: flex-start !important;
+  text-align: left !important;
+}
+.contact-page .contact-hero-grid,
+.consult-page .consult-hero-grid,
+.consult-page .consult-end-grid,
+.atlas-page .atlas-hero .atlas-wrap,
+.atlas-page .atlas-end .atlas-wrap,
+.rl-body .rl-guide-hero .rl-wrap,
+.rl-body .rl-hero .rl-wrap,
+.rl-body.fg-page .fg-hero .rl-wrap {
+  text-align: left !important;
+}
+.home-page .final-cta-grid,
+.resources-page .final-cta-grid,
+.guide-page .final-cta-grid,
+.consult-page .consult-end-grid,
+.atlas-page .atlas-end-inner {
+  text-align: left !important;
+}
+@media (max-width: 640px) {
+  body:is(.home-page,.resources-page,.guide-page) main .hero .hero-actions {
+    align-items: flex-start !important;
+  }
+}
