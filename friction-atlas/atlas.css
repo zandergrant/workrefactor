@@ -141,3 +141,26 @@
 .atlas-page .atlas-utility{display:inline-flex;align-items:center;border:1px solid #b9cede;border-radius:4px;background:#fff;color:#215a8f;padding:10px 14px;font:700 12px/1.5 "DM Sans",sans-serif;text-decoration:none;cursor:pointer}
 .atlas-page .atlas-utility:hover{background:#eaf3fb;color:#174b7d}
 .atlas-page .atlas-utility:focus-visible{outline:3px solid #87baf5;outline-offset:2px}
+
+/* Readable before-and-after card summaries, including narrow screens. */
+.atlas-page .atlas-mini strong {
+  font-size: 14px;
+  line-height: 1.48;
+}
+.atlas-page .atlas-mini small {
+  font-size: 11px;
+  letter-spacing: .03em;
+}
+@media (max-width: 540px) {
+  .atlas-page .atlas-mini {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 7px;
+  }
+  .atlas-page .atlas-mini-arrow {
+    transform: rotate(90deg);
+    min-height: 18px;
+    line-height: 1;
+  }
+  .atlas-page .atlas-mini > div { padding: 14px 15px; }
+  .atlas-page .atlas-mini strong { font-size: 15px; }
+}
