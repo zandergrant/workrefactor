@@ -6572,36 +6572,71 @@ h3,
   }
 }
 
-/* Contact form choice cards: compact inputs, not oversized display tiles.
-   Keep a generous touch target, but separate them visually from page headings. */
+
+/* Contact form options are checkbox rows, not feature cards. */
 .contact-page .form-choice-grid {
-  gap: 10px;
+  gap: 8px;
 }
 .contact-page .form-choice-box {
-  min-height: 88px;
-  padding: 15px 17px;
-  gap: 5px;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 20px minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  align-items: center;
+  column-gap: 11px;
+  row-gap: 2px;
+  min-height: 0;
+  padding: 11px 13px;
+  justify-content: stretch;
+  border-radius: 5px;
+}
+.contact-page .form-choice-box::before {
+  content: "";
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  width: 18px;
+  height: 18px;
+  border: 1.5px solid #778da2;
+  border-radius: 4px;
+  background: white;
+  box-sizing: border-box;
 }
 .contact-page .form-choice-box strong {
+  grid-column: 2;
+  grid-row: 1;
   font-family: "DM Sans", Arial, sans-serif;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.3;
-  font-weight: 650;
-  letter-spacing: -0.015em;
+  font-weight: 700;
+  letter-spacing: 0;
 }
 .contact-page .form-choice-box > span {
+  grid-column: 2;
+  grid-row: 2;
   font-family: "DM Sans", Arial, sans-serif;
-  font-size: 13px;
-  line-height: 1.4;
+  font-size: 12px;
+  line-height: 1.35;
+}
+.contact-page .form-choice input:checked + .form-choice-box::before {
+  content: "✓";
+  background: #204e77;
+  border-color: #204e77;
+  color: white;
+  font: 700 13px/15px "DM Sans", Arial, sans-serif;
+  text-align: center;
 }
 @media (max-width: 620px) {
-  .contact-page .form-choice-grid { gap: 9px; }
+  .contact-page .form-choice-grid { grid-template-columns: 1fr; gap: 6px; }
   .contact-page .form-choice-box {
-    min-height: 0;
-    padding: 13px 16px;
-    gap: 4px;
+    grid-template-rows: auto;
+    min-height: 46px;
+    padding: 10px 12px;
+    column-gap: 10px;
   }
-  .contact-page .form-choice-box strong { font-size: 16px; line-height: 1.25; }
-  .contact-page .form-choice-box > span { font-size: 13px; line-height: 1.35; }
+  .contact-page .form-choice-box::before { grid-row: 1; }
+  .contact-page .form-choice-box strong {
+    grid-row: 1;
+    font-size: 15px;
+    line-height: 1.25;
+  }
+  .contact-page .form-choice-box > span { display: none; }
 }
