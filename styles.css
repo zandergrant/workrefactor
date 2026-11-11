@@ -6527,63 +6527,14 @@ h3,
 @media(max-width:850px){.atlas-spotlight-inner{grid-template-columns:1fr}.atlas-spotlight-example{max-width:650px}}
 @media(max-width:440px){.atlas-spotlight-stage{padding:12px 9px}.atlas-spotlight-stage>div{font-size:11px;padding:9px 6px}.atlas-spotlight-example{grid-template-columns:minmax(0,1fr) 16px minmax(0,1fr);gap:5px}}
 
-/* Header wordmark: text-only, with a forward-leaning "runs". */
-.site-header .brand .hdot {
-  display: none;
-}
-.site-header .brand {
-  gap: 0;
-}
+/* Header wordmark: clean, bold italic "runs" without trails or animation. */
+.site-header .brand .hdot { display: none; }
+.site-header .brand { gap: 0; }
 .brand .brand-name-runs {
   display: inline-block;
   font-style: italic;
+  font-weight: 800;
   letter-spacing: -0.045em;
-  transform: skewX(-11deg);
-  transform-origin: left bottom;
-  transition: transform 320ms cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-.brand:hover .brand-name-runs,
-.brand:focus-visible .brand-name-runs {
-  transform: translateX(4px) skewX(-15deg);
-}
-@media (prefers-reduced-motion: reduce) {
-  .brand .brand-name-runs { transition: none; }
-}
-
-/* Three straight speed streaks trail the forward-leaning wordmark. */
-.site-header .brand-name-mid {
-  position: relative;
-  z-index: 1;
-}
-.site-header .brand .brand-name-runs {
-  position: relative;
-  isolation: isolate;
-  text-shadow: none;
-}
-.site-header .brand .brand-name-runs::before {
-  content: "";
-  position: absolute;
-  left: -39px;
-  top: 0;
-  width: 49px;
-  height: 100%;
-  z-index: -1;
-  pointer-events: none;
-  background-image:
-    linear-gradient(90deg, transparent, #a8d4ff 48%, #d6eaff),
-    linear-gradient(90deg, transparent, #87bdff 42%, #c6e5ff),
-    linear-gradient(90deg, transparent, #a8d4ff 48%, #d6eaff);
-  background-repeat: no-repeat;
-  background-size: 26px 2px, 45px 2.5px, 32px 2px;
-  background-position: right 7px top 24%, right 0 top 51%, right 5px top 79%;
-  filter: drop-shadow(0 0 2px rgba(150, 203, 255, .35));
-  transform: translateX(0);
-  transition: transform 320ms cubic-bezier(.2, .8, .2, 1);
-}
-.site-header .brand:hover .brand-name-runs::before,
-.site-header .brand:focus-visible .brand-name-runs::before {
-  transform: translateX(-5px);
-}
-@media (prefers-reduced-motion: reduce) {
-  .site-header .brand .brand-name-runs::before { transition: none; }
+  transform: skewX(-9deg);
+  transform-origin: center bottom;
 }
