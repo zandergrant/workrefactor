@@ -6550,35 +6550,39 @@ h3,
   .brand .brand-name-runs { transition: none; }
 }
 
-/* Deliberately visible motion afterimage: sharp word in front, blurred echo behind. */
+/* Three straight speed streaks trail the forward-leaning wordmark. */
+.site-header .brand-name-mid {
+  position: relative;
+  z-index: 1;
+}
 .site-header .brand .brand-name-runs {
   position: relative;
   isolation: isolate;
   text-shadow: none;
 }
 .site-header .brand .brand-name-runs::before {
-  content: "runs";
+  content: "";
   position: absolute;
-  inset: 0;
+  left: -39px;
+  top: 0;
+  width: 49px;
+  height: 100%;
   z-index: -1;
-  color: rgba(158, 203, 255, 0.78);
-  font: inherit;
-  letter-spacing: inherit;
-  white-space: nowrap;
   pointer-events: none;
-  filter: blur(3px);
-  text-shadow:
-    -8px 0 4px rgba(158, 203, 255, 0.75),
-    -20px 0 10px rgba(158, 203, 255, 0.56),
-    -31px 0 17px rgba(158, 203, 255, 0.28);
-  transform: translate(-9px, 0) skewX(-3deg);
-  transform-origin: left center;
-  transition: transform 320ms ease, filter 320ms ease;
+  background-image:
+    linear-gradient(90deg, transparent, #a8d4ff 48%, #d6eaff),
+    linear-gradient(90deg, transparent, #87bdff 42%, #c6e5ff),
+    linear-gradient(90deg, transparent, #a8d4ff 48%, #d6eaff);
+  background-repeat: no-repeat;
+  background-size: 26px 2px, 45px 2.5px, 32px 2px;
+  background-position: right 7px top 24%, right 0 top 51%, right 5px top 79%;
+  filter: drop-shadow(0 0 2px rgba(150, 203, 255, .35));
+  transform: translateX(0);
+  transition: transform 320ms cubic-bezier(.2, .8, .2, 1);
 }
 .site-header .brand:hover .brand-name-runs::before,
 .site-header .brand:focus-visible .brand-name-runs::before {
-  filter: blur(4px);
-  transform: translate(-17px, 0) skewX(-6deg);
+  transform: translateX(-5px);
 }
 @media (prefers-reduced-motion: reduce) {
   .site-header .brand .brand-name-runs::before { transition: none; }
