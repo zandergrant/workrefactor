@@ -6538,3 +6538,36 @@ h3,
   transform: skewX(-9deg);
   transform-origin: center bottom;
 }
+
+/* Contact-page typography: coherent display font and tighter multi-line headings. */
+.contact-page .contact-hero h1 {
+  font-family: "Instrument Serif", Georgia, serif;
+  font-weight: 400;
+  line-height: 1.01;
+}
+.contact-page .project-sidebar h2 {
+  font-family: "Instrument Serif", Georgia, serif;
+  font-weight: 400;
+  line-height: 1.08;
+}
+.contact-page .form-group legend {
+  font-family: "Instrument Serif", Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(27px, 2.5vw, 35px);
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+}
+.contact-page .project-sidebar-note > span {
+  font-family: "Instrument Serif", Georgia, serif;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 1.12;
+}
+@media (max-width: 620px) {
+  .contact-page .contact-hero h1 { line-height: 1.02; }
+  .contact-page .project-sidebar h2 { line-height: 1.06; }
+  .contact-page .form-group legend {
+    font-size: 27px;
+    line-height: 1.08;
+  }
+}
