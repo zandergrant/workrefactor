@@ -259,3 +259,64 @@ body:is(.home-page,.contact-page,.resources-page,.guide-page,.consult-page,.atla
 @media print {
   .hwr-reveal-pending { opacity:1!important;transform:none!important; }
 }
+
+/* Short, low-friction project inquiry. Uses the existing site form styles. */
+.contact-page .project-form-simple {
+  padding:clamp(22px,3vw,40px);
+}
+.contact-page .project-form-simple .project-form-intro { margin:0 0 25px; }
+.contact-page .project-form-simple .project-form-intro h3 {
+  margin:0 0 8px;
+  font:700 clamp(19px,2vw,22px)/1.25 var(--hwr-sans)!important;
+  letter-spacing:-.015em;
+}
+.contact-page .project-form-simple .project-form-intro p {
+  margin:0;color:var(--hwr-muted);font-size:15px;line-height:1.55;
+}
+.contact-page .project-form-simple .form-row {
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;
+}
+.contact-page .project-form-simple .form-field { margin-bottom:17px;min-width:0; }
+.contact-page .project-form-simple .form-field input,
+.contact-page .project-form-simple .form-field textarea {
+  box-sizing:border-box;width:100%;
+  background:#fff;color:var(--hwr-ink);font:400 16px/1.5 var(--hwr-sans);
+  border:1px solid #b9c9d7;border-radius:6px;
+}
+.contact-page .project-form-simple .form-field input { height:49px;padding:10px 13px; }
+.contact-page .project-form-simple .form-field textarea {
+  min-height:125px;padding:13px;resize:vertical;
+}
+.contact-page .project-form-simple .form-field textarea::placeholder {
+  color:#6d7e8f;opacity:1;
+}
+.contact-page .project-form-simple .form-optional {
+  color:var(--hwr-muted);font-weight:400;
+}
+.contact-page .project-form-simple .form-submit-area {
+  display:flex;flex-direction:column;align-items:flex-start;
+  gap:10px;margin:22px 0 0;padding:0;background:transparent;border:0;
+}
+.contact-page .project-form-simple .form-submit-note {
+  max-width:100%;margin:0;text-align:left;
+  font-size:13px!important;line-height:1.5;color:var(--hwr-muted);
+}
+.contact-page .project-form-simple .form-submit-button { min-width:188px; }
+.contact-page .project-sidebar-list li { font-size:15px;line-height:1.55; }
+.contact-page .project-sidebar-block { margin-top:28px;padding-top:23px; }
+.contact-page .project-sidebar-copy { margin-top:16px;font-size:16px;line-height:1.6; }
+.contact-page .project-sidebar-note { margin-top:28px; }
+.contact-page .inquiry-confirmation .container { max-width:980px; }
+.contact-page .inquiry-confirmation h1 { max-width:850px; }
+.contact-page .inquiry-confirmation .confirmation-copy {
+  max-width:580px;margin:20px 0 0;color:#d9e5f3;font-size:18px;line-height:1.6;
+}
+.contact-page .inquiry-confirmation .hero-actions {
+  justify-content:flex-start;align-items:flex-start;
+}
+@media(max-width:700px) {
+  .contact-page .project-form-simple .form-row { grid-template-columns:1fr;gap:0; }
+  .contact-page .project-form-simple { padding:22px 18px; }
+  .contact-page .project-form-simple .form-submit-button { width:100%; }
+  .contact-page .project-section { padding-top:54px;padding-bottom:54px; }
+}
