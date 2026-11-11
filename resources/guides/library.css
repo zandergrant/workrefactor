@@ -88,3 +88,31 @@ body.rl-body .site-header a:focus-visible,body.rl-body .site-header summary:focu
 @media(prefers-reduced-motion:reduce){
   body.rl-body .site-header .desktop-nav > a {transition:none;}
 }
+
+
+/* Field guide tools: experiment planner and handoff agreement. */
+.rl-textarea{display:block;min-height:102px;resize:vertical;line-height:1.55}
+.rl-lab-divider{margin:27px 0 20px;padding-top:21px;border-top:1px solid var(--rl-line)}
+.rl-lab-divider strong{font-size:16px;color:var(--rl-ink)}
+.rl-widget .rl-lab-divider p{font-size:13px;color:var(--rl-muted);margin:6px 0 0}
+.rl-lab-checks{border:1px solid var(--rl-line);border-radius:12px;margin:26px 0 0;padding:18px;background:#f6f9fd;min-width:0}
+.rl-lab-checks legend{font-size:13px;font-weight:800;padding:0 8px;color:#243a52}
+.rl-lab-checks label{display:flex;align-items:flex-start;gap:10px;font-size:13px;line-height:1.55;margin:7px 0;cursor:pointer}
+.rl-lab-checks input{width:17px;height:17px;flex-shrink:0;margin:2px 0 0;accent-color:#1b67d7}
+.rl-lab-output{white-space:pre-wrap;overflow-wrap:anywhere;overflow:auto;max-height:340px;background:white;border:1px solid #d7e5f2;border-radius:10px;padding:16px;color:#25384d;font:12px/1.65 ui-monospace,SFMono-Regular,Consolas,monospace}
+.rl-lab-verdict{border-left:3px solid #4380d8;background:#fff;padding:12px 15px;font-size:14px;line-height:1.65;margin:15px 0;color:#253e5a}
+.rl-share{border-top:1px solid var(--rl-line);padding:21px 0;margin:36px 0 10px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 20px}
+.rl-share span{font-size:12px;color:var(--rl-muted);font-weight:700}
+.rl-share a{font-size:13px;text-decoration:none;border-bottom:1px solid #a0c3ee}
+.rl-share a:hover,.rl-share a:focus-visible{text-decoration:underline}
+.rl-widget .rl-tool-heading{margin:0 0 10px}
+@media(max-width:640px){
+ .rl-lab-checks{padding:13px}
+ .rl-lab-output{padding:12px;max-height:275px;font-size:11px}
+ .rl-widget .rl-widget-actions .rl-action{max-width:100%;white-space:normal;min-height:44px}
+ .rl-share{gap:12px 17px}
+}
+@media print{
+ .rl-lab-output{max-height:none;overflow:visible}
+ .rl-widget-actions,.rl-share{display:none}
+}
