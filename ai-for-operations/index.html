@@ -27,7 +27,8 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://howworkruns.com/og-image.png">
   <script defer src="../site.js?v=14"></script>
-<link rel="stylesheet" href="/footer.css?v=2"></head>
+<link rel="stylesheet" href="/footer.css?v=2"><link rel="stylesheet" href="/site-system.css?v=1">
+</head>
 <body class="guide-page">
   <a class="skip-link" href="#main">Skip to content</a>
 
@@ -57,7 +58,7 @@
       <div class="container hero-inner">
         
         <h1>AI for <em>operations.</em></h1>
-        <p class="hero-copy">Where AI can help an operations team, what requires human judgment, and how to tell whether a pilot actually saves time.</p>
+        <p class="hero-copy">See where AI could save your team time, what still needs a person's judgment and how to tell whether a small test is worth continuing.</p>
         <div class="hero-actions"><a class="button button-primary" href="#start">Read the guide</a><a class="button-link" href="../#guides">Back to all guides</a></div>
         <p class="eyebrow hero-eyebrow">Updated <time datetime="2026-10-27">October 27, 2026</time></p>
       </div>
@@ -73,12 +74,12 @@
 </div>
   </div>
 </section>
-<section class="section"><div class="container"><div class="section-heading"><div><p class="eyebrow">In this guide</p></div><div><h2>Find a useful AI task, then test it.</h2></div></div><nav class="service-list" aria-label="Guide contents"><a class="service-row" href="#uses"><span class="service-number">01</span><h3>Six practical uses inside business workflows.</h3><p>01 · Match the job</p><span class="service-arrow" aria-hidden="true">↓</span></a>
+<section class="section"><div class="container"><div class="section-heading"><div><p class="eyebrow">In this guide</p></div><div><h2>Pick one useful job for AI, then test it.</h2></div></div><nav class="service-list" aria-label="Guide contents"><a class="service-row" href="#uses"><span class="service-number">01</span><h3>Six practical uses inside business workflows.</h3><p>01 · Match the job</p><span class="service-arrow" aria-hidden="true">↓</span></a>
 <a class="service-row" href="#selection"><span class="service-number">02</span><h3>Choose work that is repeatable, reviewable, and worth improving.</h3><p>02 · Select a candidate</p><span class="service-arrow" aria-hidden="true">↓</span></a>
-<a class="service-row" href="#workflow"><span class="service-number">03</span><h3>Give the model a job and the system a control path.</h3><p>03 · Design the workflow</p><span class="service-arrow" aria-hidden="true">↓</span></a>
+<a class="service-row" href="#workflow"><span class="service-number">03</span><h3>Give AI a clear task and keep people in control.</h3><p>03 · Design the workflow</p><span class="service-arrow" aria-hidden="true">↓</span></a>
 <a class="service-row" href="#example"><span class="service-number">04</span><h3>Triage a client request without giving AI authority to change it.</h3><p>Worked example</p><span class="service-arrow" aria-hidden="true">↓</span></a>
 <a class="service-row" href="#job-brief"><span class="service-number">05</span><h3>Specify the input, output, and acceptance rules.</h3><p>04 · Write the brief</p><span class="service-arrow" aria-hidden="true">↓</span></a>
-<a class="service-row" href="#evaluation"><span class="service-number">06</span><h3>Use representative cases and inspect expensive errors.</h3><p>05 · Test the completed work</p><span class="service-arrow" aria-hidden="true">↓</span></a>
+<a class="service-row" href="#evaluation"><span class="service-number">06</span><h3>Test with real examples and check the mistakes that matter.</h3><p>05 · Test the completed work</p><span class="service-arrow" aria-hidden="true">↓</span></a>
 <a class="service-row" href="#boundaries"><span class="service-number">07</span><h3>Keep access and consequential actions under application control.</h3><p>06 · Protect the workflow</p><span class="service-arrow" aria-hidden="true">↓</span></a>
 <a class="service-row" href="#economics"><span class="service-number">08</span><h3>Count review, recovery, and ongoing ownership.</h3><p>07 · Check the economics</p><span class="service-arrow" aria-hidden="true">↓</span></a>
 <a class="service-row" href="#implementation"><span class="service-number">09</span><h3>Start narrow, then expand on evidence.</h3><p>08 · Implement carefully</p><span class="service-arrow" aria-hidden="true">↓</span></a></nav></div></section>
@@ -112,7 +113,7 @@
 </section>
 <section class="section philosophy-section" id="workflow">
   <div class="container philosophy-grid">
-    <div><p class="eyebrow">03 · Design the workflow</p><h2>Give the model a job and the system a control path.</h2></div>
+    <div><p class="eyebrow">03 · Design the workflow</p><h2>Give AI a clear task and keep people in control.</h2></div>
     <div class="philosophy-copy">
   <p>Designing a useful AI workflow starts with the application that receives the case: it needs to validate the information, enforce access rules and prepare only the material required for the task. That gives the model clear operating boundaries rather than leaving it to infer them from a prompt.</p>
   <p>Once a result comes back, the system should check its structure and any rules that can be verified directly, such as permitted categories, required fields, matching identifiers, and cited source text. A person can then review uncertain cases or consequential decisions, while routine, well-tested outcomes may eventually take a more automated path if the evidence supports it. I would also keep a record of what was proposed, what was accepted, and why a case was set aside, because those details make later evaluation possible.</p>
@@ -187,7 +188,7 @@ Do not approve the request or take an external action.</code></pre>
 
 <section class="section" id="evaluation">
   <div class="container philosophy-grid">
-    <div><p class="eyebrow">05 · Test the completed work</p><h2>Use representative cases and inspect expensive errors.</h2></div>
+    <div><p class="eyebrow">05 · Test the completed work</p><h2>Test with real examples and check the mistakes that matter.</h2></div>
     <div class="philosophy-copy">
   <p>An AI workflow needs to be tested against the kind of work that actually arrives, including the awkward cases that are easy to leave out of a demonstration. I would start with examples the business is permitted to use, remove unnecessary sensitive information, and include missing fields, poorly formatted messages, ambiguous requests, and known exceptions alongside the straightforward cases.</p>
   <p>A knowledgeable employee should help define what counts as an acceptable answer, because correctness looks different depending on the task. Classification means getting a request to the right destination, especially when a rare mistake would be expensive; extraction may require an exact date or identifier, while drafting requires factual accuracy and a result that needs little additional editing. For internal knowledge answers, the test also needs to establish whether the underlying sources actually support what the model says.</p>
