@@ -26,10 +26,10 @@ Case 3:
 3. **Decision owner** — Approves or rejects. Reason recorded in same case.
 4. **Project team** — Receives decision. Work proceeds or escalates.
 
-Why the redesign might help: The redesigned flow moves decision rights into a documented rule and ensures the approver receives the material needed to act. A status is useful, but only after the team has decided what that status means and who can change it.
+Why the redesign might help: In the revised process, the person making the request supplies the important context upfront, and the request goes directly to the right decision owner. The team has also agreed when a case needs escalation, which makes the status meaningful rather than just another label.
 
 ## Investigation
-Choose ten recent requests and mark who actually made the decision, who merely forwarded the request, how many times clarification was requested and how long the case waited between responses. Separate review work from queue time.
+I'd take the last ten approvals and write down who made the decision, who passed the request along, how often it came back for clarification, and how long it sat untouched. That separates the time spent making a decision from time spent waiting for someone to pick it up.
 
 ## Changes to test
 1. **Classify decisions** — Distinguish routine, reversible changes from decisions with meaningful financial, legal or customer consequences.
@@ -46,7 +46,7 @@ Choose ten recent requests and mark who actually made the decision, who merely f
   Baseline: _______    After test: _______
 
 ## An experiment
-Run the next ten routine approvals through a single-page decision brief that requires purpose, cost, owner and requested date. Compare waiting time and clarification loops with the previous ten cases. Only then decide whether automated routing would help.
+For the next ten routine approvals, use a short brief with the purpose, estimated cost, decision owner and requested date. Compare them with the previous ten cases, especially the waiting time and clarification loops; if the new process works, consider whether routing it automatically would save more effort.
 
 Start date: _______   Review date: _______
 Owner: _______
@@ -57,6 +57,6 @@ _________________________________________________
 Not every approval is waste. Controls around financial exposure, privacy, safety or regulated actions may be mandatory, and replacing them with a simple threshold could create risk. Clarify those requirements with the responsible policy or compliance owner before changing the route.
 
 ## A smaller alternative
-For a small team, an agreed decision table and a shared status column can be sufficient. Automation becomes valuable when requests are frequent enough for manual routing to create real work, and when exceptions are clearly defined.
+For a smaller team, a decision table and a shared status column may do the job. I'd only automate the routing once the requests are frequent enough, and the exceptions clear enough, that people are spending meaningful time sending them around.
 
 **Source:** How Work Runs, The Operational Friction Atlas, published November 11, 2026.

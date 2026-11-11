@@ -26,10 +26,10 @@ Case 3:
 3. **Task system** — Links to existing case. One place to update.
 4. **Next meeting** — Reviews exceptions. Resolved items stay closed.
 
-Why the redesign might help: The redesigned process makes the decision explicit at the moment it is made. It separates discussion notes from agreed commitments and avoids asking employees to update a second task list after the meeting.
+Why the redesign might help: I'd have the team confirm each decision and action during the meeting, then record it against the related project or request. That preserves the useful context without creating another separate list that nobody updates.
 
 ## Investigation
-Read the last three recaps and identify every purported action. Check whether it has one owner, a concrete next step and a place to record completion. Then ask those owners whether they recognized the commitment at the time. The gap between the notes and their understanding is informative.
+Take the last three meeting recaps and identify the actions they describe. For each one, ask who owns it, what the next step is and where completion is recorded, then check whether the named person understood it as a commitment. Those gaps tend to explain why the same topics keep returning.
 
 ## Changes to test
 1. **Separate record types** — Keep decisions, open questions and action items distinct. Each has a different meaning and follow-up.
@@ -46,7 +46,7 @@ Read the last three recaps and identify every purported action. Check whether it
   Baseline: _______    After test: _______
 
 ## An experiment
-For four meetings, end with a two-minute confirmation of decisions, actions and owners, then link each action to the work it affects. Check the next meeting's repeated questions and unowned tasks against the previous four.
+For four meetings, finish with a short confirmation of decisions, actions and owners, then link each action to the work it affects. At the next meeting, check whether fewer questions need reopening and whether more commitments have a clear owner.
 
 Start date: _______   Review date: _______
 Owner: _______
@@ -57,6 +57,6 @@ _________________________________________________
 Automatically extracting action items from transcripts can invent commitments or misidentify an owner. Require a human to confirm the action before writing into a task system, and be careful with private or sensitive meeting content.
 
 ## A smaller alternative
-Not every conversation needs action tracking. If a meeting is exploratory, capturing the decision to conduct further analysis may be appropriate, but turning every idea into a mandatory task creates unnecessary work.
+Exploratory conversations don't need a task created for every idea. If something genuinely needs follow-up, capture the agreed next step, but leave room for discussions that are about learning or weighing options rather than assigning work.
 
 **Source:** How Work Runs, The Operational Friction Atlas, published November 11, 2026.

@@ -1,4 +1,4 @@
-// The Atlas is readable without JavaScript; search and share controls are optional.
+// The Atlas is readable without JavaScript; search controls are optional.
 (function(){
   'use strict';
   const search=document.querySelector('[data-atlas-search]');
@@ -27,22 +27,4 @@
     apply();
   }));
   if(search)apply();
-  document.querySelectorAll('[data-atlas-copy]').forEach(button=>{
-    const original=button.textContent;
-    button.addEventListener('click',async()=>{
-      const url=button.dataset.atlasCopy||window.location.href;
-      try{
-        if(navigator.clipboard&&window.isSecureContext)await navigator.clipboard.writeText(url);
-        else{
-          const field=document.createElement('textarea');field.value=url;field.style.position='fixed';field.style.opacity='0';
-          document.body.appendChild(field);field.select();
-          const ok=document.execCommand('copy');field.remove();
-          if(!ok)throw new Error('Copy unsupported');
-        }
-        button.textContent='Link copied';
-      }catch(e){button.textContent='Copy unavailable';}
-      window.setTimeout(()=>{button.textContent=original;},2600);
-    });
-  });
-  document.querySelectorAll('[data-atlas-print]').forEach(b=>b.addEventListener('click',()=>window.print()));
 })();

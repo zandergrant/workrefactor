@@ -26,10 +26,10 @@ Case 3:
 3. **Sync process** — Updates existing event ID. No duplicate creation.
 4. **People** — Review exception log. Calendar views reconcile.
 
-Why the redesign might help: The redesign separates the planning decision from the mechanical propagation of that decision. Session IDs anchor the records, time zones are stored deliberately, and changes update existing events rather than creating parallel versions.
+Why the redesign might help: I'd make the planning record authoritative, give every session a stable ID and keep the calendar event IDs linked to it. Then a reassignment or cancellation can update the existing records, with exceptions visible for someone to review instead of leaving the team to compare calendars manually.
 
 ## Investigation
-Select a dozen recently moved, canceled or reassigned sessions. Trace the original ID, source time zone, current assigned facilitator, calendar event ID and history of updates. Note whether the mismatch came from missing IDs, unclear ownership or an unsupported change type.
+I'd sample a dozen sessions that were moved, canceled or reassigned, then compare the planning record with the calendar event and its change history. A stable session ID, explicit time zone and current facilitator should be enough to identify where the records stopped agreeing.
 
 ## Changes to test
 1. **Define event identity** — Give every unique session a stable ID that does not change when the title, host or start time changes.
@@ -46,7 +46,7 @@ Select a dozen recently moved, canceled or reassigned sessions. Trace the origin
   Baseline: _______    After test: _______
 
 ## An experiment
-Create a sandbox with ten fictional sessions, then move, cancel and reassign several of them. Run the sync twice, including after a simulated failure, and verify that exactly the expected event records remain. This tests correctness before anyone trusts the automation with a live schedule.
+Set up ten fictional sessions in a test calendar and change several assignments and times, including one cancellation. Run the sync more than once and simulate a failed update, then check that the correct events remain and no duplicates appear. I'd want that working reliably before connecting it to a live schedule.
 
 Start date: _______   Review date: _______
 Owner: _______
@@ -57,6 +57,6 @@ _________________________________________________
 Calendar APIs, invitation ownership, external attendees and time-zone transitions introduce edge cases. Daylight saving changes and recurring events need explicit tests, and an automated sync must not overwrite a legitimate human adjustment without a defined ownership rule. A published schedule may also require a notification protocol when it changes.
 
 ## A smaller alternative
-For a handful of events, a careful checklist may be enough. As volume increases, the value of synchronization rises, but only if the team is prepared to maintain event identity, permissions, quotas and failure monitoring.
+For a small number of events, a careful checklist may genuinely be simpler. At larger volumes, synchronization becomes more valuable, but only if event identity, permissions and failed updates are handled properly.
 
 **Source:** How Work Runs, The Operational Friction Atlas, published November 11, 2026.

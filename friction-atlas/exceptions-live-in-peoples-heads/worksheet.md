@@ -26,10 +26,10 @@ Case 3:
 3. **Authorized owner** — Reviews unusual case. Reason documented.
 4. **Knowledge base** — Updates reusable guidance. Only meaningful patterns kept.
 
-Why the redesign might help: The improvement preserves judgment where it matters while making routine exceptions easier to recognize. The goal is not to turn every unusual situation into a rigid rule; it is to stop repeatedly rediscovering the same decision without retaining the reasoning.
+Why the redesign might help: I'd preserve room for judgment while making recurring exceptions easier to recognize. That could mean a short decision guide, a named escalation owner and a record of why similar cases were handled differently, without building a rigid rule for every possible situation.
 
 ## Investigation
-For the last ten unusual cases, write down what made each case different, who decided the outcome, what information they used and whether the case has occurred before. Group genuinely similar exceptions rather than writing a rule for every anecdote.
+I'd look at the last ten unusual cases and ask what made them different, who decided, what information mattered and whether the same situation has come up before. Group the cases that are genuinely similar; there's little value in writing a new rule for every one-off problem.
 
 ## Changes to test
 1. **Define the ordinary path** — Keep the main SOP simple and show the conditions under which it does not apply.
@@ -46,7 +46,7 @@ For the last ten unusual cases, write down what made each case different, who de
   Baseline: _______    After test: _______
 
 ## An experiment
-Choose the three exception types responsible for the most interruptions and create one-page decision briefs with an owner and clear boundaries. Use them on real cases for two weeks, recording where the brief was insufficient or where a reviewer still needed to intervene.
+Pick the three exceptions that generate the most questions and write a one-page guide for each, with the decision owner and boundaries made clear. Use the guides for two weeks, recording where people still need help or where a reviewer has to step in.
 
 Start date: _______   Review date: _______
 Owner: _______
@@ -57,6 +57,6 @@ _________________________________________________
 Some exceptions should remain case-by-case, especially where contractual, privacy or safety obligations require judgment. Do not publish sensitive customer examples as training material without authorization. An exhaustive decision tree can become harder to maintain than a short escalation protocol.
 
 ## A smaller alternative
-Where exceptions are rare and high-stakes, an explicit escalation rule may be more useful than a large knowledge base. Where they are common and repeatable, a searchable collection of short approved examples can help new employees act with confidence.
+For rare, high-stakes exceptions, a clear escalation route may be enough. If similar cases happen all the time, a short, searchable set of approved examples can help the rest of the team handle them without interrupting the same person.
 
 **Source:** How Work Runs, The Operational Friction Atlas, published November 11, 2026.

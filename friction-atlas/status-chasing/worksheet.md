@@ -26,10 +26,10 @@ Case 3:
 3. **Team lead** — Reviews exceptions only. Blockers and dates visible.
 4. **Manager** — Uses same live view. No parallel report needed.
 
-Why the redesign might help: The redesigned system treats status as part of completing the work, not a separate weekly performance ritual. A shared definition of blocked, owner, next action and last meaningful update provides much of the clarity a reporting layer tries to reconstruct.
+Why the redesign might help: I'd make the status update part of a meaningful handoff, such as accepting a request, recording a decision or marking something blocked. Give each case an owner and next action, and the team can review exceptions without recreating the whole picture every week.
 
 ## Investigation
-List the three questions a manager asks most often. For each, trace where the answer originates, how it reaches the manager, and which step makes it unreliable. If the answer exists but is hard to find, the fix may be navigation. If it does not exist, a dashboard cannot invent it.
+Start with the three questions managers ask most often, then find out where each answer comes from and why it's hard to trust. Sometimes the information exists and is difficult to locate; other times nobody records it in the first place. Those require different fixes.
 
 ## Changes to test
 1. **Define a minimum record** — Use one owner, a small set of unambiguous statuses, a next action and a date. Avoid a field unless someone will act on it.
@@ -46,7 +46,7 @@ List the three questions a manager asks most often. For each, trace where the an
   Baseline: _______    After test: _______
 
 ## An experiment
-Choose one team and one type of recurring request. Define four statuses and require an owner and next action for active items. Replace one status meeting with a review of blocked and overdue cases, then ask whether the team had fewer clarification messages.
+Choose one team and one type of request, agree on four statuses, and make an owner and next action required for open work. Replace one routine status meeting with a review of blocked and overdue requests, then see whether people actually spend less time chasing updates.
 
 Start date: _______   Review date: _______
 Owner: _______
@@ -57,6 +57,6 @@ _________________________________________________
 Too much visibility can become surveillance. The goal is to make coordination easier, not record every minute an employee spends on a task. Agree on meaningful state changes and give teams room to perform the work without constant updates.
 
 ## A smaller alternative
-When the actual work is already managed reliably in another platform, build a read-only consolidated view before asking employees to update a second tool. A shared sheet may be useful as a first iteration, but it should not become another unofficial source of truth.
+If employees already manage their work in a reliable system, I'd start with a read-only view rather than asking them to update another tracker. A shared sheet can be useful, but it shouldn't become one more competing version of the truth.
 
 **Source:** How Work Runs, The Operational Friction Atlas, published November 11, 2026.

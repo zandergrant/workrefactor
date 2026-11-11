@@ -26,10 +26,10 @@ Case 3:
 3. **Role-based view** — Shows appropriate actions. Permissions enforced in app.
 4. **Manager** — Reads decision dashboard. Changes and exceptions visible.
 
-Why the redesign might help: A focused application is most useful when it improves the interaction around reliable records, not when it hides the same fragile spreadsheet behind a prettier screen. Stable fields, ownership and change history come before visual polish.
+Why the redesign might help: I'd start with clear fields, stable IDs, named owners and a history of important changes. If people still struggle to complete their tasks, a focused interface could make the work easier without replacing all the systems underneath it.
 
 ## Investigation
-Choose three ordinary tasks and ask a new colleague to complete them while you observe. Note when they need verbal instructions, inspect hidden columns, copy data between tabs or ask permission to edit. That reveals the specific interface problem more clearly than the total number of rows.
+Ask an occasional user to complete three ordinary tasks while you watch, without explaining the workbook as they go. Notice when they have to inspect hidden columns, move between tabs or ask whether a change is allowed; those moments tell you much more than the number of rows in the file.
 
 ## Changes to test
 1. **Simplify the record** — Define columns, field types, required values, stable identifiers and a small status model. Remove unused tabs and ambiguous colors.
@@ -46,7 +46,7 @@ Choose three ordinary tasks and ask a new colleague to complete them while you o
   Baseline: _______    After test: _______
 
 ## An experiment
-Create a cleaned-up version of one workflow tab with standard fields, validation and a simple form. Ask two occasional users to complete real cases, then compare mistakes, time and questions with the current sheet. Consider an app only if meaningful friction remains.
+Clean up one part of the workbook, with consistent fields, validation and a simple input form, then ask two occasional users to complete real cases. Compare errors and questions with the current version; if the remaining problems are mostly about the interface or permissions, an app may be worth considering.
 
 Start date: _______   Review date: _______
 Owner: _______
@@ -57,6 +57,6 @@ _________________________________________________
 A web front end does not automatically create secure permissions, an audit trail or dependable synchronization. When using Sheets and Apps Script, check execution quotas, account access, backups and concurrency expectations. For confidential or high-volume data, a database-backed design may be more appropriate.
 
 ## A smaller alternative
-Some teams genuinely benefit from spreadsheets because the workflow changes frequently and the data needs to be inspected directly. A simpler workbook with protected calculations and a form can be the right answer, even when a custom app is technically possible.
+A spreadsheet may still be the right choice when the process changes frequently and the team benefits from seeing the underlying records. A cleaner structure, protected formulas and a form may solve the problem without the cost of another application.
 
 **Source:** How Work Runs, The Operational Friction Atlas, published November 11, 2026.

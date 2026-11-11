@@ -26,10 +26,10 @@ Case 3:
 3. **Integration** — Passes ID and required fields. Downstream record linked.
 4. **Owner** — Corrects source record. Downstream update is checked.
 
-Why the redesign might help: The improvement is not simply fewer keystrokes. One record becomes the source of truth for each field, and the other tools use stable identifiers to reference it. That gives the team a way to distinguish a missing update from a genuine difference in the data.
+Why the redesign might help: I'd start by giving each field one authoritative home, then linking the records through stable IDs. The other tools can still display the information, but there's a clear place to correct it; when something goes wrong, the team can trace which update failed.
 
 ## Investigation
-Take five recently changed customer records and trace the exact point where each field was first captured. For every subsequent update, write down the person, system, reason and timestamp. The map will reveal whether you have a copying problem, an ownership problem, or both.
+I'd take five customer records that changed recently and follow each field from the original submission through every update. Who changed it, in which system, and why? Once you see the sequence, it's easier to tell whether the real issue is repeated entry, unclear ownership or both.
 
 ## Changes to test
 1. **Name the authority** — Choose one system that owns each field, such as customer contact details or job status. Different fields can have different owners, but each field needs a defined rule.
@@ -46,7 +46,7 @@ Take five recently changed customer records and trace the exact point where each
   Baseline: _______    After test: _______
 
 ## An experiment
-Run one week of requests through the current process, recording repeat entry and conflicting edits. Then connect a single downstream handoff with stable IDs and an exception log. Compare accepted records and correction effort, not just how many messages the automation sent.
+Track a week's requests, including how often people retype details or correct conflicting records. Then connect one handoff using stable IDs and a visible exception log, and compare the number of accurate records and the effort required to fix mistakes.
 
 Start date: _______   Review date: _______
 Owner: _______
@@ -57,6 +57,6 @@ _________________________________________________
 Bidirectional synchronization is not automatically better. Without a conflict rule, two employees can overwrite each other, and a failed webhook can leave the systems inconsistent. If the software has no dependable integration or access permissions are unclear, a structured export and scheduled reconciliation may be the safer first step.
 
 ## A smaller alternative
-For a very small team, a single well-designed sheet may be enough. The important choice is not whether the data lives in a spreadsheet or database, but whether employees can tell which record they should change and whether the next person sees that change.
+A small team may be perfectly well served by one carefully designed spreadsheet. What matters is that people know where to make a change and can trust that the next person will see it, whether the underlying system is a sheet or a database.
 
 **Source:** How Work Runs, The Operational Friction Atlas, published November 11, 2026.

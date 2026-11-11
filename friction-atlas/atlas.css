@@ -64,9 +64,6 @@
 .atlas-page .atlas-entry-hero h1{font:400 clamp(44px,6vw,78px)/1.04 "Instrument Serif",Georgia,serif;color:#18364f;letter-spacing:-.028em;margin:0 0 22px;max-width:1010px}
 .atlas-page .atlas-entry-deck{font-size:clamp(16px,2vw,20px);line-height:1.72;color:#4c6275;max-width:880px;margin:0}
 .atlas-page .atlas-entry-tools{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:29px}
-.atlas-page .atlas-copy,.atlas-page .atlas-utility{font:700 12px/1.5 "DM Sans",sans-serif;border:1px solid #b9cede;color:#215a8f;padding:10px 14px;background:#fff;border-radius:4px;cursor:pointer;text-decoration:none}
-.atlas-page .atlas-copy:hover,.atlas-page .atlas-utility:hover{background:#eaf3fb}
-.atlas-page .atlas-copy:focus-visible,.atlas-page .atlas-utility:focus-visible{outline:3px solid #87baf5;outline-offset:2px}
 .atlas-page .atlas-entry-layout{display:grid;grid-template-columns:minmax(0,1fr) 226px;gap:clamp(28px,5vw,70px);align-items:start;padding-bottom:70px}
 .atlas-page .atlas-entry-body{min-width:0}
 .atlas-page .atlas-entry-body h2{font:400 clamp(32px,3.9vw,46px)/1.12 "Instrument Serif",Georgia,serif;color:#18364e;letter-spacing:-.018em;margin:0 0 19px}
@@ -129,3 +126,14 @@
 @media(max-width:680px){.atlas-page .atlas-wrap{width:min(100% - 34px,1150px)}.atlas-page .atlas-hero{padding:59px 0 65px}.atlas-page .atlas-hero h1{font-size:clamp(47px,10vw,70px)}.atlas-page .atlas-hero-meta{gap:11px}.atlas-page .atlas-section{padding:48px 0}.atlas-page .atlas-cards,.atlas-page .atlas-three,.atlas-page .atlas-flow-panels,.atlas-page .atlas-related,.atlas-page .atlas-prevnext{grid-template-columns:1fr}.atlas-page .atlas-card{padding:23px}.atlas-page .atlas-mini{grid-template-columns:minmax(0,1fr) 24px minmax(0,1fr)}.atlas-page .atlas-entry-hero{padding:29px 0 40px}.atlas-page .atlas-entry-hero h1{font-size:clamp(42px,9.5vw,60px)}.atlas-page .atlas-entry-layout{gap:26px}.atlas-page .atlas-sidebar{padding:16px}.atlas-page .atlas-scenario,.atlas-page .atlas-flow-panel,.atlas-page .atlas-worksheet{padding:20px}.atlas-page .atlas-measure{grid-template-columns:1fr;gap:4px}.atlas-page .atlas-end-inner{align-items:flex-start;flex-direction:column}.atlas-page .atlas-entry-tools{gap:8px}.atlas-page .atlas-search{font-size:16px}}
 @media print{.atlas-page .site-header,.atlas-page .site-footer,.atlas-page .atlas-sidebar,.atlas-page .atlas-entry-tools,.atlas-page .atlas-prevnext,.atlas-page .atlas-end{display:none!important}.atlas-page .atlas-entry-layout{display:block}.atlas-page .atlas-flow-panels{display:grid;grid-template-columns:1fr 1fr}.atlas-page .atlas-entry-body section{break-inside:avoid}.atlas-page .atlas-entry-hero{padding:12px 0 20px}.atlas-page .atlas-entry-hero h1{font-size:37px}.atlas-page .atlas-wrap{width:100%}.atlas-page{background:#fff}}
 .atlas-page .atlas-alt-heading{margin-top:24px}
+
+/* Social sharing is a small text action, not another row of buttons. */
+.atlas-page .atlas-share-links{display:inline-flex;align-items:center;flex-wrap:wrap;gap:11px;font:500 13px/1.5 "DM Sans",sans-serif;color:#65798b}
+.atlas-page .atlas-share-links a{color:#286ba7;text-decoration:underline;text-underline-offset:4px;font-weight:600}
+.atlas-page .atlas-share-links a:hover{color:#174b7d}
+.atlas-page .atlas-share-links a:focus-visible{outline:3px solid #87baf5;outline-offset:3px}
+.atlas-page .atlas-share-light{color:#c1d7ea}
+.atlas-page .atlas-share-light a{color:#e1efff}
+.atlas-page .atlas-share-light a:hover{color:#fff}
+@media(max-width:680px){.atlas-page .atlas-entry-tools{align-items:flex-start;flex-direction:column}.atlas-page .atlas-share-links{gap:12px}}
+@media print{.atlas-page .atlas-share-links{display:none!important}}

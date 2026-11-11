@@ -26,10 +26,10 @@ Case 3:
 3. **Case record** — Collects replies and notes. One visible status.
 4. **Owner** — Resolves and closes case. Customer knows the outcome.
 
-Why the redesign might help: The useful change is separating triage from resolution. One person or rotation decides where new work belongs, while a named owner is responsible for its outcome. The messages still matter, but the request record becomes the place to understand what is happening.
+Why the redesign might help: I'd give one person or a rotating role responsibility for triage, then assign each request to a named owner who can see its history and next action. The inbox still matters, but the team needs one place to understand what's happening with a request.
 
 ## Investigation
-Sample a week of incoming messages and group related replies into requests. Record the type, priority, assigned person, first meaningful response and closure. Notice how much work is genuinely new versus follow-up on a case already open.
+I'd review a week's emails, group the messages that belong to the same request, and record who handled each one, when the customer received a useful response and when it was resolved. That usually makes the gaps in ownership much easier to see.
 
 ## Changes to test
 1. **Set triage rules** — Agree on the few categories that change who should respond. Specify how urgent or sensitive messages are recognized.
@@ -46,7 +46,7 @@ Sample a week of incoming messages and group related replies into requests. Reco
   Baseline: _______    After test: _______
 
 ## An experiment
-For five working days, assign a daily triage owner and use a single shared request register. Record the cases that are reassigned, duplicated or delayed, then decide whether a dedicated inbox tool would remove enough coordination to justify itself.
+For five working days, make one person responsible for triage each day and keep all open requests in a shared register. Record where work was reassigned, duplicated or delayed; that gives you something concrete to compare before choosing an inbox platform.
 
 Start date: _______   Review date: _______
 Owner: _______
@@ -57,6 +57,6 @@ _________________________________________________
 A shared inbox may contain sensitive financial, personal or employee information. Any connected tracker needs appropriate permissions and retention rules, and a blanket forward-to-everyone automation may make privacy worse. High-stakes cases should have an explicit escalation route.
 
 ## A smaller alternative
-For a low-volume inbox, named daily triage ownership and a shared tracker may solve the problem. At higher volume, a ticketing platform may provide useful threading, assignment and audit history, provided the team is ready to maintain it.
+If the inbox is fairly quiet, a daily triage owner and a shared tracker may be all the team needs. As volume grows, a dedicated platform becomes more attractive for its threading, assignments and history, provided the team has someone to maintain it.
 
 **Source:** How Work Runs, The Operational Friction Atlas, published November 11, 2026.

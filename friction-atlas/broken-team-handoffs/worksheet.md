@@ -26,10 +26,10 @@ Case 3:
 3. **Delivery owner** — Accepts or returns handoff. Named owner and reason.
 4. **Client** — Receives confirmed next step. Milestone is visible.
 
-Why the redesign might help: Completion for the sending team is not the same as readiness for the receiving team. A clear acceptance step aligns those definitions and prevents missing information from surfacing later as emergency coordination.
+Why the redesign might help: I would define what 'ready for delivery' means with the people receiving the work, then make acceptance an explicit part of the handoff. That way, sales can finish its job and delivery can start its own without having to discover the missing pieces later.
 
 ## Investigation
-Follow three handoffs that went well and three that did not. Ask the recipient to identify what they could not do immediately and which information would have prevented the delay. Resist copying every available field into the handoff; focus on what changes the next action.
+I'd compare three handoffs that went smoothly with three that created delays, then ask the receiving team what they needed but didn't have. The goal is a short, useful set of requirements, not a form that copies every field available in the CRM.
 
 ## Changes to test
 1. **Define ready** — Write the minimum conditions that make the next team able to start, including records, decisions, accountable owner and agreed first milestone.
@@ -46,7 +46,7 @@ Follow three handoffs that went well and three that did not. Ask the recipient t
   Baseline: _______    After test: _______
 
 ## An experiment
-For one fortnight, use a five-field handoff brief and require explicit acceptance by the receiving owner. Record which missing items still trigger follow-up and revise the brief based on those cases. The first draft should be treated as an experiment, not a final policy.
+Try a five-field handoff brief for two weeks and ask the receiving owner to accept or return each one. Keep a record of what still requires clarification, then revise the brief around those real cases rather than treating the first draft as final.
 
 Start date: _______   Review date: _______
 Owner: _______
@@ -57,6 +57,6 @@ _________________________________________________
 A form with thirty mandatory questions can turn a manageable process into a new administrative burden. Keep the required fields narrow, protect sensitive contract details, and make sure the acceptance step is a real decision rather than a checkbox everyone clicks automatically.
 
 ## A smaller alternative
-Where work changes substantially between customers, distinguish a small common core from a case-specific exception note. Forcing every unusual engagement into the same detailed template can hide the nuance that matters most.
+When every engagement is different, I'd keep the common requirements short and leave space for case-specific commitments. A detailed form that treats every customer the same can lose the very details the next team needs.
 
 **Source:** How Work Runs, The Operational Friction Atlas, published November 11, 2026.

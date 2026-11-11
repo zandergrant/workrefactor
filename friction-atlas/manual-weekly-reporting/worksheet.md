@@ -26,10 +26,10 @@ Case 3:
 3. **Shared view** — Calculates agreed measures. Refresh time visible.
 4. **Lead** — Reviews outliers and decisions. No rebuild from scratch.
 
-Why the redesign might help: A trustworthy report starts as a data contract: which records are included, how they are identified, when the source was refreshed, and who is responsible when a number looks wrong. Automation is useful once that agreement exists.
+Why the redesign might help: Before building the report, I'd document which records belong in it, how they're identified, when the data is refreshed and who investigates a surprising number. Once that is agreed, the repetitive preparation can be automated without hiding the exceptions people still need to review.
 
 ## Investigation
-Take the last two reports and list every manual edit made before publication. Classify those edits as formatting, joining, correcting source errors, applying business rules or interpreting exceptions. Repeated formatting is a good automation candidate; repeated disputes about definitions are not.
+Take the last two reports and list the manual changes made before they were sent. Was someone formatting, matching records, fixing source errors, applying a rule or exercising judgment? Formatting and stable transformations are candidates for automation; arguments about what the numbers mean need to be settled first.
 
 ## Changes to test
 1. **Write metric definitions** — For each measure, specify the numerator, denominator, filters, exclusion rules and refresh frequency.
@@ -46,7 +46,7 @@ Take the last two reports and list every manual edit made before publication. Cl
   Baseline: _______    After test: _______
 
 ## An experiment
-Rebuild the next two reports from a documented metric definition sheet and a small validation checklist. Log the exceptions rather than correcting them invisibly. If the definitions hold steady, automate the repeated transformation and compare preparation time and correction rates.
+For the next two reports, use one set of metric definitions and a short validation checklist. Keep a visible list of exceptions rather than correcting them silently; if the definitions remain consistent, automate the repeated preparation and compare the time spent and corrections required.
 
 Start date: _______   Review date: _______
 Owner: _______
@@ -57,6 +57,6 @@ _________________________________________________
 Automating reports can create false confidence when upstream systems change fields or data arrives late. Display the last refresh, define acceptable lag and preserve an easy way to inspect the underlying rows. For scripts, check product limits and execution quotas before relying on scheduled refreshes.
 
 ## A smaller alternative
-If reporting volume is low, a consistent export template and a validation tab might remove most of the manual work without an integration. A fully automated dashboard becomes more valuable when the report is frequent, widely used and costly to recreate.
+If the team only produces an occasional report, a consistent export format and a validation tab might be enough. I'd consider a full dashboard when people need the information frequently enough that rebuilding it has become a real burden.
 
 **Source:** How Work Runs, The Operational Friction Atlas, published November 11, 2026.
