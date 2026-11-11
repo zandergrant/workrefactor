@@ -6571,3 +6571,37 @@ h3,
     line-height: 1.08;
   }
 }
+
+/* Contact form choice cards: compact inputs, not oversized display tiles.
+   Keep a generous touch target, but separate them visually from page headings. */
+.contact-page .form-choice-grid {
+  gap: 10px;
+}
+.contact-page .form-choice-box {
+  min-height: 88px;
+  padding: 15px 17px;
+  gap: 5px;
+  justify-content: center;
+}
+.contact-page .form-choice-box strong {
+  font-family: "DM Sans", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.3;
+  font-weight: 650;
+  letter-spacing: -0.015em;
+}
+.contact-page .form-choice-box > span {
+  font-family: "DM Sans", Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.4;
+}
+@media (max-width: 620px) {
+  .contact-page .form-choice-grid { gap: 9px; }
+  .contact-page .form-choice-box {
+    min-height: 0;
+    padding: 13px 16px;
+    gap: 4px;
+  }
+  .contact-page .form-choice-box strong { font-size: 16px; line-height: 1.25; }
+  .contact-page .form-choice-box > span { font-size: 13px; line-height: 1.35; }
+}
