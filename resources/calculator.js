@@ -4,8 +4,8 @@
   var recommendations = {
     chasing: ['Use the workflow audit to locate the bottleneck.', 'Follow three actual cases and capture where time was lost, who was waiting, and what required another message.', 1, 'Go to the workflow audit'],
     copying: ['Compare recurring tasks with the automation opportunity tracker.', 'Count how often employees transfer the same information and whether you could eliminate the step before automating it.', 2, 'Go to the automation tracker'],
-    experiment: ['Test one change with the process experiment brief.', 'Document the baseline, change one thing, and decide what to keep using the results of a short test.', 3, 'Go to the experiment brief'],
-    handoff: ['Clarify the handoff with the client brief.', 'Agree on what complete means for the receiving team, then test that definition against a delayed case.', 4, 'Go to the handoff brief'],
+    experiment: ['Plan a small process experiment.', 'Choose one measurable change, capture the baseline and guardrails, then review the result before deciding whether to keep it.', '/resources/guides/process-experiment/', 'Open the experiment planner'],
+    handoff: ['Build a clear handoff agreement.', 'Agree what the receiving team needs, who owns the next action, and how to handle incomplete cases.', '/resources/guides/handoff-repair/', 'Open the handoff builder'],
     owner: ['Map who can make decisions and when to escalate.', 'Name the person who can decide, what authority they have, and the specific conditions requiring escalation.', 5, 'Go to the ownership map'],
     sop: ['Make the recurring task easier to follow with a one-page SOP.', 'Document the ordinary case and its exceptions with the person doing the work, then ask someone else to follow it.', 6, 'Go to the SOP'],
     ai: ['Evaluate AI output against accepted answers.', 'Compare the model output with accepted answers on representative cases, including errors and escalations.', 7, 'Go to the AI evaluation sheet'],
@@ -16,8 +16,8 @@
     document.getElementById('resource-finder-title').textContent = match[0];
     document.getElementById('resource-finder-copy').textContent = match[1];
     var link = document.getElementById('resource-finder-link');
-    link.setAttribute('href', '#resource-' + match[2]);
-    link.textContent = match[3] + ' ↓';
+    link.setAttribute('href', typeof match[2] === 'number' ? '#resource-' + match[2] : match[2]);
+    link.textContent = match[3] + (typeof match[2] === 'number' ? ' ↓' : ' →');
   }
   if (problem) { problem.addEventListener('change', selectResource); selectResource(); }
 
