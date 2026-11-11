@@ -6508,3 +6508,21 @@ h3,
 .home-page .service-consult-cta { margin:24px 0 0;text-align:right; }
 .home-page .service-consult-cta a { color:#155bb8;font:600 15px/1.6 "Helvetica Neue",Helvetica,Arial,sans-serif;text-decoration:underline;text-underline-offset:4px; }
 @media(max-width:620px){.home-page .service-consult-cta{text-align:left;}}
+
+/* Editorial feature for the Operational Friction Atlas on the Resources page. */
+.atlas-spotlight{padding:clamp(48px,6vw,80px) 0;background:#eaf2f9;border-bottom:1px solid #d1dfeb}
+.atlas-spotlight-inner{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(310px,.9fr);gap:clamp(25px,5vw,65px);align-items:center}
+.atlas-spotlight h2{font:400 clamp(36px,4.1vw,59px)/1.08 "Instrument Serif",Georgia,serif;color:#193951;margin:0 0 20px}
+.atlas-spotlight-copy>p:not(.eyebrow){font-size:16px;line-height:1.78;color:#40596e;max-width:630px;margin:0 0 23px}
+.atlas-spotlight-cta{display:inline-flex;align-items:center;gap:15px;padding:13px 17px;border-radius:4px;background:#204e77;color:#fff!important;text-decoration:none;font:700 14px/1.45 "DM Sans",sans-serif}
+.atlas-spotlight-cta:hover{background:#176099}
+.atlas-spotlight-example{display:grid;grid-template-columns:minmax(0,1fr) 24px minmax(0,1fr);align-items:center;gap:9px;min-width:0}
+.atlas-spotlight-stage{background:#fff;border:1px solid #d9e4ed;border-radius:5px;padding:16px 13px;min-width:0}
+.atlas-spotlight-stage>span{display:block;font:700 11px/1.5 "DM Sans",sans-serif;text-transform:uppercase;letter-spacing:.045em;color:#78594c;margin-bottom:14px}
+.atlas-spotlight-after>span{color:#2d7b6a}
+.atlas-spotlight-stage>div{min-width:0;background:#f7f1ef;border-left:3px solid #c89985;color:#36516b;padding:9px 10px;margin-bottom:9px;font:600 12px/1.45 "DM Sans",sans-serif}
+.atlas-spotlight-after>div{background:#edf7f4;border-color:#73b29f}
+.atlas-spotlight-stage>div:last-child{margin-bottom:0}
+.atlas-spotlight-middle{text-align:center;font-size:23px;color:#5c7893}
+@media(max-width:850px){.atlas-spotlight-inner{grid-template-columns:1fr}.atlas-spotlight-example{max-width:650px}}
+@media(max-width:440px){.atlas-spotlight-stage{padding:12px 9px}.atlas-spotlight-stage>div{font-size:11px;padding:9px 6px}.atlas-spotlight-example{grid-template-columns:minmax(0,1fr) 16px minmax(0,1fr);gap:5px}}
