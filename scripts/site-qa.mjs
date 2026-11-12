@@ -6,7 +6,9 @@ const paths = [
   '/', '/contact/', '/contact/thanks/', '/resources/',
   '/friction-atlas/', '/friction-atlas/duplicate-data-entry/',
   '/workflow-automation-consulting/', '/business-systems/',
-  '/resources/guides/spreadsheet-to-app/'
+  '/resources/guides/spreadsheet-to-app/',
+  '/work/operations-hub/', '/work/global-event-operations/',
+  '/work/support-operations/', '/work-with-us/'
 ];
 const viewportWidths = [390, 768, 1440];
 const failures = [];
