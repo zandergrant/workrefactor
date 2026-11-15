@@ -374,3 +374,6 @@ body:is(.home-page,.contact-page,.resources-page,.guide-page,.consult-page,.atla
   .hwr-detail-page .hwr-detail-hero {padding:68px 0;}
   .hwr-detail-page .hwr-detail-hero-actions {align-items:flex-start;flex-direction:column;}
 }
+
+/* Editorial refinement: preserve existing layout while making service and case-study links readable. */
+.home-page .hwr-work-link:focus-visible,.hwr-detail-page .hwr-detail-text-link:focus-visible{outline:3px solid #79b9ed;outline-offset:4px;border-radius:2px}
