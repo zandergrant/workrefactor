@@ -477,3 +477,14 @@ body.home-page main #guides .guide-grid > .guide-featured {
   body.home-page main .services-section .service-row {padding:20px 0;}
   body:is(.home-page,.contact-page,.resources-page,.guide-page,.consult-page,.atlas-page,.rl-body,.privacy-page) main :is(.eyebrow,.atlas-eyebrow,.rl-eyebrow,.rl-kicker,.consult-eyebrow,.privacy-eyebrow) {font-size:15px!important;}
 }
+
+/* Sitewide section-label legibility, including contact and case-study templates. */
+body main :is(.eyebrow,.atlas-eyebrow,.rl-eyebrow,.rl-kicker,.consult-eyebrow,.privacy-eyebrow,.project-sidebar-label,.hwr-detail-eyebrow) {
+  font-size:16px!important;
+  line-height:1.45!important;
+  font-weight:700;
+  letter-spacing:.025em;
+}
+@media(max-width:700px){
+  body main :is(.eyebrow,.atlas-eyebrow,.rl-eyebrow,.rl-kicker,.consult-eyebrow,.privacy-eyebrow,.project-sidebar-label,.hwr-detail-eyebrow){font-size:15px!important;}
+}
