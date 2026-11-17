@@ -86,6 +86,34 @@ for (const width of viewportWidths) {
       }
     }
 
+    if (path === '/' || path === '/contact/') {
+      const layout = await page.evaluate(() => {
+        const rect = el => el.getBoundingClientRect();
+        const label = document.querySelector(pathname() === '/' ? '.selected-work-section .eyebrow' : '.project-sidebar .eyebrow');
+        function pathname() { return location.pathname; }
+        const services = [...document.querySelectorAll('.services-section .service-row')];
+        const guides = [...document.querySelectorAll('#guides .guide-grid > .friction-card')];
+        return {
+          labelSize: label ? parseFloat(getComputedStyle(label).fontSize) : null,
+          serviceRows: services.map(el => Math.round(rect(el).top)),
+          guideRows: guides.map(el => Math.round(rect(el).top)),
+          serviceWidths: services.map(el => Math.round(rect(el).width)),
+          guideWidths: guides.map(el => Math.round(rect(el).width))
+        };
+      });
+      check(layout.labelSize >= (width === 390 ? 15 : 16), `${width}px ${path}: section label is too small (${layout.labelSize})`);
+      if (path === '/' && width === 1440) {
+        check(layout.serviceRows.length === 3 && new Set(layout.serviceRows).size === 1, 'Desktop services must share one row');
+        check(layout.guideRows.length === 6 && new Set(layout.guideRows).size === 2 && layout.guideRows[0] === layout.guideRows[2] && layout.guideRows[3] === layout.guideRows[5], 'Desktop guides must form two rows of three');
+        check(Math.max(...layout.serviceWidths) - Math.min(...layout.serviceWidths) <= 2, 'Service widths are uneven');
+        check(Math.max(...layout.guideWidths) - Math.min(...layout.guideWidths) <= 2, 'Guide widths are uneven');
+      }
+      if (path === '/' && width === 390) {
+        check(layout.serviceRows.length === 3 && new Set(layout.serviceRows).size === 3, 'Mobile services must stack');
+        check(layout.guideRows.length === 6 && new Set(layout.guideRows).size === 6, 'Mobile guides must stack');
+      }
+    }
+
     if (path === '/contact/') {
       const contact = await page.evaluate(() => {
         const form = document.querySelector('form.project-form-simple');

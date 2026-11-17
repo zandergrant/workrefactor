@@ -434,3 +434,46 @@ body.home-page main .selected-work-section .section-heading .section-lede {
   body.home-page main .selected-work-section .section-heading .eyebrow { font-size: 15px; margin-bottom: 12px; }
   body.home-page main .selected-work-section .section-heading .section-lede { font-size: 16px; }
 }
+
+
+/* Consistent, legible section labels across the site. */
+body:is(.home-page,.contact-page,.resources-page,.guide-page,.consult-page,.atlas-page,.rl-body,.privacy-page) main :is(.eyebrow,.atlas-eyebrow,.rl-eyebrow,.rl-kicker,.consult-eyebrow,.privacy-eyebrow) {
+  font-family:var(--hwr-sans);font-size:16px!important;line-height:1.45!important;
+  font-weight:700;letter-spacing:.025em;
+}
+/* Three services should occupy one balanced row, rather than 2 + 1. */
+body.home-page main .services-section .service-list {
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:clamp(18px,2.4vw,36px);border-top:0;
+}
+body.home-page main .services-section .service-row,
+body.home-page main .services-section .service-row:last-child {
+  display:grid;grid-template-columns:1fr;align-content:start;
+  gap:0;min-width:0;grid-column:auto;
+  padding:25px 0 20px;border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+body.home-page main .services-section .service-number {display:block;margin:0 0 16px;font-size:16px;}
+body.home-page main .services-section .service-row h3 {margin:0 0 12px;max-width:none;}
+body.home-page main .services-section .service-row p {margin:0;}
+/* Six guides form two complete rows, with no orphan card. */
+body.home-page main #guides .guide-grid {
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:16px;align-items:stretch;
+}
+body.home-page main #guides .guide-grid > .friction-card,
+body.home-page main #guides .guide-grid > .guide-featured {
+  grid-column:auto;min-width:0;height:100%;
+}
+@media (min-width:701px) and (max-width:1050px) {
+  body.home-page main .services-section .service-list,
+  body.home-page main #guides .guide-grid {grid-template-columns:repeat(2,minmax(0,1fr));}
+  body.home-page main .services-section .service-row:last-child {grid-column:1 / -1;}
+}
+@media (max-width:700px) {
+  body.home-page main .services-section .service-list,
+  body.home-page main #guides .guide-grid {grid-template-columns:minmax(0,1fr);}
+  body.home-page main .services-section .service-row:last-child {grid-column:auto;}
+  body.home-page main .services-section .service-row {padding:20px 0;}
+  body:is(.home-page,.contact-page,.resources-page,.guide-page,.consult-page,.atlas-page,.rl-body,.privacy-page) main :is(.eyebrow,.atlas-eyebrow,.rl-eyebrow,.rl-kicker,.consult-eyebrow,.privacy-eyebrow) {font-size:15px!important;}
+}
