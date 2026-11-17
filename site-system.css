@@ -488,3 +488,47 @@ body main :is(.eyebrow,.atlas-eyebrow,.rl-eyebrow,.rl-kicker,.consult-eyebrow,.p
 @media(max-width:700px){
   body main :is(.eyebrow,.atlas-eyebrow,.rl-eyebrow,.rl-kicker,.consult-eyebrow,.privacy-eyebrow,.project-sidebar-label,.hwr-detail-eyebrow){font-size:15px!important;}
 }
+
+
+/* Shared site shell v1: identical header geometry, type, spacing and footer on every page.
+   Page-specific hero and content layouts remain intact. */
+:root { --hwr-shell-width:1320px; --hwr-shell-gutter:clamp(22px,4vw,64px); --hwr-header-height:78px; }
+html { scrollbar-gutter:stable; }
+body .site-header, body.home-page .site-header, body.contact-page .site-header,
+body.home-page.scroll-header-enabled .site-header,body.contact-page.scroll-header-enabled .site-header,
+body.home-page.scroll-header-enabled .site-header.is-scrolled,body.contact-page.scroll-header-enabled .site-header.is-scrolled {
+  position:fixed!important;inset:0 0 auto!important;width:100%!important;
+  min-height:var(--hwr-header-height)!important;
+  background:#1e2734!important;border-bottom:1px solid rgba(255,255,255,.12)!important;
+  box-shadow:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;
+  z-index:1000!important;
+}
+body .site-header .header-inner {
+  width:min(var(--hwr-shell-width),calc(100% - 2 * var(--hwr-shell-gutter)))!important;
+  max-width:none!important;min-height:var(--hwr-header-height)!important;
+  height:var(--hwr-header-height)!important;margin-inline:auto!important;
+  padding:0!important;display:flex!important;align-items:center!important;
+  justify-content:space-between!important;gap:28px!important;
+}
+body .site-header .brand {display:inline-flex!important;align-items:center!important;gap:0!important;
+  margin:0!important;padding:0!important;line-height:1!important;flex:none!important;}
+body .site-header .brand-name {
+  display:inline-flex!important;align-items:baseline!important;gap:0!important;
+  font-family:var(--hwr-sans)!important;font-size:clamp(23px,2vw,29px)!important;
+  font-weight:600!important;letter-spacing:-.035em!important;line-height:1!important;
+  color:#fff!important;white-space:nowrap!important;
+}
+body .site-header .brand-name-how {color:#fff!important;font-weight:600!important;}
+body .site-header .brand-name-mid {color:#a9c9fa!important;font-weight:700!important;}
+body .site-header .brand-name-runs {color:#fff!important;font-weight:700!important;font-style:italic!important;}
+body .site-header .desktop-nav {display:flex;align-items:center;gap:clamp(18px,2vw,34px);margin:0;}
+body .site-header .desktop-nav > a {font-family:var(--hwr-sans)!important;font-size:15px!important;line-height:1.2!important;white-space:nowrap;}
+body .site-header .desktop-nav .nav-cta {min-height:44px!important;padding:0 22px!important;}
+body .site-footer {font-family:var(--hwr-sans)!important;}
+body .site-footer .footer-brand .brand-name {font-family:var(--hwr-sans)!important;}
+@media(max-width:900px){
+  :root {--hwr-header-height:70px;}
+  body .site-header .desktop-nav {display:none!important;}
+  body .site-header .mobile-menu {display:block!important;}
+  body .site-header .mobile-menu summary {font-family:var(--hwr-sans)!important;font-size:15px!important;}
+}

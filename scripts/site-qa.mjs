@@ -17,6 +17,7 @@ const browser = await chromium.launch({ headless: true, args: ['--no-sandbox'] }
 function check(condition, message) { if (!condition) failures.push(message); }
 
 for (const width of viewportWidths) {
+  let baselineShell = null;
   const context = await browser.newContext({
     viewport: { width, height: 850 },
     isMobile: width === 390,
@@ -43,6 +44,34 @@ for (const width of viewportWidths) {
         title: document.title
       };
     });
+    const shell = await page.evaluate(() => {
+      const header = document.querySelector('header.site-header');
+      const brand = header?.querySelector('.brand-name');
+      const nav = header?.querySelector('.desktop-nav');
+      const footer = document.querySelector('footer.site-footer');
+      if (!header || !brand || !nav || !footer) return null;
+      const box = el => { const r=el.getBoundingClientRect(); return {x:r.x,y:r.y,width:r.width,height:r.height}; };
+      return {header:box(header),brand:box(brand),nav:box(nav),
+        footerLinks:footer.querySelectorAll('a').length,
+        brandText:brand.textContent.trim().replace(/\\s+/g,'').toLowerCase(),
+        links:[...nav.querySelectorAll('a')].map(a=>a.getAttribute('href'))};
+    });
+    check(!!shell, `${width}px ${path}: shared header/footer missing`);
+    if (shell) {
+      check(shell.brandText === 'howworkruns', `${width}px ${path}: inconsistent brand`);
+      check(shell.footerLinks >= 5, `${width}px ${path}: footer incomplete`);
+      if (!baselineShell) baselineShell = shell;
+      else {
+        for (const key of ['header','brand','nav']) {
+          for (const field of ['x','y','width','height']) {
+            check(Math.abs(shell[key][field]-baselineShell[key][field])<=1.5,
+              `${width}px ${path}: ${key} ${field} shifted from homepage`);
+          }
+        }
+        check(JSON.stringify(shell.links) === JSON.stringify(baselineShell.links),
+          `${width}px ${path}: navigation destinations differ`);
+      }
+    }
     const overflow = result.scroll - result.viewport;
     console.log(`${width}px ${path} | H1 ${result.h1} | overflow ${overflow}px | bannerButton ${result.primary || 'n/a'}`);
     check(result.css, `${width}px ${path}: shared CSS not loaded`);
