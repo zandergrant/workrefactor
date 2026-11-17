@@ -532,3 +532,15 @@ body .site-footer .footer-brand .brand-name {font-family:var(--hwr-sans)!importa
   body .site-header .mobile-menu {display:block!important;}
   body .site-header .mobile-menu summary {font-family:var(--hwr-sans)!important;font-size:15px!important;}
 }
+
+/* Navigation geometry lock: prevent page-local CSS from shifting the shared links. */
+@media(min-width:901px){
+ body .site-header .brand {width:190px!important;min-width:190px!important;justify-content:flex-start!important;}
+ body .site-header .brand-name {width:190px!important;min-width:190px!important;font-size:26px!important;letter-spacing:-.035em!important;}
+ body .site-header .desktop-nav {display:grid!important;grid-template-columns:70px 70px 90px 72px 154px!important;gap:18px!important;align-items:center!important;width:546px!important;min-width:546px!important;max-width:546px!important;justify-content:initial!important;flex:none!important;}
+ body .site-header .desktop-nav > a {display:inline-flex!important;align-items:center!important;justify-content:flex-start!important;width:100%!important;min-width:0!important;margin:0!important;padding:0!important;letter-spacing:0!important;font-family:var(--hwr-sans)!important;font-size:15px!important;font-weight:500!important;}
+ body .site-header .desktop-nav > a.nav-cta {justify-content:center!important;padding:0 12px!important;font-weight:600!important;}
+}
+@media(min-width:901px) and (max-width:1080px){
+ body .site-header .desktop-nav {grid-template-columns:65px 65px 85px 67px 142px!important;gap:12px!important;width:472px!important;min-width:472px!important;max-width:472px!important;}
+}
