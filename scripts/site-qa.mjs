@@ -50,6 +50,42 @@ for (const width of viewportWidths) {
     check(overflow <= 5, `${width}px ${path}: horizontal overflow by ${overflow}px`);
     if (result.primary) check(result.primary === 'rgb(255, 255, 255)', `${width}px ${path}: banner button not white (${result.primary})`);
 
+    if (path === '/' && width === 1440) {
+      const visual = await page.evaluate(() => {
+        const hero = document.querySelector('.home-hero');
+        const inner = hero?.querySelector('.hero-inner');
+        const headline = hero?.querySelector('h1');
+        const animation = hero?.querySelector('.hero-system');
+        const section = document.querySelector('.selected-work-section .section-heading');
+        const eyebrow = section?.querySelector('.eyebrow');
+        const title = section?.querySelector('h2');
+        if (!hero || !inner || !headline || !animation || !section || !eyebrow || !title) return null;
+        const rect = el => el.getBoundingClientRect();
+        const center = el => rect(el).left + rect(el).width / 2;
+        return {
+          heroHeight: rect(hero).height,
+          viewportHeight: window.innerHeight,
+          headlineAnimationCenterDelta: Math.abs(center(headline) - center(animation)),
+          labelTitleLeftDelta: Math.abs(rect(eyebrow).left - rect(title).left),
+          labelFontSize: parseFloat(getComputedStyle(eyebrow).fontSize),
+          labelAboveTitle: rect(eyebrow).bottom < rect(title).top,
+          animationVisible: rect(animation).width > 300 && rect(animation).height > 80,
+          heroCentered: getComputedStyle(inner).textAlign === 'center'
+        };
+      });
+      check(!!visual, 'Homepage composition elements missing');
+      if (visual) {
+        console.log('Homepage visual composition: ' + JSON.stringify(visual));
+        check(visual.heroHeight <= visual.viewportHeight * 1.15, 'Homepage hero extends too far below the fold');
+        check(visual.headlineAnimationCenterDelta <= 35, 'Hero headline and animation are not centered together');
+        check(visual.heroCentered, 'Hero text is not centered');
+        check(visual.labelTitleLeftDelta <= 8, 'Selected work label is misaligned with title');
+        check(visual.labelFontSize >= 15, 'Selected work label is too small');
+        check(visual.labelAboveTitle, 'Selected work label should appear above title');
+        check(visual.animationVisible, 'Homepage hero animation is missing or too small');
+      }
+    }
+
     if (path === '/contact/') {
       const contact = await page.evaluate(() => {
         const form = document.querySelector('form.project-form-simple');

@@ -377,3 +377,60 @@ body:is(.home-page,.contact-page,.resources-page,.guide-page,.consult-page,.atla
 
 /* Editorial refinement: preserve existing layout while making service and case-study links readable. */
 .home-page .hwr-work-link:focus-visible,.hwr-detail-page .hwr-detail-text-link:focus-visible{outline:3px solid #79b9ed;outline-offset:4px;border-radius:2px}
+
+
+/* Homepage composition and hierarchy, 2026-11-16.
+   Keep the headline, explanation and animated process as one centered scene. */
+@media (min-width: 761px) {
+  body.home-page main .home-hero,
+  body.home-page main .home-hero .hero-inner { min-height: 0; }
+  body.home-page main .home-hero .hero-inner {
+    display: flex; flex-direction: column;
+    align-items: center !important; text-align: center !important;
+    padding: clamp(72px, 7vw, 102px) 0 clamp(28px, 3vw, 44px) !important;
+  }
+  body.home-page main .home-hero .hero-inner > :is(h1,.hero-copy,.hero-promise,.hero-seo-label,.hero-actions) {
+    margin-left: auto !important; margin-right: auto !important;
+    text-align: center !important;
+  }
+  body.home-page main .home-hero .hero-inner > h1 { max-width: 1100px; margin-top: 12px; }
+  body.home-page main .home-hero .hero-promise { margin-top: 14px !important; }
+  body.home-page main .home-hero .hero-copy {
+    max-width: 760px; margin-top: 12px !important;
+    font-size: 16px; line-height: 1.52;
+  }
+  body.home-page main .home-hero .hero-actions {
+    justify-content: center !important; margin-top: 18px;
+  }
+  body.home-page main .home-hero .hero-system {
+    width: min(100%, 590px); margin: 14px auto 0;
+    text-align: center;
+  }
+  body.home-page main .home-hero .hero-system-caption { margin-top: 0; }
+}
+@media (max-width: 760px) {
+  body.home-page main .home-hero .hero-inner {
+    padding-top: 66px !important; padding-bottom: 38px !important;
+  }
+  body.home-page main .home-hero .hero-system { margin-top: 20px; }
+}
+/* The Selected work heading should read as a single editorial block. */
+body.home-page main .selected-work-section .section-heading {
+  display: block; max-width: 1080px; margin-bottom: 34px;
+}
+body.home-page main .selected-work-section .section-heading > div { min-width: 0; }
+body.home-page main .selected-work-section .section-heading .eyebrow {
+  margin: 0 0 16px; font-family: var(--hwr-sans);
+  font-size: 16px; font-weight: 700; line-height: 1.4;
+  letter-spacing: .045em; text-transform: none;
+}
+body.home-page main .selected-work-section .section-heading h2 {
+  max-width: 1000px; margin: 0;
+}
+body.home-page main .selected-work-section .section-heading .section-lede {
+  max-width: 850px; margin-top: 16px; font-size: 17px; line-height: 1.65;
+}
+@media (max-width: 620px) {
+  body.home-page main .selected-work-section .section-heading .eyebrow { font-size: 15px; margin-bottom: 12px; }
+  body.home-page main .selected-work-section .section-heading .section-lede { font-size: 16px; }
+}
