@@ -24,7 +24,7 @@ document.querySelectorAll('[data-current-year]').forEach(function (el) {
 
 // Homepage and contact page: transparent header over hero, dark header on scroll.
 (function () {
-  var header = document.querySelector('.home-page .site-header, .contact-page .site-header');
+  var header = document.querySelector('.site-header');
   if (!header) return;
   document.body.classList.add('scroll-header-enabled');
   function syncHeader() {
