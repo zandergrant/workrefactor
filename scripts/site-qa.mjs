@@ -79,6 +79,33 @@ for (const width of viewportWidths) {
     check(overflow <= 5, `${width}px ${path}: horizontal overflow by ${overflow}px`);
     if (result.primary) check(result.primary === 'rgb(255, 255, 255)', `${width}px ${path}: banner button not white (${result.primary})`);
 
+    if (path === '/') {
+      const narrative = await page.evaluate(() => {
+        const classes = [...document.querySelectorAll('main > section')].map(el => el.className);
+        const example = document.querySelector('.request-story');
+        return { classes, hasExampleLabel:example?.querySelector('.request-story-intro .eyebrow')?.textContent.trim()==='A practical example',
+          animation:!!example?.querySelector('.request-walkthrough'),
+          sections:[...document.querySelectorAll('main > section')].map(el=>el.getAttribute('id') || el.className) };
+      });
+      const sequence = ['home-hero','problem-section','services-section','request-story','selected-work-section','method-section','friction-section','final-cta'];
+      check(sequence.every((name,i)=>narrative.classes[i]?.includes(name)), `${width}px homepage: narrative sections out of order`);
+      check(narrative.hasExampleLabel && narrative.animation, `${width}px homepage: example introduction or animation missing`);
+    }
+    if (path === '/' || path === '/resources/' || path === '/contact/') {
+      const headerState = await page.evaluate(() => {
+        const h=document.querySelector('.site-header');
+        return {atTop:getComputedStyle(h).backgroundColor,scrolled:h.classList.contains('is-scrolled')};
+      });
+      check(headerState.atTop === 'rgba(0, 0, 0, 0)' && !headerState.scrolled,
+        `${width}px ${path}: header should be transparent at top (${headerState.atTop})`);
+      await page.evaluate(()=>window.scrollTo(0,400));
+      await page.waitForTimeout(300);
+      const scrolled = await page.evaluate(()=>({active:document.querySelector('.site-header').classList.contains('is-scrolled'),color:getComputedStyle(document.querySelector('.site-header')).backgroundColor}));
+      check(scrolled.active && scrolled.color !== 'rgba(0, 0, 0, 0)',
+        `${width}px ${path}: header should become opaque on scroll`);
+      await page.evaluate(()=>window.scrollTo(0,0));
+      await page.waitForTimeout(300);
+    }
     if (path === '/' && width === 1440) {
       const visual = await page.evaluate(() => {
         const hero = document.querySelector('.home-hero');
@@ -124,16 +151,16 @@ for (const width of viewportWidths) {
         const guides = [...document.querySelectorAll('#guides .guide-grid > .friction-card')];
         return {
           labelSize: label ? parseFloat(getComputedStyle(label).fontSize) : null,
-          serviceRows: services.map(el => Math.round(rect(el).top)),
-          guideRows: guides.map(el => Math.round(rect(el).top)),
+          serviceRows: services.map(el => Math.round(el.offsetTop)),
+          guideRows: guides.map(el => Math.round(el.offsetTop)),
           serviceWidths: services.map(el => Math.round(rect(el).width)),
           guideWidths: guides.map(el => Math.round(rect(el).width))
         };
       });
       check(layout.labelSize >= (width === 390 ? 15 : 16), `${width}px ${path}: section label is too small (${layout.labelSize})`);
       if (path === '/' && width === 1440) {
-        check(layout.serviceRows.length === 3 && new Set(layout.serviceRows).size === 1, 'Desktop services must share one row');
-        check(layout.guideRows.length === 6 && new Set(layout.guideRows).size === 2 && layout.guideRows[0] === layout.guideRows[2] && layout.guideRows[3] === layout.guideRows[5], 'Desktop guides must form two rows of three');
+        check(layout.serviceRows.length === 3 && new Set(layout.serviceRows).size === 1, 'Desktop services must share one row: ' + JSON.stringify(layout.serviceRows));
+        check(layout.guideRows.length === 6 && new Set(layout.guideRows).size === 2 && layout.guideRows[0] === layout.guideRows[2] && layout.guideRows[3] === layout.guideRows[5], 'Desktop guides must form two rows of three: ' + JSON.stringify(layout.guideRows));
         check(Math.max(...layout.serviceWidths) - Math.min(...layout.serviceWidths) <= 2, 'Service widths are uneven');
         check(Math.max(...layout.guideWidths) - Math.min(...layout.guideWidths) <= 2, 'Guide widths are uneven');
       }

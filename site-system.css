@@ -602,3 +602,24 @@ body.guide-page main > .hero,body.rl-body main > :is(.rl-hero,.rl-guide-hero) {-
 body.hwr-detail-page main > .hwr-detail-hero {--light-x:65%;--light-y:5%;--light-secondary-x:10%;}
 @media(max-width:900px){body:not(.home-page) main > :is(.hero,.contact-hero,.service-hero,.consult-hero,.atlas-hero,.rl-hero,.rl-guide-hero,.hwr-detail-hero,.privacy-hero,.guide-hero,.resource-hero,.page-hero,.thanks-hero){min-height:640px!important;}}
 @media(max-width:600px){body:not(.home-page) main > :is(.hero,.contact-hero,.service-hero,.consult-hero,.atlas-hero,.rl-hero,.rl-guide-hero,.hwr-detail-hero,.privacy-hero,.guide-hero,.resource-hero,.page-hero,.thanks-hero){min-height:540px!important;height:auto!important;padding-block:calc(var(--hwr-header-height) + 42px) 62px!important;}}
+
+
+/* Homepage editorial rhythm: bridge services into the practical example. */
+body.home-page main .request-story {background:#f7f9fc;border-top:1px solid #dce5ef;border-bottom:1px solid #dce5ef;}
+body.home-page main .request-story .request-story-intro {max-width:900px;margin-bottom:clamp(28px,3vw,44px);}
+body.home-page main .request-story .request-story-intro .eyebrow {margin:0 0 14px;}
+body.home-page main .request-story .request-story-intro h2 {max-width:22ch;margin:0;}
+body.home-page main .request-story .request-story-intro .section-lede {max-width:760px;margin-top:20px;}
+body.home-page main .request-story .request-walkthrough {box-shadow:0 14px 42px rgba(23,46,69,.055);}
+/* Explicitly override older homepage 2-column service and guide rules. */
+@media(min-width:1051px){
+ body.home-page main .services-section .service-list {display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;}
+ body.home-page main .services-section .service-list > .service-row {grid-column:auto!important;grid-row:auto!important;}
+ body.home-page main #guides .guide-grid {display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;}
+ body.home-page main #guides .guide-grid > .friction-card {grid-column:auto!important;grid-row:auto!important;}
+}
+@media(min-width:701px) and (max-width:1050px){
+ body.home-page main .services-section .service-list {grid-template-columns:repeat(3,minmax(0,1fr))!important;}
+ body.home-page main .services-section .service-row:last-child {grid-column:auto!important;}
+}
+@media(max-width:700px){body.home-page main .request-story .request-story-intro .section-lede {margin-top:16px;}}
