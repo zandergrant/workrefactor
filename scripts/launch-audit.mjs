@@ -16,14 +16,15 @@ for(const file of files){
  const desc=tags.find(x=>attr(x,'name').toLowerCase()==='description');
  const robots=tags.find(x=>attr(x,'name').toLowerCase()==='robots');
  const noindex=/noindex/i.test(attr(robots||'','content'));
+ const redirect=noindex && /http-equiv=["']refresh["']/i.test(head);
  if(!/<html\b[^>]*\blang=["']en["']/i.test(html))failures.push(rel+': missing document language');
  if(!/<meta\s+charset=/i.test(head))failures.push(rel+': missing charset');
  if(!tags.some(x=>attr(x,'name').toLowerCase()==='viewport'))failures.push(rel+': missing viewport');
  if(!/<title>[^<]+<\/title>/i.test(head))failures.push(rel+': missing title');
  if(!desc&&!noindex)failures.push(rel+': missing meta description');
- if((html.match(/<h1\b/gi)||[]).length!==1)failures.push(rel+': expected one H1');
- if(!html.includes('site-system.css')||!html.includes('site.js'))failures.push(rel+': missing shared shell CSS or JS');
- if(!html.includes('class="site-header"')||!html.includes('class="site-footer"'))failures.push(rel+': missing shared header/footer');
+ if(!redirect && (html.match(/<h1\b/gi)||[]).length!==1)failures.push(rel+': expected one H1');
+ if(!redirect && (!html.includes('site-system.css')||!html.includes('site.js')))failures.push(rel+': missing shared shell CSS or JS');
+ if(!redirect && (!html.includes('class="site-header"')||!html.includes('class="site-footer"')))failures.push(rel+': missing shared header/footer');
  if(!noindex&&!/rel=["']canonical["']/i.test(head))failures.push(rel+': missing canonical');
  for(const m of html.matchAll(/<img\b[^>]*>/gi)){if(!/\balt\s*=/i.test(m[0]))failures.push(rel+': image without alt attribute');}
  for(const m of html.matchAll(/(?:href|src)=["'](\/[^"'?#]*)(?:[?#][^"']*)?["']/gi)){
