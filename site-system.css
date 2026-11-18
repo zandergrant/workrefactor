@@ -560,3 +560,45 @@ body.scroll-header-enabled .site-header.is-scrolled {
 }
 body.scroll-header-enabled .site-header {transition:background-color .22s ease,border-color .22s ease,box-shadow .22s ease!important;}
 @media(prefers-reduced-motion:reduce){body.scroll-header-enabled .site-header{transition:none!important;}}
+
+
+/* Interior banners: same atmosphere as homepage, with page-specific light direction.
+   Shared desktop height is the homepage's measured ~814px. */
+body:not(.home-page) main > :is(
+ .hero,.contact-hero,.service-hero,.consult-hero,.atlas-hero,.rl-hero,
+ .rl-guide-hero,.hwr-detail-hero,.privacy-hero,.guide-hero,.resource-hero,
+ .page-hero,.thanks-hero
+){
+ --light-x:25%;--light-y:12%;--light-secondary-x:82%;
+ position:relative!important;isolation:isolate;overflow:hidden;
+ box-sizing:border-box;min-height:814px!important;
+ display:flex;flex-direction:column;justify-content:center;
+ background-color:#050b14!important;
+ background-image:
+  radial-gradient(ellipse 80% 60% at var(--light-secondary-x) 4%,rgba(179,210,255,.13),transparent 72%),
+  radial-gradient(ellipse at var(--light-x) var(--light-y),
+    rgba(60,133,238,.79) 0%,rgba(24,77,172,.80) 22%,
+    rgba(11,39,91,.96) 45%,rgba(7,24,51,1) 66%,#050b14 100%)!important;
+ padding-top:var(--hwr-header-height)!important;
+}
+body:not(.home-page) main > :is(
+ .hero,.contact-hero,.service-hero,.consult-hero,.atlas-hero,.rl-hero,
+ .rl-guide-hero,.hwr-detail-hero,.privacy-hero,.guide-hero,.resource-hero,
+ .page-hero,.thanks-hero
+)::before{
+ content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+ opacity:.25;mix-blend-mode:soft-light;
+ background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22160%22%20height%3D%22160%22%20viewBox%3D%220%200%20160%20160%22%3E%3Cfilter%20id%3D%22grain%22%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.78%22%20numOctaves%3D%223%22%20seed%3D%2212%22%20stitchTiles%3D%22stitch%22%2F%3E%3CfeColorMatrix%20type%3D%22saturate%22%20values%3D%220%22%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D%22160%22%20height%3D%22160%22%20fill%3D%22white%22%20filter%3D%22url(%23grain)%22%2F%3E%3C%2Fsvg%3E");
+ background-repeat:repeat;background-size:160px 160px;
+}
+body:not(.home-page) main > :is(
+ .hero,.contact-hero,.service-hero,.consult-hero,.atlas-hero,.rl-hero,
+ .rl-guide-hero,.hwr-detail-hero,.privacy-hero,.guide-hero,.resource-hero,
+ .page-hero,.thanks-hero
+) > *{position:relative;z-index:1;}
+body.resources-page main > .hero,body.atlas-page main > .atlas-hero {--light-x:75%;--light-y:10%;--light-secondary-x:18%;}
+body.contact-page main > .contact-hero,body.consult-page main > .consult-hero {--light-x:18%;--light-y:36%;--light-secondary-x:85%;}
+body.guide-page main > .hero,body.rl-body main > :is(.rl-hero,.rl-guide-hero) {--light-x:82%;--light-y:40%;--light-secondary-x:25%;}
+body.hwr-detail-page main > .hwr-detail-hero {--light-x:65%;--light-y:5%;--light-secondary-x:10%;}
+@media(max-width:900px){body:not(.home-page) main > :is(.hero,.contact-hero,.service-hero,.consult-hero,.atlas-hero,.rl-hero,.rl-guide-hero,.hwr-detail-hero,.privacy-hero,.guide-hero,.resource-hero,.page-hero,.thanks-hero){min-height:640px!important;}}
+@media(max-width:600px){body:not(.home-page) main > :is(.hero,.contact-hero,.service-hero,.consult-hero,.atlas-hero,.rl-hero,.rl-guide-hero,.hwr-detail-hero,.privacy-hero,.guide-hero,.resource-hero,.page-hero,.thanks-hero){min-height:540px!important;height:auto!important;padding-block:calc(var(--hwr-header-height) + 42px) 62px!important;}}
