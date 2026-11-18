@@ -5,7 +5,7 @@ const origin = 'http://127.0.0.1:4173';
 const paths = [
   '/', '/contact/', '/contact/thanks/', '/resources/',
   '/friction-atlas/', '/friction-atlas/duplicate-data-entry/',
-  '/workflow-automation-consulting/', '/business-systems/',
+  '/workflow-automation-consulting/', '/business-systems/', '/merchant-center-audit/',
   '/resources/guides/spreadsheet-to-app/',
   '/work/operations-hub/', '/work/global-event-operations/',
   '/work/support-operations/', '/work-with-us/'
@@ -105,6 +105,22 @@ for (const width of viewportWidths) {
         `${width}px ${path}: header should become opaque on scroll`);
       await page.evaluate(()=>window.scrollTo(0,0));
       await page.waitForTimeout(300);
+    }
+    if (path === '/merchant-center-audit/') {
+      const audit = await page.evaluate(() => ({
+        canonical:document.querySelector('link[rel="canonical"]')?.href,
+        schema:[...document.querySelectorAll('script[type="application/ld+json"]')].some(s=>{try{return JSON.parse(s.textContent)['@type']==='Service'}catch{return false}}),
+        sections:['scope','process','deliverables','faq'].every(id=>!!document.getElementById(id)),
+        ctas:[...document.querySelectorAll('main a')].filter(a=>a.textContent.includes('Request an audit')).map(a=>a.getAttribute('href')),
+        disclaimers:document.body.textContent.includes('does not guarantee') && document.body.textContent.includes('not affiliated with'),
+        faq:document.querySelectorAll('.merchant-faq details').length,
+        overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
+      }));
+      check(audit.canonical==='https://howworkruns.com/merchant-center-audit/',`${width}px merchant audit: incorrect canonical`);
+      check(audit.schema && audit.sections && audit.faq>=5,`${width}px merchant audit: missing service content or schema`);
+      check(audit.ctas.length===2 && audit.ctas.every(x=>x==='/contact/'),`${width}px merchant audit: CTAs must use existing contact form`);
+      check(audit.disclaimers,`${width}px merchant audit: missing independence/approval disclosures`);
+      check(audit.overflow<=1,`${width}px merchant audit: horizontal overflow ${audit.overflow}px`);
     }
     if (path === '/' && width === 1440) {
       const visual = await page.evaluate(() => {
