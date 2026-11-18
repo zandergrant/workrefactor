@@ -623,3 +623,15 @@ body.home-page main .request-story .request-walkthrough {box-shadow:0 14px 42px 
  body.home-page main .services-section .service-row:last-child {grid-column:auto!important;}
 }
 @media(max-width:700px){body.home-page main .request-story .request-story-intro .section-lede {margin-top:16px;}}
+
+/* Shared interior banner typography and content rhythm. */
+:root{--hwr-interior-banner-height:814px;--hwr-interior-banner-tablet:640px;--hwr-interior-banner-mobile:540px;}
+body:not(.home-page) main > :is(.hero,.contact-hero,.service-hero,.consult-hero,.atlas-hero,.rl-hero,.rl-guide-hero,.hwr-detail-hero,.privacy-hero,.guide-hero,.resource-hero,.page-hero,.thanks-hero){min-height:var(--hwr-interior-banner-height)!important;}
+body:not(.home-page) main > :is(.hero,.contact-hero,.service-hero,.consult-hero,.atlas-hero,.rl-hero,.rl-guide-hero,.hwr-detail-hero,.privacy-hero,.guide-hero,.resource-hero,.page-hero,.thanks-hero) :is(.hero-inner,.contact-hero-grid,.consult-hero-inner,.atlas-hero-inner,.rl-hero-inner,.privacy-hero-inner){width:min(var(--hwr-shell-width),calc(100% - 2 * var(--hwr-shell-gutter)));max-width:none;margin-inline:auto;}
+body:not(.home-page) main > :is(.hero,.contact-hero,.service-hero,.consult-hero,.atlas-hero,.rl-hero,.rl-guide-hero,.hwr-detail-hero,.privacy-hero,.guide-hero,.resource-hero,.page-hero,.thanks-hero) h1{max-width:1100px;text-wrap:balance;}
+body.home-page main .services-next-step{margin-top:clamp(30px,4vw,52px);padding:clamp(20px,2.5vw,32px);border:1px solid #d6e2ee;background:#f4f8fc;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+body.home-page main .services-next-step > p{max-width:480px;margin:0;font-size:17px;line-height:1.55;color:#243e56;}
+body.home-page main .services-next-step-links{display:flex;align-items:center;gap:22px;flex-wrap:wrap;}
+body.home-page main .services-next-step-links .button-link{color:#245f92;font-weight:600;}
+@media(max-width:900px){body:not(.home-page) main > :is(.hero,.contact-hero,.service-hero,.consult-hero,.atlas-hero,.rl-hero,.rl-guide-hero,.hwr-detail-hero,.privacy-hero,.guide-hero,.resource-hero,.page-hero,.thanks-hero){min-height:var(--hwr-interior-banner-tablet)!important;}}
+@media(max-width:600px){body:not(.home-page) main > :is(.hero,.contact-hero,.service-hero,.consult-hero,.atlas-hero,.rl-hero,.rl-guide-hero,.hwr-detail-hero,.privacy-hero,.guide-hero,.resource-hero,.page-hero,.thanks-hero){min-height:var(--hwr-interior-banner-mobile)!important;}body.home-page main .services-next-step-links{width:100%;}}
