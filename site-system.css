@@ -635,3 +635,6 @@ body.home-page main .services-next-step-links{display:flex;align-items:center;ga
 body.home-page main .services-next-step-links .button-link{color:#245f92;font-weight:600;}
 @media(max-width:900px){body:not(.home-page) main > :is(.hero,.contact-hero,.service-hero,.consult-hero,.atlas-hero,.rl-hero,.rl-guide-hero,.hwr-detail-hero,.privacy-hero,.guide-hero,.resource-hero,.page-hero,.thanks-hero){min-height:var(--hwr-interior-banner-tablet)!important;}}
 @media(max-width:600px){body:not(.home-page) main > :is(.hero,.contact-hero,.service-hero,.consult-hero,.atlas-hero,.rl-hero,.rl-guide-hero,.hwr-detail-hero,.privacy-hero,.guide-hero,.resource-hero,.page-hero,.thanks-hero){min-height:var(--hwr-interior-banner-mobile)!important;}body.home-page main .services-next-step-links{width:100%;}}
+
+/* Avoid a flash of the opaque header on initial load. Animate only the scrolled state. */
+body.scroll-header-enabled .site-header:not(.is-scrolled){transition:none!important;}
