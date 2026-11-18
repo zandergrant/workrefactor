@@ -142,6 +142,31 @@ for (const width of viewportWidths) {
       }
     }
 
+    if (['/contact/','/resources/','/workflow-automation-consulting/','/business-systems/'].includes(path)) {
+      const hero = await page.evaluate(() => {
+        const el=document.querySelector('main > :is(.hero,.contact-hero,.service-hero,.consult-hero,.atlas-hero,.rl-hero,.rl-guide-hero,.hwr-detail-hero,.privacy-hero,.guide-hero,.resource-hero,.page-hero,.thanks-hero)');
+        if (!el) return null;
+        const rect=el.getBoundingClientRect();
+        const h1=el.querySelector('h1');
+        return {height:rect.height,headingVisible:!!h1 && h1.getBoundingClientRect().width>0,
+          background:getComputedStyle(el).backgroundImage};
+      });
+      check(!!hero && hero.headingVisible, `${width}px ${path}: interior banner or heading missing`);
+      if (hero) {
+        const min=width===390?540:width===768?640:814;
+        check(hero.height>=min-2, `${width}px ${path}: banner height below shared minimum (${hero.height})`);
+        check(hero.background.includes('radial-gradient'), `${width}px ${path}: shared atmospheric lighting missing`);
+      }
+    }
+    if (path === '/') {
+      const conversion=await page.evaluate(()=>({
+        primary:document.querySelector('.services-next-step-links a.button-primary')?.getAttribute('href'),
+        secondary:document.querySelector('.services-next-step-links a.button-link')?.getAttribute('href'),
+        end:document.querySelector('.final-cta a.button-primary')?.getAttribute('href')
+      }));
+      check(conversion.primary==='/contact/' && conversion.secondary==='/work-with-us/' && conversion.end==='contact/',
+        `${width}px homepage: conversion path links missing or changed`);
+    }
     if (path === '/' || path === '/contact/') {
       const layout = await page.evaluate(() => {
         const rect = el => el.getBoundingClientRect();
