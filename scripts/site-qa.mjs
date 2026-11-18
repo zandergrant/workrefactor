@@ -110,14 +110,14 @@ for (const width of viewportWidths) {
       const audit = await page.evaluate(() => ({
         canonical:document.querySelector('link[rel="canonical"]')?.href,
         schema:[...document.querySelectorAll('script[type="application/ld+json"]')].some(s=>{try{return JSON.parse(s.textContent)['@type']==='Service'}catch{return false}}),
-        sections:['scope','process','deliverables','faq'].every(id=>!!document.getElementById(id)),
+        sections:['scope','issues','self-check','audit-vs-fix','prepare','process','deliverables','faq'].every(id=>!!document.getElementById(id)),
         ctas:[...document.querySelectorAll('main a')].filter(a=>a.textContent.includes('Request an audit')).map(a=>a.getAttribute('href')),
         disclaimers:document.body.textContent.includes('does not guarantee') && document.body.textContent.includes('not affiliated with'),
         faq:document.querySelectorAll('.merchant-faq details').length,
         overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
       }));
       check(audit.canonical==='https://howworkruns.com/merchant-center-audit/',`${width}px merchant audit: incorrect canonical`);
-      check(audit.schema && audit.sections && audit.faq>=5,`${width}px merchant audit: missing service content or schema`);
+      check(audit.schema && audit.sections && audit.faq>=10,`${width}px merchant audit: missing service content or schema`);
       check(audit.ctas.length===2 && audit.ctas.every(x=>x==='/contact/'),`${width}px merchant audit: CTAs must use existing contact form`);
       check(audit.disclaimers,`${width}px merchant audit: missing independence/approval disclosures`);
       check(audit.overflow<=1,`${width}px merchant audit: horizontal overflow ${audit.overflow}px`);

@@ -29,3 +29,24 @@ body.merchant-audit-page .merchant-faq summary{cursor:pointer;color:#172e45;font
 body.merchant-audit-page .merchant-faq details p{max-width:760px;margin:15px 0 0}
 body.merchant-audit-page .merchant-disclaimer{font-size:13px;line-height:1.55;opacity:.85;margin-top:20px}
 @media(max-width:760px){body.merchant-audit-page .merchant-columns,body.merchant-audit-page .merchant-deliverables{grid-template-columns:1fr}body.merchant-audit-page .merchant-steps li{grid-template-columns:45px minmax(0,1fr);gap:12px}body.merchant-audit-page .merchant-steps li>span{font-size:29px}body.merchant-audit-page .merchant-section{padding-block:64px}}
+
+/* Expanded editorial guidance: useful self-service information without extra dependencies. */
+body.merchant-audit-page .merchant-issue-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 44px}
+body.merchant-audit-page .merchant-issue-grid article{border-top:1px solid #d5e0ea;padding:24px 0}
+body.merchant-audit-page .merchant-issue-grid article p{margin:0}
+body.merchant-audit-page .merchant-checklist{list-style:none;counter-reset:audit-check;margin:0;padding:0;max-width:960px}
+body.merchant-audit-page .merchant-checklist li{counter-increment:audit-check;display:grid;grid-template-columns:minmax(190px, .55fr) minmax(0,1fr);gap:25px;border-top:1px solid #d5e0ea;padding:24px 0}
+body.merchant-audit-page .merchant-checklist li strong{color:#172e45;font-size:18px}
+body.merchant-audit-page .merchant-checklist li strong:before{content:counter(audit-check,decimal-leading-zero) " / ";color:#2e77b7;font-size:13px;letter-spacing:.06em}
+body.merchant-audit-page .merchant-checklist li span{color:#42586d;line-height:1.7}
+body.merchant-audit-page .merchant-check-note{max-width:850px;font-size:14px;margin-top:25px}
+body.merchant-audit-page .merchant-comparison{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:25px}
+body.merchant-audit-page .merchant-comparison article{padding:clamp(22px,3vw,36px);background:#fff;border:1px solid #d5e0ea}
+body.merchant-audit-page .merchant-comparison ul,body.merchant-audit-page .merchant-prep ul{padding-left:21px;color:#42586d;line-height:1.85}
+body.merchant-audit-page .merchant-comparison li,body.merchant-audit-page .merchant-prep li{padding-left:4px}
+body.merchant-audit-page .merchant-comparison .merchant-small{font-size:14px;border-top:1px solid #d5e0ea;padding-top:18px;margin-top:24px}
+body.merchant-audit-page .merchant-prep{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(30px,6vw,85px)}
+body.merchant-audit-page .merchant-prep-aside{background:#f4f8fc;border:1px solid #d5e0ea;padding:clamp(22px,3vw,34px);align-self:start}
+body.merchant-audit-page .merchant-inline-link{color:#245f92;font-weight:700;text-underline-offset:4px}
+body.merchant-audit-page .merchant-inline-link:focus-visible{outline:3px solid #2e77b7;outline-offset:4px}
+@media(max-width:760px){body.merchant-audit-page .merchant-issue-grid,body.merchant-audit-page .merchant-comparison,body.merchant-audit-page .merchant-prep{grid-template-columns:1fr}body.merchant-audit-page .merchant-checklist li{grid-template-columns:1fr;gap:9px}}
