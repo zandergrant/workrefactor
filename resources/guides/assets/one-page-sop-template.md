@@ -7,10 +7,10 @@
 **Required inputs:** [Links, source records, approvals, data]
 
 ## Steps
-1. **[Action]** — [Where to do it; how to tell it worked]
-2. **[Action]** — [Where to do it; how to tell it worked]
-3. **[Action]** — [Where to do it; how to tell it worked]
-4. **[Action]** — [Where to do it; how to tell it worked]
+1. **[Action]:** [Where to do it; how to tell it worked]
+2. **[Action]:** [Where to do it; how to tell it worked]
+3. **[Action]:** [Where to do it; how to tell it worked]
+4. **[Action]:** [Where to do it; how to tell it worked]
 
 ## Definition of done
 - [ ] [Outcome/record validated]

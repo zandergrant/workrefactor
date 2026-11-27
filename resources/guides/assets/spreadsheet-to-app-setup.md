@@ -1,4 +1,4 @@
-# Request Desk — Apps Script starter setup
+# Request Desk: Apps Script starter setup
 
 This is an internal, sheet-backed starter project. It is a functional example, not a production-ready application. Test with fictional data first.
 

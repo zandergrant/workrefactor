@@ -2,7 +2,7 @@
 
 **Purpose:** Start client delivery with a confirmed scope, responsible owner and agreed first milestone.
 **Process owner:** Delivery operations lead
-**Last reviewed:** Example only — replace after your team's first review
+**Last reviewed:** Example only; replace after your team's first review
 **Use this when:** Sales marks the agreement signed and requests handoff.
 **Required inputs:** Signed agreement URL, scope summary, client contact, service start date, key deliverables, open commercial promises.
 
